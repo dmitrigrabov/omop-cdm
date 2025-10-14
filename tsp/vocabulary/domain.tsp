@@ -31,6 +31,11 @@ interoperability.
  */
 
 @doc("Domain record in the OMOP CDM")
+@example(#{
+  domain_id: "12345",
+  domain_name: "Example value",
+  domain_concept_id: 8507
+})
 model Domain {
   @doc("A unique key for each domain.")
   @maxLength(20)
@@ -40,7 +45,7 @@ model Domain {
   @maxLength(255)
   domain_name: string;
 
-  @doc("A Concept representing the Domain Concept the DOMAIN record belongs to.  References CONCEPT table.")
+  @doc("A Concept representing the Domain Concept the DOMAIN record belongs to. References CONCEPT table.")
   domain_concept_id: ConceptId;
 }
 
@@ -53,7 +58,7 @@ model DomainCreate {
   @maxLength(255)
   domain_name: string;
 
-  @doc("A Concept representing the Domain Concept the DOMAIN record belongs to.  References CONCEPT table.")
+  @doc("A Concept representing the Domain Concept the DOMAIN record belongs to. References CONCEPT table.")
   domain_concept_id: ConceptId;
 }
 
@@ -65,7 +70,7 @@ model DomainUpdate {
   @doc("The name describing the Domain, e.g. Condition, Procedure, Measurement etc.")
   domain_name?: string;
 
-  @doc("A Concept representing the Domain Concept the DOMAIN record belongs to.  References CONCEPT table.")
+  @doc("A Concept representing the Domain Concept the DOMAIN record belongs to. References CONCEPT table.")
   domain_concept_id?: ConceptId;
 }
 

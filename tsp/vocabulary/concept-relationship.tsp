@@ -30,8 +30,14 @@ integration across disparate datasets.
  */
 
 @doc("ConceptRelationship record in the OMOP CDM")
+@example(#{
+  relationship_id: "Example value",
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+})
 model ConceptRelationship {
-  @doc("The relationship between CONCEPT_ID_1 and CONCEPT_ID_2. Please see the [Vocabulary Conventions](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html#concept_relationships). for more information.  References RELATIONSHIP table.")
+  @doc("The relationship between CONCEPT_ID_1 and CONCEPT_ID_2. Please see the [Vocabulary Conventions](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html#concept_relationships). for more information. References RELATIONSHIP table.")
   @maxLength(20)
   relationship_id: string;
 
@@ -51,7 +57,7 @@ model ConceptRelationship {
  */
 @doc("Request body for creating a new ConceptRelationship record")
 model ConceptRelationshipCreate {
-  @doc("The relationship between CONCEPT_ID_1 and CONCEPT_ID_2. Please see the [Vocabulary Conventions](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html#concept_relationships). for more information.  References RELATIONSHIP table.")
+  @doc("The relationship between CONCEPT_ID_1 and CONCEPT_ID_2. Please see the [Vocabulary Conventions](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html#concept_relationships). for more information. References RELATIONSHIP table.")
   @maxLength(20)
   relationship_id: string;
 
@@ -71,7 +77,7 @@ model ConceptRelationshipCreate {
  */
 @doc("Request body for updating an existing ConceptRelationship record")
 model ConceptRelationshipUpdate {
-  @doc("The relationship between CONCEPT_ID_1 and CONCEPT_ID_2. Please see the [Vocabulary Conventions](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html#concept_relationships). for more information.  References RELATIONSHIP table.")
+  @doc("The relationship between CONCEPT_ID_1 and CONCEPT_ID_2. Please see the [Vocabulary Conventions](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html#concept_relationships). for more information. References RELATIONSHIP table.")
   relationship_id?: string;
 
   @doc("The date when the relationship is first recorded.")

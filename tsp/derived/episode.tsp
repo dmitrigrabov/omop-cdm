@@ -31,11 +31,26 @@ expected to be comprehensive.
  */
 
 @doc("Episode record in the OMOP CDM")
+@example(#{
+  episode_id: 12345,
+  person_id: 100,
+  episode_concept_id: 8507,
+  episode_start_date: "2023-01-15",
+  episode_start_datetime: "2023-01-15",
+  episode_end_date: "2023-01-15",
+  episode_end_datetime: "2023-01-15",
+  episode_parent_id: 100,
+  episode_number: 100,
+  episode_object_concept_id: 8507,
+  episode_type_concept_id: 8507,
+  episode_source_value: "Example value",
+  episode_source_concept_id: 8507
+})
 model Episode {
   @doc("A unique identifier for each Episode.")
   episode_id: int64;
 
-  @doc("The PERSON_ID of the PERSON for whom the episode is recorded.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the episode is recorded. References PERSON table.")
   person_id: int64;
 
   @doc("The EPISODE_CONCEPT_ID represents the kind abstraction related to the disease phase, outcome or treatment. ETL Convention: Choose a concept in the Episode domain that best represents the ongoing disease phase, outcome, or treatment. Please see [article] for cancers and [article] for non-cancers describing how these are defined. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Episode&page=1&pageSize=15&query=) References CONCEPT table.")
@@ -78,7 +93,7 @@ model Episode {
  */
 @doc("Request body for creating a new Episode record")
 model EpisodeCreate {
-  @doc("The PERSON_ID of the PERSON for whom the episode is recorded.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the episode is recorded. References PERSON table.")
   person_id: int64;
 
   @doc("The EPISODE_CONCEPT_ID represents the kind abstraction related to the disease phase, outcome or treatment. ETL Convention: Choose a concept in the Episode domain that best represents the ongoing disease phase, outcome, or treatment. Please see [article] for cancers and [article] for non-cancers describing how these are defined. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Episode&page=1&pageSize=15&query=) References CONCEPT table.")
@@ -121,7 +136,7 @@ model EpisodeCreate {
  */
 @doc("Request body for updating an existing Episode record")
 model EpisodeUpdate {
-  @doc("The PERSON_ID of the PERSON for whom the episode is recorded.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the episode is recorded. References PERSON table.")
   person_id?: int64;
 
   @doc("The EPISODE_CONCEPT_ID represents the kind abstraction related to the disease phase, outcome or treatment. ETL Convention: Choose a concept in the Episode domain that best represents the ongoing disease phase, outcome, or treatment. Please see [article] for cancers and [article] for non-cancers describing how these are defined. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Episode&page=1&pageSize=15&query=) References CONCEPT table.")

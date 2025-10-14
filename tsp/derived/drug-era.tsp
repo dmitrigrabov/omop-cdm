@@ -25,6 +25,15 @@ part of a drug era based on the dates of exposure.
  */
 
 @doc("DrugEra record in the OMOP CDM")
+@example(#{
+  drug_era_id: 12345,
+  person_id: 100,
+  drug_concept_id: 8507,
+  drug_era_start_date: "2023-01-15",
+  drug_era_end_date: "2023-01-15",
+  drug_exposure_count: 100,
+  gap_days: 100
+})
 model DrugEra {
   @doc("")
   drug_era_id: int64;
@@ -32,7 +41,7 @@ model DrugEra {
   @doc("References PERSON table.")
   person_id: int64;
 
-  @doc("The drug_concept_id should conform to the concept class ‘ingredient’ as the drug_era is an era of time where a person is exposed to a particular drug ingredient.  References CONCEPT table.")
+  @doc("The drug_concept_id should conform to the concept class ‘ingredient’ as the drug_era is an era of time where a person is exposed to a particular drug ingredient. References CONCEPT table.")
   drug_concept_id: ConceptId;
 
   @doc("The Drug Era Start Date is the start date of the first Drug Exposure for a given ingredient, with at least 31 days since the previous exposure.")
@@ -56,7 +65,7 @@ model DrugEraCreate {
   @doc("References PERSON table.")
   person_id: int64;
 
-  @doc("The drug_concept_id should conform to the concept class ‘ingredient’ as the drug_era is an era of time where a person is exposed to a particular drug ingredient.  References CONCEPT table.")
+  @doc("The drug_concept_id should conform to the concept class ‘ingredient’ as the drug_era is an era of time where a person is exposed to a particular drug ingredient. References CONCEPT table.")
   drug_concept_id: ConceptId;
 
   @doc("The Drug Era Start Date is the start date of the first Drug Exposure for a given ingredient, with at least 31 days since the previous exposure.")
@@ -80,7 +89,7 @@ model DrugEraUpdate {
   @doc("References PERSON table.")
   person_id?: int64;
 
-  @doc("The drug_concept_id should conform to the concept class ‘ingredient’ as the drug_era is an era of time where a person is exposed to a particular drug ingredient.  References CONCEPT table.")
+  @doc("The drug_concept_id should conform to the concept class ‘ingredient’ as the drug_era is an era of time where a person is exposed to a particular drug ingredient. References CONCEPT table.")
   drug_concept_id?: ConceptId;
 
   @doc("The Drug Era Start Date is the start date of the first Drug Exposure for a given ingredient, with at least 31 days since the previous exposure.")

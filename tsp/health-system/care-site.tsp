@@ -38,6 +38,14 @@ repository](https://ohdsi.github.io/Themis/care_site.html).
  */
 
 @doc("CareSite record in the OMOP CDM")
+@example(#{
+  care_site_id: 12345,
+  care_site_name: "Example value",
+  place_of_service_concept_id: 8507,
+  location_id: 100,
+  care_site_source_value: "Example value",
+  place_of_service_source_value: "Example value"
+})
 model CareSite {
   @doc("Assign an ID to each combination of a location and nature of the site - the latter could be the Place of Service, name or another characteristic in your source data.")
   care_site_id: int64;
@@ -49,7 +57,7 @@ model CareSite {
   @doc("This is a high-level way of characterizing a Care Site. Typically, however, Care Sites can provide care in multiple settings (inpatient, outpatient, etc.) and this granularity should be reflected in the visit. ETL Convention: Choose the concept in the visit domain that best represents the setting in which healthcare is provided in the Care Site. If most visits in a Care Site are Inpatient, then the place_of_service_concept_id should represent Inpatient. If information is present about a unique Care Site (e.g. Pharmacy) then a Care Site record should be created. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Visit&standardConcept=Standard&page=2&pageSize=15&query=). For information about how to populate this field please see the [THEMIS Conventions](https://ohdsi.github.io/Themis/tag_place_of_service.html). References CONCEPT table.")
   place_of_service_concept_id?: ConceptId;
 
-  @doc("The location_id from the LOCATION table representing the physical location of the care_site.  References LOCATION table.")
+  @doc("The location_id from the LOCATION table representing the physical location of the care_site. References LOCATION table.")
   location_id?: int64;
 
   @doc("The identifier of the care_site as it appears in the source data. This could be an identifier separate from the name of the care_site.")
@@ -73,7 +81,7 @@ model CareSiteCreate {
   @doc("This is a high-level way of characterizing a Care Site. Typically, however, Care Sites can provide care in multiple settings (inpatient, outpatient, etc.) and this granularity should be reflected in the visit. ETL Convention: Choose the concept in the visit domain that best represents the setting in which healthcare is provided in the Care Site. If most visits in a Care Site are Inpatient, then the place_of_service_concept_id should represent Inpatient. If information is present about a unique Care Site (e.g. Pharmacy) then a Care Site record should be created. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Visit&standardConcept=Standard&page=2&pageSize=15&query=). For information about how to populate this field please see the [THEMIS Conventions](https://ohdsi.github.io/Themis/tag_place_of_service.html). References CONCEPT table.")
   place_of_service_concept_id?: ConceptId;
 
-  @doc("The location_id from the LOCATION table representing the physical location of the care_site.  References LOCATION table.")
+  @doc("The location_id from the LOCATION table representing the physical location of the care_site. References LOCATION table.")
   location_id?: int64;
 
   @doc("The identifier of the care_site as it appears in the source data. This could be an identifier separate from the name of the care_site.")
@@ -96,7 +104,7 @@ model CareSiteUpdate {
   @doc("This is a high-level way of characterizing a Care Site. Typically, however, Care Sites can provide care in multiple settings (inpatient, outpatient, etc.) and this granularity should be reflected in the visit. ETL Convention: Choose the concept in the visit domain that best represents the setting in which healthcare is provided in the Care Site. If most visits in a Care Site are Inpatient, then the place_of_service_concept_id should represent Inpatient. If information is present about a unique Care Site (e.g. Pharmacy) then a Care Site record should be created. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Visit&standardConcept=Standard&page=2&pageSize=15&query=). For information about how to populate this field please see the [THEMIS Conventions](https://ohdsi.github.io/Themis/tag_place_of_service.html). References CONCEPT table.")
   place_of_service_concept_id?: ConceptId;
 
-  @doc("The location_id from the LOCATION table representing the physical location of the care_site.  References LOCATION table.")
+  @doc("The location_id from the LOCATION table representing the physical location of the care_site. References LOCATION table.")
   location_id?: int64;
 
   @doc("The identifier of the care_site as it appears in the source data. This could be an identifier separate from the name of the care_site.")

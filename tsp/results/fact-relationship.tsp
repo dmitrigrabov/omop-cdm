@@ -33,6 +33,9 @@ of - Person, 2, Person, 1, child of
  */
 
 @doc("FactRelationship record in the OMOP CDM")
+@example(#{
+  relationship_concept_id: 8507
+})
 model FactRelationship {
   @doc("References CONCEPT table.")
   relationship_concept_id: ConceptId;

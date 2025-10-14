@@ -39,11 +39,17 @@ structure, enabling more comprehensive cohort definitions.
  */
 
 @doc("ConceptAncestor record in the OMOP CDM")
+@example(#{
+  ancestor_concept_id: 8507,
+  descendant_concept_id: 8507,
+  min_levels_of_separation: 100,
+  max_levels_of_separation: 100
+})
 model ConceptAncestor {
-  @doc("The Concept Id for the higher-level concept that forms the ancestor in the relationship.  References CONCEPT table.")
+  @doc("The Concept Id for the higher-level concept that forms the ancestor in the relationship. References CONCEPT table.")
   ancestor_concept_id: ConceptId;
 
-  @doc("The Concept Id for the lower-level concept that forms the descendant in the relationship.  References CONCEPT table.")
+  @doc("The Concept Id for the lower-level concept that forms the descendant in the relationship. References CONCEPT table.")
   descendant_concept_id: ConceptId;
 
   @doc("The minimum separation in number of levels of hierarchy between ancestor and descendant concepts. This is an attribute that is used to simplify hierarchic analysis.")
@@ -58,10 +64,10 @@ model ConceptAncestor {
  */
 @doc("Request body for creating a new ConceptAncestor record")
 model ConceptAncestorCreate {
-  @doc("The Concept Id for the higher-level concept that forms the ancestor in the relationship.  References CONCEPT table.")
+  @doc("The Concept Id for the higher-level concept that forms the ancestor in the relationship. References CONCEPT table.")
   ancestor_concept_id: ConceptId;
 
-  @doc("The Concept Id for the lower-level concept that forms the descendant in the relationship.  References CONCEPT table.")
+  @doc("The Concept Id for the lower-level concept that forms the descendant in the relationship. References CONCEPT table.")
   descendant_concept_id: ConceptId;
 
   @doc("The minimum separation in number of levels of hierarchy between ancestor and descendant concepts. This is an attribute that is used to simplify hierarchic analysis.")
@@ -76,10 +82,10 @@ model ConceptAncestorCreate {
  */
 @doc("Request body for updating an existing ConceptAncestor record")
 model ConceptAncestorUpdate {
-  @doc("The Concept Id for the higher-level concept that forms the ancestor in the relationship.  References CONCEPT table.")
+  @doc("The Concept Id for the higher-level concept that forms the ancestor in the relationship. References CONCEPT table.")
   ancestor_concept_id?: ConceptId;
 
-  @doc("The Concept Id for the lower-level concept that forms the descendant in the relationship.  References CONCEPT table.")
+  @doc("The Concept Id for the lower-level concept that forms the descendant in the relationship. References CONCEPT table.")
   descendant_concept_id?: ConceptId;
 
   @doc("The minimum separation in number of levels of hierarchy between ancestor and descendant concepts. This is an attribute that is used to simplify hierarchic analysis.")

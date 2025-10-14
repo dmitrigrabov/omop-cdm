@@ -20,6 +20,17 @@ has been transformed to the OMOP Common Data Model.
  */
 
 @doc("Metadata record in the OMOP CDM")
+@example(#{
+  metadata_id: 12345,
+  metadata_concept_id: 8507,
+  metadata_type_concept_id: 8507,
+  name: "Example value",
+  value_as_string: "Example value",
+  value_as_concept_id: 8507,
+  value_as_number: 98.6,
+  metadata_date: "2023-01-15",
+  metadata_datetime: "2023-01-15"
+})
 model Metadata {
   @doc("The unique key given to a Metadata record. ETL Convention: Attribute value is auto-generated")
   metadata_id: int64;

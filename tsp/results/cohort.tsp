@@ -38,6 +38,12 @@ overlapping in time
  */
 
 @doc("Cohort record in the OMOP CDM")
+@example(#{
+  cohort_definition_id: 100,
+  subject_id: 100,
+  cohort_start_date: "2023-01-15",
+  cohort_end_date: "2023-01-15"
+})
 model Cohort {
   @doc("")
   cohort_definition_id: int64;

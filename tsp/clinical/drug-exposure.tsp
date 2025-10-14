@@ -46,11 +46,36 @@ repository](https://ohdsi.github.io/Themis/drug_exposure.html).
  */
 
 @doc("DrugExposure record in the OMOP CDM")
+@example(#{
+  drug_exposure_id: 12345,
+  person_id: 100,
+  drug_concept_id: 8507,
+  drug_exposure_start_date: "2023-01-15",
+  drug_exposure_start_datetime: "2023-01-15",
+  drug_exposure_end_date: "2023-01-15",
+  drug_exposure_end_datetime: "2023-01-15",
+  verbatim_end_date: "2023-01-15",
+  drug_type_concept_id: 8507,
+  stop_reason: "Example value",
+  refills: 100,
+  quantity: 98.6,
+  days_supply: 100,
+  sig: "Example value",
+  route_concept_id: 8507,
+  lot_number: "Example value",
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  drug_source_value: "Example value",
+  drug_source_concept_id: 8507,
+  route_source_value: "Example value",
+  dose_unit_source_value: "Example value"
+})
 model DrugExposure {
   @doc("The unique key given to records of drug dispensings or administrations for a person. Refer to the ETL for how duplicate drugs during the same visit were handled. ETL Convention: Each instance of a drug dispensing or administration present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same drug within the same visit. It is valid to keep these duplicates and assign them individual, unique, DRUG_EXPOSURE_IDs, though it is up to the ETL how they should be handled.")
   drug_exposure_id: int64;
 
-  @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The DRUG_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source concept id which represents a drug product or molecule otherwise introduced to the body. The drug concepts can have a varying degree of information about drug strength and dose. This information is relevant in the context of quantity and administration information in the subsequent fields plus strength information from the DRUG_STRENGTH table, provided as part of the standard vocabulary download. ETL Convention: The CONCEPT_ID that the DRUG_SOURCE_VALUE maps to. The concept id should be derived either from mapping from the source concept id or by picking the drug concept representing the most amount of detail you have. Records whose source values map to standard concepts with a domain of Drug should go in this table. When the Drug Source Value of the code cannot be translated into Standard Drug Concept IDs, a Drug exposure entry is stored with only the corresponding SOURCE_CONCEPT_ID and DRUG_SOURCE_VALUE and a DRUG_CONCEPT_ID of 0. The Drug Concept with the most detailed content of information is preferred during the mapping process. These are indicated in the CONCEPT_CLASS_ID field of the Concept and are recorded in the following order of precedence: Marketed Product, Branded Pack, Clinical Pack, Branded Drug, Clinical Drug, Branded Drug Component, Clinical Drug Component, Branded Drug Form, Clinical Drug Form, and only if no other information is available Ingredient. Note: If only the drug class is known, the DRUG_CONCEPT_ID field should contain 0. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Drug&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")
@@ -90,7 +115,7 @@ model DrugExposure {
   @doc("This is the verbatim instruction for the drug as written by the provider. ETL Convention: Put the written out instructions for the drug as it is verbatim in the source, if available.")
   sig?: string;
 
-  @doc("The standard CONCEPT_ID that the ROUTE_SOURCE_VALUE maps to in the route domain. This is meant to represent the route of administration of the drug. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Route&standardConcept=Standard&page=1&pageSize=15&query=)  References CONCEPT table.")
+  @doc("The standard CONCEPT_ID that the ROUTE_SOURCE_VALUE maps to in the route domain. This is meant to represent the route of administration of the drug. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Route&standardConcept=Standard&page=1&pageSize=15&query=) References CONCEPT table.")
   route_concept_id?: ConceptId;
 
   @doc("")
@@ -127,7 +152,7 @@ model DrugExposure {
  */
 @doc("Request body for creating a new DrugExposure record")
 model DrugExposureCreate {
-  @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The DRUG_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source concept id which represents a drug product or molecule otherwise introduced to the body. The drug concepts can have a varying degree of information about drug strength and dose. This information is relevant in the context of quantity and administration information in the subsequent fields plus strength information from the DRUG_STRENGTH table, provided as part of the standard vocabulary download. ETL Convention: The CONCEPT_ID that the DRUG_SOURCE_VALUE maps to. The concept id should be derived either from mapping from the source concept id or by picking the drug concept representing the most amount of detail you have. Records whose source values map to standard concepts with a domain of Drug should go in this table. When the Drug Source Value of the code cannot be translated into Standard Drug Concept IDs, a Drug exposure entry is stored with only the corresponding SOURCE_CONCEPT_ID and DRUG_SOURCE_VALUE and a DRUG_CONCEPT_ID of 0. The Drug Concept with the most detailed content of information is preferred during the mapping process. These are indicated in the CONCEPT_CLASS_ID field of the Concept and are recorded in the following order of precedence: Marketed Product, Branded Pack, Clinical Pack, Branded Drug, Clinical Drug, Branded Drug Component, Clinical Drug Component, Branded Drug Form, Clinical Drug Form, and only if no other information is available Ingredient. Note: If only the drug class is known, the DRUG_CONCEPT_ID field should contain 0. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Drug&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")
@@ -167,7 +192,7 @@ model DrugExposureCreate {
   @doc("This is the verbatim instruction for the drug as written by the provider. ETL Convention: Put the written out instructions for the drug as it is verbatim in the source, if available.")
   sig?: string;
 
-  @doc("The standard CONCEPT_ID that the ROUTE_SOURCE_VALUE maps to in the route domain. This is meant to represent the route of administration of the drug. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Route&standardConcept=Standard&page=1&pageSize=15&query=)  References CONCEPT table.")
+  @doc("The standard CONCEPT_ID that the ROUTE_SOURCE_VALUE maps to in the route domain. This is meant to represent the route of administration of the drug. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Route&standardConcept=Standard&page=1&pageSize=15&query=) References CONCEPT table.")
   route_concept_id?: ConceptId;
 
   @doc("")
@@ -204,7 +229,7 @@ model DrugExposureCreate {
  */
 @doc("Request body for updating an existing DrugExposure record")
 model DrugExposureUpdate {
-  @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code. References PERSON table.")
   person_id?: int64;
 
   @doc("The DRUG_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source concept id which represents a drug product or molecule otherwise introduced to the body. The drug concepts can have a varying degree of information about drug strength and dose. This information is relevant in the context of quantity and administration information in the subsequent fields plus strength information from the DRUG_STRENGTH table, provided as part of the standard vocabulary download. ETL Convention: The CONCEPT_ID that the DRUG_SOURCE_VALUE maps to. The concept id should be derived either from mapping from the source concept id or by picking the drug concept representing the most amount of detail you have. Records whose source values map to standard concepts with a domain of Drug should go in this table. When the Drug Source Value of the code cannot be translated into Standard Drug Concept IDs, a Drug exposure entry is stored with only the corresponding SOURCE_CONCEPT_ID and DRUG_SOURCE_VALUE and a DRUG_CONCEPT_ID of 0. The Drug Concept with the most detailed content of information is preferred during the mapping process. These are indicated in the CONCEPT_CLASS_ID field of the Concept and are recorded in the following order of precedence: Marketed Product, Branded Pack, Clinical Pack, Branded Drug, Clinical Drug, Branded Drug Component, Clinical Drug Component, Branded Drug Form, Clinical Drug Form, and only if no other information is available Ingredient. Note: If only the drug class is known, the DRUG_CONCEPT_ID field should contain 0. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Drug&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")
@@ -243,7 +268,7 @@ model DrugExposureUpdate {
   @doc("This is the verbatim instruction for the drug as written by the provider. ETL Convention: Put the written out instructions for the drug as it is verbatim in the source, if available.")
   sig?: string;
 
-  @doc("The standard CONCEPT_ID that the ROUTE_SOURCE_VALUE maps to in the route domain. This is meant to represent the route of administration of the drug. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Route&standardConcept=Standard&page=1&pageSize=15&query=)  References CONCEPT table.")
+  @doc("The standard CONCEPT_ID that the ROUTE_SOURCE_VALUE maps to in the route domain. This is meant to represent the route of administration of the drug. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Route&standardConcept=Standard&page=1&pageSize=15&query=) References CONCEPT table.")
   route_concept_id?: ConceptId;
 
   @doc("")

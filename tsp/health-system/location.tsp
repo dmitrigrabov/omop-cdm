@@ -32,6 +32,18 @@ with information from the Care Site.
  */
 
 @doc("Location record in the OMOP CDM")
+@example(#{
+  location_id: 12345,
+  city: "Example value",
+  state: "Example value",
+  zip: "Example value",
+  county: "Example value",
+  location_source_value: "Example value",
+  country_concept_id: 8507,
+  country_source_value: "Example value",
+  latitude: 98.6,
+  longitude: 98.6
+})
 model Location {
   @doc("The unique key given to a unique Location. ETL Convention: Each instance of a Location in the source data should be assigned this unique key.")
   location_id: int64;
@@ -56,7 +68,7 @@ model Location {
   @maxLength(50)
   location_source_value?: string;
 
-  @doc("The Concept Id representing the country. Values should conform to the [Geography](https://athena.ohdsi.org/search-terms/terms?domain=Geography&standardConcept=Standard&page=1&pageSize=15&query=&boosts) domain.  References CONCEPT table.")
+  @doc("The Concept Id representing the country. Values should conform to the [Geography](https://athena.ohdsi.org/search-terms/terms?domain=Geography&standardConcept=Standard&page=1&pageSize=15&query=&boosts) domain. References CONCEPT table.")
   country_concept_id?: ConceptId;
 
   @doc("The name of the country.")
@@ -95,7 +107,7 @@ model LocationCreate {
   @maxLength(50)
   location_source_value?: string;
 
-  @doc("The Concept Id representing the country. Values should conform to the [Geography](https://athena.ohdsi.org/search-terms/terms?domain=Geography&standardConcept=Standard&page=1&pageSize=15&query=&boosts) domain.  References CONCEPT table.")
+  @doc("The Concept Id representing the country. Values should conform to the [Geography](https://athena.ohdsi.org/search-terms/terms?domain=Geography&standardConcept=Standard&page=1&pageSize=15&query=&boosts) domain. References CONCEPT table.")
   country_concept_id?: ConceptId;
 
   @doc("The name of the country.")
@@ -129,7 +141,7 @@ model LocationUpdate {
   @doc("Put the verbatim value for the location here, as it shows up in the source.")
   location_source_value?: string;
 
-  @doc("The Concept Id representing the country. Values should conform to the [Geography](https://athena.ohdsi.org/search-terms/terms?domain=Geography&standardConcept=Standard&page=1&pageSize=15&query=&boosts) domain.  References CONCEPT table.")
+  @doc("The Concept Id representing the country. Values should conform to the [Geography](https://athena.ohdsi.org/search-terms/terms?domain=Geography&standardConcept=Standard&page=1&pageSize=15&query=&boosts) domain. References CONCEPT table.")
   country_concept_id?: ConceptId;
 
   @doc("The name of the country.")

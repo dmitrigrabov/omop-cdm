@@ -29,6 +29,27 @@ the Device Domain have to be recorded here.
  */
 
 @doc("DeviceExposure record in the OMOP CDM")
+@example(#{
+  device_exposure_id: 12345,
+  person_id: 100,
+  device_concept_id: 8507,
+  device_exposure_start_date: "2023-01-15",
+  device_exposure_start_datetime: "2023-01-15",
+  device_exposure_end_date: "2023-01-15",
+  device_exposure_end_datetime: "2023-01-15",
+  device_type_concept_id: 8507,
+  unique_device_id: "Example value",
+  production_id: "Example value",
+  quantity: 100,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  device_source_value: "Example value",
+  device_source_concept_id: 8507,
+  unit_concept_id: 8507,
+  unit_source_value: "Example value",
+  unit_source_concept_id: 8507
+})
 model DeviceExposure {
   @doc("The unique key given to records a person’s exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key.")
   device_exposure_id: int64;

@@ -47,6 +47,14 @@ condition_era_end_date.
  */
 
 @doc("ConditionEra record in the OMOP CDM")
+@example(#{
+  condition_era_id: 12345,
+  person_id: 100,
+  condition_concept_id: 8507,
+  condition_era_start_date: "2023-01-15",
+  condition_era_end_date: "2023-01-15",
+  condition_occurrence_count: 100
+})
 model ConditionEra {
   @doc("")
   condition_era_id: int64;
@@ -54,7 +62,7 @@ model ConditionEra {
   @doc("References PERSON table.")
   person_id: int64;
 
-  @doc("The Concept Id representing the Condition.  References CONCEPT table.")
+  @doc("The Concept Id representing the Condition. References CONCEPT table.")
   condition_concept_id: ConceptId;
 
   @doc("The start date for the Condition Era constructed from the individual instances of Condition Occurrences. It is the start date of the very first chronologically recorded instance of the condition with at least 31 days since any prior record of the same Condition.")
@@ -75,7 +83,7 @@ model ConditionEraCreate {
   @doc("References PERSON table.")
   person_id: int64;
 
-  @doc("The Concept Id representing the Condition.  References CONCEPT table.")
+  @doc("The Concept Id representing the Condition. References CONCEPT table.")
   condition_concept_id: ConceptId;
 
   @doc("The start date for the Condition Era constructed from the individual instances of Condition Occurrences. It is the start date of the very first chronologically recorded instance of the condition with at least 31 days since any prior record of the same Condition.")
@@ -96,7 +104,7 @@ model ConditionEraUpdate {
   @doc("References PERSON table.")
   person_id?: int64;
 
-  @doc("The Concept Id representing the Condition.  References CONCEPT table.")
+  @doc("The Concept Id representing the Condition. References CONCEPT table.")
   condition_concept_id?: ConceptId;
 
   @doc("The start date for the Condition Era constructed from the individual instances of Condition Occurrences. It is the start date of the very first chronologically recorded instance of the condition with at least 31 days since any prior record of the same Condition.")

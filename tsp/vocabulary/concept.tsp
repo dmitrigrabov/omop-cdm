@@ -43,6 +43,18 @@ Concepts.
  */
 
 @doc("Concept record in the OMOP CDM")
+@example(#{
+  concept_id: 12345,
+  concept_name: "Example value",
+  domain_id: "Example value",
+  vocabulary_id: "Example value",
+  concept_class_id: "Example value",
+  standard_concept: "Example value",
+  concept_code: "Example value",
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+})
 model Concept {
   @doc("A unique identifier for each Concept across all domains.")
   concept_id: ConceptId;
@@ -51,15 +63,15 @@ model Concept {
   @maxLength(255)
   concept_name: string;
 
-  @doc("A foreign key to the [DOMAIN](https://ohdsi.github.io/CommonDataModel/cdm54.html#domain) table the Concept belongs to.  References DOMAIN table.")
+  @doc("A foreign key to the [DOMAIN](https://ohdsi.github.io/CommonDataModel/cdm54.html#domain) table the Concept belongs to. References DOMAIN table.")
   @maxLength(20)
   domain_id: string;
 
-  @doc("A foreign key to the [VOCABULARY](https://ohdsi.github.io/CommonDataModel/cdm54.html#vocabulary) table indicating from which source the Concept has been adapted.  References VOCABULARY table.")
+  @doc("A foreign key to the [VOCABULARY](https://ohdsi.github.io/CommonDataModel/cdm54.html#vocabulary) table indicating from which source the Concept has been adapted. References VOCABULARY table.")
   @maxLength(20)
   vocabulary_id: string;
 
-  @doc("The attribute or concept class of the Concept. Examples are ‘Clinical Drug’, ‘Ingredient’, ‘Clinical Finding’ etc.  References CONCEPT_CLASS table.")
+  @doc("The attribute or concept class of the Concept. Examples are ‘Clinical Drug’, ‘Ingredient’, ‘Clinical Finding’ etc. References CONCEPT_CLASS table.")
   @maxLength(20)
   concept_class_id: string;
 
@@ -91,15 +103,15 @@ model ConceptCreate {
   @maxLength(255)
   concept_name: string;
 
-  @doc("A foreign key to the [DOMAIN](https://ohdsi.github.io/CommonDataModel/cdm54.html#domain) table the Concept belongs to.  References DOMAIN table.")
+  @doc("A foreign key to the [DOMAIN](https://ohdsi.github.io/CommonDataModel/cdm54.html#domain) table the Concept belongs to. References DOMAIN table.")
   @maxLength(20)
   domain_id: string;
 
-  @doc("A foreign key to the [VOCABULARY](https://ohdsi.github.io/CommonDataModel/cdm54.html#vocabulary) table indicating from which source the Concept has been adapted.  References VOCABULARY table.")
+  @doc("A foreign key to the [VOCABULARY](https://ohdsi.github.io/CommonDataModel/cdm54.html#vocabulary) table indicating from which source the Concept has been adapted. References VOCABULARY table.")
   @maxLength(20)
   vocabulary_id: string;
 
-  @doc("The attribute or concept class of the Concept. Examples are ‘Clinical Drug’, ‘Ingredient’, ‘Clinical Finding’ etc.  References CONCEPT_CLASS table.")
+  @doc("The attribute or concept class of the Concept. Examples are ‘Clinical Drug’, ‘Ingredient’, ‘Clinical Finding’ etc. References CONCEPT_CLASS table.")
   @maxLength(20)
   concept_class_id: string;
 
@@ -130,13 +142,13 @@ model ConceptUpdate {
   @doc("An unambiguous, meaningful and descriptive name for the Concept.")
   concept_name?: string;
 
-  @doc("A foreign key to the [DOMAIN](https://ohdsi.github.io/CommonDataModel/cdm54.html#domain) table the Concept belongs to.  References DOMAIN table.")
+  @doc("A foreign key to the [DOMAIN](https://ohdsi.github.io/CommonDataModel/cdm54.html#domain) table the Concept belongs to. References DOMAIN table.")
   domain_id?: string;
 
-  @doc("A foreign key to the [VOCABULARY](https://ohdsi.github.io/CommonDataModel/cdm54.html#vocabulary) table indicating from which source the Concept has been adapted.  References VOCABULARY table.")
+  @doc("A foreign key to the [VOCABULARY](https://ohdsi.github.io/CommonDataModel/cdm54.html#vocabulary) table indicating from which source the Concept has been adapted. References VOCABULARY table.")
   vocabulary_id?: string;
 
-  @doc("The attribute or concept class of the Concept. Examples are ‘Clinical Drug’, ‘Ingredient’, ‘Clinical Finding’ etc.  References CONCEPT_CLASS table.")
+  @doc("The attribute or concept class of the Concept. Examples are ‘Clinical Drug’, ‘Ingredient’, ‘Clinical Finding’ etc. References CONCEPT_CLASS table.")
   concept_class_id?: string;
 
   @doc("This flag determines where a Concept is a Standard Concept, i.e. is used in the data, a Classification Concept, or a non-standard Source Concept. The allowable values are ‘S’ (Standard Concept) and ‘C’ (Classification Concept), otherwise the content is NULL.")

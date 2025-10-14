@@ -20,6 +20,21 @@ row represents a single extracted term from a note.
  */
 
 @doc("NoteNlp record in the OMOP CDM")
+@example(#{
+  note_nlp_id: 12345,
+  note_id: 100,
+  section_concept_id: 8507,
+  snippet: "Example value",
+  lexical_variant: "Example value",
+  note_nlp_concept_id: 8507,
+  note_nlp_source_concept_id: 8507,
+  nlp_system: "Example value",
+  nlp_date: "2023-01-15",
+  nlp_datetime: "2023-01-15",
+  term_exists: "Example value",
+  term_temporal: "Example value",
+  term_modifiers: "Example value"
+})
 model NoteNlp {
   @doc("A unique identifier for the NLP record.")
   note_nlp_id: int64;
@@ -27,7 +42,7 @@ model NoteNlp {
   @doc("This is the NOTE_ID for the NOTE record the NLP record is associated to.")
   note_id: int64;
 
-  @doc("The SECTION_CONCEPT_ID should be used to represent the note section contained in the NOTE_NLP record. These concepts can be found as parts of document panels and are based on the type of note written, i.e. a discharge summary. These panels can be found as concepts with the relationship ‘Subsumes’ to CONCEPT_ID [45875957](https://athena.ohdsi.org/search-terms/terms/45875957).  References CONCEPT table.")
+  @doc("The SECTION_CONCEPT_ID should be used to represent the note section contained in the NOTE_NLP record. These concepts can be found as parts of document panels and are based on the type of note written, i.e. a discharge summary. These panels can be found as concepts with the relationship ‘Subsumes’ to CONCEPT_ID [45875957](https://athena.ohdsi.org/search-terms/terms/45875957). References CONCEPT table.")
   section_concept_id?: ConceptId;
 
   @doc("A small window of text surrounding the term")
@@ -75,7 +90,7 @@ model NoteNlpCreate {
   @doc("This is the NOTE_ID for the NOTE record the NLP record is associated to.")
   note_id: int64;
 
-  @doc("The SECTION_CONCEPT_ID should be used to represent the note section contained in the NOTE_NLP record. These concepts can be found as parts of document panels and are based on the type of note written, i.e. a discharge summary. These panels can be found as concepts with the relationship ‘Subsumes’ to CONCEPT_ID [45875957](https://athena.ohdsi.org/search-terms/terms/45875957).  References CONCEPT table.")
+  @doc("The SECTION_CONCEPT_ID should be used to represent the note section contained in the NOTE_NLP record. These concepts can be found as parts of document panels and are based on the type of note written, i.e. a discharge summary. These panels can be found as concepts with the relationship ‘Subsumes’ to CONCEPT_ID [45875957](https://athena.ohdsi.org/search-terms/terms/45875957). References CONCEPT table.")
   section_concept_id?: ConceptId;
 
   @doc("A small window of text surrounding the term")
@@ -123,7 +138,7 @@ model NoteNlpUpdate {
   @doc("This is the NOTE_ID for the NOTE record the NLP record is associated to.")
   note_id?: int64;
 
-  @doc("The SECTION_CONCEPT_ID should be used to represent the note section contained in the NOTE_NLP record. These concepts can be found as parts of document panels and are based on the type of note written, i.e. a discharge summary. These panels can be found as concepts with the relationship ‘Subsumes’ to CONCEPT_ID [45875957](https://athena.ohdsi.org/search-terms/terms/45875957).  References CONCEPT table.")
+  @doc("The SECTION_CONCEPT_ID should be used to represent the note section contained in the NOTE_NLP record. These concepts can be found as parts of document panels and are based on the type of note written, i.e. a discharge summary. These panels can be found as concepts with the relationship ‘Subsumes’ to CONCEPT_ID [45875957](https://athena.ohdsi.org/search-terms/terms/45875957). References CONCEPT table.")
   section_concept_id?: ConceptId;
 
   @doc("A small window of text surrounding the term")

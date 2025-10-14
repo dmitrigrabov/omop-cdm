@@ -46,6 +46,27 @@ where the patient was in the hospital at the time of care.
  */
 
 @doc("VisitDetail record in the OMOP CDM")
+@example(#{
+  visit_detail_id: 12345,
+  person_id: 100,
+  visit_detail_concept_id: 8507,
+  visit_detail_start_date: "2023-01-15",
+  visit_detail_start_datetime: "2023-01-15",
+  visit_detail_end_date: "2023-01-15",
+  visit_detail_end_datetime: "2023-01-15",
+  visit_detail_type_concept_id: 8507,
+  provider_id: 100,
+  care_site_id: 100,
+  visit_detail_source_value: "Example value",
+  visit_detail_source_concept_id: 8507,
+  admitted_from_concept_id: 8507,
+  admitted_from_source_value: "Example value",
+  discharged_to_source_value: "Example value",
+  discharged_to_concept_id: 8507,
+  preceding_visit_detail_id: 100,
+  parent_visit_detail_id: 100,
+  visit_occurrence_id: 100
+})
 model VisitDetail {
   @doc("Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit detail. ETL Convention: This should be populated by creating a unique identifier for each unique interaction between a person and the healthcare system where the person receives a medical good or service over a span of time.")
   visit_detail_id: int64;
@@ -81,7 +102,7 @@ model VisitDetail {
   @maxLength(50)
   visit_detail_source_value?: string;
 
-  @doc("If the VISIT_DETAIL_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here.  References CONCEPT table.")
+  @doc("If the VISIT_DETAIL_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here. References CONCEPT table.")
   visit_detail_source_concept_id?: ConceptId;
 
   @doc("Use this field to determine where the patient was admitted from. This concept is part of the visit domain and can indicate if a patient was admitted to the hospital from a long-term care facility, for example. ETL Convention: If available, map the admitted_from_source_value to a standard concept in the visit domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Visit&standardConcept=Standard&page=1&pageSize=15&query=). If a person was admitted from home or was self-referred, set this to 0. References CONCEPT table.")
@@ -144,7 +165,7 @@ model VisitDetailCreate {
   @maxLength(50)
   visit_detail_source_value?: string;
 
-  @doc("If the VISIT_DETAIL_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here.  References CONCEPT table.")
+  @doc("If the VISIT_DETAIL_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here. References CONCEPT table.")
   visit_detail_source_concept_id?: ConceptId;
 
   @doc("Use this field to determine where the patient was admitted from. This concept is part of the visit domain and can indicate if a patient was admitted to the hospital from a long-term care facility, for example. ETL Convention: If available, map the admitted_from_source_value to a standard concept in the visit domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Visit&standardConcept=Standard&page=1&pageSize=15&query=). If a person was admitted from home or was self-referred, set this to 0. References CONCEPT table.")
@@ -206,7 +227,7 @@ model VisitDetailUpdate {
   @doc("This field houses the verbatim value from the source data representing the kind of visit detail that took place (inpatient, outpatient, emergency, etc.) ETL Convention: If there is information about the kind of visit detail in the source data that value should be stored here. If a visit is an amalgamation of visits from the source then use a hierarchy to choose the VISIT_DETAIL_SOURCE_VALUE, such as IP -> ER-> OP. This should line up with the logic chosen to determine how visits are created.")
   visit_detail_source_value?: string;
 
-  @doc("If the VISIT_DETAIL_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here.  References CONCEPT table.")
+  @doc("If the VISIT_DETAIL_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here. References CONCEPT table.")
   visit_detail_source_concept_id?: ConceptId;
 
   @doc("Use this field to determine where the patient was admitted from. This concept is part of the visit domain and can indicate if a patient was admitted to the hospital from a long-term care facility, for example. ETL Convention: If available, map the admitted_from_source_value to a standard concept in the visit domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Visit&standardConcept=Standard&page=1&pageSize=15&query=). If a person was admitted from home or was self-referred, set this to 0. References CONCEPT table.")

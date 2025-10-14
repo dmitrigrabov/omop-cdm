@@ -52,11 +52,36 @@ to’ relationship directs to [4046263](https://athena.ohdsi.org/search-terms/te
  */
 
 @doc("Measurement record in the OMOP CDM")
+@example(#{
+  measurement_id: 12345,
+  person_id: 100,
+  measurement_concept_id: 8507,
+  measurement_date: "2023-01-15",
+  measurement_datetime: "2023-01-15",
+  measurement_time: "Example value",
+  measurement_type_concept_id: 8507,
+  operator_concept_id: 8507,
+  value_as_number: 98.6,
+  value_as_concept_id: 8507,
+  unit_concept_id: 8507,
+  range_low: 98.6,
+  range_high: 98.6,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  measurement_source_value: "Example value",
+  measurement_source_concept_id: 8507,
+  unit_source_value: "Example value",
+  unit_source_concept_id: 8507,
+  value_source_value: "Example value",
+  measurement_event_id: 100,
+  meas_event_field_concept_id: 8507
+})
 model Measurement {
   @doc("The unique key given to a Measurement record for a Person. Refer to the ETL for how duplicate Measurements during the same Visit were handled. ETL Convention: Each instance of a measurement present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same measurement within the same visit. It is valid to keep these duplicates and assign them individual, unique, MEASUREMENT_IDs, though it is up to the ETL how they should be handled.")
   measurement_id: int64;
 
-  @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The MEASUREMENT_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a measurement. ETL Convention: The CONCEPT_ID that the MEASUREMENT_SOURCE_VALUE maps to. Only records whose source values map to concepts with a domain of �Measurement� should go in this table. References CONCEPT table.")
@@ -132,7 +157,7 @@ model Measurement {
  */
 @doc("Request body for creating a new Measurement record")
 model MeasurementCreate {
-  @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The MEASUREMENT_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a measurement. ETL Convention: The CONCEPT_ID that the MEASUREMENT_SOURCE_VALUE maps to. Only records whose source values map to concepts with a domain of �Measurement� should go in this table. References CONCEPT table.")
@@ -208,7 +233,7 @@ model MeasurementCreate {
  */
 @doc("Request body for updating an existing Measurement record")
 model MeasurementUpdate {
-  @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code. References PERSON table.")
   person_id?: int64;
 
   @doc("The MEASUREMENT_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a measurement. ETL Convention: The CONCEPT_ID that the MEASUREMENT_SOURCE_VALUE maps to. Only records whose source values map to concepts with a domain of �Measurement� should go in this table. References CONCEPT table.")

@@ -36,11 +36,29 @@ the Procedure Domain have to be recorded here.
  */
 
 @doc("ProcedureOccurrence record in the OMOP CDM")
+@example(#{
+  procedure_occurrence_id: 12345,
+  person_id: 100,
+  procedure_concept_id: 8507,
+  procedure_date: "2023-01-15",
+  procedure_datetime: "2023-01-15",
+  procedure_end_date: "2023-01-15",
+  procedure_end_datetime: "2023-01-15",
+  procedure_type_concept_id: 8507,
+  modifier_concept_id: 8507,
+  quantity: 100,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  procedure_source_value: "Example value",
+  procedure_source_concept_id: 8507,
+  modifier_source_value: "Example value"
+})
 model ProcedureOccurrence {
   @doc("The unique key given to a procedure record for a person. Refer to the ETL for how duplicate procedures during the same visit were handled. ETL Convention: Each instance of a procedure occurrence in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same procedure within the same visit. It is valid to keep these duplicates and assign them individual, unique, PROCEDURE_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.")
   procedure_occurrence_id: int64;
 
-  @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The PROCEDURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a procedure ETL Convention: The CONCEPT_ID that the PROCEDURE_SOURCE_VALUE maps to. Only records whose source values map to standard concepts with a domain of “Procedure” should go in this table. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Procedure&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")
@@ -93,7 +111,7 @@ model ProcedureOccurrence {
  */
 @doc("Request body for creating a new ProcedureOccurrence record")
 model ProcedureOccurrenceCreate {
-  @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The PROCEDURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a procedure ETL Convention: The CONCEPT_ID that the PROCEDURE_SOURCE_VALUE maps to. Only records whose source values map to standard concepts with a domain of “Procedure” should go in this table. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Procedure&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")
@@ -146,7 +164,7 @@ model ProcedureOccurrenceCreate {
  */
 @doc("Request body for updating an existing ProcedureOccurrence record")
 model ProcedureOccurrenceUpdate {
-  @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code. References PERSON table.")
   person_id?: int64;
 
   @doc("The PROCEDURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a procedure ETL Convention: The CONCEPT_ID that the PROCEDURE_SOURCE_VALUE maps to. Only records whose source values map to standard concepts with a domain of “Procedure” should go in this table. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Procedure&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")

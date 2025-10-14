@@ -28,6 +28,17 @@ Book of OHDSI Chapter 6.3](https://ohdsi.github.io/TheBookOfOhdsi/ExtractTransfo
  */
 
 @doc("SourceToConceptMap record in the OMOP CDM")
+@example(#{
+  source_code: "Example value",
+  source_concept_id: 8507,
+  source_vocabulary_id: "Example value",
+  source_code_description: "Example value",
+  target_concept_id: 8507,
+  target_vocabulary_id: "Example value",
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+})
 model SourceToConceptMap {
   @doc("The source code being translated into a Standard Concept.")
   @maxLength(50)
@@ -44,10 +55,10 @@ model SourceToConceptMap {
   @maxLength(255)
   source_code_description?: string;
 
-  @doc("The target Concept to which the source code is being mapped.  References CONCEPT table.")
+  @doc("The target Concept to which the source code is being mapped. References CONCEPT table.")
   target_concept_id: ConceptId;
 
-  @doc("The Vocabulary of the target Concept.  References VOCABULARY table.")
+  @doc("The Vocabulary of the target Concept. References VOCABULARY table.")
   @maxLength(20)
   target_vocabulary_id: string;
 
@@ -82,10 +93,10 @@ model SourceToConceptMapCreate {
   @maxLength(255)
   source_code_description?: string;
 
-  @doc("The target Concept to which the source code is being mapped.  References CONCEPT table.")
+  @doc("The target Concept to which the source code is being mapped. References CONCEPT table.")
   target_concept_id: ConceptId;
 
-  @doc("The Vocabulary of the target Concept.  References VOCABULARY table.")
+  @doc("The Vocabulary of the target Concept. References VOCABULARY table.")
   @maxLength(20)
   target_vocabulary_id: string;
 
@@ -117,10 +128,10 @@ model SourceToConceptMapUpdate {
   @doc("An optional description for the source code. This is included as a convenience to compare the description of the source code to the name of the concept.")
   source_code_description?: string;
 
-  @doc("The target Concept to which the source code is being mapped.  References CONCEPT table.")
+  @doc("The target Concept to which the source code is being mapped. References CONCEPT table.")
   target_concept_id?: ConceptId;
 
-  @doc("The Vocabulary of the target Concept.  References VOCABULARY table.")
+  @doc("The Vocabulary of the target Concept. References VOCABULARY table.")
   target_vocabulary_id?: string;
 
   @doc("The date when the mapping instance was first recorded.")

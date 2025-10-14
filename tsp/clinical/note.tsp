@@ -47,6 +47,24 @@ dimensions are contained in the OMOP Vocabulary under the domain of
  */
 
 @doc("Note record in the OMOP CDM")
+@example(#{
+  note_id: 12345,
+  person_id: 100,
+  note_date: "2023-01-15",
+  note_datetime: "2023-01-15",
+  note_type_concept_id: 8507,
+  note_class_concept_id: 8507,
+  note_title: "Example value",
+  note_text: "Example value",
+  encoding_concept_id: 8507,
+  language_concept_id: 8507,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  note_source_value: "Example value",
+  note_event_id: 100,
+  note_event_field_concept_id: 8507
+})
 model Note {
   @doc("A unique identifier for each note.")
   note_id: int64;
@@ -82,10 +100,10 @@ model Note {
   @doc("The Provider who wrote the note. ETL Convention: The ETL may need to make a determination on which provider to put here. References PROVIDER table.")
   provider_id?: int64;
 
-  @doc("The Visit during which the note was written.  References VISIT_OCCURRENCE table.")
+  @doc("The Visit during which the note was written. References VISIT_OCCURRENCE table.")
   visit_occurrence_id?: int64;
 
-  @doc("The Visit Detail during which the note was written.  References VISIT_DETAIL table.")
+  @doc("The Visit Detail during which the note was written. References VISIT_DETAIL table.")
   visit_detail_id?: int64;
 
   @doc("The source value mapped to the NOTE_CLASS_CONCEPT_ID.")
@@ -135,10 +153,10 @@ model NoteCreate {
   @doc("The Provider who wrote the note. ETL Convention: The ETL may need to make a determination on which provider to put here. References PROVIDER table.")
   provider_id?: int64;
 
-  @doc("The Visit during which the note was written.  References VISIT_OCCURRENCE table.")
+  @doc("The Visit during which the note was written. References VISIT_OCCURRENCE table.")
   visit_occurrence_id?: int64;
 
-  @doc("The Visit Detail during which the note was written.  References VISIT_DETAIL table.")
+  @doc("The Visit Detail during which the note was written. References VISIT_DETAIL table.")
   visit_detail_id?: int64;
 
   @doc("The source value mapped to the NOTE_CLASS_CONCEPT_ID.")
@@ -187,10 +205,10 @@ model NoteUpdate {
   @doc("The Provider who wrote the note. ETL Convention: The ETL may need to make a determination on which provider to put here. References PROVIDER table.")
   provider_id?: int64;
 
-  @doc("The Visit during which the note was written.  References VISIT_OCCURRENCE table.")
+  @doc("The Visit during which the note was written. References VISIT_OCCURRENCE table.")
   visit_occurrence_id?: int64;
 
-  @doc("The Visit Detail during which the note was written.  References VISIT_DETAIL table.")
+  @doc("The Visit Detail during which the note was written. References VISIT_DETAIL table.")
   visit_detail_id?: int64;
 
   @doc("The source value mapped to the NOTE_CLASS_CONCEPT_ID.")

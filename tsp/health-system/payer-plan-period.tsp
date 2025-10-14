@@ -35,6 +35,25 @@ the Plans are different.
  */
 
 @doc("PayerPlanPeriod record in the OMOP CDM")
+@example(#{
+  payer_plan_period_id: 12345,
+  person_id: 100,
+  payer_plan_period_start_date: "2023-01-15",
+  payer_plan_period_end_date: "2023-01-15",
+  payer_concept_id: 8507,
+  payer_source_value: "Example value",
+  payer_source_concept_id: 8507,
+  plan_concept_id: 8507,
+  plan_source_value: "Example value",
+  plan_source_concept_id: 8507,
+  sponsor_concept_id: 8507,
+  sponsor_source_value: "Example value",
+  sponsor_source_concept_id: 8507,
+  family_source_value: "Example value",
+  stop_reason_concept_id: 8507,
+  stop_reason_source_value: "Example value",
+  stop_reason_source_concept_id: 8507
+})
 model PayerPlanPeriod {
   @doc("A unique identifier for each unique combination of a Person, Payer, Plan, and Period of time.")
   payer_plan_period_id: int64;
@@ -55,7 +74,7 @@ model PayerPlanPeriod {
   @maxLength(50)
   payer_source_value?: string;
 
-  @doc("If the source data codes the Payer in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the Payer in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   payer_source_concept_id?: ConceptId;
 
   @doc("This field represents the specific health benefit Plan the Person is enrolled in. ETL Convention: Map the Plan directly to a standard CONCEPT_ID in the ‘Plan’ vocabulary ([Accepted Concepts](http://athena.ohdsi.org/search-terms/terms?domain=Plan&standardConcept=Standard&page=1&pageSize=15&query=)). This vocabulary is not exhaustive so if there is a value missing, please see the [custom concepts](https://ohdsi.github.io/CommonDataModel/customConcepts.html) page. References CONCEPT table.")
@@ -65,7 +84,7 @@ model PayerPlanPeriod {
   @maxLength(50)
   plan_source_value?: string;
 
-  @doc("If the source data codes the Plan in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the Plan in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   plan_source_concept_id?: ConceptId;
 
   @doc("This field represents the sponsor of the Plan who finances the Plan. This includes self-insured, small group health plan and large group health plan. ETL Convention: Map the sponsor directly to a standard CONCEPT_ID with the domain_id of ‘Sponsor’ ([Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Sponsor&standardConcept=Standard&page=1&pageSize=15&query=)). This vocabulary is not exhaustive so if there is a value missing, please see the [custom concepts](https://ohdsi.github.io/CommonDataModel/customConcepts.html) page. References CONCEPT table.")
@@ -75,7 +94,7 @@ model PayerPlanPeriod {
   @maxLength(50)
   sponsor_source_value?: string;
 
-  @doc("If the source data codes the sponsor in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the sponsor in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   sponsor_source_concept_id?: ConceptId;
 
   @doc("The common identifier for all people (often a family) that covered by the same policy. ETL Convention: Often these are the common digits of the enrollment id of the policy members.")
@@ -89,7 +108,7 @@ model PayerPlanPeriod {
   @maxLength(50)
   stop_reason_source_value?: string;
 
-  @doc("If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   stop_reason_source_concept_id?: ConceptId;
 }
 
@@ -114,7 +133,7 @@ model PayerPlanPeriodCreate {
   @maxLength(50)
   payer_source_value?: string;
 
-  @doc("If the source data codes the Payer in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the Payer in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   payer_source_concept_id?: ConceptId;
 
   @doc("This field represents the specific health benefit Plan the Person is enrolled in. ETL Convention: Map the Plan directly to a standard CONCEPT_ID in the ‘Plan’ vocabulary ([Accepted Concepts](http://athena.ohdsi.org/search-terms/terms?domain=Plan&standardConcept=Standard&page=1&pageSize=15&query=)). This vocabulary is not exhaustive so if there is a value missing, please see the [custom concepts](https://ohdsi.github.io/CommonDataModel/customConcepts.html) page. References CONCEPT table.")
@@ -124,7 +143,7 @@ model PayerPlanPeriodCreate {
   @maxLength(50)
   plan_source_value?: string;
 
-  @doc("If the source data codes the Plan in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the Plan in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   plan_source_concept_id?: ConceptId;
 
   @doc("This field represents the sponsor of the Plan who finances the Plan. This includes self-insured, small group health plan and large group health plan. ETL Convention: Map the sponsor directly to a standard CONCEPT_ID with the domain_id of ‘Sponsor’ ([Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Sponsor&standardConcept=Standard&page=1&pageSize=15&query=)). This vocabulary is not exhaustive so if there is a value missing, please see the [custom concepts](https://ohdsi.github.io/CommonDataModel/customConcepts.html) page. References CONCEPT table.")
@@ -134,7 +153,7 @@ model PayerPlanPeriodCreate {
   @maxLength(50)
   sponsor_source_value?: string;
 
-  @doc("If the source data codes the sponsor in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the sponsor in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   sponsor_source_concept_id?: ConceptId;
 
   @doc("The common identifier for all people (often a family) that covered by the same policy. ETL Convention: Often these are the common digits of the enrollment id of the policy members.")
@@ -148,7 +167,7 @@ model PayerPlanPeriodCreate {
   @maxLength(50)
   stop_reason_source_value?: string;
 
-  @doc("If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   stop_reason_source_concept_id?: ConceptId;
 }
 
@@ -172,7 +191,7 @@ model PayerPlanPeriodUpdate {
   @doc("This is the Payer as it appears in the source data.")
   payer_source_value?: string;
 
-  @doc("If the source data codes the Payer in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the Payer in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   payer_source_concept_id?: ConceptId;
 
   @doc("This field represents the specific health benefit Plan the Person is enrolled in. ETL Convention: Map the Plan directly to a standard CONCEPT_ID in the ‘Plan’ vocabulary ([Accepted Concepts](http://athena.ohdsi.org/search-terms/terms?domain=Plan&standardConcept=Standard&page=1&pageSize=15&query=)). This vocabulary is not exhaustive so if there is a value missing, please see the [custom concepts](https://ohdsi.github.io/CommonDataModel/customConcepts.html) page. References CONCEPT table.")
@@ -181,7 +200,7 @@ model PayerPlanPeriodUpdate {
   @doc("This is the health benefit Plan of the Person as it appears in the source data.")
   plan_source_value?: string;
 
-  @doc("If the source data codes the Plan in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the Plan in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   plan_source_concept_id?: ConceptId;
 
   @doc("This field represents the sponsor of the Plan who finances the Plan. This includes self-insured, small group health plan and large group health plan. ETL Convention: Map the sponsor directly to a standard CONCEPT_ID with the domain_id of ‘Sponsor’ ([Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Sponsor&standardConcept=Standard&page=1&pageSize=15&query=)). This vocabulary is not exhaustive so if there is a value missing, please see the [custom concepts](https://ohdsi.github.io/CommonDataModel/customConcepts.html) page. References CONCEPT table.")
@@ -190,7 +209,7 @@ model PayerPlanPeriodUpdate {
   @doc("The Plan sponsor as it appears in the source data.")
   sponsor_source_value?: string;
 
-  @doc("If the source data codes the sponsor in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the sponsor in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   sponsor_source_concept_id?: ConceptId;
 
   @doc("The common identifier for all people (often a family) that covered by the same policy. ETL Convention: Often these are the common digits of the enrollment id of the policy members.")
@@ -202,7 +221,7 @@ model PayerPlanPeriodUpdate {
   @doc("The Plan stop reason as it appears in the source data.")
   stop_reason_source_value?: string;
 
-  @doc("If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here.  References CONCEPT table.")
+  @doc("If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.")
   stop_reason_source_concept_id?: ConceptId;
 }
 

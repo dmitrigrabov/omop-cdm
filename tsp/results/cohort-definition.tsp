@@ -27,6 +27,15 @@ Model.
  */
 
 @doc("CohortDefinition record in the OMOP CDM")
+@example(#{
+  cohort_definition_id: 100,
+  cohort_definition_name: "Example value",
+  cohort_definition_description: "Example value",
+  definition_type_concept_id: 8507,
+  cohort_definition_syntax: "Example value",
+  subject_concept_id: 8507,
+  cohort_initiation_date: "2023-01-15"
+})
 model CohortDefinition {
   @doc("This is the identifier given to the cohort, usually by the ATLAS application")
   cohort_definition_id: int64;
@@ -38,13 +47,13 @@ model CohortDefinition {
   @doc("A complete description of the cohort.")
   cohort_definition_description?: string;
 
-  @doc("Type defining what kind of Cohort Definition the record represents and how the syntax may be executed.  References CONCEPT table.")
+  @doc("Type defining what kind of Cohort Definition the record represents and how the syntax may be executed. References CONCEPT table.")
   definition_type_concept_id: ConceptId;
 
   @doc("Syntax or code to operationalize the Cohort Definition.")
   cohort_definition_syntax?: string;
 
-  @doc("This field contains a Concept that represents the domain of the subjects that are members of the cohort (e.g., Person, Provider, Visit).  References CONCEPT table.")
+  @doc("This field contains a Concept that represents the domain of the subjects that are members of the cohort (e.g., Person, Provider, Visit). References CONCEPT table.")
   subject_concept_id: ConceptId;
 
   @doc("A date to indicate when the Cohort was initiated in the COHORT table.")
@@ -66,13 +75,13 @@ model CohortDefinitionCreate {
   @doc("A complete description of the cohort.")
   cohort_definition_description?: string;
 
-  @doc("Type defining what kind of Cohort Definition the record represents and how the syntax may be executed.  References CONCEPT table.")
+  @doc("Type defining what kind of Cohort Definition the record represents and how the syntax may be executed. References CONCEPT table.")
   definition_type_concept_id: ConceptId;
 
   @doc("Syntax or code to operationalize the Cohort Definition.")
   cohort_definition_syntax?: string;
 
-  @doc("This field contains a Concept that represents the domain of the subjects that are members of the cohort (e.g., Person, Provider, Visit).  References CONCEPT table.")
+  @doc("This field contains a Concept that represents the domain of the subjects that are members of the cohort (e.g., Person, Provider, Visit). References CONCEPT table.")
   subject_concept_id: ConceptId;
 
   @doc("A date to indicate when the Cohort was initiated in the COHORT table.")
@@ -93,13 +102,13 @@ model CohortDefinitionUpdate {
   @doc("A complete description of the cohort.")
   cohort_definition_description?: string;
 
-  @doc("Type defining what kind of Cohort Definition the record represents and how the syntax may be executed.  References CONCEPT table.")
+  @doc("Type defining what kind of Cohort Definition the record represents and how the syntax may be executed. References CONCEPT table.")
   definition_type_concept_id?: ConceptId;
 
   @doc("Syntax or code to operationalize the Cohort Definition.")
   cohort_definition_syntax?: string;
 
-  @doc("This field contains a Concept that represents the domain of the subjects that are members of the cohort (e.g., Person, Provider, Visit).  References CONCEPT table.")
+  @doc("This field contains a Concept that represents the domain of the subjects that are members of the cohort (e.g., Person, Provider, Visit). References CONCEPT table.")
   subject_concept_id?: ConceptId;
 
   @doc("A date to indicate when the Cohort was initiated in the COHORT table.")

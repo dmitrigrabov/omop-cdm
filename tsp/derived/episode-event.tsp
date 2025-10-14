@@ -25,6 +25,11 @@ For such episodes, the EPISODE_EVENT table is not populated.
  */
 
 @doc("EpisodeEvent record in the OMOP CDM")
+@example(#{
+  episode_id: 100,
+  event_id: 100,
+  episode_event_field_concept_id: 8507
+})
 model EpisodeEvent {
   @doc("Use this field to link the EPISODE_EVENT record to its EPISODE. ETL Convention: Put the EPISODE_ID that subsumes the EPISODE_EVENT record here. References EPISODE table.")
   episode_id: int64;

@@ -22,8 +22,22 @@ to support standardized analysis of drug utilization.
  */
 
 @doc("DrugStrength record in the OMOP CDM")
+@example(#{
+  drug_concept_id: 8507,
+  ingredient_concept_id: 8507,
+  amount_value: 98.6,
+  amount_unit_concept_id: 8507,
+  numerator_value: 98.6,
+  numerator_unit_concept_id: 8507,
+  denominator_value: 98.6,
+  denominator_unit_concept_id: 8507,
+  box_size: 100,
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+})
 model DrugStrength {
-  @doc("The Concept representing the Branded Drug or Clinical Drug Product.  References CONCEPT table.")
+  @doc("The Concept representing the Branded Drug or Clinical Drug Product. References CONCEPT table.")
   drug_concept_id: ConceptId;
 
   @doc("The Concept representing the active ingredient contained within the drug product. ETL Convention: Combination Drugs will have more than one record in this table, one for each active Ingredient. References CONCEPT table.")
@@ -32,19 +46,19 @@ model DrugStrength {
   @doc("The numeric value or the amount of active ingredient contained within the drug product.")
   amount_value?: float64;
 
-  @doc("The Concept representing the Unit of measure for the amount of active ingredient contained within the drug product.  References CONCEPT table.")
+  @doc("The Concept representing the Unit of measure for the amount of active ingredient contained within the drug product. References CONCEPT table.")
   amount_unit_concept_id?: ConceptId;
 
   @doc("The concentration of the active ingredient contained within the drug product.")
   numerator_value?: float64;
 
-  @doc("The Concept representing the Unit of measure for the concentration of active ingredient.  References CONCEPT table.")
+  @doc("The Concept representing the Unit of measure for the concentration of active ingredient. References CONCEPT table.")
   numerator_unit_concept_id?: ConceptId;
 
   @doc("The amount of total liquid (or other divisible product, such as ointment, gel, spray, etc.).")
   denominator_value?: float64;
 
-  @doc("The Concept representing the denominator unit for the concentration of active ingredient.  References CONCEPT table.")
+  @doc("The Concept representing the denominator unit for the concentration of active ingredient. References CONCEPT table.")
   denominator_unit_concept_id?: ConceptId;
 
   @doc("The number of units of Clinical Branded Drug or Quantified Clinical or Branded Drug contained in a box as dispensed to the patient.")
@@ -66,7 +80,7 @@ model DrugStrength {
  */
 @doc("Request body for creating a new DrugStrength record")
 model DrugStrengthCreate {
-  @doc("The Concept representing the Branded Drug or Clinical Drug Product.  References CONCEPT table.")
+  @doc("The Concept representing the Branded Drug or Clinical Drug Product. References CONCEPT table.")
   drug_concept_id: ConceptId;
 
   @doc("The Concept representing the active ingredient contained within the drug product. ETL Convention: Combination Drugs will have more than one record in this table, one for each active Ingredient. References CONCEPT table.")
@@ -75,19 +89,19 @@ model DrugStrengthCreate {
   @doc("The numeric value or the amount of active ingredient contained within the drug product.")
   amount_value?: float64;
 
-  @doc("The Concept representing the Unit of measure for the amount of active ingredient contained within the drug product.  References CONCEPT table.")
+  @doc("The Concept representing the Unit of measure for the amount of active ingredient contained within the drug product. References CONCEPT table.")
   amount_unit_concept_id?: ConceptId;
 
   @doc("The concentration of the active ingredient contained within the drug product.")
   numerator_value?: float64;
 
-  @doc("The Concept representing the Unit of measure for the concentration of active ingredient.  References CONCEPT table.")
+  @doc("The Concept representing the Unit of measure for the concentration of active ingredient. References CONCEPT table.")
   numerator_unit_concept_id?: ConceptId;
 
   @doc("The amount of total liquid (or other divisible product, such as ointment, gel, spray, etc.).")
   denominator_value?: float64;
 
-  @doc("The Concept representing the denominator unit for the concentration of active ingredient.  References CONCEPT table.")
+  @doc("The Concept representing the denominator unit for the concentration of active ingredient. References CONCEPT table.")
   denominator_unit_concept_id?: ConceptId;
 
   @doc("The number of units of Clinical Branded Drug or Quantified Clinical or Branded Drug contained in a box as dispensed to the patient.")
@@ -109,7 +123,7 @@ model DrugStrengthCreate {
  */
 @doc("Request body for updating an existing DrugStrength record")
 model DrugStrengthUpdate {
-  @doc("The Concept representing the Branded Drug or Clinical Drug Product.  References CONCEPT table.")
+  @doc("The Concept representing the Branded Drug or Clinical Drug Product. References CONCEPT table.")
   drug_concept_id?: ConceptId;
 
   @doc("The Concept representing the active ingredient contained within the drug product. ETL Convention: Combination Drugs will have more than one record in this table, one for each active Ingredient. References CONCEPT table.")
@@ -118,19 +132,19 @@ model DrugStrengthUpdate {
   @doc("The numeric value or the amount of active ingredient contained within the drug product.")
   amount_value?: float64;
 
-  @doc("The Concept representing the Unit of measure for the amount of active ingredient contained within the drug product.  References CONCEPT table.")
+  @doc("The Concept representing the Unit of measure for the amount of active ingredient contained within the drug product. References CONCEPT table.")
   amount_unit_concept_id?: ConceptId;
 
   @doc("The concentration of the active ingredient contained within the drug product.")
   numerator_value?: float64;
 
-  @doc("The Concept representing the Unit of measure for the concentration of active ingredient.  References CONCEPT table.")
+  @doc("The Concept representing the Unit of measure for the concentration of active ingredient. References CONCEPT table.")
   numerator_unit_concept_id?: ConceptId;
 
   @doc("The amount of total liquid (or other divisible product, such as ointment, gel, spray, etc.).")
   denominator_value?: float64;
 
-  @doc("The Concept representing the denominator unit for the concentration of active ingredient.  References CONCEPT table.")
+  @doc("The Concept representing the denominator unit for the concentration of active ingredient. References CONCEPT table.")
   denominator_unit_concept_id?: ConceptId;
 
   @doc("The number of units of Clinical Branded Drug or Quantified Clinical or Branded Drug contained in a box as dispensed to the patient.")

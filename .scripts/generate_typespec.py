@@ -55,16 +55,20 @@ class Field:
             doc_parts.append(self.user_guide)
         if self.etl_conventions:
             if doc_parts:
-                doc_parts.append(f"\n\nETL Convention: {self.etl_conventions}")
+                doc_parts.append(f"ETL Convention: {self.etl_conventions}")
             else:
                 doc_parts.append(self.etl_conventions)
         if self.fk_table:
             if doc_parts:
-                doc_parts.append(f" References {self.fk_table} table.")
+                doc_parts.append(f"References {self.fk_table} table.")
             else:
                 doc_parts.append(f"References {self.fk_table} table.")
 
         doc = ' '.join(doc_parts)
+        # Replace actual line breaks with spaces
+        doc = doc.replace('\n', ' ').replace('\r', ' ')
+        # Normalize multiple spaces
+        doc = ' '.join(doc.split())
         # Escape quotes
         doc = doc.replace('"', '\\"')
         return f'  @doc("{doc}")'
@@ -76,9 +80,7 @@ class Field:
         # Add documentation
         lines.append(self.generate_doc())
 
-        # Add decorators
-        if self.is_pk and not for_create:
-            lines.append('  @visibility("read")')
+        # Add decorators (PK fields are implicitly read-only by not being in Create model)
 
         if 'varchar' in self.datatype.lower():
             match = re.search(r'varchar\((\d+)\)', self.datatype.lower())
@@ -384,7 +386,11 @@ interface {model_name}s {{
         examples = {}
         for field in self.fields:
             if field.is_pk:
-                examples[field.name] = 12345
+                # Check if PK is string type
+                if 'varchar' in field.datatype.lower() or field.datatype.lower() == 'string':
+                    examples[field.name] = '"12345"'
+                else:
+                    examples[field.name] = 12345
             elif field.is_concept_id():
                 examples[field.name] = 8507
             elif field.datatype.lower() == 'integer' or field.datatype.lower() == 'int':
@@ -399,7 +405,7 @@ interface {model_name}s {{
                 examples[field.name] = '"Example value"'
 
         example_str = ',\n  '.join(f'{k}: {v}' for k, v in examples.items())
-        return f'#{{\\n  {example_str}\\n}}'
+        return f'#{{\n  {example_str}\n}}'
 
 
 def parse_omop_md(file_path: str) -> List[Table]:

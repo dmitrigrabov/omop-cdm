@@ -21,6 +21,19 @@ Model.
  */
 
 @doc("CdmSource record in the OMOP CDM")
+@example(#{
+  cdm_source_name: "Example value",
+  cdm_source_abbreviation: "Example value",
+  cdm_holder: "Example value",
+  source_description: "Example value",
+  source_documentation_reference: "Example value",
+  cdm_etl_reference: "Example value",
+  source_release_date: "2023-01-15",
+  cdm_release_date: "2023-01-15",
+  cdm_version: "Example value",
+  cdm_version_concept_id: 8507,
+  vocabulary_version: "Example value"
+})
 model CdmSource {
   @doc("The name of the CDM instance.")
   @maxLength(255)

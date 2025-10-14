@@ -22,17 +22,34 @@ the Standardized Vocabularies.
  */
 
 @doc("Specimen record in the OMOP CDM")
+@example(#{
+  specimen_id: 12345,
+  person_id: 100,
+  specimen_concept_id: 8507,
+  specimen_type_concept_id: 8507,
+  specimen_date: "2023-01-15",
+  specimen_datetime: "2023-01-15",
+  quantity: 98.6,
+  unit_concept_id: 8507,
+  anatomic_site_concept_id: 8507,
+  disease_status_concept_id: 8507,
+  specimen_source_id: "Example value",
+  specimen_source_value: "Example value",
+  unit_source_value: "Example value",
+  anatomic_site_source_value: "Example value",
+  disease_status_source_value: "Example value"
+})
 model Specimen {
   @doc("Unique identifier for each specimen.")
   specimen_id: int64;
 
-  @doc("The person from whom the specimen is collected.  References PERSON table.")
+  @doc("The person from whom the specimen is collected. References PERSON table.")
   person_id: int64;
 
-  @doc("The standard CONCEPT_ID that the SPECIMEN_SOURCE_VALUE maps to in the specimen domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Specimen&standardConcept=Standard&page=1&pageSize=15&query=)  References CONCEPT table.")
+  @doc("The standard CONCEPT_ID that the SPECIMEN_SOURCE_VALUE maps to in the specimen domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Specimen&standardConcept=Standard&page=1&pageSize=15&query=) References CONCEPT table.")
   specimen_concept_id: ConceptId;
 
-  @doc("Put the source of the specimen record, as in an EHR system. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?standardConcept=Standard&domain=Type+Concept&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT).  References CONCEPT table.")
+  @doc("Put the source of the specimen record, as in an EHR system. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?standardConcept=Standard&domain=Type+Concept&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT). References CONCEPT table.")
   specimen_type_concept_id: ConceptId;
 
   @doc("The date the specimen was collected.")
@@ -79,13 +96,13 @@ model Specimen {
  */
 @doc("Request body for creating a new Specimen record")
 model SpecimenCreate {
-  @doc("The person from whom the specimen is collected.  References PERSON table.")
+  @doc("The person from whom the specimen is collected. References PERSON table.")
   person_id: int64;
 
-  @doc("The standard CONCEPT_ID that the SPECIMEN_SOURCE_VALUE maps to in the specimen domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Specimen&standardConcept=Standard&page=1&pageSize=15&query=)  References CONCEPT table.")
+  @doc("The standard CONCEPT_ID that the SPECIMEN_SOURCE_VALUE maps to in the specimen domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Specimen&standardConcept=Standard&page=1&pageSize=15&query=) References CONCEPT table.")
   specimen_concept_id: ConceptId;
 
-  @doc("Put the source of the specimen record, as in an EHR system. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?standardConcept=Standard&domain=Type+Concept&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT).  References CONCEPT table.")
+  @doc("Put the source of the specimen record, as in an EHR system. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?standardConcept=Standard&domain=Type+Concept&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT). References CONCEPT table.")
   specimen_type_concept_id: ConceptId;
 
   @doc("The date the specimen was collected.")
@@ -132,13 +149,13 @@ model SpecimenCreate {
  */
 @doc("Request body for updating an existing Specimen record")
 model SpecimenUpdate {
-  @doc("The person from whom the specimen is collected.  References PERSON table.")
+  @doc("The person from whom the specimen is collected. References PERSON table.")
   person_id?: int64;
 
-  @doc("The standard CONCEPT_ID that the SPECIMEN_SOURCE_VALUE maps to in the specimen domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Specimen&standardConcept=Standard&page=1&pageSize=15&query=)  References CONCEPT table.")
+  @doc("The standard CONCEPT_ID that the SPECIMEN_SOURCE_VALUE maps to in the specimen domain. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Specimen&standardConcept=Standard&page=1&pageSize=15&query=) References CONCEPT table.")
   specimen_concept_id?: ConceptId;
 
-  @doc("Put the source of the specimen record, as in an EHR system. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?standardConcept=Standard&domain=Type+Concept&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT).  References CONCEPT table.")
+  @doc("Put the source of the specimen record, as in an EHR system. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?standardConcept=Standard&domain=Type+Concept&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT). References CONCEPT table.")
   specimen_type_concept_id?: ConceptId;
 
   @doc("The date the specimen was collected.")

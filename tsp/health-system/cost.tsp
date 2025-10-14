@@ -45,6 +45,30 @@ amount charged by the pharmacy and the sales tax).
  */
 
 @doc("Cost record in the OMOP CDM")
+@example(#{
+  cost_id: 12345,
+  cost_event_id: 100,
+  cost_domain_id: "Example value",
+  cost_type_concept_id: 8507,
+  currency_concept_id: 8507,
+  total_charge: 98.6,
+  total_cost: 98.6,
+  total_paid: 98.6,
+  paid_by_payer: 98.6,
+  paid_by_patient: 98.6,
+  paid_patient_copay: 98.6,
+  paid_patient_coinsurance: 98.6,
+  paid_patient_deductible: 98.6,
+  paid_by_primary: 98.6,
+  paid_ingredient_cost: 98.6,
+  paid_dispensing_fee: 98.6,
+  payer_plan_period_id: 100,
+  amount_allowed: 98.6,
+  revenue_code_concept_id: 8507,
+  revenue_code_source_value: "Example value",
+  drg_concept_id: 8507,
+  drg_source_value: "Example value"
+})
 model Cost {
   @doc("")
   cost_id: int64;

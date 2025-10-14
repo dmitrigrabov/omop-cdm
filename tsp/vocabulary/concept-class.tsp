@@ -27,6 +27,11 @@ classes or categories of concepts within the OHDSI vocabularies.
  */
 
 @doc("ConceptClass record in the OMOP CDM")
+@example(#{
+  concept_class_id: "12345",
+  concept_class_name: "Example value",
+  concept_class_concept_id: 8507
+})
 model ConceptClass {
   @doc("A unique key for each class.")
   @maxLength(20)
@@ -36,7 +41,7 @@ model ConceptClass {
   @maxLength(255)
   concept_class_name: string;
 
-  @doc("A Concept that represents the Concept Class.  References CONCEPT table.")
+  @doc("A Concept that represents the Concept Class. References CONCEPT table.")
   concept_class_concept_id: ConceptId;
 }
 
@@ -49,7 +54,7 @@ model ConceptClassCreate {
   @maxLength(255)
   concept_class_name: string;
 
-  @doc("A Concept that represents the Concept Class.  References CONCEPT table.")
+  @doc("A Concept that represents the Concept Class. References CONCEPT table.")
   concept_class_concept_id: ConceptId;
 }
 
@@ -61,7 +66,7 @@ model ConceptClassUpdate {
   @doc("The name describing the Concept Class, e.g. Clinical Finding, Ingredient, etc.")
   concept_class_name?: string;
 
-  @doc("A Concept that represents the Concept Class.  References CONCEPT table.")
+  @doc("A Concept that represents the Concept Class. References CONCEPT table.")
   concept_class_concept_id?: ConceptId;
 }
 

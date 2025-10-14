@@ -53,11 +53,34 @@ null value is the equivalent.
  */
 
 @doc("Observation record in the OMOP CDM")
+@example(#{
+  observation_id: 12345,
+  person_id: 100,
+  observation_concept_id: 8507,
+  observation_date: "2023-01-15",
+  observation_datetime: "2023-01-15",
+  observation_type_concept_id: 8507,
+  value_as_number: 98.6,
+  value_as_string: "Example value",
+  value_as_concept_id: 8507,
+  qualifier_concept_id: 8507,
+  unit_concept_id: 8507,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  observation_source_value: "Example value",
+  observation_source_concept_id: 8507,
+  unit_source_value: "Example value",
+  qualifier_source_value: "Example value",
+  value_source_value: "Example value",
+  observation_event_id: 100,
+  obs_event_field_concept_id: 8507
+})
 model Observation {
   @doc("The unique key given to an Observation record for a Person. Refer to the ETL for how duplicate Observations during the same Visit were handled. ETL Convention: Each instance of an observation present in the source data should be assigned this unique key.")
   observation_id: int64;
 
-  @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The OBSERVATION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. ETL Convention: The CONCEPT_ID that the OBSERVATION_SOURCE_CONCEPT_ID maps to. There is no specified domain that the Concepts in this table must adhere to. The only rule is that records with Concepts in the Condition, Procedure, Drug, Measurement, or Device domains MUST go to the corresponding table. References CONCEPT table.")
@@ -128,7 +151,7 @@ model Observation {
  */
 @doc("Request body for creating a new Observation record")
 model ObservationCreate {
-  @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
 
   @doc("The OBSERVATION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. ETL Convention: The CONCEPT_ID that the OBSERVATION_SOURCE_CONCEPT_ID maps to. There is no specified domain that the Concepts in this table must adhere to. The only rule is that records with Concepts in the Condition, Procedure, Drug, Measurement, or Device domains MUST go to the corresponding table. References CONCEPT table.")
@@ -199,7 +222,7 @@ model ObservationCreate {
  */
 @doc("Request body for updating an existing Observation record")
 model ObservationUpdate {
-  @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code.  References PERSON table.")
+  @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code. References PERSON table.")
   person_id?: int64;
 
   @doc("The OBSERVATION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. ETL Convention: The CONCEPT_ID that the OBSERVATION_SOURCE_CONCEPT_ID maps to. There is no specified domain that the Concepts in this table must adhere to. The only rule is that records with Concepts in the Condition, Procedure, Drug, Measurement, or Device domains MUST go to the corresponding table. References CONCEPT table.")

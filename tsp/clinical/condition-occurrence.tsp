@@ -47,11 +47,29 @@ the Condition Domain have to be recorded here.
  */
 
 @doc("ConditionOccurrence record in the OMOP CDM")
+@example(#{
+  condition_occurrence_id: 12345,
+  person_id: 100,
+  condition_concept_id: 8507,
+  condition_start_date: "2023-01-15",
+  condition_start_datetime: "2023-01-15",
+  condition_end_date: "2023-01-15",
+  condition_end_datetime: "2023-01-15",
+  condition_type_concept_id: 8507,
+  condition_status_concept_id: 8507,
+  stop_reason: "Example value",
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  condition_source_value: "Example value",
+  condition_source_concept_id: 8507,
+  condition_status_source_value: "Example value"
+})
 model ConditionOccurrence {
   @doc("The unique key given to a condition record for a person. Refer to the ETL for how duplicate conditions during the same visit were handled. ETL Convention: Each instance of a condition present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same condition within the same visit. It is valid to keep these duplicates and assign them individual, unique, CONDITION_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.")
   condition_occurrence_id: int64;
 
-  @doc("The PERSON_ID of the PERSON for whom the condition is recorded.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the condition is recorded. References PERSON table.")
   person_id: int64;
 
   @doc("The CONDITION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a condition ETL Convention: The CONCEPT_ID that the CONDITION_SOURCE_VALUE maps to. Only records whose source values map to concepts with a domain of “Condition” should go in this table. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Condition&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")
@@ -105,7 +123,7 @@ model ConditionOccurrence {
  */
 @doc("Request body for creating a new ConditionOccurrence record")
 model ConditionOccurrenceCreate {
-  @doc("The PERSON_ID of the PERSON for whom the condition is recorded.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the condition is recorded. References PERSON table.")
   person_id: int64;
 
   @doc("The CONDITION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a condition ETL Convention: The CONCEPT_ID that the CONDITION_SOURCE_VALUE maps to. Only records whose source values map to concepts with a domain of “Condition” should go in this table. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Condition&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")
@@ -159,7 +177,7 @@ model ConditionOccurrenceCreate {
  */
 @doc("Request body for updating an existing ConditionOccurrence record")
 model ConditionOccurrenceUpdate {
-  @doc("The PERSON_ID of the PERSON for whom the condition is recorded.  References PERSON table.")
+  @doc("The PERSON_ID of the PERSON for whom the condition is recorded. References PERSON table.")
   person_id?: int64;
 
   @doc("The CONDITION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a condition ETL Convention: The CONCEPT_ID that the CONDITION_SOURCE_VALUE maps to. Only records whose source values map to concepts with a domain of “Condition” should go in this table. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Condition&standardConcept=Standard&page=1&pageSize=15&query=). References CONCEPT table.")

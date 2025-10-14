@@ -27,6 +27,11 @@ concepts in the CONCEPT_SYNONYM table.
  */
 
 @doc("ConceptSynonym record in the OMOP CDM")
+@example(#{
+  concept_id: 8507,
+  concept_synonym_name: "Example value",
+  language_concept_id: 8507
+})
 model ConceptSynonym {
   @doc("References CONCEPT table.")
   concept_id: ConceptId;

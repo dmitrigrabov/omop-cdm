@@ -28,6 +28,13 @@ vocabulary_id = ‘None’.
  */
 
 @doc("Vocabulary record in the OMOP CDM")
+@example(#{
+  vocabulary_id: "12345",
+  vocabulary_name: "Example value",
+  vocabulary_reference: "Example value",
+  vocabulary_version: "Example value",
+  vocabulary_concept_id: 8507
+})
 model Vocabulary {
   @doc("A unique identifier for each Vocabulary, such as ICD9CM, SNOMED, Visit.")
   @maxLength(20)
@@ -45,7 +52,7 @@ model Vocabulary {
   @maxLength(255)
   vocabulary_version?: string;
 
-  @doc("A Concept that represents the Vocabulary the VOCABULARY record belongs to.  References CONCEPT table.")
+  @doc("A Concept that represents the Vocabulary the VOCABULARY record belongs to. References CONCEPT table.")
   vocabulary_concept_id: ConceptId;
 }
 
@@ -66,7 +73,7 @@ model VocabularyCreate {
   @maxLength(255)
   vocabulary_version?: string;
 
-  @doc("A Concept that represents the Vocabulary the VOCABULARY record belongs to.  References CONCEPT table.")
+  @doc("A Concept that represents the Vocabulary the VOCABULARY record belongs to. References CONCEPT table.")
   vocabulary_concept_id: ConceptId;
 }
 
@@ -84,7 +91,7 @@ model VocabularyUpdate {
   @doc("Version of the Vocabulary as indicated in the source.")
   vocabulary_version?: string;
 
-  @doc("A Concept that represents the Vocabulary the VOCABULARY record belongs to.  References CONCEPT table.")
+  @doc("A Concept that represents the Vocabulary the VOCABULARY record belongs to. References CONCEPT table.")
   vocabulary_concept_id?: ConceptId;
 }
 

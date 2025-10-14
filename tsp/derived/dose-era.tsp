@@ -25,6 +25,15 @@ the entire time of exposure to the Ingredient.
  */
 
 @doc("DoseEra record in the OMOP CDM")
+@example(#{
+  dose_era_id: 12345,
+  person_id: 100,
+  drug_concept_id: 8507,
+  unit_concept_id: 8507,
+  dose_value: 98.6,
+  dose_era_start_date: "2023-01-15",
+  dose_era_end_date: "2023-01-15"
+})
 model DoseEra {
   @doc("")
   dose_era_id: int64;
@@ -32,10 +41,10 @@ model DoseEra {
   @doc("References PERSON table.")
   person_id: int64;
 
-  @doc("The Concept Id representing the specific drug ingredient.  References CONCEPT table.")
+  @doc("The Concept Id representing the specific drug ingredient. References CONCEPT table.")
   drug_concept_id: ConceptId;
 
-  @doc("The Concept Id representing the unit of the specific drug ingredient.  References CONCEPT table.")
+  @doc("The Concept Id representing the unit of the specific drug ingredient. References CONCEPT table.")
   unit_concept_id: ConceptId;
 
   @doc("The numeric value of the dosage of the drug_ingredient.")
@@ -56,10 +65,10 @@ model DoseEraCreate {
   @doc("References PERSON table.")
   person_id: int64;
 
-  @doc("The Concept Id representing the specific drug ingredient.  References CONCEPT table.")
+  @doc("The Concept Id representing the specific drug ingredient. References CONCEPT table.")
   drug_concept_id: ConceptId;
 
-  @doc("The Concept Id representing the unit of the specific drug ingredient.  References CONCEPT table.")
+  @doc("The Concept Id representing the unit of the specific drug ingredient. References CONCEPT table.")
   unit_concept_id: ConceptId;
 
   @doc("The numeric value of the dosage of the drug_ingredient.")
@@ -80,10 +89,10 @@ model DoseEraUpdate {
   @doc("References PERSON table.")
   person_id?: int64;
 
-  @doc("The Concept Id representing the specific drug ingredient.  References CONCEPT table.")
+  @doc("The Concept Id representing the specific drug ingredient. References CONCEPT table.")
   drug_concept_id?: ConceptId;
 
-  @doc("The Concept Id representing the unit of the specific drug ingredient.  References CONCEPT table.")
+  @doc("The Concept Id representing the unit of the specific drug ingredient. References CONCEPT table.")
   unit_concept_id?: ConceptId;
 
   @doc("The numeric value of the dosage of the drug_ingredient.")

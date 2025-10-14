@@ -52,11 +52,18 @@ adjacent OBSERVATION_PERIOD records have to be merged into one.
  */
 
 @doc("ObservationPeriod record in the OMOP CDM")
+@example(#{
+  observation_period_id: 12345,
+  person_id: 100,
+  observation_period_start_date: "2023-01-15",
+  observation_period_end_date: "2023-01-15",
+  period_type_concept_id: 8507
+})
 model ObservationPeriod {
   @doc("A Person can have multiple discrete Observation Periods which are identified by the Observation_Period_Id. ETL Convention: Assign a unique observation_period_id to each discrete Observation Period for a Person.")
   observation_period_id: int64;
 
-  @doc("The Person ID of the PERSON record for which the Observation Period is recorded.  References PERSON table.")
+  @doc("The Person ID of the PERSON record for which the Observation Period is recorded. References PERSON table.")
   person_id: int64;
 
   @doc("Use this date to determine the start date of the Observation Period. ETL Convention: It is often the case that the idea of Observation Periods does not exist in source data. In those cases, the observation_period_start_date can be inferred as the earliest Event date available for the Person. In insurance claim data, the Observation Period can be considered as the time period the Person is enrolled with a payer. If a Person switches plans but stays with the same payer, and therefore capturing of data continues, that change would be captured in [PAYER_PLAN_PERIOD](https://ohdsi.github.io/CommonDataModel/cdm54.html#payer_plan_period).")
@@ -74,7 +81,7 @@ model ObservationPeriod {
  */
 @doc("Request body for creating a new ObservationPeriod record")
 model ObservationPeriodCreate {
-  @doc("The Person ID of the PERSON record for which the Observation Period is recorded.  References PERSON table.")
+  @doc("The Person ID of the PERSON record for which the Observation Period is recorded. References PERSON table.")
   person_id: int64;
 
   @doc("Use this date to determine the start date of the Observation Period. ETL Convention: It is often the case that the idea of Observation Periods does not exist in source data. In those cases, the observation_period_start_date can be inferred as the earliest Event date available for the Person. In insurance claim data, the Observation Period can be considered as the time period the Person is enrolled with a payer. If a Person switches plans but stays with the same payer, and therefore capturing of data continues, that change would be captured in [PAYER_PLAN_PERIOD](https://ohdsi.github.io/CommonDataModel/cdm54.html#payer_plan_period).")
@@ -92,7 +99,7 @@ model ObservationPeriodCreate {
  */
 @doc("Request body for updating an existing ObservationPeriod record")
 model ObservationPeriodUpdate {
-  @doc("The Person ID of the PERSON record for which the Observation Period is recorded.  References PERSON table.")
+  @doc("The Person ID of the PERSON record for which the Observation Period is recorded. References PERSON table.")
   person_id?: int64;
 
   @doc("Use this date to determine the start date of the Observation Period. ETL Convention: It is often the case that the idea of Observation Periods does not exist in source data. In those cases, the observation_period_start_date can be inferred as the earliest Event date available for the Person. In insurance claim data, the Observation Period can be considered as the time period the Person is enrolled with a payer. If a Person switches plans but stays with the same payer, and therefore capturing of data continues, that change would be captured in [PAYER_PLAN_PERIOD](https://ohdsi.github.io/CommonDataModel/cdm54.html#payer_plan_period).")

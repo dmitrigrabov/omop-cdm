@@ -25,6 +25,15 @@ repository](https://ohdsi.github.io/Themis/death.html).
  */
 
 @doc("Death record in the OMOP CDM")
+@example(#{
+  person_id: 100,
+  death_date: "2023-01-15",
+  death_datetime: "2023-01-15",
+  death_type_concept_id: 8507,
+  cause_concept_id: 8507,
+  cause_source_value: "Example value",
+  cause_source_concept_id: 8507
+})
 model Death {
   @doc("References PERSON table.")
   person_id: int64;
@@ -45,7 +54,7 @@ model Death {
   @maxLength(50)
   cause_source_value?: string;
 
-  @doc("If the cause of death was coded using a Vocabulary present in the OMOP Vocabularies (not necessarily a standard concept) put the CONCEPT_ID representing the cause of death here.  References CONCEPT table.")
+  @doc("If the cause of death was coded using a Vocabulary present in the OMOP Vocabularies (not necessarily a standard concept) put the CONCEPT_ID representing the cause of death here. References CONCEPT table.")
   cause_source_concept_id?: ConceptId;
 }
 
@@ -73,7 +82,7 @@ model DeathCreate {
   @maxLength(50)
   cause_source_value?: string;
 
-  @doc("If the cause of death was coded using a Vocabulary present in the OMOP Vocabularies (not necessarily a standard concept) put the CONCEPT_ID representing the cause of death here.  References CONCEPT table.")
+  @doc("If the cause of death was coded using a Vocabulary present in the OMOP Vocabularies (not necessarily a standard concept) put the CONCEPT_ID representing the cause of death here. References CONCEPT table.")
   cause_source_concept_id?: ConceptId;
 }
 
@@ -100,7 +109,7 @@ model DeathUpdate {
   @doc("If available, put the source code representing the cause of death here.")
   cause_source_value?: string;
 
-  @doc("If the cause of death was coded using a Vocabulary present in the OMOP Vocabularies (not necessarily a standard concept) put the CONCEPT_ID representing the cause of death here.  References CONCEPT table.")
+  @doc("If the cause of death was coded using a Vocabulary present in the OMOP Vocabularies (not necessarily a standard concept) put the CONCEPT_ID representing the cause of death here. References CONCEPT table.")
   cause_source_concept_id?: ConceptId;
 }
 

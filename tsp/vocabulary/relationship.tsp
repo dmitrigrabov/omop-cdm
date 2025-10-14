@@ -29,6 +29,14 @@ characteristics.
  */
 
 @doc("Relationship record in the OMOP CDM")
+@example(#{
+  relationship_id: "12345",
+  relationship_name: "Example value",
+  is_hierarchical: "Example value",
+  defines_ancestry: "Example value",
+  reverse_relationship_id: "Example value",
+  relationship_concept_id: 8507
+})
 model Relationship {
   @doc("The type of relationship captured by the relationship record.")
   @maxLength(20)
@@ -50,7 +58,7 @@ model Relationship {
   @maxLength(20)
   reverse_relationship_id: string;
 
-  @doc("A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept.  References CONCEPT table.")
+  @doc("A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept. References CONCEPT table.")
   relationship_concept_id: ConceptId;
 }
 
@@ -75,7 +83,7 @@ model RelationshipCreate {
   @maxLength(20)
   reverse_relationship_id: string;
 
-  @doc("A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept.  References CONCEPT table.")
+  @doc("A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept. References CONCEPT table.")
   relationship_concept_id: ConceptId;
 }
 
@@ -96,7 +104,7 @@ model RelationshipUpdate {
   @doc("The identifier for the relationship used to define the reverse relationship between two concepts.")
   reverse_relationship_id?: string;
 
-  @doc("A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept.  References CONCEPT table.")
+  @doc("A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept. References CONCEPT table.")
   relationship_concept_id?: ConceptId;
 }
 
