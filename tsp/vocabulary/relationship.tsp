@@ -31,7 +31,6 @@ characteristics.
 @doc("Relationship record in the OMOP CDM")
 model Relationship {
   @doc("The type of relationship captured by the relationship record.")
-  @visibility("read")
   @maxLength(20)
   relationship_id: string;
 
@@ -189,7 +188,7 @@ interface Relationships {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update relationship (partial)")
   @doc("Update specific fields of an existing Relationship record.")
   patch(

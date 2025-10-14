@@ -49,7 +49,6 @@ the Condition Domain have to be recorded here.
 @doc("ConditionOccurrence record in the OMOP CDM")
 model ConditionOccurrence {
   @doc("The unique key given to a condition record for a person. Refer to the ETL for how duplicate conditions during the same visit were handled. ETL Convention: Each instance of a condition present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same condition within the same visit. It is valid to keep these duplicates and assign them individual, unique, CONDITION_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.")
-  @visibility("read")
   condition_occurrence_id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the condition is recorded.  References PERSON table.")
@@ -322,7 +321,7 @@ interface ConditionOccurrences {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update condition-occurrence (partial)")
   @doc("Update specific fields of an existing ConditionOccurrence record.")
   patch(

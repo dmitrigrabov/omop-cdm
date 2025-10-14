@@ -172,7 +172,7 @@ interface ConceptRelationships {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update concept-relationship (partial)")
   @doc("Update specific fields of an existing ConceptRelationship record.")
   patch(

@@ -174,7 +174,7 @@ interface Cohorts {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update cohort (partial)")
   @doc("Update specific fields of an existing Cohort record.")
   patch(

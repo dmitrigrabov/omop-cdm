@@ -34,7 +34,6 @@ with information from the Care Site.
 @doc("Location record in the OMOP CDM")
 model Location {
   @doc("The unique key given to a unique Location. ETL Convention: Each instance of a Location in the source data should be assigned this unique key.")
-  @visibility("read")
   location_id: int64;
 
   @doc("")
@@ -231,7 +230,7 @@ interface Locations {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update location (partial)")
   @doc("Update specific fields of an existing Location record.")
   patch(

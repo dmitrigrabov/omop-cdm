@@ -31,7 +31,6 @@ the Device Domain have to be recorded here.
 @doc("DeviceExposure record in the OMOP CDM")
 model DeviceExposure {
   @doc("The unique key given to records a person’s exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key.")
-  @visibility("read")
   device_exposure_id: int64;
 
   @doc("References PERSON table.")
@@ -337,7 +336,7 @@ interface DeviceExposures {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update device-exposure (partial)")
   @doc("Update specific fields of an existing DeviceExposure record.")
   patch(

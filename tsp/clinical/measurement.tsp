@@ -54,7 +54,6 @@ to’ relationship directs to [4046263](https://athena.ohdsi.org/search-terms/te
 @doc("Measurement record in the OMOP CDM")
 model Measurement {
   @doc("The unique key given to a Measurement record for a Person. Refer to the ETL for how duplicate Measurements during the same Visit were handled. ETL Convention: Each instance of a measurement present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same measurement within the same visit. It is valid to keep these duplicates and assign them individual, unique, MEASUREMENT_IDs, though it is up to the ETL how they should be handled.")
-  @visibility("read")
   measurement_id: int64;
 
   @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code.  References PERSON table.")
@@ -408,7 +407,7 @@ interface Measurements {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update measurement (partial)")
   @doc("Update specific fields of an existing Measurement record.")
   patch(

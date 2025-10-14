@@ -48,7 +48,6 @@ where the patient was in the hospital at the time of care.
 @doc("VisitDetail record in the OMOP CDM")
 model VisitDetail {
   @doc("Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit detail. ETL Convention: This should be populated by creating a unique identifier for each unique interaction between a person and the healthcare system where the person receives a medical good or service over a span of time.")
-  @visibility("read")
   visit_detail_id: int64;
 
   @doc("References PERSON table.")
@@ -360,7 +359,7 @@ interface VisitDetails {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update visit-detail (partial)")
   @doc("Update specific fields of an existing VisitDetail record.")
   patch(

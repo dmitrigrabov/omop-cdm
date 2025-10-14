@@ -22,7 +22,6 @@ row represents a single extracted term from a note.
 @doc("NoteNlp record in the OMOP CDM")
 model NoteNlp {
   @doc("A unique identifier for the NLP record.")
-  @visibility("read")
   note_nlp_id: int64;
 
   @doc("This is the NOTE_ID for the NOTE record the NLP record is associated to.")
@@ -254,7 +253,7 @@ interface NoteNlps {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update note-nlp (partial)")
   @doc("Update specific fields of an existing NoteNlp record.")
   patch(

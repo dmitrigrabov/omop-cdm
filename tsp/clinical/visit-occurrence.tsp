@@ -103,7 +103,6 @@ and PROVIDER tables.
 @doc("VisitOccurrence record in the OMOP CDM")
 model VisitOccurrence {
   @doc("Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit. ETL Convention: This should be populated by creating a unique identifier for each unique interaction between a person and the healthcare system where the person receives a medical good or service over a span of time.")
-  @visibility("read")
   visit_occurrence_id: int64;
 
   @doc("References PERSON table.")
@@ -389,7 +388,7 @@ interface VisitOccurrences {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update visit-occurrence (partial)")
   @doc("Update specific fields of an existing VisitOccurrence record.")
   patch(

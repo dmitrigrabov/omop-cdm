@@ -162,7 +162,7 @@ interface ConceptSynonyms {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update concept-synonym (partial)")
   @doc("Update specific fields of an existing ConceptSynonym record.")
   patch(

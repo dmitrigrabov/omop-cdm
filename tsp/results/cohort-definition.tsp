@@ -198,7 +198,7 @@ interface CohortDefinitions {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update cohort-definition (partial)")
   @doc("Update specific fields of an existing CohortDefinition record.")
   patch(

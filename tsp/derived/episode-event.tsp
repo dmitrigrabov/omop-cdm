@@ -158,7 +158,7 @@ interface EpisodeEvents {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update episode-event (partial)")
   @doc("Update specific fields of an existing EpisodeEvent record.")
   patch(

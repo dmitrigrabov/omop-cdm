@@ -38,7 +38,6 @@ the Procedure Domain have to be recorded here.
 @doc("ProcedureOccurrence record in the OMOP CDM")
 model ProcedureOccurrence {
   @doc("The unique key given to a procedure record for a person. Refer to the ETL for how duplicate procedures during the same visit were handled. ETL Convention: Each instance of a procedure occurrence in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same procedure within the same visit. It is valid to keep these duplicates and assign them individual, unique, PROCEDURE_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.")
-  @visibility("read")
   procedure_occurrence_id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code.  References PERSON table.")
@@ -309,7 +308,7 @@ interface ProcedureOccurrences {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update procedure-occurrence (partial)")
   @doc("Update specific fields of an existing ProcedureOccurrence record.")
   patch(

@@ -33,7 +33,6 @@ expected to be comprehensive.
 @doc("Episode record in the OMOP CDM")
 model Episode {
   @doc("A unique identifier for each Episode.")
-  @visibility("read")
   episode_id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the episode is recorded.  References PERSON table.")
@@ -263,7 +262,7 @@ interface Episodes {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update episode (partial)")
   @doc("Update specific fields of an existing Episode record.")
   patch(

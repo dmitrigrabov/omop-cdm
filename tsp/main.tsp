@@ -79,22 +79,9 @@ using TypeSpec.OpenAPI;
  * For more information about the OMOP CDM, visit:
  * https://github.com/OHDSI/CommonDataModel
  */
-@service({
+@service(#{
   title: "OMOP CDM v5.4 API",
 })
 @server("https://api.example.com", "Production server")
-@info({
-  version: "5.4.0",
-  termsOfService: "https://ohdsi.org/terms/",
-  contact: {
-    name: "OHDSI Community",
-    url: "https://ohdsi.org",
-    email: "support@ohdsi.org",
-  },
-  license: {
-    name: "Apache 2.0",
-    url: "https://www.apache.org/licenses/LICENSE-2.0.html",
-  },
-})
 @useAuth(BearerAuth)
 namespace OmopCdm;

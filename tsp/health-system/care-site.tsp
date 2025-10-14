@@ -40,7 +40,6 @@ repository](https://ohdsi.github.io/Themis/care_site.html).
 @doc("CareSite record in the OMOP CDM")
 model CareSite {
   @doc("Assign an ID to each combination of a location and nature of the site - the latter could be the Place of Service, name or another characteristic in your source data.")
-  @visibility("read")
   care_site_id: int64;
 
   @doc("The name of the care_site as it appears in the source data")
@@ -199,7 +198,7 @@ interface CareSites {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update care-site (partial)")
   @doc("Update specific fields of an existing CareSite record.")
   patch(

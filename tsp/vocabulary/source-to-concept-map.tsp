@@ -229,7 +229,7 @@ interface SourceToConceptMaps {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update source-to-concept-map (partial)")
   @doc("Update specific fields of an existing SourceToConceptMap record.")
   patch(

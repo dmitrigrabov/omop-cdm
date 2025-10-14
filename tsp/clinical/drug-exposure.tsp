@@ -48,7 +48,6 @@ repository](https://ohdsi.github.io/Themis/drug_exposure.html).
 @doc("DrugExposure record in the OMOP CDM")
 model DrugExposure {
   @doc("The unique key given to records of drug dispensings or administrations for a person. Refer to the ETL for how duplicate drugs during the same visit were handled. ETL Convention: Each instance of a drug dispensing or administration present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same drug within the same visit. It is valid to keep these duplicates and assign them individual, unique, DRUG_EXPOSURE_IDs, though it is up to the ETL how they should be handled.")
-  @visibility("read")
   drug_exposure_id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code.  References PERSON table.")
@@ -388,7 +387,7 @@ interface DrugExposures {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update drug-exposure (partial)")
   @doc("Update specific fields of an existing DrugExposure record.")
   patch(

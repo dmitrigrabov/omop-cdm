@@ -49,7 +49,6 @@ dimensions are contained in the OMOP Vocabulary under the domain of
 @doc("Note record in the OMOP CDM")
 model Note {
   @doc("A unique identifier for each note.")
-  @visibility("read")
   note_id: int64;
 
   @doc("References PERSON table.")
@@ -324,7 +323,7 @@ interface Notes {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update note (partial)")
   @doc("Update specific fields of an existing Note record.")
   patch(

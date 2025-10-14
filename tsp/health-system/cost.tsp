@@ -47,7 +47,6 @@ amount charged by the pharmacy and the sales tax).
 @doc("Cost record in the OMOP CDM")
 model Cost {
   @doc("")
-  @visibility("read")
   cost_id: int64;
 
   @doc("")
@@ -362,7 +361,7 @@ interface Costs {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update cost (partial)")
   @doc("Update specific fields of an existing Cost record.")
   patch(

@@ -250,7 +250,7 @@ interface DrugStrengths {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update drug-strength (partial)")
   @doc("Update specific fields of an existing DrugStrength record.")
   patch(

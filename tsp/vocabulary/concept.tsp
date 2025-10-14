@@ -45,7 +45,6 @@ Concepts.
 @doc("Concept record in the OMOP CDM")
 model Concept {
   @doc("A unique identifier for each Concept across all domains.")
-  @visibility("read")
   concept_id: ConceptId;
 
   @doc("An unambiguous, meaningful and descriptive name for the Concept.")
@@ -252,7 +251,7 @@ interface Concepts {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update concept (partial)")
   @doc("Update specific fields of an existing Concept record.")
   patch(

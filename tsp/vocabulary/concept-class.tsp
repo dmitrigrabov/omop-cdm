@@ -29,7 +29,6 @@ classes or categories of concepts within the OHDSI vocabularies.
 @doc("ConceptClass record in the OMOP CDM")
 model ConceptClass {
   @doc("A unique key for each class.")
-  @visibility("read")
   @maxLength(20)
   concept_class_id: string;
 
@@ -154,7 +153,7 @@ interface ConceptClasss {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update concept-class (partial)")
   @doc("Update specific fields of an existing ConceptClass record.")
   patch(

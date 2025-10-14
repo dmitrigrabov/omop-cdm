@@ -30,7 +30,6 @@ vocabulary_id = ‘None’.
 @doc("Vocabulary record in the OMOP CDM")
 model Vocabulary {
   @doc("A unique identifier for each Vocabulary, such as ICD9CM, SNOMED, Visit.")
-  @visibility("read")
   @maxLength(20)
   vocabulary_id: string;
 
@@ -177,7 +176,7 @@ interface Vocabularys {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update vocabulary (partial)")
   @doc("Update specific fields of an existing Vocabulary record.")
   patch(

@@ -55,7 +55,6 @@ null value is the equivalent.
 @doc("Observation record in the OMOP CDM")
 model Observation {
   @doc("The unique key given to an Observation record for a Person. Refer to the ETL for how duplicate Observations during the same Visit were handled. ETL Convention: Each instance of an observation present in the source data should be assigned this unique key.")
-  @visibility("read")
   observation_id: int64;
 
   @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code.  References PERSON table.")
@@ -389,7 +388,7 @@ interface Observations {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update observation (partial)")
   @doc("Update specific fields of an existing Observation record.")
   patch(

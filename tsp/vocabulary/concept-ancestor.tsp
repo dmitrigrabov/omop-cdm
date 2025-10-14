@@ -181,7 +181,7 @@ interface ConceptAncestors {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update concept-ancestor (partial)")
   @doc("Update specific fields of an existing ConceptAncestor record.")
   patch(

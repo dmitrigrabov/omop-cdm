@@ -49,7 +49,6 @@ condition_era_end_date.
 @doc("ConditionEra record in the OMOP CDM")
 model ConditionEra {
   @doc("")
-  @visibility("read")
   condition_era_id: int64;
 
   @doc("References PERSON table.")
@@ -202,7 +201,7 @@ interface ConditionEras {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update condition-era (partial)")
   @doc("Update specific fields of an existing ConditionEra record.")
   patch(

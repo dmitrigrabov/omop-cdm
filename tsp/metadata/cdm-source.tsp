@@ -236,7 +236,7 @@ interface CdmSources {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update cdm-source (partial)")
   @doc("Update specific fields of an existing CdmSource record.")
   patch(

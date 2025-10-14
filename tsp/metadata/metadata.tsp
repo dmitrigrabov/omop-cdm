@@ -22,7 +22,6 @@ has been transformed to the OMOP Common Data Model.
 @doc("Metadata record in the OMOP CDM")
 model Metadata {
   @doc("The unique key given to a Metadata record. ETL Convention: Attribute value is auto-generated")
-  @visibility("read")
   metadata_id: int64;
 
   @doc("References CONCEPT table.")
@@ -210,7 +209,7 @@ interface Metadatas {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update metadata (partial)")
   @doc("Update specific fields of an existing Metadata record.")
   patch(

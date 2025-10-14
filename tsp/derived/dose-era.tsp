@@ -27,7 +27,6 @@ the entire time of exposure to the Ingredient.
 @doc("DoseEra record in the OMOP CDM")
 model DoseEra {
   @doc("")
-  @visibility("read")
   dose_era_id: int64;
 
   @doc("References PERSON table.")
@@ -193,7 +192,7 @@ interface DoseEras {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update dose-era (partial)")
   @doc("Update specific fields of an existing DoseEra record.")
   patch(

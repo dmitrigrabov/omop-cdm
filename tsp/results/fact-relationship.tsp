@@ -144,7 +144,7 @@ interface FactRelationships {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update fact-relationship (partial)")
   @doc("Update specific fields of an existing FactRelationship record.")
   patch(

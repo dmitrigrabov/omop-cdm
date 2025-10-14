@@ -204,7 +204,7 @@ interface Deaths {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update death (partial)")
   @doc("Update specific fields of an existing Death record.")
   patch(

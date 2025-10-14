@@ -24,7 +24,6 @@ the Standardized Vocabularies.
 @doc("Specimen record in the OMOP CDM")
 model Specimen {
   @doc("Unique identifier for each specimen.")
-  @visibility("read")
   specimen_id: int64;
 
   @doc("The person from whom the specimen is collected.  References PERSON table.")
@@ -284,7 +283,7 @@ interface Specimens {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update specimen (partial)")
   @doc("Update specific fields of an existing Specimen record.")
   patch(

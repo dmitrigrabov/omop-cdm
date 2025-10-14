@@ -37,7 +37,6 @@ the Plans are different.
 @doc("PayerPlanPeriod record in the OMOP CDM")
 model PayerPlanPeriod {
   @doc("A unique identifier for each unique combination of a Person, Payer, Plan, and Period of time.")
-  @visibility("read")
   payer_plan_period_id: int64;
 
   @doc("The Person covered by the Plan. ETL Convention: A single Person can have multiple, overlapping, PAYER_PLAN_PERIOD records References PERSON table.")
@@ -327,7 +326,7 @@ interface PayerPlanPeriods {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update payer-plan-period (partial)")
   @doc("Update specific fields of an existing PayerPlanPeriod record.")
   patch(

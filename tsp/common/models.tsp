@@ -73,7 +73,6 @@ enum SortOrder {
 @error
 model ErrorResponse {
   @doc("HTTP status code")
-  @statusCode
   code: int32;
 
   @doc("Error message")

@@ -33,7 +33,6 @@ interoperability.
 @doc("Domain record in the OMOP CDM")
 model Domain {
   @doc("A unique key for each domain.")
-  @visibility("read")
   @maxLength(20)
   domain_id: string;
 
@@ -158,7 +157,7 @@ interface Domains {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update domain (partial)")
   @doc("Update specific fields of an existing Domain record.")
   patch(

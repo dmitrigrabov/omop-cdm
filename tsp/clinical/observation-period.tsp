@@ -54,7 +54,6 @@ adjacent OBSERVATION_PERIOD records have to be merged into one.
 @doc("ObservationPeriod record in the OMOP CDM")
 model ObservationPeriod {
   @doc("A Person can have multiple discrete Observation Periods which are identified by the Observation_Period_Id. ETL Convention: Assign a unique observation_period_id to each discrete Observation Period for a Person.")
-  @visibility("read")
   observation_period_id: int64;
 
   @doc("The Person ID of the PERSON record for which the Observation Period is recorded.  References PERSON table.")
@@ -198,7 +197,7 @@ interface ObservationPeriods {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update observation-period (partial)")
   @doc("Update specific fields of an existing ObservationPeriod record.")
   patch(

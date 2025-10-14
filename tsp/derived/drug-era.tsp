@@ -27,7 +27,6 @@ part of a drug era based on the dates of exposure.
 @doc("DrugEra record in the OMOP CDM")
 model DrugEra {
   @doc("")
-  @visibility("read")
   drug_era_id: int64;
 
   @doc("References PERSON table.")
@@ -189,7 +188,7 @@ interface DrugEras {
     @body body: ErrorResponse;
   } | ErrorResponse;
 
-  @patch
+  @patch(#{implicitOptionality: true})
   @summary("Update drug-era (partial)")
   @doc("Update specific fields of an existing DrugEra record.")
   patch(
