@@ -3,13 +3,30 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
     "@typespec/compiler": "latest",
     "@typespec/http": "latest",
-    "@typespec/rest": "latest",
     "@typespec/openapi": "latest",
     "@typespec/openapi3": "latest",
-    "@typespec/versioning": "latest"
+    "@typespec/prettier-plugin-typespec": "^1.5.0",
+    "@typespec/rest": "latest",
+    "@typespec/versioning": "latest",
+    "@vitejs/plugin-react": "^5.0.4",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10"
+  },
+  "dependencies": {
+    "@hookform/lenses": "^0.9.0",
+    "@hookform/resolvers": "^5.2.2",
+    "react": "^19.2.0",
+    "react-hook-form": "^7.65.0",
+    "zod": "^4.1.12"
+  },
+  "scripts": {
+    "supabase:generate:types": "supabase gen types typescript --local > supabase/functions/database-generated.types.ts"
   },
   "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67"
 }

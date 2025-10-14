@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@skmtc/gen-supabase-hono": "jsr:@skmtc/gen-supabase-hono@0.0.41",
+    "@skmtc/gen-typescript": "jsr:@skmtc/gen-typescript@0.0.41",
+    "@skmtc/gen-zod": "jsr:@skmtc/gen-zod@0.0.41"
+  }
+}

@@ -1,0 +1,57 @@
+import { metadataCdmSource } from '@/types/metadataCdmSource.generated.ts'
+import { z } from 'zod'
+import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
+import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
+import { supabase } from '@/lib/supabase'
+import { useQuery, keepPreviousData } from '@tanstack/react-query'
+
+export const useGetApiCdmSourcesResponse = z.object({
+  data: z.array(metadataCdmSource),
+  pagination: z.object({
+    total: z.number().int(),
+    offset: z.number().int(),
+    limit: z.number().int(),
+    count: z.number().int(),
+  }),
+})
+
+export type UseGetApiCdmSourcesArgs = {
+  offset?: number | undefined
+  limit?: number | undefined
+  cdm_version_concept_id?: CommonConceptId | undefined
+  sort_by?: 'cdm_source_id' | undefined
+  sort_order?: CommonSortOrder | undefined
+}
+
+export const useGetApiCdmSources = ({
+  offset,
+  limit,
+  cdm_version_concept_id,
+  sort_by,
+  sort_order,
+}: UseGetApiCdmSourcesArgs) => {
+  const result = useQuery({
+    queryKey: [
+      'Metadata - CdmSources',
+      offset,
+      limit,
+      cdm_version_concept_id,
+      sort_by,
+      sort_order,
+    ],
+    queryFn: async () => {
+      const { data, error } = await supabase.functions.invoke(`/cdm-sources`, {
+        method: 'GET',
+      })
+
+      if (error) {
+        throw error
+      }
+
+      return useGetApiCdmSourcesResponse.parse(data)
+    },
+    placeholderData: keepPreviousData,
+  })
+
+  return result
+}

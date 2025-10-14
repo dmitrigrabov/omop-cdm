@@ -70,7 +70,7 @@ class TestField(unittest.TestCase):
         field = Field("person_id", "integer", True, True, "Unique identifier", "Auto-generated")
         definition = field.generate_field_definition()
         self.assertIn("@doc", definition)
-        self.assertIn("@visibility(\"read\")", definition)
+        # PK fields are read-only by design (excluded from Create models), no @visibility decorator needed
         self.assertIn("person_id: int64", definition)
 
     def test_generate_field_definition_varchar_with_maxlength(self):

@@ -45,7 +45,6 @@ dimensions will necessarily yield an existing LOINC code. Each of these
 dimensions are contained in the OMOP Vocabulary under the domain of
 ‘Meas Value’ with each dimension represented as a Concept Class.
  */
-
 @doc("Note record in the OMOP CDM")
 @example(#{
   note_id: 12345,
@@ -63,7 +62,7 @@ dimensions are contained in the OMOP Vocabulary under the domain of
   visit_detail_id: 100,
   note_source_value: "Example value",
   note_event_id: 100,
-  note_event_field_concept_id: 8507
+  note_event_field_concept_id: 8507,
 })
 model Note {
   @doc("A unique identifier for each note.")
@@ -282,9 +281,7 @@ interface Notes {
   @get
   @summary("List all notes")
   @doc("Returns a paginated list of Note records.")
-  list(
-    ...NoteQueryParams,
-  ): {
+  list(...NoteQueryParams): {
     @statusCode statusCode: 200;
     @body body: PaginatedList<Note>;
   } | ErrorResponse;
@@ -330,18 +327,22 @@ interface Notes {
     @body
     @doc("Complete note data")
     record: NoteCreate,
-  ): {
-    @statusCode statusCode: 200;
-    @body body: Note;
-  } | {
-    @statusCode statusCode: 404;
-    @body body: ErrorResponse;
-  } | {
-    @statusCode statusCode: 400;
-    @body body: ErrorResponse;
-  } | ErrorResponse;
+  ):
+    | {
+        @statusCode statusCode: 200;
+        @body body: Note;
+      }
+    | {
+        @statusCode statusCode: 404;
+        @body body: ErrorResponse;
+      }
+    | {
+        @statusCode statusCode: 400;
+        @body body: ErrorResponse;
+      }
+    | ErrorResponse;
 
-  @patch(#{implicitOptionality: true})
+  @patch(#{ implicitOptionality: true })
   @summary("Update note (partial)")
   @doc("Update specific fields of an existing Note record.")
   patch(

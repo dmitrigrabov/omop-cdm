@@ -1,0 +1,60 @@
+import { DerivedEpisodeEventCreate } from '@/types/derivedEpisodeEventCreate.generated.ts'
+import {
+  derivedEpisodeEvent,
+  DerivedEpisodeEvent,
+} from '@/types/derivedEpisodeEvent.generated.ts'
+import { supabase } from '@/lib/supabase'
+import {
+  useMutation,
+  useQueryClient,
+  UseMutationOptions,
+} from '@tanstack/react-query'
+import { z } from 'zod'
+
+export type UseUpdateApiEpisodeEventsEpisodeEventIdArgs = {
+  episode_event_id: number
+  body: DerivedEpisodeEventCreate
+}
+
+export const useUpdateApiEpisodeEventsEpisodeEventId = (
+  args: UseMutationOptions<
+    DerivedEpisodeEvent,
+    Error,
+    UseUpdateApiEpisodeEventsEpisodeEventIdArgs,
+    unknown
+  > = {},
+) => {
+  const queryClient = useQueryClient()
+
+  const { onSuccess, ...rest } = args
+
+  return useMutation({
+    mutationFn: async ({
+      episode_event_id,
+      body,
+    }: UseUpdateApiEpisodeEventsEpisodeEventIdArgs) => {
+      const { data, error } = await supabase.functions.invoke(
+        `/episode-events/${episode_event_id}`,
+        {
+          method: 'PUT',
+          body,
+        },
+      )
+
+      if (error) {
+        throw error
+      }
+
+      return derivedEpisodeEvent.parse(data)
+    },
+    onSuccess: (...successArgs) => {
+      // Invalidate and refetch
+      void queryClient.invalidateQueries({
+        queryKey: ['Derived - EpisodeEvents'],
+      })
+
+      onSuccess?.(...successArgs)
+    },
+    ...rest,
+  })
+}

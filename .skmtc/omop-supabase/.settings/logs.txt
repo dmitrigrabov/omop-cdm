@@ -1,0 +1,7 @@
+trace parse
+{"stackTrail":"914c133a1aa9cd89","level":"INFO","datetime":1760459191105,"message":"trace","args":"parse"}
+trace generate
+{"stackTrail":"914c133a1aa9cd89","level":"INFO","datetime":1760459191184,"message":"trace","args":"generate"}
+{"stackTrail":"914c133a1aa9cd89","level":"DEBUG","datetime":1760459191216,"message":"168 files generated"}
+trace render
+{"stackTrail":"914c133a1aa9cd89","level":"INFO","datetime":1760459191216,"message":"trace","args":"render"}
