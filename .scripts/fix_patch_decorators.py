@@ -42,7 +42,7 @@ def fix_patch_decorator(file_path: Path) -> bool:
 def main():
     """Main function to fix all TypeSpec files."""
     # Define the TypeSpec directory structure
-    tsp_dir = Path('tsp')
+    tsp_dir = Path('../tsp')
     categories = ['clinical', 'health-system', 'derived', 'metadata', 'vocabulary', 'results']
 
     fixed_files = []

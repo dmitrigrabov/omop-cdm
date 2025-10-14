@@ -457,12 +457,12 @@ def parse_omop_md(file_path: str) -> List[Table]:
 def main():
     """Main function to generate TypeSpec files"""
     print("Parsing omop.md...")
-    tables = parse_omop_md('omop.md')
+    tables = parse_omop_md('../omop.md')
 
     print(f"Found {len(tables)} tables")
 
     # Create output directories if they don't exist
-    base_dir = Path('tsp')
+    base_dir = Path('../tsp')
 
     # Generate TypeSpec files
     for table in tables:

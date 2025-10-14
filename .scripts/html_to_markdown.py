@@ -291,8 +291,8 @@ if __name__ == '__main__':
         output_file = sys.argv[2]
     elif len(sys.argv) == 1:
         # Default files
-        input_file = 'omop.html'
-        output_file = 'omop.md'
+        input_file = '../omop.html'
+        output_file = '../omop.md'
     else:
         print(__doc__)
         sys.exit(1)

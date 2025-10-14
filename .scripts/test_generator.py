@@ -188,10 +188,10 @@ class TestParseOmopMd(unittest.TestCase):
 
     def test_parse_omop_md(self):
         """Test parsing of actual omop.md file"""
-        if not os.path.exists('omop.md'):
+        if not os.path.exists('../omop.md'):
             self.skipTest("omop.md file not found")
 
-        tables = parse_omop_md('omop.md')
+        tables = parse_omop_md('../omop.md')
 
         # Check that we parsed tables
         self.assertGreater(len(tables), 0)
@@ -219,10 +219,10 @@ class TestParseOmopMd(unittest.TestCase):
 
     def test_field_parsing(self):
         """Test that fields are parsed correctly"""
-        if not os.path.exists('omop.md'):
+        if not os.path.exists('../omop.md'):
             self.skipTest("omop.md file not found")
 
-        tables = parse_omop_md('omop.md')
+        tables = parse_omop_md('../omop.md')
         person_table = next(t for t in tables if t.name == 'person')
 
         # Find person_id field
@@ -243,11 +243,11 @@ class TestIntegration(unittest.TestCase):
 
     def test_full_generation_workflow(self):
         """Test the full generation workflow"""
-        if not os.path.exists('omop.md'):
+        if not os.path.exists('../omop.md'):
             self.skipTest("omop.md file not found")
 
         # Parse
-        tables = parse_omop_md('omop.md')
+        tables = parse_omop_md('../omop.md')
         self.assertGreater(len(tables), 0)
 
         # Generate TypeSpec for one table
