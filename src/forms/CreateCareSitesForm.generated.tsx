@@ -23,7 +23,10 @@ export const CreateCareSitesFormFields = () => {
       <StringField fieldName={`care_site_name`} label="care_site_name" />
       <IntegerField fieldName={`place_of_service_concept_id`} />
       <IntegerField fieldName={`location_id`} />
-      <StringField fieldName={`care_site_source_value`} label="care_site_source_value" />
+      <StringField
+        fieldName={`care_site_source_value`}
+        label="care_site_source_value"
+      />
       <StringField
         fieldName={`place_of_service_source_value`}
         label="place_of_service_source_value"
@@ -42,7 +45,7 @@ export type CreateCareSitesFormPathParams = Record<string, never>
 export const CreateCareSitesForm = (props: CreateCareSitesFormProps) => {
   const form = useForm<CreateCareSitesFormBody>({
     resolver: zodResolver(healthsystemCareSiteCreate),
-    defaultValues: props.defaultValues
+    defaultValues: props.defaultValues,
   })
 
   const lens = useLens(form)

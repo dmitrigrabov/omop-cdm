@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const vocabularyRelationship = z.object({
-  relationship_id: z.string(),
+  id: z.string(),
   relationship_name: z.string(),
   is_hierarchical: z.string(),
   defines_ancestry: z.string(),
@@ -10,7 +10,7 @@ export const vocabularyRelationship = z.object({
 })
 
 export type VocabularyRelationship = {
-  relationship_id: string
+  id: string
   relationship_name: string
   is_hierarchical: string
   defines_ancestry: string

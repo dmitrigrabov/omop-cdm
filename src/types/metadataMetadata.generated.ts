@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const metadataMetadata = z.object({
-  metadata_id: z.number().int(),
+  id: z.number().int(),
   metadata_concept_id: z.number().int(),
   metadata_type_concept_id: z.number().int(),
   name: z.string(),
@@ -13,7 +13,7 @@ export const metadataMetadata = z.object({
 })
 
 export type MetadataMetadata = {
-  metadata_id: number
+  id: number
   metadata_concept_id: number
   metadata_type_concept_id: number
   name: string

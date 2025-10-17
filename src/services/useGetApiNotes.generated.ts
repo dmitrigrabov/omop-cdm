@@ -27,7 +27,7 @@ export type UseGetApiNotesArgs = {
   visit_occurrence_id?: number | undefined
   visit_detail_id?: number | undefined
   note_event_field_concept_id?: CommonConceptId | undefined
-  sort_by?: 'note_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

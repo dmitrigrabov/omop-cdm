@@ -46,7 +46,7 @@ amount charged by the pharmacy and the sales tax).
 
 @doc("Cost record in the OMOP CDM")
 @example(#{
-  cost_id: 12345,
+  id: 12345,
   cost_event_id: 100,
   cost_domain_id: "Example value",
   cost_type_concept_id: 8507,
@@ -71,7 +71,7 @@ amount charged by the pharmacy and the sales tax).
 })
 model Cost {
   @doc("")
-  cost_id: int64;
+  id: int64;
 
   @doc("")
   cost_event_id: int64;
@@ -310,7 +310,7 @@ model CostQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "cost_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -339,7 +339,7 @@ interface Costs {
   read(
     @path
     @doc("Unique cost identifier")
-    cost_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Cost;
@@ -369,7 +369,7 @@ interface Costs {
   update(
     @path
     @doc("Unique cost identifier")
-    cost_id: int64,
+    id: int64,
 
     @body
     @doc("Complete cost data")
@@ -391,7 +391,7 @@ interface Costs {
   patch(
     @path
     @doc("Unique cost identifier")
-    cost_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -410,7 +410,7 @@ interface Costs {
   delete(
     @path
     @doc("Unique cost identifier")
-    cost_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

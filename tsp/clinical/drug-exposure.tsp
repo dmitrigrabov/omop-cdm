@@ -47,7 +47,7 @@ repository](https://ohdsi.github.io/Themis/drug_exposure.html).
 
 @doc("DrugExposure record in the OMOP CDM")
 @example(#{
-  drug_exposure_id: 12345,
+  id: 12345,
   person_id: 100,
   drug_concept_id: 8507,
   drug_exposure_start_date: "2023-01-15",
@@ -73,7 +73,7 @@ repository](https://ohdsi.github.io/Themis/drug_exposure.html).
 })
 model DrugExposure {
   @doc("The unique key given to records of drug dispensings or administrations for a person. Refer to the ETL for how duplicate drugs during the same visit were handled. ETL Convention: Each instance of a drug dispensing or administration present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same drug within the same visit. It is valid to keep these duplicates and assign them individual, unique, DRUG_EXPOSURE_IDs, though it is up to the ETL how they should be handled.")
-  drug_exposure_id: int64;
+  id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
@@ -337,7 +337,7 @@ model DrugExposureQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "drug_exposure_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -366,7 +366,7 @@ interface DrugExposures {
   read(
     @path
     @doc("Unique drug-exposure identifier")
-    drug_exposure_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: DrugExposure;
@@ -396,7 +396,7 @@ interface DrugExposures {
   update(
     @path
     @doc("Unique drug-exposure identifier")
-    drug_exposure_id: int64,
+    id: int64,
 
     @body
     @doc("Complete drug-exposure data")
@@ -418,7 +418,7 @@ interface DrugExposures {
   patch(
     @path
     @doc("Unique drug-exposure identifier")
-    drug_exposure_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -437,7 +437,7 @@ interface DrugExposures {
   delete(
     @path
     @doc("Unique drug-exposure identifier")
-    drug_exposure_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

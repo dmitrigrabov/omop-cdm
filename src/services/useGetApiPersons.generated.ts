@@ -27,7 +27,7 @@ export type UseGetApiPersonsArgs = {
   gender_source_concept_id?: CommonConceptId | undefined
   race_source_concept_id?: CommonConceptId | undefined
   ethnicity_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'person_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

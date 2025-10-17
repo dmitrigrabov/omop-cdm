@@ -171,7 +171,7 @@ class Table:
 
         # Get primary key field name
         pk_field = self.get_pk_field()
-        pk_name = pk_field.name if pk_field else f"{self.name}_id"
+        pk_name = pk_field.name if pk_field else "id"
         pk_type = pk_field.to_typespec_type() if pk_field else "int64"
 
         # Prepare tag name
@@ -309,7 +309,7 @@ interface {model_name}s {{
     @body body: ErrorResponse;
   }} | ErrorResponse;
 
-  @patch
+  @patch(#{{implicitOptionality: true}})
   @summary("Update {route_name} (partial)")
   @doc("Update specific fields of an existing {model_name} record.")
   patch(

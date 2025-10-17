@@ -20,7 +20,7 @@ export type UseGetApiConceptsArgs = {
   domain_id?: string | undefined
   vocabulary_id?: string | undefined
   concept_class_id?: string | undefined
-  sort_by?: 'concept_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

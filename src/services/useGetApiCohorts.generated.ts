@@ -17,7 +17,7 @@ export const useGetApiCohortsResponse = z.object({
 export type UseGetApiCohortsArgs = {
   offset?: number | undefined
   limit?: number | undefined
-  sort_by?: 'cohort_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

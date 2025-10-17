@@ -26,7 +26,7 @@ the entire time of exposure to the Ingredient.
 
 @doc("DoseEra record in the OMOP CDM")
 @example(#{
-  dose_era_id: 12345,
+  id: 12345,
   person_id: 100,
   drug_concept_id: 8507,
   unit_concept_id: 8507,
@@ -36,7 +36,7 @@ the entire time of exposure to the Ingredient.
 })
 model DoseEra {
   @doc("")
-  dose_era_id: int64;
+  id: int64;
 
   @doc("References PERSON table.")
   person_id: int64;
@@ -126,7 +126,7 @@ model DoseEraQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "dose_era_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -155,7 +155,7 @@ interface DoseEras {
   read(
     @path
     @doc("Unique dose-era identifier")
-    dose_era_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: DoseEra;
@@ -185,7 +185,7 @@ interface DoseEras {
   update(
     @path
     @doc("Unique dose-era identifier")
-    dose_era_id: int64,
+    id: int64,
 
     @body
     @doc("Complete dose-era data")
@@ -207,7 +207,7 @@ interface DoseEras {
   patch(
     @path
     @doc("Unique dose-era identifier")
-    dose_era_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -226,7 +226,7 @@ interface DoseEras {
   delete(
     @path
     @doc("Unique dose-era identifier")
-    dose_era_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

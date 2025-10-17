@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const vocabularyConcept = z.object({
-  concept_id: z.number().int(),
+  id: z.number().int(),
   concept_name: z.string(),
   domain_id: z.string(),
   vocabulary_id: z.string(),
@@ -14,7 +14,7 @@ export const vocabularyConcept = z.object({
 })
 
 export type VocabularyConcept = {
-  concept_id: number
+  id: number
   concept_name: string
   domain_id: string
   vocabulary_id: string

@@ -44,7 +44,7 @@ Concepts.
 
 @doc("Concept record in the OMOP CDM")
 @example(#{
-  concept_id: 12345,
+  id: 12345,
   concept_name: "Example value",
   domain_id: "Example value",
   vocabulary_id: "Example value",
@@ -57,7 +57,7 @@ Concepts.
 })
 model Concept {
   @doc("A unique identifier for each Concept across all domains.")
-  concept_id: ConceptId;
+  id: int64;
 
   @doc("An unambiguous, meaningful and descriptive name for the Concept.")
   @maxLength(255)
@@ -188,7 +188,7 @@ model ConceptQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "concept_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -217,7 +217,7 @@ interface Concepts {
   read(
     @path
     @doc("Unique concept identifier")
-    concept_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Concept;
@@ -247,7 +247,7 @@ interface Concepts {
   update(
     @path
     @doc("Unique concept identifier")
-    concept_id: int64,
+    id: int64,
 
     @body
     @doc("Complete concept data")
@@ -269,7 +269,7 @@ interface Concepts {
   patch(
     @path
     @doc("Unique concept identifier")
-    concept_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -288,7 +288,7 @@ interface Concepts {
   delete(
     @path
     @doc("Unique concept identifier")
-    concept_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

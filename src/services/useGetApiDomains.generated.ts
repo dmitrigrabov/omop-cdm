@@ -19,7 +19,7 @@ export type UseGetApiDomainsArgs = {
   offset?: number | undefined
   limit?: number | undefined
   domain_concept_id?: CommonConceptId | undefined
-  sort_by?: 'domain_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

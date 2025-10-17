@@ -135,13 +135,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Healthsystem.CareSiteCreate'
         description: CareSite data to create
-  /care-sites/{care_site_id}:
+  /care-sites/{id}:
     get:
       operationId: CareSites_read
       summary: Get care-site by ID
       description: Retrieve a single CareSite record by its unique identifier.
       parameters:
-        - name: care_site_id
+        - name: id
           in: path
           required: true
           description: Unique care-site identifier
@@ -174,7 +174,7 @@ paths:
       summary: Update care-site (full replacement)
       description: Replace all fields of an existing CareSite record.
       parameters:
-        - name: care_site_id
+        - name: id
           in: path
           required: true
           description: Unique care-site identifier
@@ -220,7 +220,7 @@ paths:
       summary: Update care-site (partial)
       description: Update specific fields of an existing CareSite record.
       parameters:
-        - name: care_site_id
+        - name: id
           in: path
           required: true
           description: Unique care-site identifier
@@ -260,7 +260,7 @@ paths:
       summary: Delete care-site
       description: Delete a CareSite record.
       parameters:
-        - name: care_site_id
+        - name: id
           in: path
           required: true
           description: Unique care-site identifier
@@ -357,13 +357,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Metadata.CdmSourceCreate'
         description: CdmSource data to create
-  /cdm-sources/{cdm_source_id}:
+  /cdm-sources/{id}:
     get:
       operationId: CdmSources_read
       summary: Get cdm-source by ID
       description: Retrieve a single CdmSource record by its unique identifier.
       parameters:
-        - name: cdm_source_id
+        - name: id
           in: path
           required: true
           description: Unique cdm-source identifier
@@ -396,7 +396,7 @@ paths:
       summary: Update cdm-source (full replacement)
       description: Replace all fields of an existing CdmSource record.
       parameters:
-        - name: cdm_source_id
+        - name: id
           in: path
           required: true
           description: Unique cdm-source identifier
@@ -442,7 +442,7 @@ paths:
       summary: Update cdm-source (partial)
       description: Update specific fields of an existing CdmSource record.
       parameters:
-        - name: cdm_source_id
+        - name: id
           in: path
           required: true
           description: Unique cdm-source identifier
@@ -482,7 +482,7 @@ paths:
       summary: Delete cdm-source
       description: Delete a CdmSource record.
       parameters:
-        - name: cdm_source_id
+        - name: id
           in: path
           required: true
           description: Unique cdm-source identifier
@@ -580,13 +580,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Results.CohortDefinitionCreate'
         description: CohortDefinition data to create
-  /cohort-definitions/{cohort_definition_id}:
+  /cohort-definitions/{id}:
     get:
       operationId: CohortDefinitions_read
       summary: Get cohort-definition by ID
       description: Retrieve a single CohortDefinition record by its unique identifier.
       parameters:
-        - name: cohort_definition_id
+        - name: id
           in: path
           required: true
           description: Unique cohort-definition identifier
@@ -619,7 +619,7 @@ paths:
       summary: Update cohort-definition (full replacement)
       description: Replace all fields of an existing CohortDefinition record.
       parameters:
-        - name: cohort_definition_id
+        - name: id
           in: path
           required: true
           description: Unique cohort-definition identifier
@@ -665,7 +665,7 @@ paths:
       summary: Update cohort-definition (partial)
       description: Update specific fields of an existing CohortDefinition record.
       parameters:
-        - name: cohort_definition_id
+        - name: id
           in: path
           required: true
           description: Unique cohort-definition identifier
@@ -705,7 +705,7 @@ paths:
       summary: Delete cohort-definition
       description: Delete a CohortDefinition record.
       parameters:
-        - name: cohort_definition_id
+        - name: id
           in: path
           required: true
           description: Unique cohort-definition identifier
@@ -801,13 +801,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Results.CohortCreate'
         description: Cohort data to create
-  /cohorts/{cohort_id}:
+  /cohorts/{id}:
     get:
       operationId: Cohorts_read
       summary: Get cohort by ID
       description: Retrieve a single Cohort record by its unique identifier.
       parameters:
-        - name: cohort_id
+        - name: id
           in: path
           required: true
           description: Unique cohort identifier
@@ -840,7 +840,7 @@ paths:
       summary: Update cohort (full replacement)
       description: Replace all fields of an existing Cohort record.
       parameters:
-        - name: cohort_id
+        - name: id
           in: path
           required: true
           description: Unique cohort identifier
@@ -886,7 +886,7 @@ paths:
       summary: Update cohort (partial)
       description: Update specific fields of an existing Cohort record.
       parameters:
-        - name: cohort_id
+        - name: id
           in: path
           required: true
           description: Unique cohort identifier
@@ -926,7 +926,7 @@ paths:
       summary: Delete cohort
       description: Delete a Cohort record.
       parameters:
-        - name: cohort_id
+        - name: id
           in: path
           required: true
           description: Unique cohort identifier
@@ -1024,13 +1024,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.ConceptAncestorCreate'
         description: ConceptAncestor data to create
-  /concept-ancestors/{concept_ancestor_id}:
+  /concept-ancestors/{id}:
     get:
       operationId: ConceptAncestors_read
       summary: Get concept-ancestor by ID
       description: Retrieve a single ConceptAncestor record by its unique identifier.
       parameters:
-        - name: concept_ancestor_id
+        - name: id
           in: path
           required: true
           description: Unique concept-ancestor identifier
@@ -1063,7 +1063,7 @@ paths:
       summary: Update concept-ancestor (full replacement)
       description: Replace all fields of an existing ConceptAncestor record.
       parameters:
-        - name: concept_ancestor_id
+        - name: id
           in: path
           required: true
           description: Unique concept-ancestor identifier
@@ -1109,7 +1109,7 @@ paths:
       summary: Update concept-ancestor (partial)
       description: Update specific fields of an existing ConceptAncestor record.
       parameters:
-        - name: concept_ancestor_id
+        - name: id
           in: path
           required: true
           description: Unique concept-ancestor identifier
@@ -1149,7 +1149,7 @@ paths:
       summary: Delete concept-ancestor
       description: Delete a ConceptAncestor record.
       parameters:
-        - name: concept_ancestor_id
+        - name: id
           in: path
           required: true
           description: Unique concept-ancestor identifier
@@ -1246,13 +1246,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.ConceptClassCreate'
         description: ConceptClass data to create
-  /concept-classs/{concept_class_id}:
+  /concept-classs/{id}:
     get:
       operationId: ConceptClasss_read
       summary: Get concept-class by ID
       description: Retrieve a single ConceptClass record by its unique identifier.
       parameters:
-        - name: concept_class_id
+        - name: id
           in: path
           required: true
           description: Unique concept-class identifier
@@ -1284,7 +1284,7 @@ paths:
       summary: Update concept-class (full replacement)
       description: Replace all fields of an existing ConceptClass record.
       parameters:
-        - name: concept_class_id
+        - name: id
           in: path
           required: true
           description: Unique concept-class identifier
@@ -1329,7 +1329,7 @@ paths:
       summary: Update concept-class (partial)
       description: Update specific fields of an existing ConceptClass record.
       parameters:
-        - name: concept_class_id
+        - name: id
           in: path
           required: true
           description: Unique concept-class identifier
@@ -1368,7 +1368,7 @@ paths:
       summary: Delete concept-class
       description: Delete a ConceptClass record.
       parameters:
-        - name: concept_class_id
+        - name: id
           in: path
           required: true
           description: Unique concept-class identifier
@@ -1464,13 +1464,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.ConceptRelationshipCreate'
         description: ConceptRelationship data to create
-  /concept-relationships/{concept_relationship_id}:
+  /concept-relationships/{id}:
     get:
       operationId: ConceptRelationships_read
       summary: Get concept-relationship by ID
       description: Retrieve a single ConceptRelationship record by its unique identifier.
       parameters:
-        - name: concept_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique concept-relationship identifier
@@ -1503,7 +1503,7 @@ paths:
       summary: Update concept-relationship (full replacement)
       description: Replace all fields of an existing ConceptRelationship record.
       parameters:
-        - name: concept_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique concept-relationship identifier
@@ -1549,7 +1549,7 @@ paths:
       summary: Update concept-relationship (partial)
       description: Update specific fields of an existing ConceptRelationship record.
       parameters:
-        - name: concept_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique concept-relationship identifier
@@ -1589,7 +1589,7 @@ paths:
       summary: Delete concept-relationship
       description: Delete a ConceptRelationship record.
       parameters:
-        - name: concept_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique concept-relationship identifier
@@ -1687,13 +1687,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.ConceptSynonymCreate'
         description: ConceptSynonym data to create
-  /concept-synonyms/{concept_synonym_id}:
+  /concept-synonyms/{id}:
     get:
       operationId: ConceptSynonyms_read
       summary: Get concept-synonym by ID
       description: Retrieve a single ConceptSynonym record by its unique identifier.
       parameters:
-        - name: concept_synonym_id
+        - name: id
           in: path
           required: true
           description: Unique concept-synonym identifier
@@ -1726,7 +1726,7 @@ paths:
       summary: Update concept-synonym (full replacement)
       description: Replace all fields of an existing ConceptSynonym record.
       parameters:
-        - name: concept_synonym_id
+        - name: id
           in: path
           required: true
           description: Unique concept-synonym identifier
@@ -1772,7 +1772,7 @@ paths:
       summary: Update concept-synonym (partial)
       description: Update specific fields of an existing ConceptSynonym record.
       parameters:
-        - name: concept_synonym_id
+        - name: id
           in: path
           required: true
           description: Unique concept-synonym identifier
@@ -1812,7 +1812,7 @@ paths:
       summary: Delete concept-synonym
       description: Delete a ConceptSynonym record.
       parameters:
-        - name: concept_synonym_id
+        - name: id
           in: path
           required: true
           description: Unique concept-synonym identifier
@@ -1911,13 +1911,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.ConceptCreate'
         description: Concept data to create
-  /concepts/{concept_id}:
+  /concepts/{id}:
     get:
       operationId: Concepts_read
       summary: Get concept by ID
       description: Retrieve a single Concept record by its unique identifier.
       parameters:
-        - name: concept_id
+        - name: id
           in: path
           required: true
           description: Unique concept identifier
@@ -1950,7 +1950,7 @@ paths:
       summary: Update concept (full replacement)
       description: Replace all fields of an existing Concept record.
       parameters:
-        - name: concept_id
+        - name: id
           in: path
           required: true
           description: Unique concept identifier
@@ -1996,7 +1996,7 @@ paths:
       summary: Update concept (partial)
       description: Update specific fields of an existing Concept record.
       parameters:
-        - name: concept_id
+        - name: id
           in: path
           required: true
           description: Unique concept identifier
@@ -2036,7 +2036,7 @@ paths:
       summary: Delete concept
       description: Delete a Concept record.
       parameters:
-        - name: concept_id
+        - name: id
           in: path
           required: true
           description: Unique concept identifier
@@ -2134,13 +2134,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Derived.ConditionEraCreate'
         description: ConditionEra data to create
-  /condition-eras/{condition_era_id}:
+  /condition-eras/{id}:
     get:
       operationId: ConditionEras_read
       summary: Get condition-era by ID
       description: Retrieve a single ConditionEra record by its unique identifier.
       parameters:
-        - name: condition_era_id
+        - name: id
           in: path
           required: true
           description: Unique condition-era identifier
@@ -2173,7 +2173,7 @@ paths:
       summary: Update condition-era (full replacement)
       description: Replace all fields of an existing ConditionEra record.
       parameters:
-        - name: condition_era_id
+        - name: id
           in: path
           required: true
           description: Unique condition-era identifier
@@ -2219,7 +2219,7 @@ paths:
       summary: Update condition-era (partial)
       description: Update specific fields of an existing ConditionEra record.
       parameters:
-        - name: condition_era_id
+        - name: id
           in: path
           required: true
           description: Unique condition-era identifier
@@ -2259,7 +2259,7 @@ paths:
       summary: Delete condition-era
       description: Delete a ConditionEra record.
       parameters:
-        - name: condition_era_id
+        - name: id
           in: path
           required: true
           description: Unique condition-era identifier
@@ -2363,13 +2363,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.ConditionOccurrenceCreate'
         description: ConditionOccurrence data to create
-  /condition-occurrences/{condition_occurrence_id}:
+  /condition-occurrences/{id}:
     get:
       operationId: ConditionOccurrences_read
       summary: Get condition-occurrence by ID
       description: Retrieve a single ConditionOccurrence record by its unique identifier.
       parameters:
-        - name: condition_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique condition-occurrence identifier
@@ -2402,7 +2402,7 @@ paths:
       summary: Update condition-occurrence (full replacement)
       description: Replace all fields of an existing ConditionOccurrence record.
       parameters:
-        - name: condition_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique condition-occurrence identifier
@@ -2448,7 +2448,7 @@ paths:
       summary: Update condition-occurrence (partial)
       description: Update specific fields of an existing ConditionOccurrence record.
       parameters:
-        - name: condition_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique condition-occurrence identifier
@@ -2488,7 +2488,7 @@ paths:
       summary: Delete condition-occurrence
       description: Delete a ConditionOccurrence record.
       parameters:
-        - name: condition_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique condition-occurrence identifier
@@ -2589,13 +2589,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Healthsystem.CostCreate'
         description: Cost data to create
-  /costs/{cost_id}:
+  /costs/{id}:
     get:
       operationId: Costs_read
       summary: Get cost by ID
       description: Retrieve a single Cost record by its unique identifier.
       parameters:
-        - name: cost_id
+        - name: id
           in: path
           required: true
           description: Unique cost identifier
@@ -2628,7 +2628,7 @@ paths:
       summary: Update cost (full replacement)
       description: Replace all fields of an existing Cost record.
       parameters:
-        - name: cost_id
+        - name: id
           in: path
           required: true
           description: Unique cost identifier
@@ -2674,7 +2674,7 @@ paths:
       summary: Update cost (partial)
       description: Update specific fields of an existing Cost record.
       parameters:
-        - name: cost_id
+        - name: id
           in: path
           required: true
           description: Unique cost identifier
@@ -2714,7 +2714,7 @@ paths:
       summary: Delete cost
       description: Delete a Cost record.
       parameters:
-        - name: cost_id
+        - name: id
           in: path
           required: true
           description: Unique cost identifier
@@ -2814,13 +2814,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.DeathCreate'
         description: Death data to create
-  /deaths/{death_id}:
+  /deaths/{id}:
     get:
       operationId: Deaths_read
       summary: Get death by ID
       description: Retrieve a single Death record by its unique identifier.
       parameters:
-        - name: death_id
+        - name: id
           in: path
           required: true
           description: Unique death identifier
@@ -2853,7 +2853,7 @@ paths:
       summary: Update death (full replacement)
       description: Replace all fields of an existing Death record.
       parameters:
-        - name: death_id
+        - name: id
           in: path
           required: true
           description: Unique death identifier
@@ -2899,7 +2899,7 @@ paths:
       summary: Update death (partial)
       description: Update specific fields of an existing Death record.
       parameters:
-        - name: death_id
+        - name: id
           in: path
           required: true
           description: Unique death identifier
@@ -2939,7 +2939,7 @@ paths:
       summary: Delete death
       description: Delete a Death record.
       parameters:
-        - name: death_id
+        - name: id
           in: path
           required: true
           description: Unique death identifier
@@ -3044,13 +3044,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.DeviceExposureCreate'
         description: DeviceExposure data to create
-  /device-exposures/{device_exposure_id}:
+  /device-exposures/{id}:
     get:
       operationId: DeviceExposures_read
       summary: Get device-exposure by ID
       description: Retrieve a single DeviceExposure record by its unique identifier.
       parameters:
-        - name: device_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique device-exposure identifier
@@ -3083,7 +3083,7 @@ paths:
       summary: Update device-exposure (full replacement)
       description: Replace all fields of an existing DeviceExposure record.
       parameters:
-        - name: device_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique device-exposure identifier
@@ -3129,7 +3129,7 @@ paths:
       summary: Update device-exposure (partial)
       description: Update specific fields of an existing DeviceExposure record.
       parameters:
-        - name: device_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique device-exposure identifier
@@ -3169,7 +3169,7 @@ paths:
       summary: Delete device-exposure
       description: Delete a DeviceExposure record.
       parameters:
-        - name: device_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique device-exposure identifier
@@ -3266,13 +3266,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.DomainCreate'
         description: Domain data to create
-  /domains/{domain_id}:
+  /domains/{id}:
     get:
       operationId: Domains_read
       summary: Get domain by ID
       description: Retrieve a single Domain record by its unique identifier.
       parameters:
-        - name: domain_id
+        - name: id
           in: path
           required: true
           description: Unique domain identifier
@@ -3304,7 +3304,7 @@ paths:
       summary: Update domain (full replacement)
       description: Replace all fields of an existing Domain record.
       parameters:
-        - name: domain_id
+        - name: id
           in: path
           required: true
           description: Unique domain identifier
@@ -3349,7 +3349,7 @@ paths:
       summary: Update domain (partial)
       description: Update specific fields of an existing Domain record.
       parameters:
-        - name: domain_id
+        - name: id
           in: path
           required: true
           description: Unique domain identifier
@@ -3388,7 +3388,7 @@ paths:
       summary: Delete domain
       description: Delete a Domain record.
       parameters:
-        - name: domain_id
+        - name: id
           in: path
           required: true
           description: Unique domain identifier
@@ -3486,13 +3486,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Derived.DoseEraCreate'
         description: DoseEra data to create
-  /dose-eras/{dose_era_id}:
+  /dose-eras/{id}:
     get:
       operationId: DoseEras_read
       summary: Get dose-era by ID
       description: Retrieve a single DoseEra record by its unique identifier.
       parameters:
-        - name: dose_era_id
+        - name: id
           in: path
           required: true
           description: Unique dose-era identifier
@@ -3525,7 +3525,7 @@ paths:
       summary: Update dose-era (full replacement)
       description: Replace all fields of an existing DoseEra record.
       parameters:
-        - name: dose_era_id
+        - name: id
           in: path
           required: true
           description: Unique dose-era identifier
@@ -3571,7 +3571,7 @@ paths:
       summary: Update dose-era (partial)
       description: Update specific fields of an existing DoseEra record.
       parameters:
-        - name: dose_era_id
+        - name: id
           in: path
           required: true
           description: Unique dose-era identifier
@@ -3611,7 +3611,7 @@ paths:
       summary: Delete dose-era
       description: Delete a DoseEra record.
       parameters:
-        - name: dose_era_id
+        - name: id
           in: path
           required: true
           description: Unique dose-era identifier
@@ -3709,13 +3709,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Derived.DrugEraCreate'
         description: DrugEra data to create
-  /drug-eras/{drug_era_id}:
+  /drug-eras/{id}:
     get:
       operationId: DrugEras_read
       summary: Get drug-era by ID
       description: Retrieve a single DrugEra record by its unique identifier.
       parameters:
-        - name: drug_era_id
+        - name: id
           in: path
           required: true
           description: Unique drug-era identifier
@@ -3748,7 +3748,7 @@ paths:
       summary: Update drug-era (full replacement)
       description: Replace all fields of an existing DrugEra record.
       parameters:
-        - name: drug_era_id
+        - name: id
           in: path
           required: true
           description: Unique drug-era identifier
@@ -3794,7 +3794,7 @@ paths:
       summary: Update drug-era (partial)
       description: Update specific fields of an existing DrugEra record.
       parameters:
-        - name: drug_era_id
+        - name: id
           in: path
           required: true
           description: Unique drug-era identifier
@@ -3834,7 +3834,7 @@ paths:
       summary: Delete drug-era
       description: Delete a DrugEra record.
       parameters:
-        - name: drug_era_id
+        - name: id
           in: path
           required: true
           description: Unique drug-era identifier
@@ -3938,13 +3938,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.DrugExposureCreate'
         description: DrugExposure data to create
-  /drug-exposures/{drug_exposure_id}:
+  /drug-exposures/{id}:
     get:
       operationId: DrugExposures_read
       summary: Get drug-exposure by ID
       description: Retrieve a single DrugExposure record by its unique identifier.
       parameters:
-        - name: drug_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique drug-exposure identifier
@@ -3977,7 +3977,7 @@ paths:
       summary: Update drug-exposure (full replacement)
       description: Replace all fields of an existing DrugExposure record.
       parameters:
-        - name: drug_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique drug-exposure identifier
@@ -4023,7 +4023,7 @@ paths:
       summary: Update drug-exposure (partial)
       description: Update specific fields of an existing DrugExposure record.
       parameters:
-        - name: drug_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique drug-exposure identifier
@@ -4063,7 +4063,7 @@ paths:
       summary: Delete drug-exposure
       description: Delete a DrugExposure record.
       parameters:
-        - name: drug_exposure_id
+        - name: id
           in: path
           required: true
           description: Unique drug-exposure identifier
@@ -4164,13 +4164,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.DrugStrengthCreate'
         description: DrugStrength data to create
-  /drug-strengths/{drug_strength_id}:
+  /drug-strengths/{id}:
     get:
       operationId: DrugStrengths_read
       summary: Get drug-strength by ID
       description: Retrieve a single DrugStrength record by its unique identifier.
       parameters:
-        - name: drug_strength_id
+        - name: id
           in: path
           required: true
           description: Unique drug-strength identifier
@@ -4203,7 +4203,7 @@ paths:
       summary: Update drug-strength (full replacement)
       description: Replace all fields of an existing DrugStrength record.
       parameters:
-        - name: drug_strength_id
+        - name: id
           in: path
           required: true
           description: Unique drug-strength identifier
@@ -4249,7 +4249,7 @@ paths:
       summary: Update drug-strength (partial)
       description: Update specific fields of an existing DrugStrength record.
       parameters:
-        - name: drug_strength_id
+        - name: id
           in: path
           required: true
           description: Unique drug-strength identifier
@@ -4289,7 +4289,7 @@ paths:
       summary: Delete drug-strength
       description: Delete a DrugStrength record.
       parameters:
-        - name: drug_strength_id
+        - name: id
           in: path
           required: true
           description: Unique drug-strength identifier
@@ -4387,13 +4387,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Derived.EpisodeEventCreate'
         description: EpisodeEvent data to create
-  /episode-events/{episode_event_id}:
+  /episode-events/{id}:
     get:
       operationId: EpisodeEvents_read
       summary: Get episode-event by ID
       description: Retrieve a single EpisodeEvent record by its unique identifier.
       parameters:
-        - name: episode_event_id
+        - name: id
           in: path
           required: true
           description: Unique episode-event identifier
@@ -4426,7 +4426,7 @@ paths:
       summary: Update episode-event (full replacement)
       description: Replace all fields of an existing EpisodeEvent record.
       parameters:
-        - name: episode_event_id
+        - name: id
           in: path
           required: true
           description: Unique episode-event identifier
@@ -4472,7 +4472,7 @@ paths:
       summary: Update episode-event (partial)
       description: Update specific fields of an existing EpisodeEvent record.
       parameters:
-        - name: episode_event_id
+        - name: id
           in: path
           required: true
           description: Unique episode-event identifier
@@ -4512,7 +4512,7 @@ paths:
       summary: Delete episode-event
       description: Delete a EpisodeEvent record.
       parameters:
-        - name: episode_event_id
+        - name: id
           in: path
           required: true
           description: Unique episode-event identifier
@@ -4613,13 +4613,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Derived.EpisodeCreate'
         description: Episode data to create
-  /episodes/{episode_id}:
+  /episodes/{id}:
     get:
       operationId: Episodes_read
       summary: Get episode by ID
       description: Retrieve a single Episode record by its unique identifier.
       parameters:
-        - name: episode_id
+        - name: id
           in: path
           required: true
           description: Unique episode identifier
@@ -4652,7 +4652,7 @@ paths:
       summary: Update episode (full replacement)
       description: Replace all fields of an existing Episode record.
       parameters:
-        - name: episode_id
+        - name: id
           in: path
           required: true
           description: Unique episode identifier
@@ -4698,7 +4698,7 @@ paths:
       summary: Update episode (partial)
       description: Update specific fields of an existing Episode record.
       parameters:
-        - name: episode_id
+        - name: id
           in: path
           required: true
           description: Unique episode identifier
@@ -4738,7 +4738,7 @@ paths:
       summary: Delete episode
       description: Delete a Episode record.
       parameters:
-        - name: episode_id
+        - name: id
           in: path
           required: true
           description: Unique episode identifier
@@ -4835,13 +4835,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Results.FactRelationshipCreate'
         description: FactRelationship data to create
-  /fact-relationships/{fact_relationship_id}:
+  /fact-relationships/{id}:
     get:
       operationId: FactRelationships_read
       summary: Get fact-relationship by ID
       description: Retrieve a single FactRelationship record by its unique identifier.
       parameters:
-        - name: fact_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique fact-relationship identifier
@@ -4874,7 +4874,7 @@ paths:
       summary: Update fact-relationship (full replacement)
       description: Replace all fields of an existing FactRelationship record.
       parameters:
-        - name: fact_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique fact-relationship identifier
@@ -4920,7 +4920,7 @@ paths:
       summary: Update fact-relationship (partial)
       description: Update specific fields of an existing FactRelationship record.
       parameters:
-        - name: fact_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique fact-relationship identifier
@@ -4960,7 +4960,7 @@ paths:
       summary: Delete fact-relationship
       description: Delete a FactRelationship record.
       parameters:
-        - name: fact_relationship_id
+        - name: id
           in: path
           required: true
           description: Unique fact-relationship identifier
@@ -5057,13 +5057,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Healthsystem.LocationCreate'
         description: Location data to create
-  /locations/{location_id}:
+  /locations/{id}:
     get:
       operationId: Locations_read
       summary: Get location by ID
       description: Retrieve a single Location record by its unique identifier.
       parameters:
-        - name: location_id
+        - name: id
           in: path
           required: true
           description: Unique location identifier
@@ -5096,7 +5096,7 @@ paths:
       summary: Update location (full replacement)
       description: Replace all fields of an existing Location record.
       parameters:
-        - name: location_id
+        - name: id
           in: path
           required: true
           description: Unique location identifier
@@ -5142,7 +5142,7 @@ paths:
       summary: Update location (partial)
       description: Update specific fields of an existing Location record.
       parameters:
-        - name: location_id
+        - name: id
           in: path
           required: true
           description: Unique location identifier
@@ -5182,7 +5182,7 @@ paths:
       summary: Delete location
       description: Delete a Location record.
       parameters:
-        - name: location_id
+        - name: id
           in: path
           required: true
           description: Unique location identifier
@@ -5290,13 +5290,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.MeasurementCreate'
         description: Measurement data to create
-  /measurements/{measurement_id}:
+  /measurements/{id}:
     get:
       operationId: Measurements_read
       summary: Get measurement by ID
       description: Retrieve a single Measurement record by its unique identifier.
       parameters:
-        - name: measurement_id
+        - name: id
           in: path
           required: true
           description: Unique measurement identifier
@@ -5329,7 +5329,7 @@ paths:
       summary: Update measurement (full replacement)
       description: Replace all fields of an existing Measurement record.
       parameters:
-        - name: measurement_id
+        - name: id
           in: path
           required: true
           description: Unique measurement identifier
@@ -5375,7 +5375,7 @@ paths:
       summary: Update measurement (partial)
       description: Update specific fields of an existing Measurement record.
       parameters:
-        - name: measurement_id
+        - name: id
           in: path
           required: true
           description: Unique measurement identifier
@@ -5415,7 +5415,7 @@ paths:
       summary: Delete measurement
       description: Delete a Measurement record.
       parameters:
-        - name: measurement_id
+        - name: id
           in: path
           required: true
           description: Unique measurement identifier
@@ -5514,13 +5514,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Metadata.MetadataCreate'
         description: Metadata data to create
-  /metadatas/{metadata_id}:
+  /metadatas/{id}:
     get:
       operationId: Metadatas_read
       summary: Get metadata by ID
       description: Retrieve a single Metadata record by its unique identifier.
       parameters:
-        - name: metadata_id
+        - name: id
           in: path
           required: true
           description: Unique metadata identifier
@@ -5553,7 +5553,7 @@ paths:
       summary: Update metadata (full replacement)
       description: Replace all fields of an existing Metadata record.
       parameters:
-        - name: metadata_id
+        - name: id
           in: path
           required: true
           description: Unique metadata identifier
@@ -5599,7 +5599,7 @@ paths:
       summary: Update metadata (partial)
       description: Update specific fields of an existing Metadata record.
       parameters:
-        - name: metadata_id
+        - name: id
           in: path
           required: true
           description: Unique metadata identifier
@@ -5639,7 +5639,7 @@ paths:
       summary: Delete metadata
       description: Delete a Metadata record.
       parameters:
-        - name: metadata_id
+        - name: id
           in: path
           required: true
           description: Unique metadata identifier
@@ -5738,13 +5738,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.NoteNlpCreate'
         description: NoteNlp data to create
-  /note-nlps/{note_nlp_id}:
+  /note-nlps/{id}:
     get:
       operationId: NoteNlps_read
       summary: Get note-nlp by ID
       description: Retrieve a single NoteNlp record by its unique identifier.
       parameters:
-        - name: note_nlp_id
+        - name: id
           in: path
           required: true
           description: Unique note-nlp identifier
@@ -5777,7 +5777,7 @@ paths:
       summary: Update note-nlp (full replacement)
       description: Replace all fields of an existing NoteNlp record.
       parameters:
-        - name: note_nlp_id
+        - name: id
           in: path
           required: true
           description: Unique note-nlp identifier
@@ -5823,7 +5823,7 @@ paths:
       summary: Update note-nlp (partial)
       description: Update specific fields of an existing NoteNlp record.
       parameters:
-        - name: note_nlp_id
+        - name: id
           in: path
           required: true
           description: Unique note-nlp identifier
@@ -5863,7 +5863,7 @@ paths:
       summary: Delete note-nlp
       description: Delete a NoteNlp record.
       parameters:
-        - name: note_nlp_id
+        - name: id
           in: path
           required: true
           description: Unique note-nlp identifier
@@ -5968,13 +5968,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.NoteCreate'
         description: Note data to create
-  /notes/{note_id}:
+  /notes/{id}:
     get:
       operationId: Notes_read
       summary: Get note by ID
       description: Retrieve a single Note record by its unique identifier.
       parameters:
-        - name: note_id
+        - name: id
           in: path
           required: true
           description: Unique note identifier
@@ -6007,7 +6007,7 @@ paths:
       summary: Update note (full replacement)
       description: Replace all fields of an existing Note record.
       parameters:
-        - name: note_id
+        - name: id
           in: path
           required: true
           description: Unique note identifier
@@ -6053,7 +6053,7 @@ paths:
       summary: Update note (partial)
       description: Update specific fields of an existing Note record.
       parameters:
-        - name: note_id
+        - name: id
           in: path
           required: true
           description: Unique note identifier
@@ -6093,7 +6093,7 @@ paths:
       summary: Delete note
       description: Delete a Note record.
       parameters:
-        - name: note_id
+        - name: id
           in: path
           required: true
           description: Unique note identifier
@@ -6191,13 +6191,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.ObservationPeriodCreate'
         description: ObservationPeriod data to create
-  /observation-periods/{observation_period_id}:
+  /observation-periods/{id}:
     get:
       operationId: ObservationPeriods_read
       summary: Get observation-period by ID
       description: Retrieve a single ObservationPeriod record by its unique identifier.
       parameters:
-        - name: observation_period_id
+        - name: id
           in: path
           required: true
           description: Unique observation-period identifier
@@ -6230,7 +6230,7 @@ paths:
       summary: Update observation-period (full replacement)
       description: Replace all fields of an existing ObservationPeriod record.
       parameters:
-        - name: observation_period_id
+        - name: id
           in: path
           required: true
           description: Unique observation-period identifier
@@ -6276,7 +6276,7 @@ paths:
       summary: Update observation-period (partial)
       description: Update specific fields of an existing ObservationPeriod record.
       parameters:
-        - name: observation_period_id
+        - name: id
           in: path
           required: true
           description: Unique observation-period identifier
@@ -6316,7 +6316,7 @@ paths:
       summary: Delete observation-period
       description: Delete a ObservationPeriod record.
       parameters:
-        - name: observation_period_id
+        - name: id
           in: path
           required: true
           description: Unique observation-period identifier
@@ -6423,13 +6423,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.ObservationCreate'
         description: Observation data to create
-  /observations/{observation_id}:
+  /observations/{id}:
     get:
       operationId: Observations_read
       summary: Get observation by ID
       description: Retrieve a single Observation record by its unique identifier.
       parameters:
-        - name: observation_id
+        - name: id
           in: path
           required: true
           description: Unique observation identifier
@@ -6462,7 +6462,7 @@ paths:
       summary: Update observation (full replacement)
       description: Replace all fields of an existing Observation record.
       parameters:
-        - name: observation_id
+        - name: id
           in: path
           required: true
           description: Unique observation identifier
@@ -6508,7 +6508,7 @@ paths:
       summary: Update observation (partial)
       description: Update specific fields of an existing Observation record.
       parameters:
-        - name: observation_id
+        - name: id
           in: path
           required: true
           description: Unique observation identifier
@@ -6548,7 +6548,7 @@ paths:
       summary: Delete observation
       description: Delete a Observation record.
       parameters:
-        - name: observation_id
+        - name: id
           in: path
           required: true
           description: Unique observation identifier
@@ -6653,13 +6653,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Healthsystem.PayerPlanPeriodCreate'
         description: PayerPlanPeriod data to create
-  /payer-plan-periods/{payer_plan_period_id}:
+  /payer-plan-periods/{id}:
     get:
       operationId: PayerPlanPeriods_read
       summary: Get payer-plan-period by ID
       description: Retrieve a single PayerPlanPeriod record by its unique identifier.
       parameters:
-        - name: payer_plan_period_id
+        - name: id
           in: path
           required: true
           description: Unique payer-plan-period identifier
@@ -6692,7 +6692,7 @@ paths:
       summary: Update payer-plan-period (full replacement)
       description: Replace all fields of an existing PayerPlanPeriod record.
       parameters:
-        - name: payer_plan_period_id
+        - name: id
           in: path
           required: true
           description: Unique payer-plan-period identifier
@@ -6738,7 +6738,7 @@ paths:
       summary: Update payer-plan-period (partial)
       description: Update specific fields of an existing PayerPlanPeriod record.
       parameters:
-        - name: payer_plan_period_id
+        - name: id
           in: path
           required: true
           description: Unique payer-plan-period identifier
@@ -6778,7 +6778,7 @@ paths:
       summary: Delete payer-plan-period
       description: Delete a PayerPlanPeriod record.
       parameters:
-        - name: payer_plan_period_id
+        - name: id
           in: path
           required: true
           description: Unique payer-plan-period identifier
@@ -6883,13 +6883,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.PersonCreate'
         description: Person data to create
-  /persons/{person_id}:
+  /persons/{id}:
     get:
       operationId: Persons_read
       summary: Get person by ID
       description: Retrieve a single Person record by its unique identifier.
       parameters:
-        - name: person_id
+        - name: id
           in: path
           required: true
           description: Unique person identifier
@@ -6922,7 +6922,7 @@ paths:
       summary: Update person (full replacement)
       description: Replace all fields of an existing Person record.
       parameters:
-        - name: person_id
+        - name: id
           in: path
           required: true
           description: Unique person identifier
@@ -6968,7 +6968,7 @@ paths:
       summary: Update person (partial)
       description: Update specific fields of an existing Person record.
       parameters:
-        - name: person_id
+        - name: id
           in: path
           required: true
           description: Unique person identifier
@@ -7008,7 +7008,7 @@ paths:
       summary: Delete person
       description: Delete a Person record.
       parameters:
-        - name: person_id
+        - name: id
           in: path
           required: true
           description: Unique person identifier
@@ -7112,13 +7112,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.ProcedureOccurrenceCreate'
         description: ProcedureOccurrence data to create
-  /procedure-occurrences/{procedure_occurrence_id}:
+  /procedure-occurrences/{id}:
     get:
       operationId: ProcedureOccurrences_read
       summary: Get procedure-occurrence by ID
       description: Retrieve a single ProcedureOccurrence record by its unique identifier.
       parameters:
-        - name: procedure_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique procedure-occurrence identifier
@@ -7151,7 +7151,7 @@ paths:
       summary: Update procedure-occurrence (full replacement)
       description: Replace all fields of an existing ProcedureOccurrence record.
       parameters:
-        - name: procedure_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique procedure-occurrence identifier
@@ -7197,7 +7197,7 @@ paths:
       summary: Update procedure-occurrence (partial)
       description: Update specific fields of an existing ProcedureOccurrence record.
       parameters:
-        - name: procedure_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique procedure-occurrence identifier
@@ -7237,7 +7237,7 @@ paths:
       summary: Delete procedure-occurrence
       description: Delete a ProcedureOccurrence record.
       parameters:
-        - name: procedure_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique procedure-occurrence identifier
@@ -7338,13 +7338,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Healthsystem.ProviderCreate'
         description: Provider data to create
-  /providers/{provider_id}:
+  /providers/{id}:
     get:
       operationId: Providers_read
       summary: Get provider by ID
       description: Retrieve a single Provider record by its unique identifier.
       parameters:
-        - name: provider_id
+        - name: id
           in: path
           required: true
           description: Unique provider identifier
@@ -7377,7 +7377,7 @@ paths:
       summary: Update provider (full replacement)
       description: Replace all fields of an existing Provider record.
       parameters:
-        - name: provider_id
+        - name: id
           in: path
           required: true
           description: Unique provider identifier
@@ -7423,7 +7423,7 @@ paths:
       summary: Update provider (partial)
       description: Update specific fields of an existing Provider record.
       parameters:
-        - name: provider_id
+        - name: id
           in: path
           required: true
           description: Unique provider identifier
@@ -7463,7 +7463,7 @@ paths:
       summary: Delete provider
       description: Delete a Provider record.
       parameters:
-        - name: provider_id
+        - name: id
           in: path
           required: true
           description: Unique provider identifier
@@ -7560,13 +7560,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.RelationshipCreate'
         description: Relationship data to create
-  /relationships/{relationship_id}:
+  /relationships/{id}:
     get:
       operationId: Relationships_read
       summary: Get relationship by ID
       description: Retrieve a single Relationship record by its unique identifier.
       parameters:
-        - name: relationship_id
+        - name: id
           in: path
           required: true
           description: Unique relationship identifier
@@ -7598,7 +7598,7 @@ paths:
       summary: Update relationship (full replacement)
       description: Replace all fields of an existing Relationship record.
       parameters:
-        - name: relationship_id
+        - name: id
           in: path
           required: true
           description: Unique relationship identifier
@@ -7643,7 +7643,7 @@ paths:
       summary: Update relationship (partial)
       description: Update specific fields of an existing Relationship record.
       parameters:
-        - name: relationship_id
+        - name: id
           in: path
           required: true
           description: Unique relationship identifier
@@ -7682,7 +7682,7 @@ paths:
       summary: Delete relationship
       description: Delete a Relationship record.
       parameters:
-        - name: relationship_id
+        - name: id
           in: path
           required: true
           description: Unique relationship identifier
@@ -7780,13 +7780,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.SourceToConceptMapCreate'
         description: SourceToConceptMap data to create
-  /source-to-concept-maps/{source_to_concept_map_id}:
+  /source-to-concept-maps/{id}:
     get:
       operationId: SourceToConceptMaps_read
       summary: Get source-to-concept-map by ID
       description: Retrieve a single SourceToConceptMap record by its unique identifier.
       parameters:
-        - name: source_to_concept_map_id
+        - name: id
           in: path
           required: true
           description: Unique source-to-concept-map identifier
@@ -7819,7 +7819,7 @@ paths:
       summary: Update source-to-concept-map (full replacement)
       description: Replace all fields of an existing SourceToConceptMap record.
       parameters:
-        - name: source_to_concept_map_id
+        - name: id
           in: path
           required: true
           description: Unique source-to-concept-map identifier
@@ -7865,7 +7865,7 @@ paths:
       summary: Update source-to-concept-map (partial)
       description: Update specific fields of an existing SourceToConceptMap record.
       parameters:
-        - name: source_to_concept_map_id
+        - name: id
           in: path
           required: true
           description: Unique source-to-concept-map identifier
@@ -7905,7 +7905,7 @@ paths:
       summary: Delete source-to-concept-map
       description: Delete a SourceToConceptMap record.
       parameters:
-        - name: source_to_concept_map_id
+        - name: id
           in: path
           required: true
           description: Unique source-to-concept-map identifier
@@ -8007,13 +8007,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.SpecimenCreate'
         description: Specimen data to create
-  /specimens/{specimen_id}:
+  /specimens/{id}:
     get:
       operationId: Specimens_read
       summary: Get specimen by ID
       description: Retrieve a single Specimen record by its unique identifier.
       parameters:
-        - name: specimen_id
+        - name: id
           in: path
           required: true
           description: Unique specimen identifier
@@ -8046,7 +8046,7 @@ paths:
       summary: Update specimen (full replacement)
       description: Replace all fields of an existing Specimen record.
       parameters:
-        - name: specimen_id
+        - name: id
           in: path
           required: true
           description: Unique specimen identifier
@@ -8092,7 +8092,7 @@ paths:
       summary: Update specimen (partial)
       description: Update specific fields of an existing Specimen record.
       parameters:
-        - name: specimen_id
+        - name: id
           in: path
           required: true
           description: Unique specimen identifier
@@ -8132,7 +8132,7 @@ paths:
       summary: Delete specimen
       description: Delete a Specimen record.
       parameters:
-        - name: specimen_id
+        - name: id
           in: path
           required: true
           description: Unique specimen identifier
@@ -8239,13 +8239,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.VisitDetailCreate'
         description: VisitDetail data to create
-  /visit-details/{visit_detail_id}:
+  /visit-details/{id}:
     get:
       operationId: VisitDetails_read
       summary: Get visit-detail by ID
       description: Retrieve a single VisitDetail record by its unique identifier.
       parameters:
-        - name: visit_detail_id
+        - name: id
           in: path
           required: true
           description: Unique visit-detail identifier
@@ -8278,7 +8278,7 @@ paths:
       summary: Update visit-detail (full replacement)
       description: Replace all fields of an existing VisitDetail record.
       parameters:
-        - name: visit_detail_id
+        - name: id
           in: path
           required: true
           description: Unique visit-detail identifier
@@ -8324,7 +8324,7 @@ paths:
       summary: Update visit-detail (partial)
       description: Update specific fields of an existing VisitDetail record.
       parameters:
-        - name: visit_detail_id
+        - name: id
           in: path
           required: true
           description: Unique visit-detail identifier
@@ -8364,7 +8364,7 @@ paths:
       summary: Delete visit-detail
       description: Delete a VisitDetail record.
       parameters:
-        - name: visit_detail_id
+        - name: id
           in: path
           required: true
           description: Unique visit-detail identifier
@@ -8469,13 +8469,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Clinical.VisitOccurrenceCreate'
         description: VisitOccurrence data to create
-  /visit-occurrences/{visit_occurrence_id}:
+  /visit-occurrences/{id}:
     get:
       operationId: VisitOccurrences_read
       summary: Get visit-occurrence by ID
       description: Retrieve a single VisitOccurrence record by its unique identifier.
       parameters:
-        - name: visit_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique visit-occurrence identifier
@@ -8508,7 +8508,7 @@ paths:
       summary: Update visit-occurrence (full replacement)
       description: Replace all fields of an existing VisitOccurrence record.
       parameters:
-        - name: visit_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique visit-occurrence identifier
@@ -8554,7 +8554,7 @@ paths:
       summary: Update visit-occurrence (partial)
       description: Update specific fields of an existing VisitOccurrence record.
       parameters:
-        - name: visit_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique visit-occurrence identifier
@@ -8594,7 +8594,7 @@ paths:
       summary: Delete visit-occurrence
       description: Delete a VisitOccurrence record.
       parameters:
-        - name: visit_occurrence_id
+        - name: id
           in: path
           required: true
           description: Unique visit-occurrence identifier
@@ -8691,13 +8691,13 @@ paths:
             schema:
               $ref: '#/components/schemas/Vocabulary.VocabularyCreate'
         description: Vocabulary data to create
-  /vocabularys/{vocabulary_id}:
+  /vocabularys/{id}:
     get:
       operationId: Vocabularys_read
       summary: Get vocabulary by ID
       description: Retrieve a single Vocabulary record by its unique identifier.
       parameters:
-        - name: vocabulary_id
+        - name: id
           in: path
           required: true
           description: Unique vocabulary identifier
@@ -8729,7 +8729,7 @@ paths:
       summary: Update vocabulary (full replacement)
       description: Replace all fields of an existing Vocabulary record.
       parameters:
-        - name: vocabulary_id
+        - name: id
           in: path
           required: true
           description: Unique vocabulary identifier
@@ -8774,7 +8774,7 @@ paths:
       summary: Update vocabulary (partial)
       description: Update specific fields of an existing Vocabulary record.
       parameters:
-        - name: vocabulary_id
+        - name: id
           in: path
           required: true
           description: Unique vocabulary identifier
@@ -8813,7 +8813,7 @@ paths:
       summary: Delete vocabulary
       description: Delete a Vocabulary record.
       parameters:
-        - name: vocabulary_id
+        - name: id
           in: path
           required: true
           description: Unique vocabulary identifier
@@ -8898,7 +8898,7 @@ components:
       schema:
         type: string
         enum:
-          - condition_occurrence_id
+          - id
       explode: false
     Clinical.ConditionOccurrenceQueryParams.sort_order:
       name: sort_order
@@ -8967,7 +8967,7 @@ components:
       schema:
         type: string
         enum:
-          - death_id
+          - id
       explode: false
     Clinical.DeathQueryParams.sort_order:
       name: sort_order
@@ -9027,7 +9027,7 @@ components:
       schema:
         type: string
         enum:
-          - device_exposure_id
+          - id
       explode: false
     Clinical.DeviceExposureQueryParams.sort_order:
       name: sort_order
@@ -9129,7 +9129,7 @@ components:
       schema:
         type: string
         enum:
-          - drug_exposure_id
+          - id
       explode: false
     Clinical.DrugExposureQueryParams.sort_order:
       name: sort_order
@@ -9223,7 +9223,7 @@ components:
       schema:
         type: string
         enum:
-          - measurement_id
+          - id
       explode: false
     Clinical.MeasurementQueryParams.sort_order:
       name: sort_order
@@ -9307,7 +9307,7 @@ components:
       schema:
         type: string
         enum:
-          - note_nlp_id
+          - id
       explode: false
     Clinical.NoteNlpQueryParams.sort_order:
       name: sort_order
@@ -9383,7 +9383,7 @@ components:
       schema:
         type: string
         enum:
-          - note_id
+          - id
       explode: false
     Clinical.NoteQueryParams.sort_order:
       name: sort_order
@@ -9436,7 +9436,7 @@ components:
       schema:
         type: string
         enum:
-          - observation_period_id
+          - id
       explode: false
     Clinical.ObservationPeriodQueryParams.sort_order:
       name: sort_order
@@ -9512,7 +9512,7 @@ components:
       schema:
         type: string
         enum:
-          - observation_id
+          - id
       explode: false
     Clinical.ObservationQueryParams.sort_order:
       name: sort_order
@@ -9639,7 +9639,7 @@ components:
       schema:
         type: string
         enum:
-          - person_id
+          - id
       explode: false
     Clinical.PersonQueryParams.sort_order:
       name: sort_order
@@ -9707,7 +9707,7 @@ components:
       schema:
         type: string
         enum:
-          - procedure_occurrence_id
+          - id
       explode: false
     Clinical.ProcedureOccurrenceQueryParams.sort_order:
       name: sort_order
@@ -9768,7 +9768,7 @@ components:
       schema:
         type: string
         enum:
-          - specimen_id
+          - id
       explode: false
     Clinical.SpecimenQueryParams.sort_order:
       name: sort_order
@@ -9871,7 +9871,7 @@ components:
       schema:
         type: string
         enum:
-          - visit_detail_id
+          - id
       explode: false
     Clinical.VisitDetailQueryParams.sort_order:
       name: sort_order
@@ -9974,7 +9974,7 @@ components:
       schema:
         type: string
         enum:
-          - visit_occurrence_id
+          - id
       explode: false
     Clinical.VisitOccurrenceQueryParams.sort_order:
       name: sort_order
@@ -10055,7 +10055,7 @@ components:
       schema:
         type: string
         enum:
-          - condition_era_id
+          - id
       explode: false
     Derived.ConditionEraQueryParams.sort_order:
       name: sort_order
@@ -10090,7 +10090,7 @@ components:
       schema:
         type: string
         enum:
-          - dose_era_id
+          - id
       explode: false
     Derived.DoseEraQueryParams.sort_order:
       name: sort_order
@@ -10133,7 +10133,7 @@ components:
       schema:
         type: string
         enum:
-          - drug_era_id
+          - id
       explode: false
     Derived.DrugEraQueryParams.sort_order:
       name: sort_order
@@ -10168,7 +10168,7 @@ components:
       schema:
         type: string
         enum:
-          - episode_event_id
+          - id
       explode: false
     Derived.EpisodeEventQueryParams.sort_order:
       name: sort_order
@@ -10227,7 +10227,7 @@ components:
       schema:
         type: string
         enum:
-          - episode_id
+          - id
       explode: false
     Derived.EpisodeQueryParams.sort_order:
       name: sort_order
@@ -10262,7 +10262,7 @@ components:
       schema:
         type: string
         enum:
-          - care_site_id
+          - id
       explode: false
     Healthsystem.CareSiteQueryParams.sort_order:
       name: sort_order
@@ -10320,7 +10320,7 @@ components:
       schema:
         type: string
         enum:
-          - cost_id
+          - id
       explode: false
     Healthsystem.CostQueryParams.sort_order:
       name: sort_order
@@ -10346,7 +10346,7 @@ components:
       schema:
         type: string
         enum:
-          - location_id
+          - id
       explode: false
     Healthsystem.LocationQueryParams.sort_order:
       name: sort_order
@@ -10405,7 +10405,7 @@ components:
       schema:
         type: string
         enum:
-          - payer_plan_period_id
+          - id
       explode: false
     Healthsystem.PayerPlanPeriodQueryParams.sort_order:
       name: sort_order
@@ -10480,7 +10480,7 @@ components:
       schema:
         type: string
         enum:
-          - provider_id
+          - id
       explode: false
     Healthsystem.ProviderQueryParams.sort_order:
       name: sort_order
@@ -10522,7 +10522,7 @@ components:
       schema:
         type: string
         enum:
-          - cdm_source_id
+          - id
       explode: false
     Metadata.CdmSourceQueryParams.sort_order:
       name: sort_order
@@ -10556,7 +10556,7 @@ components:
       schema:
         type: string
         enum:
-          - metadata_id
+          - id
       explode: false
     Metadata.MetadataQueryParams.sort_order:
       name: sort_order
@@ -10590,7 +10590,7 @@ components:
       schema:
         type: string
         enum:
-          - cohort_definition_id
+          - id
       explode: false
     Results.CohortDefinitionQueryParams.sort_order:
       name: sort_order
@@ -10616,7 +10616,7 @@ components:
       schema:
         type: string
         enum:
-          - cohort_id
+          - id
       explode: false
     Results.CohortQueryParams.sort_order:
       name: sort_order
@@ -10642,7 +10642,7 @@ components:
       schema:
         type: string
         enum:
-          - fact_relationship_id
+          - id
       explode: false
     Results.FactRelationshipQueryParams.sort_order:
       name: sort_order
@@ -10676,7 +10676,7 @@ components:
       schema:
         type: string
         enum:
-          - concept_ancestor_id
+          - id
       explode: false
     Vocabulary.ConceptAncestorQueryParams.sort_order:
       name: sort_order
@@ -10702,7 +10702,7 @@ components:
       schema:
         type: string
         enum:
-          - concept_class_id
+          - id
       explode: false
     Vocabulary.ConceptClassQueryParams.sort_order:
       name: sort_order
@@ -10736,7 +10736,7 @@ components:
       schema:
         type: string
         enum:
-          - concept_id
+          - id
       explode: false
     Vocabulary.ConceptQueryParams.sort_order:
       name: sort_order
@@ -10770,7 +10770,7 @@ components:
       schema:
         type: string
         enum:
-          - concept_relationship_id
+          - id
       explode: false
     Vocabulary.ConceptRelationshipQueryParams.sort_order:
       name: sort_order
@@ -10804,7 +10804,7 @@ components:
       schema:
         type: string
         enum:
-          - concept_synonym_id
+          - id
       explode: false
     Vocabulary.ConceptSynonymQueryParams.sort_order:
       name: sort_order
@@ -10830,7 +10830,7 @@ components:
       schema:
         type: string
         enum:
-          - domain_id
+          - id
       explode: false
     Vocabulary.DomainQueryParams.sort_order:
       name: sort_order
@@ -10888,7 +10888,7 @@ components:
       schema:
         type: string
         enum:
-          - drug_strength_id
+          - id
       explode: false
     Vocabulary.DrugStrengthQueryParams.sort_order:
       name: sort_order
@@ -10914,7 +10914,7 @@ components:
       schema:
         type: string
         enum:
-          - relationship_id
+          - id
       explode: false
     Vocabulary.RelationshipQueryParams.sort_order:
       name: sort_order
@@ -10932,7 +10932,7 @@ components:
       schema:
         type: string
         enum:
-          - source_to_concept_map_id
+          - id
       explode: false
     Vocabulary.SourceToConceptMapQueryParams.sort_order:
       name: sort_order
@@ -10974,7 +10974,7 @@ components:
       schema:
         type: string
         enum:
-          - vocabulary_id
+          - id
       explode: false
     Vocabulary.VocabularyQueryParams.sort_order:
       name: sort_order
@@ -10996,13 +10996,13 @@ components:
     Clinical.ConditionOccurrence:
       type: object
       required:
-        - condition_occurrence_id
+        - id
         - person_id
         - condition_concept_id
         - condition_start_date
         - condition_type_concept_id
       properties:
-        condition_occurrence_id:
+        id:
           type: integer
           format: int64
           description: 'The unique key given to a condition record for a person. Refer to the ETL for how duplicate conditions during the same visit were handled. ETL Convention: Each instance of a condition present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same condition within the same visit. It is valid to keep these duplicates and assign them individual, unique, CONDITION_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.'
@@ -11068,7 +11068,7 @@ components:
           description: 'This field houses the verbatim value from the source data representing the condition status. ETL Convention: This information may be called something different in the source data but the field is meant to contain a value indicating when and how a diagnosis was given to a patient. This source value is mapped to a standard concept which is stored in the CONDITION_STATUS_CONCEPT_ID field.'
       description: ConditionOccurrence record in the OMOP CDM
       example:
-        condition_occurrence_id: 12345
+        id: 12345
         person_id: 100
         condition_concept_id: 8507
         condition_start_date: '2023-01-15'
@@ -11326,16 +11326,16 @@ components:
     Clinical.DeviceExposure:
       type: object
       required:
-        - device_exposure_id
+        - id
         - person_id
         - device_concept_id
         - device_exposure_start_date
         - device_type_concept_id
       properties:
-        device_exposure_id:
+        id:
           type: integer
           format: int64
-          description: 'The unique key given to records a person’s exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key.'
+          description: "The unique key given to records a person's exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key."
         person_id:
           type: integer
           format: int64
@@ -11410,7 +11410,7 @@ components:
           description: 'This is the concept representing the UNIT_SOURCE_VALUE and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Unit necessary for a given analytic use case. Consider using UNIT_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network. ETL Convention: If the UNIT_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here. References CONCEPT table.'
       description: DeviceExposure record in the OMOP CDM
       example:
-        device_exposure_id: 12345
+        id: 12345
         person_id: 100
         device_concept_id: 8507
         device_exposure_start_date: '2023-01-15'
@@ -11585,14 +11585,14 @@ components:
     Clinical.DrugExposure:
       type: object
       required:
-        - drug_exposure_id
+        - id
         - person_id
         - drug_concept_id
         - drug_exposure_start_date
         - drug_exposure_end_date
         - drug_type_concept_id
       properties:
-        drug_exposure_id:
+        id:
           type: integer
           format: int64
           description: 'The unique key given to records of drug dispensings or administrations for a person. Refer to the ETL for how duplicate drugs during the same visit were handled. ETL Convention: Each instance of a drug dispensing or administration present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same drug within the same visit. It is valid to keep these duplicates and assign them individual, unique, DRUG_EXPOSURE_IDs, though it is up to the ETL how they should be handled.'
@@ -11685,7 +11685,7 @@ components:
           description: 'This field houses the verbatim value from the source data representing the dose unit of the drug given. ETL Convention: This information may be called something different in the source data but the field is meant to contain a value indicating the unit of dosage of drug given to the patient. **This is an older column and will be deprecated in an upcoming version.**'
       description: DrugExposure record in the OMOP CDM
       example:
-        drug_exposure_id: 12345
+        id: 12345
         person_id: 100
         drug_concept_id: 8507
         drug_exposure_start_date: '2023-01-15'
@@ -11894,13 +11894,13 @@ components:
     Clinical.Measurement:
       type: object
       required:
-        - measurement_id
+        - id
         - person_id
         - measurement_concept_id
         - measurement_date
         - measurement_type_concept_id
       properties:
-        measurement_id:
+        id:
           type: integer
           format: int64
           description: 'The unique key given to a Measurement record for a Person. Refer to the ETL for how duplicate Measurements during the same Visit were handled. ETL Convention: Each instance of a measurement present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same measurement within the same visit. It is valid to keep these duplicates and assign them individual, unique, MEASUREMENT_IDs, though it is up to the ETL how they should be handled.'
@@ -11994,7 +11994,7 @@ components:
           description: 'If the Measurement record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the MEASUREMENT_EVENT_ID came from. References CONCEPT table.'
       description: Measurement record in the OMOP CDM
       example:
-        measurement_id: 12345
+        id: 12345
         person_id: 100
         measurement_concept_id: 8507
         measurement_date: '2023-01-15'
@@ -12205,7 +12205,7 @@ components:
     Clinical.Note:
       type: object
       required:
-        - note_id
+        - id
         - person_id
         - note_date
         - note_type_concept_id
@@ -12214,7 +12214,7 @@ components:
         - encoding_concept_id
         - language_concept_id
       properties:
-        note_id:
+        id:
           type: integer
           format: int64
           description: A unique identifier for each note.
@@ -12279,7 +12279,7 @@ components:
           description: 'If the Note record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the NOTE_EVENT_ID came from. References CONCEPT table.'
       description: Note record in the OMOP CDM
       example:
-        note_id: 12345
+        id: 12345
         person_id: 100
         note_date: '2023-01-15'
         note_datetime: '2023-01-15'
@@ -12369,12 +12369,12 @@ components:
     Clinical.NoteNlp:
       type: object
       required:
-        - note_nlp_id
+        - id
         - note_id
         - lexical_variant
         - nlp_date
       properties:
-        note_nlp_id:
+        id:
           type: integer
           format: int64
           description: A unique identifier for the NLP record.
@@ -12428,7 +12428,7 @@ components:
           description: 'For the modifiers that are there, they would have to have these values: - Negation = false - Subject = patient - Conditional = false - Rule_out = false - Uncertain = true or high or moderate or even low (could argue about low). Term_modifiers will concatenate all modifiers for different types of entities (conditions, drugs, labs etc) into one string. Lab values will be saved as one of the modifiers.'
       description: NoteNlp record in the OMOP CDM
       example:
-        note_nlp_id: 12345
+        id: 12345
         note_id: 100
         section_concept_id: 8507
         snippet: Example value
@@ -12607,13 +12607,13 @@ components:
     Clinical.Observation:
       type: object
       required:
-        - observation_id
+        - id
         - person_id
         - observation_concept_id
         - observation_date
         - observation_type_concept_id
       properties:
-        observation_id:
+        id:
           type: integer
           format: int64
           description: 'The unique key given to an Observation record for a Person. Refer to the ETL for how duplicate Observations during the same Visit were handled. ETL Convention: Each instance of an observation present in the source data should be assigned this unique key.'
@@ -12699,7 +12699,7 @@ components:
           description: 'If the Observation record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the OBSERVATION_EVENT_ID came from. References CONCEPT table.'
       description: Observation record in the OMOP CDM
       example:
-        observation_id: 12345
+        id: 12345
         person_id: 100
         observation_concept_id: 8507
         observation_date: '2023-01-15'
@@ -12812,13 +12812,13 @@ components:
     Clinical.ObservationPeriod:
       type: object
       required:
-        - observation_period_id
+        - id
         - person_id
         - observation_period_start_date
         - observation_period_end_date
         - period_type_concept_id
       properties:
-        observation_period_id:
+        id:
           type: integer
           format: int64
           description: 'A Person can have multiple discrete Observation Periods which are identified by the Observation_Period_Id. ETL Convention: Assign a unique observation_period_id to each discrete Observation Period for a Person.'
@@ -12840,7 +12840,7 @@ components:
           description: 'This field can be used to determine the provenance of the Observation Period as in whether the period was determined from an insurance enrollment file, EHR healthcare encounters, or other sources. ETL Convention: Choose the observation_period_type_concept_id that best represents how the period was determined. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Type+Concept&standardConcept=Standard&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT). References CONCEPT table.'
       description: ObservationPeriod record in the OMOP CDM
       example:
-        observation_period_id: 12345
+        id: 12345
         person_id: 100
         observation_period_start_date: '2023-01-15'
         observation_period_end_date: '2023-01-15'
@@ -12972,13 +12972,13 @@ components:
     Clinical.Person:
       type: object
       required:
-        - person_id
+        - id
         - gender_concept_id
         - year_of_birth
         - race_concept_id
         - ethnicity_concept_id
       properties:
-        person_id:
+        id:
           type: integer
           format: int64
           description: 'It is assumed that every person with a different unique identifier is in fact a different person and should be treated independently. ETL Convention: Any person linkage that needs to occur to uniquely identify Persons ought to be done prior to writing this table. This identifier can be the original id from the source data provided if it is an integer, otherwise it can be an autogenerated number.'
@@ -13052,7 +13052,7 @@ components:
           description: 'Due to the small number of options, this tends to be zero. ETL Convention: If the source data codes ethnicity in an OMOP supported vocabulary, store the concept_id here. References CONCEPT table.'
       description: Person record in the OMOP CDM
       example:
-        person_id: 12345
+        id: 12345
         gender_concept_id: 8507
         year_of_birth: 100
         month_of_birth: 100
@@ -13218,13 +13218,13 @@ components:
     Clinical.ProcedureOccurrence:
       type: object
       required:
-        - procedure_occurrence_id
+        - id
         - person_id
         - procedure_concept_id
         - procedure_date
         - procedure_type_concept_id
       properties:
-        procedure_occurrence_id:
+        id:
           type: integer
           format: int64
           description: 'The unique key given to a procedure record for a person. Refer to the ETL for how duplicate procedures during the same visit were handled. ETL Convention: Each instance of a procedure occurrence in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same procedure within the same visit. It is valid to keep these duplicates and assign them individual, unique, PROCEDURE_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.'
@@ -13290,7 +13290,7 @@ components:
           description: 'This field houses the verbatim value from the source data representing the modifier code for the procedure that occurred. ETL Convention: The value stored here is mapped to a MODIFIER_CONCEPT_ID.'
       description: ProcedureOccurrence record in the OMOP CDM
       example:
-        procedure_occurrence_id: 12345
+        id: 12345
         person_id: 100
         procedure_concept_id: 8507
         procedure_date: '2023-01-15'
@@ -13440,13 +13440,13 @@ components:
     Clinical.Specimen:
       type: object
       required:
-        - specimen_id
+        - id
         - person_id
         - specimen_concept_id
         - specimen_type_concept_id
         - specimen_date
       properties:
-        specimen_id:
+        id:
           type: integer
           format: int64
           description: Unique identifier for each specimen.
@@ -13508,7 +13508,7 @@ components:
           description: ''
       description: Specimen record in the OMOP CDM
       example:
-        specimen_id: 12345
+        id: 12345
         person_id: 100
         specimen_concept_id: 8507
         specimen_type_concept_id: 8507
@@ -13646,7 +13646,7 @@ components:
     Clinical.VisitDetail:
       type: object
       required:
-        - visit_detail_id
+        - id
         - person_id
         - visit_detail_concept_id
         - visit_detail_start_date
@@ -13654,7 +13654,7 @@ components:
         - visit_detail_type_concept_id
         - visit_occurrence_id
       properties:
-        visit_detail_id:
+        id:
           type: integer
           format: int64
           description: 'Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit detail. ETL Convention: This should be populated by creating a unique identifier for each unique interaction between a person and the healthcare system where the person receives a medical good or service over a span of time.'
@@ -13732,7 +13732,7 @@ components:
           description: 'Use this field to link the VISIT_DETAIL record to its VISIT_OCCURRENCE. ETL Convention: Put the VISIT_OCCURRENCE_ID that subsumes the VISIT_DETAIL record here. References VISIT_OCCURRENCE table.'
       description: VisitDetail record in the OMOP CDM
       example:
-        visit_detail_id: 12345
+        id: 12345
         person_id: 100
         visit_detail_concept_id: 8507
         visit_detail_start_date: '2023-01-15'
@@ -13910,14 +13910,14 @@ components:
     Clinical.VisitOccurrence:
       type: object
       required:
-        - visit_occurrence_id
+        - id
         - person_id
         - visit_concept_id
         - visit_start_date
         - visit_end_date
         - visit_type_concept_id
       properties:
-        visit_occurrence_id:
+        id:
           type: integer
           format: int64
           description: 'Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit. ETL Convention: This should be populated by creating a unique identifier for each unique interaction between a person and the healthcare system where the person receives a medical good or service over a span of time.'
@@ -13987,7 +13987,7 @@ components:
           description: 'Use this field to find the visit that occurred for the person prior to the given visit. There could be a few days or a few years in between. ETL Convention: This field can be used to link a visit immediately preceding the current visit. Note this is not symmetrical, and there is no such thing as a “following_visit_id”. References VISIT_OCCURRENCE table.'
       description: VisitOccurrence record in the OMOP CDM
       example:
-        visit_occurrence_id: 12345
+        id: 12345
         person_id: 100
         visit_concept_id: 8507
         visit_start_date: '2023-01-15'
@@ -14291,13 +14291,13 @@ components:
     Derived.ConditionEra:
       type: object
       required:
-        - condition_era_id
+        - id
         - person_id
         - condition_concept_id
         - condition_era_start_date
         - condition_era_end_date
       properties:
-        condition_era_id:
+        id:
           type: integer
           format: int64
           description: ''
@@ -14323,7 +14323,7 @@ components:
           description: The number of individual Condition Occurrences used to construct the condition era.
       description: ConditionEra record in the OMOP CDM
       example:
-        condition_era_id: 12345
+        id: 12345
         person_id: 100
         condition_concept_id: 8507
         condition_era_start_date: '2023-01-15'
@@ -14385,7 +14385,7 @@ components:
     Derived.DoseEra:
       type: object
       required:
-        - dose_era_id
+        - id
         - person_id
         - drug_concept_id
         - unit_concept_id
@@ -14393,7 +14393,7 @@ components:
         - dose_era_start_date
         - dose_era_end_date
       properties:
-        dose_era_id:
+        id:
           type: integer
           format: int64
           description: ''
@@ -14423,7 +14423,7 @@ components:
           description: The date the Person was no longer exposed to the dosage of the specific drug ingredient. An era is ended if there are 31 days or more between dosage records.
       description: DoseEra record in the OMOP CDM
       example:
-        dose_era_id: 12345
+        id: 12345
         person_id: 100
         drug_concept_id: 8507
         unit_concept_id: 8507
@@ -14496,13 +14496,13 @@ components:
     Derived.DrugEra:
       type: object
       required:
-        - drug_era_id
+        - id
         - person_id
         - drug_concept_id
         - drug_era_start_date
         - drug_era_end_date
       properties:
-        drug_era_id:
+        id:
           type: integer
           format: int64
           description: ''
@@ -14532,7 +14532,7 @@ components:
           description: The Gap Days determine how many total drug-free days are observed between all Drug Exposure events that contribute to a DRUG_ERA record. It is assumed that the drugs are “not stockpiled” by the patient, i.e. that if a new drug prescription or refill is observed (a new DRUG_EXPOSURE record is written), the remaining supply from the previous events is abandoned. The difference between Persistence Window and Gap Days is that the former is the maximum drug-free time allowed between two subsequent DRUG_EXPOSURE records, while the latter is the sum of actual drug-free days for the given Drug Era under the above assumption of non-stockpiling.
       description: DrugEra record in the OMOP CDM
       example:
-        drug_era_id: 12345
+        id: 12345
         person_id: 100
         drug_concept_id: 8507
         drug_era_start_date: '2023-01-15'
@@ -14603,14 +14603,14 @@ components:
     Derived.Episode:
       type: object
       required:
-        - episode_id
+        - id
         - person_id
         - episode_concept_id
         - episode_start_date
         - episode_object_concept_id
         - episode_type_concept_id
       properties:
-        episode_id:
+        id:
           type: integer
           format: int64
           description: A unique identifier for each Episode.
@@ -14664,7 +14664,7 @@ components:
           description: 'A foreign key to a Episode Concept that refers to the code used in the source. ETL Convention: Given that the Episodes are user-defined it is unlikely that there will be a Source Concept available. If that is the case then set this field to zero. References CONCEPT table.'
       description: Episode record in the OMOP CDM
       example:
-        episode_id: 12345
+        id: 12345
         person_id: 100
         episode_concept_id: 8507
         episode_start_date: '2023-01-15'
@@ -14849,9 +14849,9 @@ components:
     Healthsystem.CareSite:
       type: object
       required:
-        - care_site_id
+        - id
       properties:
-        care_site_id:
+        id:
           type: integer
           format: int64
           description: Assign an ID to each combination of a location and nature of the site - the latter could be the Place of Service, name or another characteristic in your source data.
@@ -14877,7 +14877,7 @@ components:
           description: Put the place of service of the care_site as it appears in the source data.
       description: CareSite record in the OMOP CDM
       example:
-        care_site_id: 12345
+        id: 12345
         care_site_name: Example value
         place_of_service_concept_id: 8507
         location_id: 100
@@ -14931,12 +14931,12 @@ components:
     Healthsystem.Cost:
       type: object
       required:
-        - cost_id
+        - id
         - cost_event_id
         - cost_domain_id
         - cost_type_concept_id
       properties:
-        cost_id:
+        id:
           type: integer
           format: int64
           description: ''
@@ -15026,7 +15026,7 @@ components:
           description: Diagnosis Related Groups are US codes used to classify hospital cases into one of approximately 500 groups.
       description: Cost record in the OMOP CDM
       example:
-        cost_id: 12345
+        id: 12345
         cost_event_id: 100
         cost_domain_id: Example value
         cost_type_concept_id: 8507
@@ -15228,9 +15228,9 @@ components:
     Healthsystem.Location:
       type: object
       required:
-        - location_id
+        - id
       properties:
-        location_id:
+        id:
           type: integer
           format: int64
           description: 'The unique key given to a unique Location. ETL Convention: Each instance of a Location in the source data should be assigned this unique key.'
@@ -15272,7 +15272,7 @@ components:
           description: Must be between -180 and 180.
       description: Location record in the OMOP CDM
       example:
-        location_id: 12345
+        id: 12345
         city: Example value
         state: Example value
         zip: Example value
@@ -15359,12 +15359,12 @@ components:
     Healthsystem.PayerPlanPeriod:
       type: object
       required:
-        - payer_plan_period_id
+        - id
         - person_id
         - payer_plan_period_start_date
         - payer_plan_period_end_date
       properties:
-        payer_plan_period_id:
+        id:
           type: integer
           format: int64
           description: A unique identifier for each unique combination of a Person, Payer, Plan, and Period of time.
@@ -15434,7 +15434,7 @@ components:
           description: If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.
       description: PayerPlanPeriod record in the OMOP CDM
       example:
-        payer_plan_period_id: 12345
+        id: 12345
         person_id: 100
         payer_plan_period_start_date: '2023-01-15'
         payer_plan_period_end_date: '2023-01-15'
@@ -15589,9 +15589,9 @@ components:
     Healthsystem.Provider:
       type: object
       required:
-        - provider_id
+        - id
       properties:
-        provider_id:
+        id:
           type: integer
           format: int64
           description: 'It is assumed that every provider with a different unique identifier is in fact a different person and should be treated independently. ETL Convention: This identifier can be the original id from the source data provided it is an integer, otherwise it can be an autogenerated number.'
@@ -15645,7 +15645,7 @@ components:
           description: 'This is often zero as many sites use proprietary codes to store provider gender. ETL Convention: If the source data codes provider gender in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.'
       description: Provider record in the OMOP CDM
       example:
-        provider_id: 12345
+        id: 12345
         provider_name: Example value
         npi: Example value
         dea: Example value
@@ -15921,12 +15921,12 @@ components:
     Metadata.Metadata:
       type: object
       required:
-        - metadata_id
+        - id
         - metadata_concept_id
         - metadata_type_concept_id
         - name
       properties:
-        metadata_id:
+        id:
           type: integer
           format: int64
           description: 'The unique key given to a Metadata record. ETL Convention: Attribute value is auto-generated'
@@ -15964,7 +15964,7 @@ components:
           description: ''
       description: Metadata record in the OMOP CDM
       example:
-        metadata_id: 12345
+        id: 12345
         metadata_concept_id: 8507
         metadata_type_concept_id: 8507
         name: Example value
@@ -16262,7 +16262,7 @@ components:
     Vocabulary.Concept:
       type: object
       required:
-        - concept_id
+        - id
         - concept_name
         - domain_id
         - vocabulary_id
@@ -16271,9 +16271,9 @@ components:
         - valid_start_date
         - valid_end_date
       properties:
-        concept_id:
-          allOf:
-            - $ref: '#/components/schemas/Common.ConceptId'
+        id:
+          type: integer
+          format: int64
           description: A unique identifier for each Concept across all domains.
         concept_name:
           type: string
@@ -16313,7 +16313,7 @@ components:
           description: Reason the Concept was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value.
       description: Concept record in the OMOP CDM
       example:
-        concept_id: 12345
+        id: 12345
         concept_name: Example value
         domain_id: Example value
         vocabulary_id: Example value
@@ -16401,11 +16401,11 @@ components:
     Vocabulary.ConceptClass:
       type: object
       required:
-        - concept_class_id
+        - id
         - concept_class_name
         - concept_class_concept_id
       properties:
-        concept_class_id:
+        id:
           type: string
           maxLength: 20
           description: A unique key for each class.
@@ -16419,7 +16419,7 @@ components:
           description: A Concept that represents the Concept Class. References CONCEPT table.
       description: ConceptClass record in the OMOP CDM
       example:
-        concept_class_id: '12345'
+        id: '12345'
         concept_class_name: Example value
         concept_class_concept_id: 8507
     Vocabulary.ConceptClassCreate:
@@ -16662,11 +16662,11 @@ components:
     Vocabulary.Domain:
       type: object
       required:
-        - domain_id
+        - id
         - domain_name
         - domain_concept_id
       properties:
-        domain_id:
+        id:
           type: string
           maxLength: 20
           description: A unique key for each domain.
@@ -16680,7 +16680,7 @@ components:
           description: A Concept representing the Domain Concept the DOMAIN record belongs to. References CONCEPT table.
       description: Domain record in the OMOP CDM
       example:
-        domain_id: '12345'
+        id: '12345'
         domain_name: Example value
         domain_concept_id: 8507
     Vocabulary.DomainCreate:
@@ -16890,14 +16890,14 @@ components:
     Vocabulary.Relationship:
       type: object
       required:
-        - relationship_id
+        - id
         - relationship_name
         - is_hierarchical
         - defines_ancestry
         - reverse_relationship_id
         - relationship_concept_id
       properties:
-        relationship_id:
+        id:
           type: string
           maxLength: 20
           description: The type of relationship captured by the relationship record.
@@ -16923,7 +16923,7 @@ components:
           description: A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept. References CONCEPT table.
       description: Relationship record in the OMOP CDM
       example:
-        relationship_id: '12345'
+        id: '12345'
         relationship_name: Example value
         is_hierarchical: Example value
         defines_ancestry: Example value
@@ -17123,11 +17123,11 @@ components:
     Vocabulary.Vocabulary:
       type: object
       required:
-        - vocabulary_id
+        - id
         - vocabulary_name
         - vocabulary_concept_id
       properties:
-        vocabulary_id:
+        id:
           type: string
           maxLength: 20
           description: A unique identifier for each Vocabulary, such as ICD9CM, SNOMED, Visit.
@@ -17149,7 +17149,7 @@ components:
           description: A Concept that represents the Vocabulary the VOCABULARY record belongs to. References CONCEPT table.
       description: Vocabulary record in the OMOP CDM
       example:
-        vocabulary_id: '12345'
+        id: '12345'
         vocabulary_name: Example value
         vocabulary_reference: Example value
         vocabulary_version: Example value

@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const healthsystemProvider = z.object({
-  provider_id: z.number().int(),
+  id: z.number().int(),
   provider_name: z.string().optional(),
   npi: z.string().optional(),
   dea: z.string().optional(),
@@ -17,7 +17,7 @@ export const healthsystemProvider = z.object({
 })
 
 export type HealthsystemProvider = {
-  provider_id: number
+  id: number
   provider_name?: string | undefined
   npi?: string | undefined
   dea?: string | undefined

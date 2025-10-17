@@ -27,7 +27,7 @@ export type UseGetApiPayerPlanPeriodsArgs = {
   sponsor_source_concept_id?: CommonConceptId | undefined
   stop_reason_concept_id?: CommonConceptId | undefined
   stop_reason_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'payer_plan_period_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

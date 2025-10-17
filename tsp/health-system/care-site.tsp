@@ -39,7 +39,7 @@ repository](https://ohdsi.github.io/Themis/care_site.html).
 
 @doc("CareSite record in the OMOP CDM")
 @example(#{
-  care_site_id: 12345,
+  id: 12345,
   care_site_name: "Example value",
   place_of_service_concept_id: 8507,
   location_id: 100,
@@ -48,7 +48,7 @@ repository](https://ohdsi.github.io/Themis/care_site.html).
 })
 model CareSite {
   @doc("Assign an ID to each combination of a location and nature of the site - the latter could be the Place of Service, name or another characteristic in your source data.")
-  care_site_id: int64;
+  id: int64;
 
   @doc("The name of the care_site as it appears in the source data")
   @maxLength(255)
@@ -131,7 +131,7 @@ model CareSiteQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "care_site_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -160,7 +160,7 @@ interface CareSites {
   read(
     @path
     @doc("Unique care-site identifier")
-    care_site_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: CareSite;
@@ -190,7 +190,7 @@ interface CareSites {
   update(
     @path
     @doc("Unique care-site identifier")
-    care_site_id: int64,
+    id: int64,
 
     @body
     @doc("Complete care-site data")
@@ -212,7 +212,7 @@ interface CareSites {
   patch(
     @path
     @doc("Unique care-site identifier")
-    care_site_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -231,7 +231,7 @@ interface CareSites {
   delete(
     @path
     @doc("Unique care-site identifier")
-    care_site_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -28,14 +28,14 @@ classes or categories of concepts within the OHDSI vocabularies.
 
 @doc("ConceptClass record in the OMOP CDM")
 @example(#{
-  concept_class_id: "12345",
+  id: "12345",
   concept_class_name: "Example value",
   concept_class_concept_id: 8507
 })
 model ConceptClass {
   @doc("A unique key for each class.")
   @maxLength(20)
-  concept_class_id: string;
+  id: string;
 
   @doc("The name describing the Concept Class, e.g. Clinical Finding, Ingredient, etc.")
   @maxLength(255)
@@ -83,7 +83,7 @@ model ConceptClassQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "concept_class_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -112,7 +112,7 @@ interface ConceptClasss {
   read(
     @path
     @doc("Unique concept-class identifier")
-    concept_class_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ConceptClass;
@@ -142,7 +142,7 @@ interface ConceptClasss {
   update(
     @path
     @doc("Unique concept-class identifier")
-    concept_class_id: string,
+    id: string,
 
     @body
     @doc("Complete concept-class data")
@@ -164,7 +164,7 @@ interface ConceptClasss {
   patch(
     @path
     @doc("Unique concept-class identifier")
-    concept_class_id: string,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -183,7 +183,7 @@ interface ConceptClasss {
   delete(
     @path
     @doc("Unique concept-class identifier")
-    concept_class_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

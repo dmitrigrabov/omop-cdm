@@ -48,7 +48,7 @@ condition_era_end_date.
 
 @doc("ConditionEra record in the OMOP CDM")
 @example(#{
-  condition_era_id: 12345,
+  id: 12345,
   person_id: 100,
   condition_concept_id: 8507,
   condition_era_start_date: "2023-01-15",
@@ -57,7 +57,7 @@ condition_era_end_date.
 })
 model ConditionEra {
   @doc("")
-  condition_era_id: int64;
+  id: int64;
 
   @doc("References PERSON table.")
   person_id: int64;
@@ -134,7 +134,7 @@ model ConditionEraQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "condition_era_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -163,7 +163,7 @@ interface ConditionEras {
   read(
     @path
     @doc("Unique condition-era identifier")
-    condition_era_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: ConditionEra;
@@ -193,7 +193,7 @@ interface ConditionEras {
   update(
     @path
     @doc("Unique condition-era identifier")
-    condition_era_id: int64,
+    id: int64,
 
     @body
     @doc("Complete condition-era data")
@@ -215,7 +215,7 @@ interface ConditionEras {
   patch(
     @path
     @doc("Unique condition-era identifier")
-    condition_era_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -234,7 +234,7 @@ interface ConditionEras {
   delete(
     @path
     @doc("Unique condition-era identifier")
-    condition_era_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

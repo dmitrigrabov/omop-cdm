@@ -23,7 +23,7 @@ export type UseGetApiDrugStrengthsArgs = {
   amount_unit_concept_id?: CommonConceptId | undefined
   numerator_unit_concept_id?: CommonConceptId | undefined
   denominator_unit_concept_id?: CommonConceptId | undefined
-  sort_by?: 'drug_strength_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

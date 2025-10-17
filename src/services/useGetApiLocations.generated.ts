@@ -19,7 +19,7 @@ export type UseGetApiLocationsArgs = {
   offset?: number | undefined
   limit?: number | undefined
   country_concept_id?: CommonConceptId | undefined
-  sort_by?: 'location_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

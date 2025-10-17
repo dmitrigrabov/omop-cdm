@@ -26,7 +26,7 @@ export type UseGetApiDrugExposuresArgs = {
   visit_occurrence_id?: number | undefined
   visit_detail_id?: number | undefined
   drug_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'drug_exposure_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

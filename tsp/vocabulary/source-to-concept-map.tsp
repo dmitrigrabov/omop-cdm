@@ -165,7 +165,7 @@ model SourceToConceptMapQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "source_to_concept_map_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -194,7 +194,7 @@ interface SourceToConceptMaps {
   read(
     @path
     @doc("Unique source-to-concept-map identifier")
-    source_to_concept_map_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: SourceToConceptMap;
@@ -224,7 +224,7 @@ interface SourceToConceptMaps {
   update(
     @path
     @doc("Unique source-to-concept-map identifier")
-    source_to_concept_map_id: int64,
+    id: int64,
 
     @body
     @doc("Complete source-to-concept-map data")
@@ -246,7 +246,7 @@ interface SourceToConceptMaps {
   patch(
     @path
     @doc("Unique source-to-concept-map identifier")
-    source_to_concept_map_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -265,7 +265,7 @@ interface SourceToConceptMaps {
   delete(
     @path
     @doc("Unique source-to-concept-map identifier")
-    source_to_concept_map_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

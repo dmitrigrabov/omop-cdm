@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const vocabularyVocabulary = z.object({
-  vocabulary_id: z.string(),
+  id: z.string(),
   vocabulary_name: z.string(),
   vocabulary_reference: z.string().optional(),
   vocabulary_version: z.string().optional(),
@@ -9,7 +9,7 @@ export const vocabularyVocabulary = z.object({
 })
 
 export type VocabularyVocabulary = {
-  vocabulary_id: string
+  id: string
   vocabulary_name: string
   vocabulary_reference?: string | undefined
   vocabulary_version?: string | undefined

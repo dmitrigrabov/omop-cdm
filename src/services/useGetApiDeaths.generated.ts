@@ -22,7 +22,7 @@ export type UseGetApiDeathsArgs = {
   death_type_concept_id?: CommonConceptId | undefined
   cause_concept_id?: CommonConceptId | undefined
   cause_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'death_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

@@ -21,7 +21,7 @@ row represents a single extracted term from a note.
 
 @doc("NoteNlp record in the OMOP CDM")
 @example(#{
-  note_nlp_id: 12345,
+  id: 12345,
   note_id: 100,
   section_concept_id: 8507,
   snippet: "Example value",
@@ -37,7 +37,7 @@ row represents a single extracted term from a note.
 })
 model NoteNlp {
   @doc("A unique identifier for the NLP record.")
-  note_nlp_id: int64;
+  id: int64;
 
   @doc("This is the NOTE_ID for the NOTE record the NLP record is associated to.")
   note_id: int64;
@@ -193,7 +193,7 @@ model NoteNlpQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "note_nlp_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -222,7 +222,7 @@ interface NoteNlps {
   read(
     @path
     @doc("Unique note-nlp identifier")
-    note_nlp_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: NoteNlp;
@@ -252,7 +252,7 @@ interface NoteNlps {
   update(
     @path
     @doc("Unique note-nlp identifier")
-    note_nlp_id: int64,
+    id: int64,
 
     @body
     @doc("Complete note-nlp data")
@@ -274,7 +274,7 @@ interface NoteNlps {
   patch(
     @path
     @doc("Unique note-nlp identifier")
-    note_nlp_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -293,7 +293,7 @@ interface NoteNlps {
   delete(
     @path
     @doc("Unique note-nlp identifier")
-    note_nlp_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -105,7 +105,7 @@ model CohortQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "cohort_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -134,7 +134,7 @@ interface Cohorts {
   read(
     @path
     @doc("Unique cohort identifier")
-    cohort_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Cohort;
@@ -164,7 +164,7 @@ interface Cohorts {
   update(
     @path
     @doc("Unique cohort identifier")
-    cohort_id: int64,
+    id: int64,
 
     @body
     @doc("Complete cohort data")
@@ -186,7 +186,7 @@ interface Cohorts {
   patch(
     @path
     @doc("Unique cohort identifier")
-    cohort_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -205,7 +205,7 @@ interface Cohorts {
   delete(
     @path
     @doc("Unique cohort identifier")
-    cohort_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

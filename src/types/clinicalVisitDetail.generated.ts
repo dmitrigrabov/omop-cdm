@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const clinicalVisitDetail = z.object({
-  visit_detail_id: z.number().int(),
+  id: z.number().int(),
   person_id: z.number().int(),
   visit_detail_concept_id: z.number().int(),
   visit_detail_start_date: z.string(),
@@ -23,7 +23,7 @@ export const clinicalVisitDetail = z.object({
 })
 
 export type ClinicalVisitDetail = {
-  visit_detail_id: number
+  id: number
   person_id: number
   visit_detail_concept_id: number
   visit_detail_start_date: string

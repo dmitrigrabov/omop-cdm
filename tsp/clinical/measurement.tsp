@@ -53,7 +53,7 @@ to’ relationship directs to [4046263](https://athena.ohdsi.org/search-terms/te
 
 @doc("Measurement record in the OMOP CDM")
 @example(#{
-  measurement_id: 12345,
+  id: 12345,
   person_id: 100,
   measurement_concept_id: 8507,
   measurement_date: "2023-01-15",
@@ -79,7 +79,7 @@ to’ relationship directs to [4046263](https://athena.ohdsi.org/search-terms/te
 })
 model Measurement {
   @doc("The unique key given to a Measurement record for a Person. Refer to the ETL for how duplicate Measurements during the same Visit were handled. ETL Convention: Each instance of a measurement present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same measurement within the same visit. It is valid to keep these duplicates and assign them individual, unique, MEASUREMENT_IDs, though it is up to the ETL how they should be handled.")
-  measurement_id: int64;
+  id: int64;
 
   @doc("The PERSON_ID of the Person for whom the Measurement is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
@@ -357,7 +357,7 @@ model MeasurementQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "measurement_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -386,7 +386,7 @@ interface Measurements {
   read(
     @path
     @doc("Unique measurement identifier")
-    measurement_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Measurement;
@@ -416,7 +416,7 @@ interface Measurements {
   update(
     @path
     @doc("Unique measurement identifier")
-    measurement_id: int64,
+    id: int64,
 
     @body
     @doc("Complete measurement data")
@@ -438,7 +438,7 @@ interface Measurements {
   patch(
     @path
     @doc("Unique measurement identifier")
-    measurement_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -457,7 +457,7 @@ interface Measurements {
   delete(
     @path
     @doc("Unique measurement identifier")
-    measurement_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

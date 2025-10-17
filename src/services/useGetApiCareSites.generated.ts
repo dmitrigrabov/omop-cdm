@@ -11,8 +11,8 @@ export const useGetApiCareSitesResponse = z.object({
     total: z.number().int(),
     offset: z.number().int(),
     limit: z.number().int(),
-    count: z.number().int()
-  })
+    count: z.number().int(),
+  }),
 })
 
 export type UseGetApiCareSitesArgs = {
@@ -20,7 +20,7 @@ export type UseGetApiCareSitesArgs = {
   limit?: number | undefined
   place_of_service_concept_id?: CommonConceptId | undefined
   location_id?: number | undefined
-  sort_by?: 'care_site_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 
@@ -30,7 +30,7 @@ export const useGetApiCareSites = ({
   place_of_service_concept_id,
   location_id,
   sort_by,
-  sort_order
+  sort_order,
 }: UseGetApiCareSitesArgs) => {
   const result = useQuery({
     queryKey: [
@@ -40,11 +40,11 @@ export const useGetApiCareSites = ({
       place_of_service_concept_id,
       location_id,
       sort_by,
-      sort_order
+      sort_order,
     ],
     queryFn: async () => {
       const { data, error } = await supabase.functions.invoke(`/care-sites`, {
-        method: 'GET'
+        method: 'GET',
       })
 
       if (error) {
@@ -53,7 +53,7 @@ export const useGetApiCareSites = ({
 
       return useGetApiCareSitesResponse.parse(data)
     },
-    placeholderData: keepPreviousData
+    placeholderData: keepPreviousData,
   })
 
   return result

@@ -32,7 +32,7 @@ expected to be comprehensive.
 
 @doc("Episode record in the OMOP CDM")
 @example(#{
-  episode_id: 12345,
+  id: 12345,
   person_id: 100,
   episode_concept_id: 8507,
   episode_start_date: "2023-01-15",
@@ -48,7 +48,7 @@ expected to be comprehensive.
 })
 model Episode {
   @doc("A unique identifier for each Episode.")
-  episode_id: int64;
+  id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the episode is recorded. References PERSON table.")
   person_id: int64;
@@ -202,7 +202,7 @@ model EpisodeQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "episode_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -231,7 +231,7 @@ interface Episodes {
   read(
     @path
     @doc("Unique episode identifier")
-    episode_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Episode;
@@ -261,7 +261,7 @@ interface Episodes {
   update(
     @path
     @doc("Unique episode identifier")
-    episode_id: int64,
+    id: int64,
 
     @body
     @doc("Complete episode data")
@@ -283,7 +283,7 @@ interface Episodes {
   patch(
     @path
     @doc("Unique episode identifier")
-    episode_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -302,7 +302,7 @@ interface Episodes {
   delete(
     @path
     @doc("Unique episode identifier")
-    episode_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

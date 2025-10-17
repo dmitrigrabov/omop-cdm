@@ -29,7 +29,7 @@ export type UseGetApiVisitDetailsArgs = {
   preceding_visit_detail_id?: number | undefined
   parent_visit_detail_id?: number | undefined
   visit_occurrence_id?: number | undefined
-  sort_by?: 'visit_detail_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

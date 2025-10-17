@@ -20,7 +20,7 @@ export type UseGetApiEpisodeEventsArgs = {
   limit?: number | undefined
   episode_id?: number | undefined
   episode_event_field_concept_id?: CommonConceptId | undefined
-  sort_by?: 'episode_event_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

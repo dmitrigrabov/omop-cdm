@@ -103,7 +103,7 @@ model ConceptRelationshipQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "concept_relationship_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -132,7 +132,7 @@ interface ConceptRelationships {
   read(
     @path
     @doc("Unique concept-relationship identifier")
-    concept_relationship_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: ConceptRelationship;
@@ -162,7 +162,7 @@ interface ConceptRelationships {
   update(
     @path
     @doc("Unique concept-relationship identifier")
-    concept_relationship_id: int64,
+    id: int64,
 
     @body
     @doc("Complete concept-relationship data")
@@ -184,7 +184,7 @@ interface ConceptRelationships {
   patch(
     @path
     @doc("Unique concept-relationship identifier")
-    concept_relationship_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -203,7 +203,7 @@ interface ConceptRelationships {
   delete(
     @path
     @doc("Unique concept-relationship identifier")
-    concept_relationship_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

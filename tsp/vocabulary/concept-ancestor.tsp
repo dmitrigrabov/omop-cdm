@@ -112,7 +112,7 @@ model ConceptAncestorQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "concept_ancestor_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -141,7 +141,7 @@ interface ConceptAncestors {
   read(
     @path
     @doc("Unique concept-ancestor identifier")
-    concept_ancestor_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: ConceptAncestor;
@@ -171,7 +171,7 @@ interface ConceptAncestors {
   update(
     @path
     @doc("Unique concept-ancestor identifier")
-    concept_ancestor_id: int64,
+    id: int64,
 
     @body
     @doc("Complete concept-ancestor data")
@@ -193,7 +193,7 @@ interface ConceptAncestors {
   patch(
     @path
     @doc("Unique concept-ancestor identifier")
-    concept_ancestor_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -212,7 +212,7 @@ interface ConceptAncestors {
   delete(
     @path
     @doc("Unique concept-ancestor identifier")
-    concept_ancestor_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

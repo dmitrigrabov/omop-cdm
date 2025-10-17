@@ -21,7 +21,7 @@ export type UseGetApiMetadatasArgs = {
   metadata_concept_id?: CommonConceptId | undefined
   metadata_type_concept_id?: CommonConceptId | undefined
   value_as_concept_id?: CommonConceptId | undefined
-  sort_by?: 'metadata_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

@@ -102,7 +102,7 @@ and PROVIDER tables.
 
 @doc("VisitOccurrence record in the OMOP CDM")
 @example(#{
-  visit_occurrence_id: 12345,
+  id: 12345,
   person_id: 100,
   visit_concept_id: 8507,
   visit_start_date: "2023-01-15",
@@ -122,7 +122,7 @@ and PROVIDER tables.
 })
 model VisitOccurrence {
   @doc("Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit. ETL Convention: This should be populated by creating a unique identifier for each unique interaction between a person and the healthcare system where the person receives a medical good or service over a span of time.")
-  visit_occurrence_id: int64;
+  id: int64;
 
   @doc("References PERSON table.")
   person_id: int64;
@@ -332,7 +332,7 @@ model VisitOccurrenceQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "visit_occurrence_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -361,7 +361,7 @@ interface VisitOccurrences {
   read(
     @path
     @doc("Unique visit-occurrence identifier")
-    visit_occurrence_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: VisitOccurrence;
@@ -391,7 +391,7 @@ interface VisitOccurrences {
   update(
     @path
     @doc("Unique visit-occurrence identifier")
-    visit_occurrence_id: int64,
+    id: int64,
 
     @body
     @doc("Complete visit-occurrence data")
@@ -413,7 +413,7 @@ interface VisitOccurrences {
   patch(
     @path
     @doc("Unique visit-occurrence identifier")
-    visit_occurrence_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -432,7 +432,7 @@ interface VisitOccurrences {
   delete(
     @path
     @doc("Unique visit-occurrence identifier")
-    visit_occurrence_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const derivedConditionEra = z.object({
-  condition_era_id: z.number().int(),
+  id: z.number().int(),
   person_id: z.number().int(),
   condition_concept_id: z.number().int(),
   condition_era_start_date: z.string(),
@@ -10,7 +10,7 @@ export const derivedConditionEra = z.object({
 })
 
 export type DerivedConditionEra = {
-  condition_era_id: number
+  id: number
   person_id: number
   condition_concept_id: number
   condition_era_start_date: string

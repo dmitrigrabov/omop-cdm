@@ -21,7 +21,7 @@ export type UseGetApiSourceToConceptMapsArgs = {
   source_concept_id?: CommonConceptId | undefined
   target_concept_id?: CommonConceptId | undefined
   target_vocabulary_id?: string | undefined
-  sort_by?: 'source_to_concept_map_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

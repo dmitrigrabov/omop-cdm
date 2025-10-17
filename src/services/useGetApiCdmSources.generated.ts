@@ -19,7 +19,7 @@ export type UseGetApiCdmSourcesArgs = {
   offset?: number | undefined
   limit?: number | undefined
   cdm_version_concept_id?: CommonConceptId | undefined
-  sort_by?: 'cdm_source_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

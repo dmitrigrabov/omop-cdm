@@ -29,7 +29,7 @@ export type UseGetApiObservationsArgs = {
   visit_detail_id?: number | undefined
   observation_source_concept_id?: CommonConceptId | undefined
   obs_event_field_concept_id?: CommonConceptId | undefined
-  sort_by?: 'observation_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

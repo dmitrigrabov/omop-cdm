@@ -26,7 +26,7 @@ export type UseGetApiProcedureOccurrencesArgs = {
   visit_occurrence_id?: number | undefined
   visit_detail_id?: number | undefined
   procedure_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'procedure_occurrence_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

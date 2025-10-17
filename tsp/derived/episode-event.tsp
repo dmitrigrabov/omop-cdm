@@ -88,7 +88,7 @@ model EpisodeEventQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "episode_event_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -117,7 +117,7 @@ interface EpisodeEvents {
   read(
     @path
     @doc("Unique episode-event identifier")
-    episode_event_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: EpisodeEvent;
@@ -147,7 +147,7 @@ interface EpisodeEvents {
   update(
     @path
     @doc("Unique episode-event identifier")
-    episode_event_id: int64,
+    id: int64,
 
     @body
     @doc("Complete episode-event data")
@@ -169,7 +169,7 @@ interface EpisodeEvents {
   patch(
     @path
     @doc("Unique episode-event identifier")
-    episode_event_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -188,7 +188,7 @@ interface EpisodeEvents {
   delete(
     @path
     @doc("Unique episode-event identifier")
-    episode_event_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

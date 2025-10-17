@@ -23,7 +23,7 @@ export type UseGetApiCostsArgs = {
   currency_concept_id?: CommonConceptId | undefined
   revenue_code_concept_id?: CommonConceptId | undefined
   drg_concept_id?: CommonConceptId | undefined
-  sort_by?: 'cost_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const healthsystemPayerPlanPeriod = z.object({
-  payer_plan_period_id: z.number().int(),
+  id: z.number().int(),
   person_id: z.number().int(),
   payer_plan_period_start_date: z.string(),
   payer_plan_period_end_date: z.string(),
@@ -21,7 +21,7 @@ export const healthsystemPayerPlanPeriod = z.object({
 })
 
 export type HealthsystemPayerPlanPeriod = {
-  payer_plan_period_id: number
+  id: number
   person_id: number
   payer_plan_period_start_date: string
   payer_plan_period_end_date: string

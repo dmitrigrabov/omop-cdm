@@ -92,7 +92,7 @@ model ConceptSynonymQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "concept_synonym_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -121,7 +121,7 @@ interface ConceptSynonyms {
   read(
     @path
     @doc("Unique concept-synonym identifier")
-    concept_synonym_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: ConceptSynonym;
@@ -151,7 +151,7 @@ interface ConceptSynonyms {
   update(
     @path
     @doc("Unique concept-synonym identifier")
-    concept_synonym_id: int64,
+    id: int64,
 
     @body
     @doc("Complete concept-synonym data")
@@ -173,7 +173,7 @@ interface ConceptSynonyms {
   patch(
     @path
     @doc("Unique concept-synonym identifier")
-    concept_synonym_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -192,7 +192,7 @@ interface ConceptSynonyms {
   delete(
     @path
     @doc("Unique concept-synonym identifier")
-    concept_synonym_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

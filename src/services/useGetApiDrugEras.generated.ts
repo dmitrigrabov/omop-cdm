@@ -20,7 +20,7 @@ export type UseGetApiDrugErasArgs = {
   limit?: number | undefined
   person_id?: number | undefined
   drug_concept_id?: CommonConceptId | undefined
-  sort_by?: 'drug_era_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

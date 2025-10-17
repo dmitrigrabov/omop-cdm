@@ -23,7 +23,7 @@ the Standardized Vocabularies.
 
 @doc("Specimen record in the OMOP CDM")
 @example(#{
-  specimen_id: 12345,
+  id: 12345,
   person_id: 100,
   specimen_concept_id: 8507,
   specimen_type_concept_id: 8507,
@@ -41,7 +41,7 @@ the Standardized Vocabularies.
 })
 model Specimen {
   @doc("Unique identifier for each specimen.")
-  specimen_id: int64;
+  id: int64;
 
   @doc("The person from whom the specimen is collected. References PERSON table.")
   person_id: int64;
@@ -225,7 +225,7 @@ model SpecimenQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "specimen_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -254,7 +254,7 @@ interface Specimens {
   read(
     @path
     @doc("Unique specimen identifier")
-    specimen_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Specimen;
@@ -284,7 +284,7 @@ interface Specimens {
   update(
     @path
     @doc("Unique specimen identifier")
-    specimen_id: int64,
+    id: int64,
 
     @body
     @doc("Complete specimen data")
@@ -306,7 +306,7 @@ interface Specimens {
   patch(
     @path
     @doc("Unique specimen identifier")
-    specimen_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -325,7 +325,7 @@ interface Specimens {
   delete(
     @path
     @doc("Unique specimen identifier")
-    specimen_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

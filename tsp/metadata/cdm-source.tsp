@@ -174,7 +174,7 @@ model CdmSourceQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "cdm_source_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -203,7 +203,7 @@ interface CdmSources {
   read(
     @path
     @doc("Unique cdm-source identifier")
-    cdm_source_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: CdmSource;
@@ -233,7 +233,7 @@ interface CdmSources {
   update(
     @path
     @doc("Unique cdm-source identifier")
-    cdm_source_id: int64,
+    id: int64,
 
     @body
     @doc("Complete cdm-source data")
@@ -255,7 +255,7 @@ interface CdmSources {
   patch(
     @path
     @doc("Unique cdm-source identifier")
-    cdm_source_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -274,7 +274,7 @@ interface CdmSources {
   delete(
     @path
     @doc("Unique cdm-source identifier")
-    cdm_source_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

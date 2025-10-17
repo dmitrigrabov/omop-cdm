@@ -30,7 +30,7 @@ the Device Domain have to be recorded here.
 
 @doc("DeviceExposure record in the OMOP CDM")
 @example(#{
-  device_exposure_id: 12345,
+  id: 12345,
   person_id: 100,
   device_concept_id: 8507,
   device_exposure_start_date: "2023-01-15",
@@ -51,8 +51,8 @@ the Device Domain have to be recorded here.
   unit_source_concept_id: 8507
 })
 model DeviceExposure {
-  @doc("The unique key given to records a person’s exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key.")
-  device_exposure_id: int64;
+  @doc("The unique key given to records a person's exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key.")
+  id: int64;
 
   @doc("References PERSON table.")
   person_id: int64;
@@ -282,7 +282,7 @@ model DeviceExposureQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "device_exposure_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -311,7 +311,7 @@ interface DeviceExposures {
   read(
     @path
     @doc("Unique device-exposure identifier")
-    device_exposure_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: DeviceExposure;
@@ -341,7 +341,7 @@ interface DeviceExposures {
   update(
     @path
     @doc("Unique device-exposure identifier")
-    device_exposure_id: int64,
+    id: int64,
 
     @body
     @doc("Complete device-exposure data")
@@ -363,7 +363,7 @@ interface DeviceExposures {
   patch(
     @path
     @doc("Unique device-exposure identifier")
-    device_exposure_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -382,7 +382,7 @@ interface DeviceExposures {
   delete(
     @path
     @doc("Unique device-exposure identifier")
-    device_exposure_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

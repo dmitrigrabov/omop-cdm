@@ -47,7 +47,7 @@ where the patient was in the hospital at the time of care.
 
 @doc("VisitDetail record in the OMOP CDM")
 @example(#{
-  visit_detail_id: 12345,
+  id: 12345,
   person_id: 100,
   visit_detail_concept_id: 8507,
   visit_detail_start_date: "2023-01-15",
@@ -69,7 +69,7 @@ where the patient was in the hospital at the time of care.
 })
 model VisitDetail {
   @doc("Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit detail. ETL Convention: This should be populated by creating a unique identifier for each unique interaction between a person and the healthcare system where the person receives a medical good or service over a span of time.")
-  visit_detail_id: int64;
+  id: int64;
 
   @doc("References PERSON table.")
   person_id: int64;
@@ -305,7 +305,7 @@ model VisitDetailQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "visit_detail_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -334,7 +334,7 @@ interface VisitDetails {
   read(
     @path
     @doc("Unique visit-detail identifier")
-    visit_detail_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: VisitDetail;
@@ -364,7 +364,7 @@ interface VisitDetails {
   update(
     @path
     @doc("Unique visit-detail identifier")
-    visit_detail_id: int64,
+    id: int64,
 
     @body
     @doc("Complete visit-detail data")
@@ -386,7 +386,7 @@ interface VisitDetails {
   patch(
     @path
     @doc("Unique visit-detail identifier")
-    visit_detail_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -405,7 +405,7 @@ interface VisitDetails {
   delete(
     @path
     @doc("Unique visit-detail identifier")
-    visit_detail_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -36,7 +36,7 @@ the Plans are different.
 
 @doc("PayerPlanPeriod record in the OMOP CDM")
 @example(#{
-  payer_plan_period_id: 12345,
+  id: 12345,
   person_id: 100,
   payer_plan_period_start_date: "2023-01-15",
   payer_plan_period_end_date: "2023-01-15",
@@ -56,7 +56,7 @@ the Plans are different.
 })
 model PayerPlanPeriod {
   @doc("A unique identifier for each unique combination of a Person, Payer, Plan, and Period of time.")
-  payer_plan_period_id: int64;
+  id: int64;
 
   @doc("The Person covered by the Plan. ETL Convention: A single Person can have multiple, overlapping, PAYER_PLAN_PERIOD records References PERSON table.")
   person_id: int64;
@@ -270,7 +270,7 @@ model PayerPlanPeriodQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "payer_plan_period_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -299,7 +299,7 @@ interface PayerPlanPeriods {
   read(
     @path
     @doc("Unique payer-plan-period identifier")
-    payer_plan_period_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: PayerPlanPeriod;
@@ -329,7 +329,7 @@ interface PayerPlanPeriods {
   update(
     @path
     @doc("Unique payer-plan-period identifier")
-    payer_plan_period_id: int64,
+    id: int64,
 
     @body
     @doc("Complete payer-plan-period data")
@@ -351,7 +351,7 @@ interface PayerPlanPeriods {
   patch(
     @path
     @doc("Unique payer-plan-period identifier")
-    payer_plan_period_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -370,7 +370,7 @@ interface PayerPlanPeriods {
   delete(
     @path
     @doc("Unique payer-plan-period identifier")
-    payer_plan_period_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

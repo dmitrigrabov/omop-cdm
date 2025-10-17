@@ -33,7 +33,7 @@ with information from the Care Site.
 
 @doc("Location record in the OMOP CDM")
 @example(#{
-  location_id: 12345,
+  id: 12345,
   city: "Example value",
   state: "Example value",
   zip: "Example value",
@@ -46,7 +46,7 @@ with information from the Care Site.
 })
 model Location {
   @doc("The unique key given to a unique Location. ETL Convention: Each instance of a Location in the source data should be assigned this unique key.")
-  location_id: int64;
+  id: int64;
 
   @doc("")
   @maxLength(50)
@@ -167,7 +167,7 @@ model LocationQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "location_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -196,7 +196,7 @@ interface Locations {
   read(
     @path
     @doc("Unique location identifier")
-    location_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Location;
@@ -226,7 +226,7 @@ interface Locations {
   update(
     @path
     @doc("Unique location identifier")
-    location_id: int64,
+    id: int64,
 
     @body
     @doc("Complete location data")
@@ -248,7 +248,7 @@ interface Locations {
   patch(
     @path
     @doc("Unique location identifier")
-    location_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -267,7 +267,7 @@ interface Locations {
   delete(
     @path
     @doc("Unique location identifier")
-    location_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -48,7 +48,7 @@ the Condition Domain have to be recorded here.
 
 @doc("ConditionOccurrence record in the OMOP CDM")
 @example(#{
-  condition_occurrence_id: 12345,
+  id: 12345,
   person_id: 100,
   condition_concept_id: 8507,
   condition_start_date: "2023-01-15",
@@ -67,7 +67,7 @@ the Condition Domain have to be recorded here.
 })
 model ConditionOccurrence {
   @doc("The unique key given to a condition record for a person. Refer to the ETL for how duplicate conditions during the same visit were handled. ETL Convention: Each instance of a condition present in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same condition within the same visit. It is valid to keep these duplicates and assign them individual, unique, CONDITION_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.")
-  condition_occurrence_id: int64;
+  id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the condition is recorded. References PERSON table.")
   person_id: int64;
@@ -264,7 +264,7 @@ model ConditionOccurrenceQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "condition_occurrence_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -293,7 +293,7 @@ interface ConditionOccurrences {
   read(
     @path
     @doc("Unique condition-occurrence identifier")
-    condition_occurrence_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: ConditionOccurrence;
@@ -323,7 +323,7 @@ interface ConditionOccurrences {
   update(
     @path
     @doc("Unique condition-occurrence identifier")
-    condition_occurrence_id: int64,
+    id: int64,
 
     @body
     @doc("Complete condition-occurrence data")
@@ -345,7 +345,7 @@ interface ConditionOccurrences {
   patch(
     @path
     @doc("Unique condition-occurrence identifier")
-    condition_occurrence_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -364,7 +364,7 @@ interface ConditionOccurrences {
   delete(
     @path
     @doc("Unique condition-occurrence identifier")
-    condition_occurrence_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

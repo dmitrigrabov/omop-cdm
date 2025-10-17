@@ -26,7 +26,7 @@ part of a drug era based on the dates of exposure.
 
 @doc("DrugEra record in the OMOP CDM")
 @example(#{
-  drug_era_id: 12345,
+  id: 12345,
   person_id: 100,
   drug_concept_id: 8507,
   drug_era_start_date: "2023-01-15",
@@ -36,7 +36,7 @@ part of a drug era based on the dates of exposure.
 })
 model DrugEra {
   @doc("")
-  drug_era_id: int64;
+  id: int64;
 
   @doc("References PERSON table.")
   person_id: int64;
@@ -122,7 +122,7 @@ model DrugEraQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "drug_era_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -151,7 +151,7 @@ interface DrugEras {
   read(
     @path
     @doc("Unique drug-era identifier")
-    drug_era_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: DrugEra;
@@ -181,7 +181,7 @@ interface DrugEras {
   update(
     @path
     @doc("Unique drug-era identifier")
-    drug_era_id: int64,
+    id: int64,
 
     @body
     @doc("Complete drug-era data")
@@ -203,7 +203,7 @@ interface DrugEras {
   patch(
     @path
     @doc("Unique drug-era identifier")
-    drug_era_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -222,7 +222,7 @@ interface DrugEras {
   delete(
     @path
     @doc("Unique drug-era identifier")
-    drug_era_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

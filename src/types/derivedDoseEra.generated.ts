@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const derivedDoseEra = z.object({
-  dose_era_id: z.number().int(),
+  id: z.number().int(),
   person_id: z.number().int(),
   drug_concept_id: z.number().int(),
   unit_concept_id: z.number().int(),
@@ -11,7 +11,7 @@ export const derivedDoseEra = z.object({
 })
 
 export type DerivedDoseEra = {
-  dose_era_id: number
+  id: number
   person_id: number
   drug_concept_id: number
   unit_concept_id: number

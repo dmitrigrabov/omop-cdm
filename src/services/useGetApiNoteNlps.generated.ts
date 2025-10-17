@@ -21,7 +21,7 @@ export type UseGetApiNoteNlpsArgs = {
   section_concept_id?: CommonConceptId | undefined
   note_nlp_concept_id?: CommonConceptId | undefined
   note_nlp_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'note_nlp_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

@@ -18,7 +18,7 @@ export type UseGetApiConceptRelationshipsArgs = {
   offset?: number | undefined
   limit?: number | undefined
   relationship_id?: string | undefined
-  sort_by?: 'concept_relationship_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

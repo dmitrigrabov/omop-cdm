@@ -29,7 +29,7 @@ vocabulary_id = ‘None’.
 
 @doc("Vocabulary record in the OMOP CDM")
 @example(#{
-  vocabulary_id: "12345",
+  id: "12345",
   vocabulary_name: "Example value",
   vocabulary_reference: "Example value",
   vocabulary_version: "Example value",
@@ -38,7 +38,7 @@ vocabulary_id = ‘None’.
 model Vocabulary {
   @doc("A unique identifier for each Vocabulary, such as ICD9CM, SNOMED, Visit.")
   @maxLength(20)
-  vocabulary_id: string;
+  id: string;
 
   @doc("The name describing the vocabulary, for example, International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 1 and 2 (NCHS) etc.")
   @maxLength(255)
@@ -108,7 +108,7 @@ model VocabularyQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "vocabulary_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -137,7 +137,7 @@ interface Vocabularys {
   read(
     @path
     @doc("Unique vocabulary identifier")
-    vocabulary_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Vocabulary;
@@ -167,7 +167,7 @@ interface Vocabularys {
   update(
     @path
     @doc("Unique vocabulary identifier")
-    vocabulary_id: string,
+    id: string,
 
     @body
     @doc("Complete vocabulary data")
@@ -189,7 +189,7 @@ interface Vocabularys {
   patch(
     @path
     @doc("Unique vocabulary identifier")
-    vocabulary_id: string,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -208,7 +208,7 @@ interface Vocabularys {
   delete(
     @path
     @doc("Unique vocabulary identifier")
-    vocabulary_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

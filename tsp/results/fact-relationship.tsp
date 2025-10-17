@@ -72,7 +72,7 @@ model FactRelationshipQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "fact_relationship_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -101,7 +101,7 @@ interface FactRelationships {
   read(
     @path
     @doc("Unique fact-relationship identifier")
-    fact_relationship_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: FactRelationship;
@@ -131,7 +131,7 @@ interface FactRelationships {
   update(
     @path
     @doc("Unique fact-relationship identifier")
-    fact_relationship_id: int64,
+    id: int64,
 
     @body
     @doc("Complete fact-relationship data")
@@ -153,7 +153,7 @@ interface FactRelationships {
   patch(
     @path
     @doc("Unique fact-relationship identifier")
-    fact_relationship_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -172,7 +172,7 @@ interface FactRelationships {
   delete(
     @path
     @doc("Unique fact-relationship identifier")
-    fact_relationship_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

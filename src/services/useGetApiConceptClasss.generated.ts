@@ -19,7 +19,7 @@ export type UseGetApiConceptClasssArgs = {
   offset?: number | undefined
   limit?: number | undefined
   concept_class_concept_id?: CommonConceptId | undefined
-  sort_by?: 'concept_class_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

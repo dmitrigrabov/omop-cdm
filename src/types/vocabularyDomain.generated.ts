@@ -1,13 +1,13 @@
 import { z } from 'zod'
 
 export const vocabularyDomain = z.object({
-  domain_id: z.string(),
+  id: z.string(),
   domain_name: z.string(),
   domain_concept_id: z.number().int(),
 })
 
 export type VocabularyDomain = {
-  domain_id: string
+  id: string
   domain_name: string
   domain_concept_id: number
 }

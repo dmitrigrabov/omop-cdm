@@ -132,7 +132,7 @@ model CohortDefinitionQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "cohort_definition_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -161,7 +161,7 @@ interface CohortDefinitions {
   read(
     @path
     @doc("Unique cohort-definition identifier")
-    cohort_definition_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: CohortDefinition;
@@ -191,7 +191,7 @@ interface CohortDefinitions {
   update(
     @path
     @doc("Unique cohort-definition identifier")
-    cohort_definition_id: int64,
+    id: int64,
 
     @body
     @doc("Complete cohort-definition data")
@@ -213,7 +213,7 @@ interface CohortDefinitions {
   patch(
     @path
     @doc("Unique cohort-definition identifier")
-    cohort_definition_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -232,7 +232,7 @@ interface CohortDefinitions {
   delete(
     @path
     @doc("Unique cohort-definition identifier")
-    cohort_definition_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

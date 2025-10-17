@@ -20,7 +20,7 @@ export type UseGetApiConditionErasArgs = {
   limit?: number | undefined
   person_id?: number | undefined
   condition_concept_id?: CommonConceptId | undefined
-  sort_by?: 'condition_era_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

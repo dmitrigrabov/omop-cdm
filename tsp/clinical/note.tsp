@@ -45,9 +45,10 @@ dimensions will necessarily yield an existing LOINC code. Each of these
 dimensions are contained in the OMOP Vocabulary under the domain of
 ‘Meas Value’ with each dimension represented as a Concept Class.
  */
+
 @doc("Note record in the OMOP CDM")
 @example(#{
-  note_id: 12345,
+  id: 12345,
   person_id: 100,
   note_date: "2023-01-15",
   note_datetime: "2023-01-15",
@@ -62,11 +63,11 @@ dimensions are contained in the OMOP Vocabulary under the domain of
   visit_detail_id: 100,
   note_source_value: "Example value",
   note_event_id: 100,
-  note_event_field_concept_id: 8507,
+  note_event_field_concept_id: 8507
 })
 model Note {
   @doc("A unique identifier for each note.")
-  note_id: int64;
+  id: int64;
 
   @doc("References PERSON table.")
   person_id: int64;
@@ -265,7 +266,7 @@ model NoteQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "note_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -281,7 +282,9 @@ interface Notes {
   @get
   @summary("List all notes")
   @doc("Returns a paginated list of Note records.")
-  list(...NoteQueryParams): {
+  list(
+    ...NoteQueryParams,
+  ): {
     @statusCode statusCode: 200;
     @body body: PaginatedList<Note>;
   } | ErrorResponse;
@@ -292,7 +295,7 @@ interface Notes {
   read(
     @path
     @doc("Unique note identifier")
-    note_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Note;
@@ -322,33 +325,29 @@ interface Notes {
   update(
     @path
     @doc("Unique note identifier")
-    note_id: int64,
+    id: int64,
 
     @body
     @doc("Complete note data")
     record: NoteCreate,
-  ):
-    | {
-        @statusCode statusCode: 200;
-        @body body: Note;
-      }
-    | {
-        @statusCode statusCode: 404;
-        @body body: ErrorResponse;
-      }
-    | {
-        @statusCode statusCode: 400;
-        @body body: ErrorResponse;
-      }
-    | ErrorResponse;
+  ): {
+    @statusCode statusCode: 200;
+    @body body: Note;
+  } | {
+    @statusCode statusCode: 404;
+    @body body: ErrorResponse;
+  } | {
+    @statusCode statusCode: 400;
+    @body body: ErrorResponse;
+  } | ErrorResponse;
 
-  @patch(#{ implicitOptionality: true })
+  @patch(#{implicitOptionality: true})
   @summary("Update note (partial)")
   @doc("Update specific fields of an existing Note record.")
   patch(
     @path
     @doc("Unique note identifier")
-    note_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -367,7 +366,7 @@ interface Notes {
   delete(
     @path
     @doc("Unique note identifier")
-    note_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

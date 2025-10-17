@@ -24,7 +24,7 @@ export type UseGetApiSpecimensArgs = {
   unit_concept_id?: CommonConceptId | undefined
   anatomic_site_concept_id?: CommonConceptId | undefined
   disease_status_concept_id?: CommonConceptId | undefined
-  sort_by?: 'specimen_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

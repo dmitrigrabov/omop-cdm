@@ -54,7 +54,7 @@ null value is the equivalent.
 
 @doc("Observation record in the OMOP CDM")
 @example(#{
-  observation_id: 12345,
+  id: 12345,
   person_id: 100,
   observation_concept_id: 8507,
   observation_date: "2023-01-15",
@@ -78,7 +78,7 @@ null value is the equivalent.
 })
 model Observation {
   @doc("The unique key given to an Observation record for a Person. Refer to the ETL for how duplicate Observations during the same Visit were handled. ETL Convention: Each instance of an observation present in the source data should be assigned this unique key.")
-  observation_id: int64;
+  id: int64;
 
   @doc("The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
@@ -336,7 +336,7 @@ model ObservationQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "observation_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -365,7 +365,7 @@ interface Observations {
   read(
     @path
     @doc("Unique observation identifier")
-    observation_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Observation;
@@ -395,7 +395,7 @@ interface Observations {
   update(
     @path
     @doc("Unique observation identifier")
-    observation_id: int64,
+    id: int64,
 
     @body
     @doc("Complete observation data")
@@ -417,7 +417,7 @@ interface Observations {
   patch(
     @path
     @doc("Unique observation identifier")
-    observation_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -436,7 +436,7 @@ interface Observations {
   delete(
     @path
     @doc("Unique observation identifier")
-    observation_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

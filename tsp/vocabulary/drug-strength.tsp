@@ -189,7 +189,7 @@ model DrugStrengthQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "drug_strength_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -218,7 +218,7 @@ interface DrugStrengths {
   read(
     @path
     @doc("Unique drug-strength identifier")
-    drug_strength_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: DrugStrength;
@@ -248,7 +248,7 @@ interface DrugStrengths {
   update(
     @path
     @doc("Unique drug-strength identifier")
-    drug_strength_id: int64,
+    id: int64,
 
     @body
     @doc("Complete drug-strength data")
@@ -270,7 +270,7 @@ interface DrugStrengths {
   patch(
     @path
     @doc("Unique drug-strength identifier")
-    drug_strength_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -289,7 +289,7 @@ interface DrugStrengths {
   delete(
     @path
     @doc("Unique drug-strength identifier")
-    drug_strength_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

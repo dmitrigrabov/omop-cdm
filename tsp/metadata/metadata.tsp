@@ -21,7 +21,7 @@ has been transformed to the OMOP Common Data Model.
 
 @doc("Metadata record in the OMOP CDM")
 @example(#{
-  metadata_id: 12345,
+  id: 12345,
   metadata_concept_id: 8507,
   metadata_type_concept_id: 8507,
   name: "Example value",
@@ -33,7 +33,7 @@ has been transformed to the OMOP Common Data Model.
 })
 model Metadata {
   @doc("The unique key given to a Metadata record. ETL Convention: Attribute value is auto-generated")
-  metadata_id: int64;
+  id: int64;
 
   @doc("References CONCEPT table.")
   metadata_concept_id: ConceptId;
@@ -145,7 +145,7 @@ model MetadataQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "metadata_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -174,7 +174,7 @@ interface Metadatas {
   read(
     @path
     @doc("Unique metadata identifier")
-    metadata_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Metadata;
@@ -204,7 +204,7 @@ interface Metadatas {
   update(
     @path
     @doc("Unique metadata identifier")
-    metadata_id: int64,
+    id: int64,
 
     @body
     @doc("Complete metadata data")
@@ -226,7 +226,7 @@ interface Metadatas {
   patch(
     @path
     @doc("Unique metadata identifier")
-    metadata_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -245,7 +245,7 @@ interface Metadatas {
   delete(
     @path
     @doc("Unique metadata identifier")
-    metadata_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

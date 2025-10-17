@@ -20,7 +20,7 @@ export type UseGetApiConceptSynonymsArgs = {
   limit?: number | undefined
   concept_id?: CommonConceptId | undefined
   language_concept_id?: CommonConceptId | undefined
-  sort_by?: 'concept_synonym_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

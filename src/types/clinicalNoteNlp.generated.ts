@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const clinicalNoteNlp = z.object({
-  note_nlp_id: z.number().int(),
+  id: z.number().int(),
   note_id: z.number().int(),
   section_concept_id: z.number().int().optional(),
   snippet: z.string().optional(),
@@ -17,7 +17,7 @@ export const clinicalNoteNlp = z.object({
 })
 
 export type ClinicalNoteNlp = {
-  note_nlp_id: number
+  id: number
   note_id: number
   section_concept_id?: number | undefined
   snippet?: string | undefined

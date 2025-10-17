@@ -20,7 +20,7 @@ export type UseGetApiConceptAncestorsArgs = {
   limit?: number | undefined
   ancestor_concept_id?: CommonConceptId | undefined
   descendant_concept_id?: CommonConceptId | undefined
-  sort_by?: 'concept_ancestor_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

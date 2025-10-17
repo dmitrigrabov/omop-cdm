@@ -20,7 +20,7 @@ export type UseGetApiCohortDefinitionsArgs = {
   limit?: number | undefined
   definition_type_concept_id?: CommonConceptId | undefined
   subject_concept_id?: CommonConceptId | undefined
-  sort_by?: 'cohort_definition_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

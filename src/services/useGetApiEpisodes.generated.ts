@@ -23,7 +23,7 @@ export type UseGetApiEpisodesArgs = {
   episode_object_concept_id?: CommonConceptId | undefined
   episode_type_concept_id?: CommonConceptId | undefined
   episode_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'episode_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

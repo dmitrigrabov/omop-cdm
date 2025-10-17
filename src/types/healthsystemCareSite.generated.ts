@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const healthsystemCareSite = z.object({
-  care_site_id: z.number().int(),
+  id: z.number().int(),
   care_site_name: z.string().optional(),
   place_of_service_concept_id: z.number().int().optional(),
   location_id: z.number().int().optional(),
@@ -10,7 +10,7 @@ export const healthsystemCareSite = z.object({
 })
 
 export type HealthsystemCareSite = {
-  care_site_id: number
+  id: number
   care_site_name?: string | undefined
   place_of_service_concept_id?: number | undefined
   location_id?: number | undefined

@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const derivedEpisode = z.object({
-  episode_id: z.number().int(),
+  id: z.number().int(),
   person_id: z.number().int(),
   episode_concept_id: z.number().int(),
   episode_start_date: z.string(),
@@ -17,7 +17,7 @@ export const derivedEpisode = z.object({
 })
 
 export type DerivedEpisode = {
-  episode_id: number
+  id: number
   person_id: number
   episode_concept_id: number
   episode_start_date: string

@@ -32,14 +32,14 @@ interoperability.
 
 @doc("Domain record in the OMOP CDM")
 @example(#{
-  domain_id: "12345",
+  id: "12345",
   domain_name: "Example value",
   domain_concept_id: 8507
 })
 model Domain {
   @doc("A unique key for each domain.")
   @maxLength(20)
-  domain_id: string;
+  id: string;
 
   @doc("The name describing the Domain, e.g. Condition, Procedure, Measurement etc.")
   @maxLength(255)
@@ -87,7 +87,7 @@ model DomainQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "domain_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -116,7 +116,7 @@ interface Domains {
   read(
     @path
     @doc("Unique domain identifier")
-    domain_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Domain;
@@ -146,7 +146,7 @@ interface Domains {
   update(
     @path
     @doc("Unique domain identifier")
-    domain_id: string,
+    id: string,
 
     @body
     @doc("Complete domain data")
@@ -168,7 +168,7 @@ interface Domains {
   patch(
     @path
     @doc("Unique domain identifier")
-    domain_id: string,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -187,7 +187,7 @@ interface Domains {
   delete(
     @path
     @doc("Unique domain identifier")
-    domain_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

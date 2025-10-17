@@ -26,7 +26,7 @@ export type UseGetApiConditionOccurrencesArgs = {
   visit_occurrence_id?: number | undefined
   visit_detail_id?: number | undefined
   condition_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'condition_occurrence_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

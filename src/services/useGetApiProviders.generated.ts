@@ -23,7 +23,7 @@ export type UseGetApiProvidersArgs = {
   gender_concept_id?: CommonConceptId | undefined
   specialty_source_concept_id?: CommonConceptId | undefined
   gender_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'provider_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

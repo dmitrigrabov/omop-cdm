@@ -20,7 +20,7 @@ export type UseGetApiObservationPeriodsArgs = {
   limit?: number | undefined
   person_id?: number | undefined
   period_type_concept_id?: CommonConceptId | undefined
-  sort_by?: 'observation_period_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

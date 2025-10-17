@@ -30,7 +30,7 @@ characteristics.
 
 @doc("Relationship record in the OMOP CDM")
 @example(#{
-  relationship_id: "12345",
+  id: "12345",
   relationship_name: "Example value",
   is_hierarchical: "Example value",
   defines_ancestry: "Example value",
@@ -40,7 +40,7 @@ characteristics.
 model Relationship {
   @doc("The type of relationship captured by the relationship record.")
   @maxLength(20)
-  relationship_id: string;
+  id: string;
 
   @doc("")
   @maxLength(255)
@@ -121,7 +121,7 @@ model RelationshipQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "relationship_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -150,7 +150,7 @@ interface Relationships {
   read(
     @path
     @doc("Unique relationship identifier")
-    relationship_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Relationship;
@@ -180,7 +180,7 @@ interface Relationships {
   update(
     @path
     @doc("Unique relationship identifier")
-    relationship_id: string,
+    id: string,
 
     @body
     @doc("Complete relationship data")
@@ -202,7 +202,7 @@ interface Relationships {
   patch(
     @path
     @doc("Unique relationship identifier")
-    relationship_id: string,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -221,7 +221,7 @@ interface Relationships {
   delete(
     @path
     @doc("Unique relationship identifier")
-    relationship_id: string,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -19,7 +19,7 @@ export type UseGetApiFactRelationshipsArgs = {
   offset?: number | undefined
   limit?: number | undefined
   relationship_concept_id?: CommonConceptId | undefined
-  sort_by?: 'fact_relationship_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

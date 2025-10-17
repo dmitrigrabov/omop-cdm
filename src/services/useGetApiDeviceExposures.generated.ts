@@ -27,7 +27,7 @@ export type UseGetApiDeviceExposuresArgs = {
   device_source_concept_id?: CommonConceptId | undefined
   unit_concept_id?: CommonConceptId | undefined
   unit_source_concept_id?: CommonConceptId | undefined
-  sort_by?: 'device_exposure_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

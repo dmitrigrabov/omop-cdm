@@ -138,7 +138,7 @@ model DeathQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "death_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -167,7 +167,7 @@ interface Deaths {
   read(
     @path
     @doc("Unique death identifier")
-    death_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: Death;
@@ -197,7 +197,7 @@ interface Deaths {
   update(
     @path
     @doc("Unique death identifier")
-    death_id: int64,
+    id: int64,
 
     @body
     @doc("Complete death data")
@@ -219,7 +219,7 @@ interface Deaths {
   patch(
     @path
     @doc("Unique death identifier")
-    death_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -238,7 +238,7 @@ interface Deaths {
   delete(
     @path
     @doc("Unique death identifier")
-    death_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

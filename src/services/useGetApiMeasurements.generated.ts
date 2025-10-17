@@ -30,7 +30,7 @@ export type UseGetApiMeasurementsArgs = {
   measurement_source_concept_id?: CommonConceptId | undefined
   unit_source_concept_id?: CommonConceptId | undefined
   meas_event_field_concept_id?: CommonConceptId | undefined
-  sort_by?: 'measurement_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

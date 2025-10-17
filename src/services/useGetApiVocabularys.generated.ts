@@ -19,7 +19,7 @@ export type UseGetApiVocabularysArgs = {
   offset?: number | undefined
   limit?: number | undefined
   vocabulary_concept_id?: CommonConceptId | undefined
-  sort_by?: 'vocabulary_id' | undefined
+  sort_by?: 'id' | undefined
   sort_order?: CommonSortOrder | undefined
 }
 

@@ -53,7 +53,7 @@ adjacent OBSERVATION_PERIOD records have to be merged into one.
 
 @doc("ObservationPeriod record in the OMOP CDM")
 @example(#{
-  observation_period_id: 12345,
+  id: 12345,
   person_id: 100,
   observation_period_start_date: "2023-01-15",
   observation_period_end_date: "2023-01-15",
@@ -61,7 +61,7 @@ adjacent OBSERVATION_PERIOD records have to be merged into one.
 })
 model ObservationPeriod {
   @doc("A Person can have multiple discrete Observation Periods which are identified by the Observation_Period_Id. ETL Convention: Assign a unique observation_period_id to each discrete Observation Period for a Person.")
-  observation_period_id: int64;
+  id: int64;
 
   @doc("The Person ID of the PERSON record for which the Observation Period is recorded. References PERSON table.")
   person_id: int64;
@@ -129,7 +129,7 @@ model ObservationPeriodQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "observation_period_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -158,7 +158,7 @@ interface ObservationPeriods {
   read(
     @path
     @doc("Unique observation-period identifier")
-    observation_period_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: ObservationPeriod;
@@ -188,7 +188,7 @@ interface ObservationPeriods {
   update(
     @path
     @doc("Unique observation-period identifier")
-    observation_period_id: int64,
+    id: int64,
 
     @body
     @doc("Complete observation-period data")
@@ -210,7 +210,7 @@ interface ObservationPeriods {
   patch(
     @path
     @doc("Unique observation-period identifier")
-    observation_period_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -229,7 +229,7 @@ interface ObservationPeriods {
   delete(
     @path
     @doc("Unique observation-period identifier")
-    observation_period_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {

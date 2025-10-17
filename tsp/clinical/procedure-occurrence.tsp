@@ -37,7 +37,7 @@ the Procedure Domain have to be recorded here.
 
 @doc("ProcedureOccurrence record in the OMOP CDM")
 @example(#{
-  procedure_occurrence_id: 12345,
+  id: 12345,
   person_id: 100,
   procedure_concept_id: 8507,
   procedure_date: "2023-01-15",
@@ -56,7 +56,7 @@ the Procedure Domain have to be recorded here.
 })
 model ProcedureOccurrence {
   @doc("The unique key given to a procedure record for a person. Refer to the ETL for how duplicate procedures during the same visit were handled. ETL Convention: Each instance of a procedure occurrence in the source data should be assigned this unique key. In some cases, a person can have multiple records of the same procedure within the same visit. It is valid to keep these duplicates and assign them individual, unique, PROCEDURE_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.")
-  procedure_occurrence_id: int64;
+  id: int64;
 
   @doc("The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code. References PERSON table.")
   person_id: int64;
@@ -251,7 +251,7 @@ model ProcedureOccurrenceQueryParams {
 
   @doc("Sort field")
   @query
-  sort_by?: "procedure_occurrence_id";
+  sort_by?: "id";
 
   @doc("Sort order")
   @query
@@ -280,7 +280,7 @@ interface ProcedureOccurrences {
   read(
     @path
     @doc("Unique procedure-occurrence identifier")
-    procedure_occurrence_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 200;
     @body body: ProcedureOccurrence;
@@ -310,7 +310,7 @@ interface ProcedureOccurrences {
   update(
     @path
     @doc("Unique procedure-occurrence identifier")
-    procedure_occurrence_id: int64,
+    id: int64,
 
     @body
     @doc("Complete procedure-occurrence data")
@@ -332,7 +332,7 @@ interface ProcedureOccurrences {
   patch(
     @path
     @doc("Unique procedure-occurrence identifier")
-    procedure_occurrence_id: int64,
+    id: int64,
 
     @body
     @doc("Fields to update")
@@ -351,7 +351,7 @@ interface ProcedureOccurrences {
   delete(
     @path
     @doc("Unique procedure-occurrence identifier")
-    procedure_occurrence_id: int64,
+    id: int64,
   ): {
     @statusCode statusCode: 204;
   } | {
