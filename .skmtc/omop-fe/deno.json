@@ -1,11 +1,11 @@
 {
   "imports": {
     "@skmtc/gen-shadcn-form": "./gen-shadcn-form/mod.ts",
-    "@skmtc/gen-shadcn-select": "jsr:@skmtc/gen-shadcn-select@0.0.41",
+    "@skmtc/gen-shadcn-select": "./gen-shadcn-select/mod.ts",
     "@skmtc/gen-tanstack-query-supabase-zod": "jsr:@skmtc/gen-tanstack-query-supabase-zod@^0.0.41",
     "@skmtc/gen-zod": "jsr:@skmtc/gen-zod@^0.0.41",
     "@skmtc/gen-typescript": "jsr:@skmtc/gen-typescript@^0.0.41",
-    "@skmtc/gen-msw": "jsr:@skmtc/gen-msw@0.0.41",
+    "@skmtc/gen-msw": "./gen-msw/mod.ts",
     "@skmtc/core": "jsr:@skmtc/core@^0.0.828",
     "tiny-invariant": "npm:tiny-invariant@^1.3.3",
     "@std/path": "jsr:@std/path@^1.1.2",
@@ -14,7 +14,10 @@
     "hono": "npm:hono@^4.7.2"
   },
   "workspace": [
-    "./gen-shadcn-form"
+    "./gen-shadcn-form",
+    "./gen-tanstack-query-supabase-zod",
+    "./gen-shadcn-select",
+    "./gen-msw"
   ],
   "nodeModulesDir": "auto"
 }

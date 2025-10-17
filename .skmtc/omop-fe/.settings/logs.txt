@@ -47,3 +47,24 @@ trace generate
 {"stackTrail":"bddc7114f680e311","level":"DEBUG","datetime":1760696061065,"message":"520 files generated"}
 trace render
 {"stackTrail":"bddc7114f680e311","level":"INFO","datetime":1760696061065,"message":"trace","args":"render"}
+trace parse
+{"stackTrail":"960c2bf974d9d388","level":"INFO","datetime":1760696674178,"message":"trace","args":"parse"}
+trace generate
+{"stackTrail":"960c2bf974d9d388","level":"INFO","datetime":1760696674239,"message":"trace","args":"generate"}
+{"stackTrail":"960c2bf974d9d388","level":"DEBUG","datetime":1760696674319,"message":"520 files generated"}
+trace render
+{"stackTrail":"960c2bf974d9d388","level":"INFO","datetime":1760696674319,"message":"trace","args":"render"}
+trace parse
+{"stackTrail":"9e4e911146a1d69a","level":"INFO","datetime":1760696780540,"message":"trace","args":"parse"}
+trace generate
+{"stackTrail":"9e4e911146a1d69a","level":"INFO","datetime":1760696780599,"message":"trace","args":"generate"}
+{"stackTrail":"9e4e911146a1d69a","level":"DEBUG","datetime":1760696780696,"message":"520 files generated"}
+trace render
+{"stackTrail":"9e4e911146a1d69a","level":"INFO","datetime":1760696780696,"message":"trace","args":"render"}
+trace parse
+{"stackTrail":"988a9a455056844c","level":"INFO","datetime":1760697074826,"message":"trace","args":"parse"}
+trace generate
+{"stackTrail":"988a9a455056844c","level":"INFO","datetime":1760697074865,"message":"trace","args":"generate"}
+{"stackTrail":"988a9a455056844c","level":"DEBUG","datetime":1760697074940,"message":"520 files generated"}
+trace render
+{"stackTrail":"988a9a455056844c","level":"INFO","datetime":1760697074940,"message":"trace","args":"render"}

@@ -18,7 +18,7 @@ import { Lens } from '@hookform/lenses'
 export type ConditionErasSelectProps = {
   onChange: (value: string) => void
   value: string
-  placeholder: string
+  placeholder: string | undefined
 }
 
 export const ConditionErasSelect = (props: ConditionErasSelectProps) => {
@@ -31,7 +31,7 @@ export const ConditionErasSelect = (props: ConditionErasSelectProps) => {
       </SelectTrigger>
       <SelectContent>
         {data?.data?.map((item) => (
-          <SelectItem key={item.id} value={item.id}>
+          <SelectItem key={item.id} value={`${item.id}`}>
             {item.id}
           </SelectItem>
         ))}

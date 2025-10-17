@@ -18,7 +18,7 @@ import { Lens } from '@hookform/lenses'
 export type CdmSourcesSelectProps = {
   onChange: (value: string) => void
   value: string
-  placeholder: string
+  placeholder: string | undefined
 }
 
 export const CdmSourcesSelect = (props: CdmSourcesSelectProps) => {
@@ -31,7 +31,7 @@ export const CdmSourcesSelect = (props: CdmSourcesSelectProps) => {
       </SelectTrigger>
       <SelectContent>
         {data?.data?.map((item) => (
-          <SelectItem key={item.id} value={item.id}>
+          <SelectItem key={item.id} value={`${item.id}`}>
             {item.id}
           </SelectItem>
         ))}

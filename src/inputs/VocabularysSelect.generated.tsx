@@ -18,7 +18,7 @@ import { Lens } from '@hookform/lenses'
 export type VocabularysSelectProps = {
   onChange: (value: string) => void
   value: string
-  placeholder: string
+  placeholder: string | undefined
 }
 
 export const VocabularysSelect = (props: VocabularysSelectProps) => {
@@ -31,7 +31,7 @@ export const VocabularysSelect = (props: VocabularysSelectProps) => {
       </SelectTrigger>
       <SelectContent>
         {data?.data?.map((item) => (
-          <SelectItem key={item.id} value={item.id}>
+          <SelectItem key={item.id} value={`${item.id}`}>
             {item.id}
           </SelectItem>
         ))}

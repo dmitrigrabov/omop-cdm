@@ -18,7 +18,7 @@ import { Lens } from '@hookform/lenses'
 export type ConceptAncestorsSelectProps = {
   onChange: (value: string) => void
   value: string
-  placeholder: string
+  placeholder: string | undefined
 }
 
 export const ConceptAncestorsSelect = (props: ConceptAncestorsSelectProps) => {
@@ -31,7 +31,7 @@ export const ConceptAncestorsSelect = (props: ConceptAncestorsSelectProps) => {
       </SelectTrigger>
       <SelectContent>
         {data?.data?.map((item) => (
-          <SelectItem key={item.id} value={item.id}>
+          <SelectItem key={item.id} value={`${item.id}`}>
             {item.id}
           </SelectItem>
         ))}

@@ -9,7 +9,6 @@ import {
   useQueryClient,
   UseMutationOptions,
 } from '@tanstack/react-query'
-import { z } from 'zod'
 
 export type UseUpdateApiLocationsIdArgs = {
   id: number
