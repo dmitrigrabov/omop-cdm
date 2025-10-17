@@ -1,4 +1,5 @@
 import { vocabularyConceptAncestorUpdate } from '@/types/vocabularyConceptAncestorUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiConceptAncestorsConceptAncestorId } from '@/services/usePatchApiConceptAncestorsConceptAncestorId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -12,6 +13,17 @@ export type PatchConceptAncestorsConceptAncestorIdFormBody = {
   descendant_concept_id?: number | undefined
   min_levels_of_separation?: number | undefined
   max_levels_of_separation?: number | undefined
+}
+
+export const PatchConceptAncestorsConceptAncestorIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`ancestor_concept_id`} />
+      <IntegerField fieldName={`descendant_concept_id`} />
+      <IntegerField fieldName={`min_levels_of_separation`} />
+      <IntegerField fieldName={`max_levels_of_separation`} />
+    </>
+  )
 }
 
 export type PatchConceptAncestorsConceptAncestorIdFormProps = {
@@ -52,6 +64,8 @@ export const PatchConceptAncestorsConceptAncestorIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchConceptAncestorsConceptAncestorIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

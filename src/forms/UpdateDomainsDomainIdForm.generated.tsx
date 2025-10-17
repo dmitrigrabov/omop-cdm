@@ -1,4 +1,6 @@
 import { vocabularyDomainCreate } from '@/types/vocabularyDomainCreate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { useUpdateApiDomainsDomainId } from '@/services/useUpdateApiDomainsDomainId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -10,6 +12,15 @@ import { useEffect } from 'react'
 export type UpdateDomainsDomainIdFormBody = {
   domain_name: string
   domain_concept_id: number
+}
+
+export const UpdateDomainsDomainIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`domain_name`} label="domain_name" />
+      <IntegerField fieldName={`domain_concept_id`} />
+    </>
+  )
 }
 
 export type UpdateDomainsDomainIdFormProps = {
@@ -48,6 +59,8 @@ export const UpdateDomainsDomainIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <UpdateDomainsDomainIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

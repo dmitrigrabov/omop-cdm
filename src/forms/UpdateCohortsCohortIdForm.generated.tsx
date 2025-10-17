@@ -1,4 +1,6 @@
 import { resultsCohortCreate } from '@/types/resultsCohortCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { useUpdateApiCohortsCohortId } from '@/services/useUpdateApiCohortsCohortId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -12,6 +14,17 @@ export type UpdateCohortsCohortIdFormBody = {
   subject_id: number
   cohort_start_date: string
   cohort_end_date: string
+}
+
+export const UpdateCohortsCohortIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`cohort_definition_id`} />
+      <IntegerField fieldName={`subject_id`} />
+      <StringField fieldName={`cohort_start_date`} label="cohort_start_date" />
+      <StringField fieldName={`cohort_end_date`} label="cohort_end_date" />
+    </>
+  )
 }
 
 export type UpdateCohortsCohortIdFormProps = {
@@ -50,6 +63,8 @@ export const UpdateCohortsCohortIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <UpdateCohortsCohortIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

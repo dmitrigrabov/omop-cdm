@@ -1,4 +1,6 @@
 import { clinicalDeviceExposureUpdate } from '@/types/clinicalDeviceExposureUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { usePatchApiDeviceExposuresDeviceExposureId } from '@/services/usePatchApiDeviceExposuresDeviceExposureId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -26,6 +28,46 @@ export type PatchDeviceExposuresDeviceExposureIdFormBody = {
   unit_concept_id?: number | undefined
   unit_source_value?: string | undefined
   unit_source_concept_id?: number | undefined
+}
+
+export const PatchDeviceExposuresDeviceExposureIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`device_concept_id`} />
+      <StringField
+        fieldName={`device_exposure_start_date`}
+        label="device_exposure_start_date"
+      />
+      <StringField
+        fieldName={`device_exposure_start_datetime`}
+        label="device_exposure_start_datetime"
+      />
+      <StringField
+        fieldName={`device_exposure_end_date`}
+        label="device_exposure_end_date"
+      />
+      <StringField
+        fieldName={`device_exposure_end_datetime`}
+        label="device_exposure_end_datetime"
+      />
+      <IntegerField fieldName={`device_type_concept_id`} />
+      <StringField fieldName={`unique_device_id`} label="unique_device_id" />
+      <StringField fieldName={`production_id`} label="production_id" />
+      <IntegerField fieldName={`quantity`} />
+      <IntegerField fieldName={`provider_id`} />
+      <IntegerField fieldName={`visit_occurrence_id`} />
+      <IntegerField fieldName={`visit_detail_id`} />
+      <StringField
+        fieldName={`device_source_value`}
+        label="device_source_value"
+      />
+      <IntegerField fieldName={`device_source_concept_id`} />
+      <IntegerField fieldName={`unit_concept_id`} />
+      <StringField fieldName={`unit_source_value`} label="unit_source_value" />
+      <IntegerField fieldName={`unit_source_concept_id`} />
+    </>
+  )
 }
 
 export type PatchDeviceExposuresDeviceExposureIdFormProps = {
@@ -66,6 +108,8 @@ export const PatchDeviceExposuresDeviceExposureIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchDeviceExposuresDeviceExposureIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

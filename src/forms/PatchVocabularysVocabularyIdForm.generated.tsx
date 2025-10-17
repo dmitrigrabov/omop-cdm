@@ -1,4 +1,6 @@
 import { vocabularyVocabularyUpdate } from '@/types/vocabularyVocabularyUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiVocabularysVocabularyId } from '@/services/usePatchApiVocabularysVocabularyId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -12,6 +14,23 @@ export type PatchVocabularysVocabularyIdFormBody = {
   vocabulary_reference?: string | undefined
   vocabulary_version?: string | undefined
   vocabulary_concept_id?: number | undefined
+}
+
+export const PatchVocabularysVocabularyIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`vocabulary_name`} label="vocabulary_name" />
+      <StringField
+        fieldName={`vocabulary_reference`}
+        label="vocabulary_reference"
+      />
+      <StringField
+        fieldName={`vocabulary_version`}
+        label="vocabulary_version"
+      />
+      <IntegerField fieldName={`vocabulary_concept_id`} />
+    </>
+  )
 }
 
 export type PatchVocabularysVocabularyIdFormProps = {
@@ -52,6 +71,8 @@ export const PatchVocabularysVocabularyIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchVocabularysVocabularyIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -1,4 +1,6 @@
 import { vocabularyRelationshipCreate } from '@/types/vocabularyRelationshipCreate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { useCreateApiRelationships } from '@/services/useCreateApiRelationships.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -13,6 +15,21 @@ export type CreateRelationshipsFormBody = {
   defines_ancestry: string
   reverse_relationship_id: string
   relationship_concept_id: number
+}
+
+export const CreateRelationshipsFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`relationship_name`} label="relationship_name" />
+      <StringField fieldName={`is_hierarchical`} label="is_hierarchical" />
+      <StringField fieldName={`defines_ancestry`} label="defines_ancestry" />
+      <StringField
+        fieldName={`reverse_relationship_id`}
+        label="reverse_relationship_id"
+      />
+      <IntegerField fieldName={`relationship_concept_id`} />
+    </>
+  )
 }
 
 export type CreateRelationshipsFormProps = {
@@ -50,6 +67,8 @@ export const CreateRelationshipsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateRelationshipsFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

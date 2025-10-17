@@ -1,4 +1,6 @@
 import { metadataCdmSourceUpdate } from '@/types/metadataCdmSourceUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiCdmSourcesCdmSourceId } from '@/services/usePatchApiCdmSourcesCdmSourceId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -19,6 +21,39 @@ export type PatchCdmSourcesCdmSourceIdFormBody = {
   cdm_version?: string | undefined
   cdm_version_concept_id?: number | undefined
   vocabulary_version?: string | undefined
+}
+
+export const PatchCdmSourcesCdmSourceIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`cdm_source_name`} label="cdm_source_name" />
+      <StringField
+        fieldName={`cdm_source_abbreviation`}
+        label="cdm_source_abbreviation"
+      />
+      <StringField fieldName={`cdm_holder`} label="cdm_holder" />
+      <StringField
+        fieldName={`source_description`}
+        label="source_description"
+      />
+      <StringField
+        fieldName={`source_documentation_reference`}
+        label="source_documentation_reference"
+      />
+      <StringField fieldName={`cdm_etl_reference`} label="cdm_etl_reference" />
+      <StringField
+        fieldName={`source_release_date`}
+        label="source_release_date"
+      />
+      <StringField fieldName={`cdm_release_date`} label="cdm_release_date" />
+      <StringField fieldName={`cdm_version`} label="cdm_version" />
+      <IntegerField fieldName={`cdm_version_concept_id`} />
+      <StringField
+        fieldName={`vocabulary_version`}
+        label="vocabulary_version"
+      />
+    </>
+  )
 }
 
 export type PatchCdmSourcesCdmSourceIdFormProps = {
@@ -57,6 +92,8 @@ export const PatchCdmSourcesCdmSourceIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchCdmSourcesCdmSourceIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

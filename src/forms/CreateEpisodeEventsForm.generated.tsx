@@ -1,4 +1,5 @@
 import { derivedEpisodeEventCreate } from '@/types/derivedEpisodeEventCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
 import { useCreateApiEpisodeEvents } from '@/services/useCreateApiEpisodeEvents.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -11,6 +12,16 @@ export type CreateEpisodeEventsFormBody = {
   episode_id: number
   event_id: number
   episode_event_field_concept_id: number
+}
+
+export const CreateEpisodeEventsFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`episode_id`} />
+      <IntegerField fieldName={`event_id`} />
+      <IntegerField fieldName={`episode_event_field_concept_id`} />
+    </>
+  )
 }
 
 export type CreateEpisodeEventsFormProps = {
@@ -48,6 +59,8 @@ export const CreateEpisodeEventsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateEpisodeEventsFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

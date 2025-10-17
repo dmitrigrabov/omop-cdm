@@ -1,4 +1,6 @@
 import { vocabularyDomainUpdate } from '@/types/vocabularyDomainUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiDomainsDomainId } from '@/services/usePatchApiDomainsDomainId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -10,6 +12,15 @@ import { useEffect } from 'react'
 export type PatchDomainsDomainIdFormBody = {
   domain_name?: string | undefined
   domain_concept_id?: number | undefined
+}
+
+export const PatchDomainsDomainIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`domain_name`} label="domain_name" />
+      <IntegerField fieldName={`domain_concept_id`} />
+    </>
+  )
 }
 
 export type PatchDomainsDomainIdFormProps = {
@@ -48,6 +59,8 @@ export const PatchDomainsDomainIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchDomainsDomainIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

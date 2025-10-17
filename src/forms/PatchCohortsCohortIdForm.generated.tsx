@@ -1,4 +1,6 @@
 import { resultsCohortUpdate } from '@/types/resultsCohortUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { usePatchApiCohortsCohortId } from '@/services/usePatchApiCohortsCohortId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -12,6 +14,17 @@ export type PatchCohortsCohortIdFormBody = {
   subject_id?: number | undefined
   cohort_start_date?: string | undefined
   cohort_end_date?: string | undefined
+}
+
+export const PatchCohortsCohortIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`cohort_definition_id`} />
+      <IntegerField fieldName={`subject_id`} />
+      <StringField fieldName={`cohort_start_date`} label="cohort_start_date" />
+      <StringField fieldName={`cohort_end_date`} label="cohort_end_date" />
+    </>
+  )
 }
 
 export type PatchCohortsCohortIdFormProps = {
@@ -50,6 +63,8 @@ export const PatchCohortsCohortIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchCohortsCohortIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

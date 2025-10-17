@@ -1,4 +1,6 @@
 import { derivedEpisodeCreate } from '@/types/derivedEpisodeCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { useCreateApiEpisodes } from '@/services/useCreateApiEpisodes.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -20,6 +22,37 @@ export type CreateEpisodesFormBody = {
   episode_type_concept_id: number
   episode_source_value?: string | undefined
   episode_source_concept_id?: number | undefined
+}
+
+export const CreateEpisodesFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`episode_concept_id`} />
+      <StringField
+        fieldName={`episode_start_date`}
+        label="episode_start_date"
+      />
+      <StringField
+        fieldName={`episode_start_datetime`}
+        label="episode_start_datetime"
+      />
+      <StringField fieldName={`episode_end_date`} label="episode_end_date" />
+      <StringField
+        fieldName={`episode_end_datetime`}
+        label="episode_end_datetime"
+      />
+      <IntegerField fieldName={`episode_parent_id`} />
+      <IntegerField fieldName={`episode_number`} />
+      <IntegerField fieldName={`episode_object_concept_id`} />
+      <IntegerField fieldName={`episode_type_concept_id`} />
+      <StringField
+        fieldName={`episode_source_value`}
+        label="episode_source_value"
+      />
+      <IntegerField fieldName={`episode_source_concept_id`} />
+    </>
+  )
 }
 
 export type CreateEpisodesFormProps = {
@@ -55,6 +88,8 @@ export const CreateEpisodesForm = (props: CreateEpisodesFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateEpisodesFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

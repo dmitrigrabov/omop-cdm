@@ -1,4 +1,7 @@
 import { metadataMetadataCreate } from '@/types/metadataMetadataCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
+import { NumberField } from '@/components/fields/number-field'
 import { useCreateApiMetadatas } from '@/services/useCreateApiMetadatas.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -16,6 +19,21 @@ export type CreateMetadatasFormBody = {
   value_as_number?: number | undefined
   metadata_date?: string | undefined
   metadata_datetime?: string | undefined
+}
+
+export const CreateMetadatasFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`metadata_concept_id`} />
+      <IntegerField fieldName={`metadata_type_concept_id`} />
+      <StringField fieldName={`name`} label="name" />
+      <StringField fieldName={`value_as_string`} label="value_as_string" />
+      <IntegerField fieldName={`value_as_concept_id`} />
+      <NumberField fieldName={`value_as_number`} />
+      <StringField fieldName={`metadata_date`} label="metadata_date" />
+      <StringField fieldName={`metadata_datetime`} label="metadata_datetime" />
+    </>
+  )
 }
 
 export type CreateMetadatasFormProps = {
@@ -51,6 +69,8 @@ export const CreateMetadatasForm = (props: CreateMetadatasFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateMetadatasFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

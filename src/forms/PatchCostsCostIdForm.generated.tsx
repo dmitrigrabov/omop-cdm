@@ -1,4 +1,7 @@
 import { healthsystemCostUpdate } from '@/types/healthsystemCostUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
+import { NumberField } from '@/components/fields/number-field'
 import { usePatchApiCostsCostId } from '@/services/usePatchApiCostsCostId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -29,6 +32,37 @@ export type PatchCostsCostIdFormBody = {
   revenue_code_source_value?: string | undefined
   drg_concept_id?: number | undefined
   drg_source_value?: string | undefined
+}
+
+export const PatchCostsCostIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`cost_event_id`} />
+      <StringField fieldName={`cost_domain_id`} label="cost_domain_id" />
+      <IntegerField fieldName={`cost_type_concept_id`} />
+      <IntegerField fieldName={`currency_concept_id`} />
+      <NumberField fieldName={`total_charge`} />
+      <NumberField fieldName={`total_cost`} />
+      <NumberField fieldName={`total_paid`} />
+      <NumberField fieldName={`paid_by_payer`} />
+      <NumberField fieldName={`paid_by_patient`} />
+      <NumberField fieldName={`paid_patient_copay`} />
+      <NumberField fieldName={`paid_patient_coinsurance`} />
+      <NumberField fieldName={`paid_patient_deductible`} />
+      <NumberField fieldName={`paid_by_primary`} />
+      <NumberField fieldName={`paid_ingredient_cost`} />
+      <NumberField fieldName={`paid_dispensing_fee`} />
+      <IntegerField fieldName={`payer_plan_period_id`} />
+      <NumberField fieldName={`amount_allowed`} />
+      <IntegerField fieldName={`revenue_code_concept_id`} />
+      <StringField
+        fieldName={`revenue_code_source_value`}
+        label="revenue_code_source_value"
+      />
+      <IntegerField fieldName={`drg_concept_id`} />
+      <StringField fieldName={`drg_source_value`} label="drg_source_value" />
+    </>
+  )
 }
 
 export type PatchCostsCostIdFormProps = {
@@ -65,6 +99,8 @@ export const PatchCostsCostIdForm = (props: PatchCostsCostIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchCostsCostIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -1,4 +1,6 @@
 import { healthsystemProviderUpdate } from '@/types/healthsystemProviderUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiProvidersProviderId } from '@/services/usePatchApiProvidersProviderId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -20,6 +22,34 @@ export type PatchProvidersProviderIdFormBody = {
   specialty_source_concept_id?: number | undefined
   gender_source_value?: string | undefined
   gender_source_concept_id?: number | undefined
+}
+
+export const PatchProvidersProviderIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`provider_name`} label="provider_name" />
+      <StringField fieldName={`npi`} label="npi" />
+      <StringField fieldName={`dea`} label="dea" />
+      <IntegerField fieldName={`specialty_concept_id`} />
+      <IntegerField fieldName={`care_site_id`} />
+      <IntegerField fieldName={`year_of_birth`} />
+      <IntegerField fieldName={`gender_concept_id`} />
+      <StringField
+        fieldName={`provider_source_value`}
+        label="provider_source_value"
+      />
+      <StringField
+        fieldName={`specialty_source_value`}
+        label="specialty_source_value"
+      />
+      <IntegerField fieldName={`specialty_source_concept_id`} />
+      <StringField
+        fieldName={`gender_source_value`}
+        label="gender_source_value"
+      />
+      <IntegerField fieldName={`gender_source_concept_id`} />
+    </>
+  )
 }
 
 export type PatchProvidersProviderIdFormProps = {
@@ -58,6 +88,8 @@ export const PatchProvidersProviderIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchProvidersProviderIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

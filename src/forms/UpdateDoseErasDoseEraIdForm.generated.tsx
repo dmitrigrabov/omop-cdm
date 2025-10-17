@@ -1,4 +1,7 @@
 import { derivedDoseEraCreate } from '@/types/derivedDoseEraCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { NumberField } from '@/components/fields/number-field'
+import { StringField } from '@/components/fields/string-field'
 import { useUpdateApiDoseErasDoseEraId } from '@/services/useUpdateApiDoseErasDoseEraId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -14,6 +17,22 @@ export type UpdateDoseErasDoseEraIdFormBody = {
   dose_value: number
   dose_era_start_date: string
   dose_era_end_date: string
+}
+
+export const UpdateDoseErasDoseEraIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`drug_concept_id`} />
+      <IntegerField fieldName={`unit_concept_id`} />
+      <NumberField fieldName={`dose_value`} />
+      <StringField
+        fieldName={`dose_era_start_date`}
+        label="dose_era_start_date"
+      />
+      <StringField fieldName={`dose_era_end_date`} label="dose_era_end_date" />
+    </>
+  )
 }
 
 export type UpdateDoseErasDoseEraIdFormProps = {
@@ -52,6 +71,8 @@ export const UpdateDoseErasDoseEraIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <UpdateDoseErasDoseEraIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

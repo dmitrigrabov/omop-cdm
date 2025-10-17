@@ -1,4 +1,7 @@
 import { derivedDoseEraCreate } from '@/types/derivedDoseEraCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { NumberField } from '@/components/fields/number-field'
+import { StringField } from '@/components/fields/string-field'
 import { useCreateApiDoseEras } from '@/services/useCreateApiDoseEras.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -14,6 +17,22 @@ export type CreateDoseErasFormBody = {
   dose_value: number
   dose_era_start_date: string
   dose_era_end_date: string
+}
+
+export const CreateDoseErasFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`drug_concept_id`} />
+      <IntegerField fieldName={`unit_concept_id`} />
+      <NumberField fieldName={`dose_value`} />
+      <StringField
+        fieldName={`dose_era_start_date`}
+        label="dose_era_start_date"
+      />
+      <StringField fieldName={`dose_era_end_date`} label="dose_era_end_date" />
+    </>
+  )
 }
 
 export type CreateDoseErasFormProps = {
@@ -49,6 +68,8 @@ export const CreateDoseErasForm = (props: CreateDoseErasFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateDoseErasFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -1,4 +1,6 @@
 import { resultsCohortDefinitionCreate } from '@/types/resultsCohortDefinitionCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { useUpdateApiCohortDefinitionsCohortDefinitionId } from '@/services/useUpdateApiCohortDefinitionsCohortDefinitionId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -15,6 +17,32 @@ export type UpdateCohortDefinitionsCohortDefinitionIdFormBody = {
   cohort_definition_syntax?: string | undefined
   subject_concept_id: number
   cohort_initiation_date?: string | undefined
+}
+
+export const UpdateCohortDefinitionsCohortDefinitionIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`cohort_definition_id`} />
+      <StringField
+        fieldName={`cohort_definition_name`}
+        label="cohort_definition_name"
+      />
+      <StringField
+        fieldName={`cohort_definition_description`}
+        label="cohort_definition_description"
+      />
+      <IntegerField fieldName={`definition_type_concept_id`} />
+      <StringField
+        fieldName={`cohort_definition_syntax`}
+        label="cohort_definition_syntax"
+      />
+      <IntegerField fieldName={`subject_concept_id`} />
+      <StringField
+        fieldName={`cohort_initiation_date`}
+        label="cohort_initiation_date"
+      />
+    </>
+  )
 }
 
 export type UpdateCohortDefinitionsCohortDefinitionIdFormProps = {
@@ -55,6 +83,8 @@ export const UpdateCohortDefinitionsCohortDefinitionIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <UpdateCohortDefinitionsCohortDefinitionIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

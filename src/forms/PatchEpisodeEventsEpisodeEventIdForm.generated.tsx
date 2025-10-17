@@ -1,4 +1,5 @@
 import { derivedEpisodeEventUpdate } from '@/types/derivedEpisodeEventUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiEpisodeEventsEpisodeEventId } from '@/services/usePatchApiEpisodeEventsEpisodeEventId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -11,6 +12,16 @@ export type PatchEpisodeEventsEpisodeEventIdFormBody = {
   episode_id?: number | undefined
   event_id?: number | undefined
   episode_event_field_concept_id?: number | undefined
+}
+
+export const PatchEpisodeEventsEpisodeEventIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`episode_id`} />
+      <IntegerField fieldName={`event_id`} />
+      <IntegerField fieldName={`episode_event_field_concept_id`} />
+    </>
+  )
 }
 
 export type PatchEpisodeEventsEpisodeEventIdFormProps = {
@@ -51,6 +62,8 @@ export const PatchEpisodeEventsEpisodeEventIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchEpisodeEventsEpisodeEventIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

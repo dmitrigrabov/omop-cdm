@@ -1,4 +1,6 @@
 import { clinicalObservationPeriodUpdate } from '@/types/clinicalObservationPeriodUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { usePatchApiObservationPeriodsObservationPeriodId } from '@/services/usePatchApiObservationPeriodsObservationPeriodId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -12,6 +14,23 @@ export type PatchObservationPeriodsObservationPeriodIdFormBody = {
   observation_period_start_date?: string | undefined
   observation_period_end_date?: string | undefined
   period_type_concept_id?: number | undefined
+}
+
+export const PatchObservationPeriodsObservationPeriodIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <StringField
+        fieldName={`observation_period_start_date`}
+        label="observation_period_start_date"
+      />
+      <StringField
+        fieldName={`observation_period_end_date`}
+        label="observation_period_end_date"
+      />
+      <IntegerField fieldName={`period_type_concept_id`} />
+    </>
+  )
 }
 
 export type PatchObservationPeriodsObservationPeriodIdFormProps = {
@@ -52,6 +71,8 @@ export const PatchObservationPeriodsObservationPeriodIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchObservationPeriodsObservationPeriodIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

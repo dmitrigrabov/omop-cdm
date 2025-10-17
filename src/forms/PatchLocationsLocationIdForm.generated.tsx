@@ -1,4 +1,7 @@
 import { healthsystemLocationUpdate } from '@/types/healthsystemLocationUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
+import { NumberField } from '@/components/fields/number-field'
 import { usePatchApiLocationsLocationId } from '@/services/usePatchApiLocationsLocationId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -17,6 +20,28 @@ export type PatchLocationsLocationIdFormBody = {
   country_source_value?: string | undefined
   latitude?: number | undefined
   longitude?: number | undefined
+}
+
+export const PatchLocationsLocationIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`city`} label="city" />
+      <StringField fieldName={`state`} label="state" />
+      <StringField fieldName={`zip`} label="zip" />
+      <StringField fieldName={`county`} label="county" />
+      <StringField
+        fieldName={`location_source_value`}
+        label="location_source_value"
+      />
+      <IntegerField fieldName={`country_concept_id`} />
+      <StringField
+        fieldName={`country_source_value`}
+        label="country_source_value"
+      />
+      <NumberField fieldName={`latitude`} />
+      <NumberField fieldName={`longitude`} />
+    </>
+  )
 }
 
 export type PatchLocationsLocationIdFormProps = {
@@ -55,6 +80,8 @@ export const PatchLocationsLocationIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchLocationsLocationIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

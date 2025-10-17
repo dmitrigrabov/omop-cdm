@@ -1,4 +1,6 @@
 import { clinicalDeathUpdate } from '@/types/clinicalDeathUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { usePatchApiDeathsDeathId } from '@/services/usePatchApiDeathsDeathId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -15,6 +17,23 @@ export type PatchDeathsDeathIdFormBody = {
   cause_concept_id?: number | undefined
   cause_source_value?: string | undefined
   cause_source_concept_id?: number | undefined
+}
+
+export const PatchDeathsDeathIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <StringField fieldName={`death_date`} label="death_date" />
+      <StringField fieldName={`death_datetime`} label="death_datetime" />
+      <IntegerField fieldName={`death_type_concept_id`} />
+      <IntegerField fieldName={`cause_concept_id`} />
+      <StringField
+        fieldName={`cause_source_value`}
+        label="cause_source_value"
+      />
+      <IntegerField fieldName={`cause_source_concept_id`} />
+    </>
+  )
 }
 
 export type PatchDeathsDeathIdFormProps = {
@@ -51,6 +70,8 @@ export const PatchDeathsDeathIdForm = (props: PatchDeathsDeathIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchDeathsDeathIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

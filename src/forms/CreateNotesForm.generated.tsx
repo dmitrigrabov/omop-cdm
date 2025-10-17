@@ -1,4 +1,6 @@
 import { clinicalNoteCreate } from '@/types/clinicalNoteCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { useCreateApiNotes } from '@/services/useCreateApiNotes.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -23,6 +25,28 @@ export type CreateNotesFormBody = {
   note_source_value?: string | undefined
   note_event_id?: number | undefined
   note_event_field_concept_id?: number | undefined
+}
+
+export const CreateNotesFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <StringField fieldName={`note_date`} label="note_date" />
+      <StringField fieldName={`note_datetime`} label="note_datetime" />
+      <IntegerField fieldName={`note_type_concept_id`} />
+      <IntegerField fieldName={`note_class_concept_id`} />
+      <StringField fieldName={`note_title`} label="note_title" />
+      <StringField fieldName={`note_text`} label="note_text" />
+      <IntegerField fieldName={`encoding_concept_id`} />
+      <IntegerField fieldName={`language_concept_id`} />
+      <IntegerField fieldName={`provider_id`} />
+      <IntegerField fieldName={`visit_occurrence_id`} />
+      <IntegerField fieldName={`visit_detail_id`} />
+      <StringField fieldName={`note_source_value`} label="note_source_value" />
+      <IntegerField fieldName={`note_event_id`} />
+      <IntegerField fieldName={`note_event_field_concept_id`} />
+    </>
+  )
 }
 
 export type CreateNotesFormProps = {
@@ -58,6 +82,8 @@ export const CreateNotesForm = (props: CreateNotesFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateNotesFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

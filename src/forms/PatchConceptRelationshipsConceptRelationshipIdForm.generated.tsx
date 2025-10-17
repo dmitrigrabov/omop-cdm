@@ -1,4 +1,5 @@
 import { vocabularyConceptRelationshipUpdate } from '@/types/vocabularyConceptRelationshipUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
 import { usePatchApiConceptRelationshipsConceptRelationshipId } from '@/services/usePatchApiConceptRelationshipsConceptRelationshipId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -12,6 +13,17 @@ export type PatchConceptRelationshipsConceptRelationshipIdFormBody = {
   valid_start_date?: string | undefined
   valid_end_date?: string | undefined
   invalid_reason?: string | undefined
+}
+
+export const PatchConceptRelationshipsConceptRelationshipIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`relationship_id`} label="relationship_id" />
+      <StringField fieldName={`valid_start_date`} label="valid_start_date" />
+      <StringField fieldName={`valid_end_date`} label="valid_end_date" />
+      <StringField fieldName={`invalid_reason`} label="invalid_reason" />
+    </>
+  )
 }
 
 export type PatchConceptRelationshipsConceptRelationshipIdFormProps = {
@@ -52,6 +64,8 @@ export const PatchConceptRelationshipsConceptRelationshipIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchConceptRelationshipsConceptRelationshipIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -1,4 +1,6 @@
 import { clinicalConditionOccurrenceCreate } from '@/types/clinicalConditionOccurrenceCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { useUpdateApiConditionOccurrencesConditionOccurrenceId } from '@/services/useUpdateApiConditionOccurrencesConditionOccurrenceId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -23,6 +25,46 @@ export type UpdateConditionOccurrencesConditionOccurrenceIdFormBody = {
   condition_source_value?: string | undefined
   condition_source_concept_id?: number | undefined
   condition_status_source_value?: string | undefined
+}
+
+export const UpdateConditionOccurrencesConditionOccurrenceIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`condition_concept_id`} />
+      <StringField
+        fieldName={`condition_start_date`}
+        label="condition_start_date"
+      />
+      <StringField
+        fieldName={`condition_start_datetime`}
+        label="condition_start_datetime"
+      />
+      <StringField
+        fieldName={`condition_end_date`}
+        label="condition_end_date"
+      />
+      <StringField
+        fieldName={`condition_end_datetime`}
+        label="condition_end_datetime"
+      />
+      <IntegerField fieldName={`condition_type_concept_id`} />
+      <IntegerField fieldName={`condition_status_concept_id`} />
+      <StringField fieldName={`stop_reason`} label="stop_reason" />
+      <IntegerField fieldName={`provider_id`} />
+      <IntegerField fieldName={`visit_occurrence_id`} />
+      <IntegerField fieldName={`visit_detail_id`} />
+      <StringField
+        fieldName={`condition_source_value`}
+        label="condition_source_value"
+      />
+      <IntegerField fieldName={`condition_source_concept_id`} />
+      <StringField
+        fieldName={`condition_status_source_value`}
+        label="condition_status_source_value"
+      />
+    </>
+  )
 }
 
 export type UpdateConditionOccurrencesConditionOccurrenceIdFormProps = {
@@ -65,6 +107,8 @@ export const UpdateConditionOccurrencesConditionOccurrenceIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <UpdateConditionOccurrencesConditionOccurrenceIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

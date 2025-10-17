@@ -1,4 +1,6 @@
 import { vocabularyConceptSynonymCreate } from '@/types/vocabularyConceptSynonymCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { useUpdateApiConceptSynonymsConceptSynonymId } from '@/services/useUpdateApiConceptSynonymsConceptSynonymId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -11,6 +13,19 @@ export type UpdateConceptSynonymsConceptSynonymIdFormBody = {
   concept_id: number
   concept_synonym_name: string
   language_concept_id: number
+}
+
+export const UpdateConceptSynonymsConceptSynonymIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`concept_id`} />
+      <StringField
+        fieldName={`concept_synonym_name`}
+        label="concept_synonym_name"
+      />
+      <IntegerField fieldName={`language_concept_id`} />
+    </>
+  )
 }
 
 export type UpdateConceptSynonymsConceptSynonymIdFormProps = {
@@ -51,6 +66,8 @@ export const UpdateConceptSynonymsConceptSynonymIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <UpdateConceptSynonymsConceptSynonymIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

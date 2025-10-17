@@ -1,4 +1,6 @@
 import { clinicalProcedureOccurrenceUpdate } from '@/types/clinicalProcedureOccurrenceUpdate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { usePatchApiProcedureOccurrencesProcedureOccurrenceId } from '@/services/usePatchApiProcedureOccurrencesProcedureOccurrenceId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -23,6 +25,43 @@ export type PatchProcedureOccurrencesProcedureOccurrenceIdFormBody = {
   procedure_source_value?: string | undefined
   procedure_source_concept_id?: number | undefined
   modifier_source_value?: string | undefined
+}
+
+export const PatchProcedureOccurrencesProcedureOccurrenceIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`procedure_concept_id`} />
+      <StringField fieldName={`procedure_date`} label="procedure_date" />
+      <StringField
+        fieldName={`procedure_datetime`}
+        label="procedure_datetime"
+      />
+      <StringField
+        fieldName={`procedure_end_date`}
+        label="procedure_end_date"
+      />
+      <StringField
+        fieldName={`procedure_end_datetime`}
+        label="procedure_end_datetime"
+      />
+      <IntegerField fieldName={`procedure_type_concept_id`} />
+      <IntegerField fieldName={`modifier_concept_id`} />
+      <IntegerField fieldName={`quantity`} />
+      <IntegerField fieldName={`provider_id`} />
+      <IntegerField fieldName={`visit_occurrence_id`} />
+      <IntegerField fieldName={`visit_detail_id`} />
+      <StringField
+        fieldName={`procedure_source_value`}
+        label="procedure_source_value"
+      />
+      <IntegerField fieldName={`procedure_source_concept_id`} />
+      <StringField
+        fieldName={`modifier_source_value`}
+        label="modifier_source_value"
+      />
+    </>
+  )
 }
 
 export type PatchProcedureOccurrencesProcedureOccurrenceIdFormProps = {
@@ -63,6 +102,8 @@ export const PatchProcedureOccurrencesProcedureOccurrenceIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchProcedureOccurrencesProcedureOccurrenceIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

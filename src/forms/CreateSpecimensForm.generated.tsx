@@ -1,4 +1,7 @@
 import { clinicalSpecimenCreate } from '@/types/clinicalSpecimenCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
+import { NumberField } from '@/components/fields/number-field'
 import { useCreateApiSpecimens } from '@/services/useCreateApiSpecimens.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -22,6 +25,39 @@ export type CreateSpecimensFormBody = {
   unit_source_value?: string | undefined
   anatomic_site_source_value?: string | undefined
   disease_status_source_value?: string | undefined
+}
+
+export const CreateSpecimensFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`specimen_concept_id`} />
+      <IntegerField fieldName={`specimen_type_concept_id`} />
+      <StringField fieldName={`specimen_date`} label="specimen_date" />
+      <StringField fieldName={`specimen_datetime`} label="specimen_datetime" />
+      <NumberField fieldName={`quantity`} />
+      <IntegerField fieldName={`unit_concept_id`} />
+      <IntegerField fieldName={`anatomic_site_concept_id`} />
+      <IntegerField fieldName={`disease_status_concept_id`} />
+      <StringField
+        fieldName={`specimen_source_id`}
+        label="specimen_source_id"
+      />
+      <StringField
+        fieldName={`specimen_source_value`}
+        label="specimen_source_value"
+      />
+      <StringField fieldName={`unit_source_value`} label="unit_source_value" />
+      <StringField
+        fieldName={`anatomic_site_source_value`}
+        label="anatomic_site_source_value"
+      />
+      <StringField
+        fieldName={`disease_status_source_value`}
+        label="disease_status_source_value"
+      />
+    </>
+  )
 }
 
 export type CreateSpecimensFormProps = {
@@ -57,6 +93,8 @@ export const CreateSpecimensForm = (props: CreateSpecimensFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateSpecimensFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

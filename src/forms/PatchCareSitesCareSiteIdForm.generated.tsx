@@ -1,4 +1,6 @@
 import { healthsystemCareSiteUpdate } from '@/types/healthsystemCareSiteUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiCareSitesCareSiteId } from '@/services/usePatchApiCareSitesCareSiteId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -13,6 +15,24 @@ export type PatchCareSitesCareSiteIdFormBody = {
   location_id?: number | undefined
   care_site_source_value?: string | undefined
   place_of_service_source_value?: string | undefined
+}
+
+export const PatchCareSitesCareSiteIdFormFields = () => {
+  return (
+    <>
+      <StringField fieldName={`care_site_name`} label="care_site_name" />
+      <IntegerField fieldName={`place_of_service_concept_id`} />
+      <IntegerField fieldName={`location_id`} />
+      <StringField
+        fieldName={`care_site_source_value`}
+        label="care_site_source_value"
+      />
+      <StringField
+        fieldName={`place_of_service_source_value`}
+        label="place_of_service_source_value"
+      />
+    </>
+  )
 }
 
 export type PatchCareSitesCareSiteIdFormProps = {
@@ -51,6 +71,8 @@ export const PatchCareSitesCareSiteIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchCareSitesCareSiteIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

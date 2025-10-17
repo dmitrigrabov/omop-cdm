@@ -12,3 +12,17 @@ trace generate
 {"stackTrail":"bfe0c6157921ae3a","level":"DEBUG","datetime":1760460273071,"message":"520 files generated"}
 trace render
 {"stackTrail":"bfe0c6157921ae3a","level":"INFO","datetime":1760460273071,"message":"trace","args":"render"}
+trace parse
+{"stackTrail":"be12d4807be1beba","level":"INFO","datetime":1760646598222,"message":"trace","args":"parse"}
+trace generate
+{"stackTrail":"be12d4807be1beba","level":"INFO","datetime":1760646598267,"message":"trace","args":"generate"}
+{"stackTrail":"be12d4807be1beba","level":"DEBUG","datetime":1760646598348,"message":"520 files generated"}
+trace render
+{"stackTrail":"be12d4807be1beba","level":"INFO","datetime":1760646598348,"message":"trace","args":"render"}
+trace parse
+{"stackTrail":"87359a84e0087dd5","level":"INFO","datetime":1760646786543,"message":"trace","args":"parse"}
+trace generate
+{"stackTrail":"87359a84e0087dd5","level":"INFO","datetime":1760646786580,"message":"trace","args":"generate"}
+{"stackTrail":"87359a84e0087dd5","level":"DEBUG","datetime":1760646786661,"message":"520 files generated"}
+trace render
+{"stackTrail":"87359a84e0087dd5","level":"INFO","datetime":1760646786661,"message":"trace","args":"render"}

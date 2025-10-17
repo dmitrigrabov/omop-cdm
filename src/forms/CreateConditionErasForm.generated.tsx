@@ -1,4 +1,6 @@
 import { derivedConditionEraCreate } from '@/types/derivedConditionEraCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
+import { StringField } from '@/components/fields/string-field'
 import { useCreateApiConditionEras } from '@/services/useCreateApiConditionEras.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -13,6 +15,24 @@ export type CreateConditionErasFormBody = {
   condition_era_start_date: string
   condition_era_end_date: string
   condition_occurrence_count?: number | undefined
+}
+
+export const CreateConditionErasFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`person_id`} />
+      <IntegerField fieldName={`condition_concept_id`} />
+      <StringField
+        fieldName={`condition_era_start_date`}
+        label="condition_era_start_date"
+      />
+      <StringField
+        fieldName={`condition_era_end_date`}
+        label="condition_era_end_date"
+      />
+      <IntegerField fieldName={`condition_occurrence_count`} />
+    </>
+  )
 }
 
 export type CreateConditionErasFormProps = {
@@ -50,6 +70,8 @@ export const CreateConditionErasForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <CreateConditionErasFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -1,4 +1,6 @@
 import { vocabularyConceptClassUpdate } from '@/types/vocabularyConceptClassUpdate.generated.ts'
+import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { usePatchApiConceptClasssConceptClassId } from '@/services/usePatchApiConceptClasssConceptClassId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -10,6 +12,18 @@ import { useEffect } from 'react'
 export type PatchConceptClasssConceptClassIdFormBody = {
   concept_class_name?: string | undefined
   concept_class_concept_id?: number | undefined
+}
+
+export const PatchConceptClasssConceptClassIdFormFields = () => {
+  return (
+    <>
+      <StringField
+        fieldName={`concept_class_name`}
+        label="concept_class_name"
+      />
+      <IntegerField fieldName={`concept_class_concept_id`} />
+    </>
+  )
 }
 
 export type PatchConceptClasssConceptClassIdFormProps = {
@@ -50,6 +64,8 @@ export const PatchConceptClasssConceptClassIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <PatchConceptClasssConceptClassIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

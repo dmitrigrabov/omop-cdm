@@ -12,7 +12,7 @@ import { Lens } from '@hookform/lenses'
 export type CareSitesSelectProps = {
   onChange: (value: string) => void
   value: string
-  placeholder: string
+  placeholder: string | undefined
 }
 
 export const CareSitesSelect = (props: CareSitesSelectProps) => {

@@ -1,4 +1,5 @@
 import { resultsFactRelationshipCreate } from '@/types/resultsFactRelationshipCreate.generated.ts'
+import { IntegerField } from '@/components/fields/integer-field'
 import { useUpdateApiFactRelationshipsFactRelationshipId } from '@/services/useUpdateApiFactRelationshipsFactRelationshipId.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -9,6 +10,14 @@ import { useEffect } from 'react'
 
 export type UpdateFactRelationshipsFactRelationshipIdFormBody = {
   relationship_concept_id: number
+}
+
+export const UpdateFactRelationshipsFactRelationshipIdFormFields = () => {
+  return (
+    <>
+      <IntegerField fieldName={`relationship_concept_id`} />
+    </>
+  )
 }
 
 export type UpdateFactRelationshipsFactRelationshipIdFormProps = {
@@ -49,6 +58,8 @@ export const UpdateFactRelationshipsFactRelationshipIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
+        <UpdateFactRelationshipsFactRelationshipIdFormFields />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>
