@@ -14,26 +14,17 @@ export type UpdateDomainsIdFormBody = {
   domain_concept_id: number
 }
 
-export const UpdateDomainsIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`domain_name`} label="domain_name" />
-      <IntegerField fieldName={`domain_concept_id`} />
-    </>
-  )
-}
-
 export type UpdateDomainsIdFormProps = {
   id: string
-  defaultValues: UpdateDomainsIdFormBody
+  defaultValues: Required<UpdateDomainsIdFormBody>
   onSuccess: () => void
 }
 
 export type UpdateDomainsIdFormPathParams = { id: string }
 
 export const UpdateDomainsIdForm = (props: UpdateDomainsIdFormProps) => {
-  const form = useForm<UpdateDomainsIdFormBody>({
-    resolver: zodResolver(vocabularyDomainCreate),
+  const form = useForm<Required<UpdateDomainsIdFormBody>>({
+    resolver: zodResolver(vocabularyDomainCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -57,7 +48,11 @@ export const UpdateDomainsIdForm = (props: UpdateDomainsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateDomainsIdFormFields />
+        <StringField lens={lens.focus('domain_name')} label="domain_name" />
+        <IntegerField
+          lens={lens.focus('domain_concept_id')}
+          label="domain_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

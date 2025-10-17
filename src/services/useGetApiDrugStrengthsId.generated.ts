@@ -2,7 +2,7 @@ import { vocabularyDrugStrength } from '@/types/vocabularyDrugStrength.generated
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiDrugStrengthsIdArgs = { id: number }
+export type UseGetApiDrugStrengthsIdArgs = { id: string }
 
 export const useGetApiDrugStrengthsId = ({
   id,

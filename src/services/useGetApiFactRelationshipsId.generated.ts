@@ -2,7 +2,7 @@ import { resultsFactRelationship } from '@/types/resultsFactRelationship.generat
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiFactRelationshipsIdArgs = { id: number }
+export type UseGetApiFactRelationshipsIdArgs = { id: string }
 
 export const useGetApiFactRelationshipsId = ({
   id,

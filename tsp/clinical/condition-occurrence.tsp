@@ -272,6 +272,40 @@ model ConditionOccurrenceQueryParams {
 }
 
 /**
+ * ConditionOccurrence list response with example
+ */
+@doc("Paginated list of ConditionOccurrence records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  condition_concept_id: 8507,
+  condition_start_date: "2023-01-15",
+  condition_start_datetime: "2023-01-15",
+  condition_end_date: "2023-01-15",
+  condition_end_datetime: "2023-01-15",
+  condition_type_concept_id: 8507,
+  condition_status_concept_id: 8507,
+  stop_reason: "Example value",
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  condition_source_value: "Example value",
+  condition_source_concept_id: 8507,
+  condition_status_source_value: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ConditionOccurrenceList {
+  ...PaginatedList<ConditionOccurrence>;
+}
+
+/**
  * ConditionOccurrence API operations
  */
 @route("/condition-occurrences")
@@ -284,7 +318,7 @@ interface ConditionOccurrences {
     ...ConditionOccurrenceQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ConditionOccurrence>;
+    @body body: ConditionOccurrenceList;
   } | ErrorResponse;
 
   @get
@@ -293,7 +327,7 @@ interface ConditionOccurrences {
   read(
     @path
     @doc("Unique condition-occurrence identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ConditionOccurrence;
@@ -323,7 +357,7 @@ interface ConditionOccurrences {
   update(
     @path
     @doc("Unique condition-occurrence identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete condition-occurrence data")
@@ -345,7 +379,7 @@ interface ConditionOccurrences {
   patch(
     @path
     @doc("Unique condition-occurrence identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -364,7 +398,7 @@ interface ConditionOccurrences {
   delete(
     @path
     @doc("Unique condition-occurrence identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

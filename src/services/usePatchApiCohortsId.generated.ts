@@ -10,7 +10,7 @@ import {
   UseMutationOptions,
 } from '@tanstack/react-query'
 
-export type UsePatchApiCohortsIdArgs = { id: number; body: ResultsCohortUpdate }
+export type UsePatchApiCohortsIdArgs = { id: string; body: ResultsCohortUpdate }
 
 export const usePatchApiCohortsId = (
   args: UseMutationOptions<

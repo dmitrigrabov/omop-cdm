@@ -340,6 +340,41 @@ model VisitOccurrenceQueryParams {
 }
 
 /**
+ * VisitOccurrence list response with example
+ */
+@doc("Paginated list of VisitOccurrence records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  visit_concept_id: 8507,
+  visit_start_date: "2023-01-15",
+  visit_start_datetime: "2023-01-15",
+  visit_end_date: "2023-01-15",
+  visit_end_datetime: "2023-01-15",
+  visit_type_concept_id: 8507,
+  provider_id: 100,
+  care_site_id: 100,
+  visit_source_value: "Example value",
+  visit_source_concept_id: 8507,
+  admitted_from_concept_id: 8507,
+  admitted_from_source_value: "Example value",
+  discharged_to_concept_id: 8507,
+  discharged_to_source_value: "Example value",
+  preceding_visit_occurrence_id: 100
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model VisitOccurrenceList {
+  ...PaginatedList<VisitOccurrence>;
+}
+
+/**
  * VisitOccurrence API operations
  */
 @route("/visit-occurrences")
@@ -352,7 +387,7 @@ interface VisitOccurrences {
     ...VisitOccurrenceQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<VisitOccurrence>;
+    @body body: VisitOccurrenceList;
   } | ErrorResponse;
 
   @get
@@ -361,7 +396,7 @@ interface VisitOccurrences {
   read(
     @path
     @doc("Unique visit-occurrence identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: VisitOccurrence;
@@ -391,7 +426,7 @@ interface VisitOccurrences {
   update(
     @path
     @doc("Unique visit-occurrence identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete visit-occurrence data")
@@ -413,7 +448,7 @@ interface VisitOccurrences {
   patch(
     @path
     @doc("Unique visit-occurrence identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -432,7 +467,7 @@ interface VisitOccurrences {
   delete(
     @path
     @doc("Unique visit-occurrence identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

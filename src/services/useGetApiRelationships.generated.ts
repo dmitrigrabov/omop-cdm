@@ -1,19 +1,8 @@
-import { vocabularyRelationship } from '@/types/vocabularyRelationship.generated.ts'
-import { z } from 'zod'
+import { vocabularyRelationshipList } from '@/types/vocabularyRelationshipList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiRelationshipsResponse = z.object({
-  data: z.array(vocabularyRelationship),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiRelationshipsArgs = {
   offset?: number | undefined
@@ -51,7 +40,7 @@ export const useGetApiRelationships = ({
         throw error
       }
 
-      return useGetApiRelationshipsResponse.parse(data)
+      return vocabularyRelationshipList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

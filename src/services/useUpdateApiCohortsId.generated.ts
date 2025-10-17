@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UseUpdateApiCohortsIdArgs = {
-  id: number
+  id: string
   body: ResultsCohortCreate
 }
 

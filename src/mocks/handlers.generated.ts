@@ -1,129 +1,165 @@
-import { HealthsystemCareSite } from '@/types/healthsystemCareSite.generated.ts'
+import { HealthsystemCareSiteList } from '@/types/healthsystemCareSiteList.generated.ts'
 import { http, HttpResponse } from 'msw'
 import { HealthsystemCareSiteCreate } from '@/types/healthsystemCareSiteCreate.generated.ts'
+import { HealthsystemCareSite } from '@/types/healthsystemCareSite.generated.ts'
 import { HealthsystemCareSiteUpdate } from '@/types/healthsystemCareSiteUpdate.generated.ts'
-import { MetadataCdmSource } from '@/types/metadataCdmSource.generated.ts'
+import { MetadataCdmSourceList } from '@/types/metadataCdmSourceList.generated.ts'
 import { MetadataCdmSourceCreate } from '@/types/metadataCdmSourceCreate.generated.ts'
+import { MetadataCdmSource } from '@/types/metadataCdmSource.generated.ts'
 import { MetadataCdmSourceUpdate } from '@/types/metadataCdmSourceUpdate.generated.ts'
-import { ResultsCohortDefinition } from '@/types/resultsCohortDefinition.generated.ts'
+import { ResultsCohortDefinitionList } from '@/types/resultsCohortDefinitionList.generated.ts'
 import { ResultsCohortDefinitionCreate } from '@/types/resultsCohortDefinitionCreate.generated.ts'
+import { ResultsCohortDefinition } from '@/types/resultsCohortDefinition.generated.ts'
 import { ResultsCohortDefinitionUpdate } from '@/types/resultsCohortDefinitionUpdate.generated.ts'
-import { ResultsCohort } from '@/types/resultsCohort.generated.ts'
+import { ResultsCohortList } from '@/types/resultsCohortList.generated.ts'
 import { ResultsCohortCreate } from '@/types/resultsCohortCreate.generated.ts'
+import { ResultsCohort } from '@/types/resultsCohort.generated.ts'
 import { ResultsCohortUpdate } from '@/types/resultsCohortUpdate.generated.ts'
-import { VocabularyConceptAncestor } from '@/types/vocabularyConceptAncestor.generated.ts'
+import { VocabularyConceptAncestorList } from '@/types/vocabularyConceptAncestorList.generated.ts'
 import { VocabularyConceptAncestorCreate } from '@/types/vocabularyConceptAncestorCreate.generated.ts'
+import { VocabularyConceptAncestor } from '@/types/vocabularyConceptAncestor.generated.ts'
 import { VocabularyConceptAncestorUpdate } from '@/types/vocabularyConceptAncestorUpdate.generated.ts'
-import { VocabularyConceptClass } from '@/types/vocabularyConceptClass.generated.ts'
+import { VocabularyConceptClassList } from '@/types/vocabularyConceptClassList.generated.ts'
 import { VocabularyConceptClassCreate } from '@/types/vocabularyConceptClassCreate.generated.ts'
+import { VocabularyConceptClass } from '@/types/vocabularyConceptClass.generated.ts'
 import { VocabularyConceptClassUpdate } from '@/types/vocabularyConceptClassUpdate.generated.ts'
-import { VocabularyConceptRelationship } from '@/types/vocabularyConceptRelationship.generated.ts'
+import { VocabularyConceptRelationshipList } from '@/types/vocabularyConceptRelationshipList.generated.ts'
 import { VocabularyConceptRelationshipCreate } from '@/types/vocabularyConceptRelationshipCreate.generated.ts'
+import { VocabularyConceptRelationship } from '@/types/vocabularyConceptRelationship.generated.ts'
 import { VocabularyConceptRelationshipUpdate } from '@/types/vocabularyConceptRelationshipUpdate.generated.ts'
-import { VocabularyConceptSynonym } from '@/types/vocabularyConceptSynonym.generated.ts'
+import { VocabularyConceptSynonymList } from '@/types/vocabularyConceptSynonymList.generated.ts'
 import { VocabularyConceptSynonymCreate } from '@/types/vocabularyConceptSynonymCreate.generated.ts'
+import { VocabularyConceptSynonym } from '@/types/vocabularyConceptSynonym.generated.ts'
 import { VocabularyConceptSynonymUpdate } from '@/types/vocabularyConceptSynonymUpdate.generated.ts'
-import { VocabularyConcept } from '@/types/vocabularyConcept.generated.ts'
+import { VocabularyConceptList } from '@/types/vocabularyConceptList.generated.ts'
 import { VocabularyConceptCreate } from '@/types/vocabularyConceptCreate.generated.ts'
+import { VocabularyConcept } from '@/types/vocabularyConcept.generated.ts'
 import { VocabularyConceptUpdate } from '@/types/vocabularyConceptUpdate.generated.ts'
-import { DerivedConditionEra } from '@/types/derivedConditionEra.generated.ts'
+import { DerivedConditionEraList } from '@/types/derivedConditionEraList.generated.ts'
 import { DerivedConditionEraCreate } from '@/types/derivedConditionEraCreate.generated.ts'
+import { DerivedConditionEra } from '@/types/derivedConditionEra.generated.ts'
 import { DerivedConditionEraUpdate } from '@/types/derivedConditionEraUpdate.generated.ts'
-import { ClinicalConditionOccurrence } from '@/types/clinicalConditionOccurrence.generated.ts'
+import { ClinicalConditionOccurrenceList } from '@/types/clinicalConditionOccurrenceList.generated.ts'
 import { ClinicalConditionOccurrenceCreate } from '@/types/clinicalConditionOccurrenceCreate.generated.ts'
+import { ClinicalConditionOccurrence } from '@/types/clinicalConditionOccurrence.generated.ts'
 import { ClinicalConditionOccurrenceUpdate } from '@/types/clinicalConditionOccurrenceUpdate.generated.ts'
-import { HealthsystemCost } from '@/types/healthsystemCost.generated.ts'
+import { HealthsystemCostList } from '@/types/healthsystemCostList.generated.ts'
 import { HealthsystemCostCreate } from '@/types/healthsystemCostCreate.generated.ts'
+import { HealthsystemCost } from '@/types/healthsystemCost.generated.ts'
 import { HealthsystemCostUpdate } from '@/types/healthsystemCostUpdate.generated.ts'
-import { ClinicalDeath } from '@/types/clinicalDeath.generated.ts'
+import { ClinicalDeathList } from '@/types/clinicalDeathList.generated.ts'
 import { ClinicalDeathCreate } from '@/types/clinicalDeathCreate.generated.ts'
+import { ClinicalDeath } from '@/types/clinicalDeath.generated.ts'
 import { ClinicalDeathUpdate } from '@/types/clinicalDeathUpdate.generated.ts'
-import { ClinicalDeviceExposure } from '@/types/clinicalDeviceExposure.generated.ts'
+import { ClinicalDeviceExposureList } from '@/types/clinicalDeviceExposureList.generated.ts'
 import { ClinicalDeviceExposureCreate } from '@/types/clinicalDeviceExposureCreate.generated.ts'
+import { ClinicalDeviceExposure } from '@/types/clinicalDeviceExposure.generated.ts'
 import { ClinicalDeviceExposureUpdate } from '@/types/clinicalDeviceExposureUpdate.generated.ts'
-import { VocabularyDomain } from '@/types/vocabularyDomain.generated.ts'
+import { VocabularyDomainList } from '@/types/vocabularyDomainList.generated.ts'
 import { VocabularyDomainCreate } from '@/types/vocabularyDomainCreate.generated.ts'
+import { VocabularyDomain } from '@/types/vocabularyDomain.generated.ts'
 import { VocabularyDomainUpdate } from '@/types/vocabularyDomainUpdate.generated.ts'
-import { DerivedDoseEra } from '@/types/derivedDoseEra.generated.ts'
+import { DerivedDoseEraList } from '@/types/derivedDoseEraList.generated.ts'
 import { DerivedDoseEraCreate } from '@/types/derivedDoseEraCreate.generated.ts'
+import { DerivedDoseEra } from '@/types/derivedDoseEra.generated.ts'
 import { DerivedDoseEraUpdate } from '@/types/derivedDoseEraUpdate.generated.ts'
-import { DerivedDrugEra } from '@/types/derivedDrugEra.generated.ts'
+import { DerivedDrugEraList } from '@/types/derivedDrugEraList.generated.ts'
 import { DerivedDrugEraCreate } from '@/types/derivedDrugEraCreate.generated.ts'
+import { DerivedDrugEra } from '@/types/derivedDrugEra.generated.ts'
 import { DerivedDrugEraUpdate } from '@/types/derivedDrugEraUpdate.generated.ts'
-import { ClinicalDrugExposure } from '@/types/clinicalDrugExposure.generated.ts'
+import { ClinicalDrugExposureList } from '@/types/clinicalDrugExposureList.generated.ts'
 import { ClinicalDrugExposureCreate } from '@/types/clinicalDrugExposureCreate.generated.ts'
+import { ClinicalDrugExposure } from '@/types/clinicalDrugExposure.generated.ts'
 import { ClinicalDrugExposureUpdate } from '@/types/clinicalDrugExposureUpdate.generated.ts'
-import { VocabularyDrugStrength } from '@/types/vocabularyDrugStrength.generated.ts'
+import { VocabularyDrugStrengthList } from '@/types/vocabularyDrugStrengthList.generated.ts'
 import { VocabularyDrugStrengthCreate } from '@/types/vocabularyDrugStrengthCreate.generated.ts'
+import { VocabularyDrugStrength } from '@/types/vocabularyDrugStrength.generated.ts'
 import { VocabularyDrugStrengthUpdate } from '@/types/vocabularyDrugStrengthUpdate.generated.ts'
-import { DerivedEpisodeEvent } from '@/types/derivedEpisodeEvent.generated.ts'
+import { DerivedEpisodeEventList } from '@/types/derivedEpisodeEventList.generated.ts'
 import { DerivedEpisodeEventCreate } from '@/types/derivedEpisodeEventCreate.generated.ts'
+import { DerivedEpisodeEvent } from '@/types/derivedEpisodeEvent.generated.ts'
 import { DerivedEpisodeEventUpdate } from '@/types/derivedEpisodeEventUpdate.generated.ts'
-import { DerivedEpisode } from '@/types/derivedEpisode.generated.ts'
+import { DerivedEpisodeList } from '@/types/derivedEpisodeList.generated.ts'
 import { DerivedEpisodeCreate } from '@/types/derivedEpisodeCreate.generated.ts'
+import { DerivedEpisode } from '@/types/derivedEpisode.generated.ts'
 import { DerivedEpisodeUpdate } from '@/types/derivedEpisodeUpdate.generated.ts'
-import { ResultsFactRelationship } from '@/types/resultsFactRelationship.generated.ts'
+import { ResultsFactRelationshipList } from '@/types/resultsFactRelationshipList.generated.ts'
 import { ResultsFactRelationshipCreate } from '@/types/resultsFactRelationshipCreate.generated.ts'
+import { ResultsFactRelationship } from '@/types/resultsFactRelationship.generated.ts'
 import { ResultsFactRelationshipUpdate } from '@/types/resultsFactRelationshipUpdate.generated.ts'
-import { HealthsystemLocation } from '@/types/healthsystemLocation.generated.ts'
+import { HealthsystemLocationList } from '@/types/healthsystemLocationList.generated.ts'
 import { HealthsystemLocationCreate } from '@/types/healthsystemLocationCreate.generated.ts'
+import { HealthsystemLocation } from '@/types/healthsystemLocation.generated.ts'
 import { HealthsystemLocationUpdate } from '@/types/healthsystemLocationUpdate.generated.ts'
-import { ClinicalMeasurement } from '@/types/clinicalMeasurement.generated.ts'
+import { ClinicalMeasurementList } from '@/types/clinicalMeasurementList.generated.ts'
 import { ClinicalMeasurementCreate } from '@/types/clinicalMeasurementCreate.generated.ts'
+import { ClinicalMeasurement } from '@/types/clinicalMeasurement.generated.ts'
 import { ClinicalMeasurementUpdate } from '@/types/clinicalMeasurementUpdate.generated.ts'
-import { MetadataMetadata } from '@/types/metadataMetadata.generated.ts'
+import { MetadataMetadataList } from '@/types/metadataMetadataList.generated.ts'
 import { MetadataMetadataCreate } from '@/types/metadataMetadataCreate.generated.ts'
+import { MetadataMetadata } from '@/types/metadataMetadata.generated.ts'
 import { MetadataMetadataUpdate } from '@/types/metadataMetadataUpdate.generated.ts'
-import { ClinicalNoteNlp } from '@/types/clinicalNoteNlp.generated.ts'
+import { ClinicalNoteNlpList } from '@/types/clinicalNoteNlpList.generated.ts'
 import { ClinicalNoteNlpCreate } from '@/types/clinicalNoteNlpCreate.generated.ts'
+import { ClinicalNoteNlp } from '@/types/clinicalNoteNlp.generated.ts'
 import { ClinicalNoteNlpUpdate } from '@/types/clinicalNoteNlpUpdate.generated.ts'
-import { ClinicalNote } from '@/types/clinicalNote.generated.ts'
+import { ClinicalNoteList } from '@/types/clinicalNoteList.generated.ts'
 import { ClinicalNoteCreate } from '@/types/clinicalNoteCreate.generated.ts'
+import { ClinicalNote } from '@/types/clinicalNote.generated.ts'
 import { ClinicalNoteUpdate } from '@/types/clinicalNoteUpdate.generated.ts'
-import { ClinicalObservationPeriod } from '@/types/clinicalObservationPeriod.generated.ts'
+import { ClinicalObservationPeriodList } from '@/types/clinicalObservationPeriodList.generated.ts'
 import { ClinicalObservationPeriodCreate } from '@/types/clinicalObservationPeriodCreate.generated.ts'
+import { ClinicalObservationPeriod } from '@/types/clinicalObservationPeriod.generated.ts'
 import { ClinicalObservationPeriodUpdate } from '@/types/clinicalObservationPeriodUpdate.generated.ts'
-import { ClinicalObservation } from '@/types/clinicalObservation.generated.ts'
+import { ClinicalObservationList } from '@/types/clinicalObservationList.generated.ts'
 import { ClinicalObservationCreate } from '@/types/clinicalObservationCreate.generated.ts'
+import { ClinicalObservation } from '@/types/clinicalObservation.generated.ts'
 import { ClinicalObservationUpdate } from '@/types/clinicalObservationUpdate.generated.ts'
-import { HealthsystemPayerPlanPeriod } from '@/types/healthsystemPayerPlanPeriod.generated.ts'
+import { HealthsystemPayerPlanPeriodList } from '@/types/healthsystemPayerPlanPeriodList.generated.ts'
 import { HealthsystemPayerPlanPeriodCreate } from '@/types/healthsystemPayerPlanPeriodCreate.generated.ts'
+import { HealthsystemPayerPlanPeriod } from '@/types/healthsystemPayerPlanPeriod.generated.ts'
 import { HealthsystemPayerPlanPeriodUpdate } from '@/types/healthsystemPayerPlanPeriodUpdate.generated.ts'
-import { ClinicalPerson } from '@/types/clinicalPerson.generated.ts'
+import { ClinicalPersonList } from '@/types/clinicalPersonList.generated.ts'
 import { ClinicalPersonCreate } from '@/types/clinicalPersonCreate.generated.ts'
+import { ClinicalPerson } from '@/types/clinicalPerson.generated.ts'
 import { ClinicalPersonUpdate } from '@/types/clinicalPersonUpdate.generated.ts'
-import { ClinicalProcedureOccurrence } from '@/types/clinicalProcedureOccurrence.generated.ts'
+import { ClinicalProcedureOccurrenceList } from '@/types/clinicalProcedureOccurrenceList.generated.ts'
 import { ClinicalProcedureOccurrenceCreate } from '@/types/clinicalProcedureOccurrenceCreate.generated.ts'
+import { ClinicalProcedureOccurrence } from '@/types/clinicalProcedureOccurrence.generated.ts'
 import { ClinicalProcedureOccurrenceUpdate } from '@/types/clinicalProcedureOccurrenceUpdate.generated.ts'
-import { HealthsystemProvider } from '@/types/healthsystemProvider.generated.ts'
+import { HealthsystemProviderList } from '@/types/healthsystemProviderList.generated.ts'
 import { HealthsystemProviderCreate } from '@/types/healthsystemProviderCreate.generated.ts'
+import { HealthsystemProvider } from '@/types/healthsystemProvider.generated.ts'
 import { HealthsystemProviderUpdate } from '@/types/healthsystemProviderUpdate.generated.ts'
-import { VocabularyRelationship } from '@/types/vocabularyRelationship.generated.ts'
+import { VocabularyRelationshipList } from '@/types/vocabularyRelationshipList.generated.ts'
 import { VocabularyRelationshipCreate } from '@/types/vocabularyRelationshipCreate.generated.ts'
+import { VocabularyRelationship } from '@/types/vocabularyRelationship.generated.ts'
 import { VocabularyRelationshipUpdate } from '@/types/vocabularyRelationshipUpdate.generated.ts'
-import { VocabularySourceToConceptMap } from '@/types/vocabularySourceToConceptMap.generated.ts'
+import { VocabularySourceToConceptMapList } from '@/types/vocabularySourceToConceptMapList.generated.ts'
 import { VocabularySourceToConceptMapCreate } from '@/types/vocabularySourceToConceptMapCreate.generated.ts'
+import { VocabularySourceToConceptMap } from '@/types/vocabularySourceToConceptMap.generated.ts'
 import { VocabularySourceToConceptMapUpdate } from '@/types/vocabularySourceToConceptMapUpdate.generated.ts'
-import { ClinicalSpecimen } from '@/types/clinicalSpecimen.generated.ts'
+import { ClinicalSpecimenList } from '@/types/clinicalSpecimenList.generated.ts'
 import { ClinicalSpecimenCreate } from '@/types/clinicalSpecimenCreate.generated.ts'
+import { ClinicalSpecimen } from '@/types/clinicalSpecimen.generated.ts'
 import { ClinicalSpecimenUpdate } from '@/types/clinicalSpecimenUpdate.generated.ts'
-import { ClinicalVisitDetail } from '@/types/clinicalVisitDetail.generated.ts'
+import { ClinicalVisitDetailList } from '@/types/clinicalVisitDetailList.generated.ts'
 import { ClinicalVisitDetailCreate } from '@/types/clinicalVisitDetailCreate.generated.ts'
+import { ClinicalVisitDetail } from '@/types/clinicalVisitDetail.generated.ts'
 import { ClinicalVisitDetailUpdate } from '@/types/clinicalVisitDetailUpdate.generated.ts'
-import { ClinicalVisitOccurrence } from '@/types/clinicalVisitOccurrence.generated.ts'
+import { ClinicalVisitOccurrenceList } from '@/types/clinicalVisitOccurrenceList.generated.ts'
 import { ClinicalVisitOccurrenceCreate } from '@/types/clinicalVisitOccurrenceCreate.generated.ts'
+import { ClinicalVisitOccurrence } from '@/types/clinicalVisitOccurrence.generated.ts'
 import { ClinicalVisitOccurrenceUpdate } from '@/types/clinicalVisitOccurrenceUpdate.generated.ts'
-import { VocabularyVocabulary } from '@/types/vocabularyVocabulary.generated.ts'
+import { VocabularyVocabularyList } from '@/types/vocabularyVocabularyList.generated.ts'
 import { VocabularyVocabularyCreate } from '@/types/vocabularyVocabularyCreate.generated.ts'
+import { VocabularyVocabulary } from '@/types/vocabularyVocabulary.generated.ts'
 import { VocabularyVocabularyUpdate } from '@/types/vocabularyVocabularyUpdate.generated.ts'
 
 export const getCareSitesHandler = http.get<
   never,
   never,
-  {
-    data: Array<HealthsystemCareSite>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  HealthsystemCareSiteList
 >('/care-sites', () => {
   return HttpResponse.json({
     data: [
@@ -136,6 +172,12 @@ export const getCareSitesHandler = http.get<
         place_of_service_source_value: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -392,7 +434,7 @@ export const postCareSitesHandler = http.post<
 })
 
 export const getCareSitesIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   HealthsystemCareSite
 >('/care-sites/:id', () => {
@@ -407,7 +449,7 @@ export const getCareSitesIdHandler = http.get<
 })
 
 export const putCareSitesIdHandler = http.put<
-  { id: number },
+  { id: string },
   HealthsystemCareSiteCreate,
   HealthsystemCareSite
 >('/care-sites/:id', () => {
@@ -422,7 +464,7 @@ export const putCareSitesIdHandler = http.put<
 })
 
 export const patchCareSitesIdHandler = http.patch<
-  { id: number },
+  { id: string },
   HealthsystemCareSiteUpdate,
   HealthsystemCareSite
 >('/care-sites/:id', () => {
@@ -437,7 +479,7 @@ export const patchCareSitesIdHandler = http.patch<
 })
 
 export const deleteCareSitesIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/care-sites/:id', () => {
@@ -447,10 +489,7 @@ export const deleteCareSitesIdHandler = http.delete<
 export const getCdmSourcesHandler = http.get<
   never,
   never,
-  {
-    data: Array<MetadataCdmSource>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  MetadataCdmSourceList
 >('/cdm-sources', () => {
   return HttpResponse.json({
     data: [
@@ -468,6 +507,12 @@ export const getCdmSourcesHandler = http.get<
         vocabulary_version: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -492,7 +537,7 @@ export const postCdmSourcesHandler = http.post<
 })
 
 export const getCdmSourcesIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   MetadataCdmSource
 >('/cdm-sources/:id', () => {
@@ -512,7 +557,7 @@ export const getCdmSourcesIdHandler = http.get<
 })
 
 export const putCdmSourcesIdHandler = http.put<
-  { id: number },
+  { id: string },
   MetadataCdmSourceCreate,
   MetadataCdmSource
 >('/cdm-sources/:id', () => {
@@ -532,7 +577,7 @@ export const putCdmSourcesIdHandler = http.put<
 })
 
 export const patchCdmSourcesIdHandler = http.patch<
-  { id: number },
+  { id: string },
   MetadataCdmSourceUpdate,
   MetadataCdmSource
 >('/cdm-sources/:id', () => {
@@ -552,7 +597,7 @@ export const patchCdmSourcesIdHandler = http.patch<
 })
 
 export const deleteCdmSourcesIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/cdm-sources/:id', () => {
@@ -562,15 +607,12 @@ export const deleteCdmSourcesIdHandler = http.delete<
 export const getCohortDefinitionsHandler = http.get<
   never,
   never,
-  {
-    data: Array<ResultsCohortDefinition>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ResultsCohortDefinitionList
 >('/cohort-definitions', () => {
   return HttpResponse.json({
     data: [
       {
-        cohort_definition_id: 100,
+        id: 12345,
         cohort_definition_name: 'Example value',
         cohort_definition_description: 'Example value',
         definition_type_concept_id: 8507,
@@ -579,6 +621,12 @@ export const getCohortDefinitionsHandler = http.get<
         cohort_initiation_date: '2023-01-15',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -588,7 +636,7 @@ export const postCohortDefinitionsHandler = http.post<
   ResultsCohortDefinition
 >('/cohort-definitions', () => {
   return HttpResponse.json({
-    cohort_definition_id: 100,
+    id: 12345,
     cohort_definition_name: 'Example value',
     cohort_definition_description: 'Example value',
     definition_type_concept_id: 8507,
@@ -599,12 +647,12 @@ export const postCohortDefinitionsHandler = http.post<
 })
 
 export const getCohortDefinitionsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ResultsCohortDefinition
 >('/cohort-definitions/:id', () => {
   return HttpResponse.json({
-    cohort_definition_id: 100,
+    id: 12345,
     cohort_definition_name: 'Example value',
     cohort_definition_description: 'Example value',
     definition_type_concept_id: 8507,
@@ -615,12 +663,12 @@ export const getCohortDefinitionsIdHandler = http.get<
 })
 
 export const putCohortDefinitionsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ResultsCohortDefinitionCreate,
   ResultsCohortDefinition
 >('/cohort-definitions/:id', () => {
   return HttpResponse.json({
-    cohort_definition_id: 100,
+    id: 12345,
     cohort_definition_name: 'Example value',
     cohort_definition_description: 'Example value',
     definition_type_concept_id: 8507,
@@ -631,12 +679,12 @@ export const putCohortDefinitionsIdHandler = http.put<
 })
 
 export const patchCohortDefinitionsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ResultsCohortDefinitionUpdate,
   ResultsCohortDefinition
 >('/cohort-definitions/:id', () => {
   return HttpResponse.json({
-    cohort_definition_id: 100,
+    id: 12345,
     cohort_definition_name: 'Example value',
     cohort_definition_description: 'Example value',
     definition_type_concept_id: 8507,
@@ -647,32 +695,34 @@ export const patchCohortDefinitionsIdHandler = http.patch<
 })
 
 export const deleteCohortDefinitionsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/cohort-definitions/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getCohortsHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<ResultsCohort>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/cohorts', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        cohort_definition_id: 100,
-        subject_id: 100,
-        cohort_start_date: '2023-01-15',
-        cohort_end_date: '2023-01-15',
+export const getCohortsHandler = http.get<never, never, ResultsCohortList>(
+  '/cohorts',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          cohort_definition_id: 100,
+          subject_id: 100,
+          cohort_start_date: '2023-01-15',
+          cohort_end_date: '2023-01-15',
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postCohortsHandler = http.post<
   never,
@@ -688,7 +738,7 @@ export const postCohortsHandler = http.post<
 })
 
 export const getCohortsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ResultsCohort
 >('/cohorts/:id', () => {
@@ -701,7 +751,7 @@ export const getCohortsIdHandler = http.get<
 })
 
 export const putCohortsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ResultsCohortCreate,
   ResultsCohort
 >('/cohorts/:id', () => {
@@ -714,7 +764,7 @@ export const putCohortsIdHandler = http.put<
 })
 
 export const patchCohortsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ResultsCohortUpdate,
   ResultsCohort
 >('/cohorts/:id', () => {
@@ -726,7 +776,7 @@ export const patchCohortsIdHandler = http.patch<
   })
 })
 
-export const deleteCohortsIdHandler = http.delete<{ id: number }, never, never>(
+export const deleteCohortsIdHandler = http.delete<{ id: string }, never, never>(
   '/cohorts/:id',
   () => {
     return HttpResponse.json(undefined)
@@ -736,10 +786,7 @@ export const deleteCohortsIdHandler = http.delete<{ id: number }, never, never>(
 export const getConceptAncestorsHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularyConceptAncestor>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularyConceptAncestorList
 >('/concept-ancestors', () => {
   return HttpResponse.json({
     data: [
@@ -750,6 +797,12 @@ export const getConceptAncestorsHandler = http.get<
         max_levels_of_separation: 100,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -767,7 +820,7 @@ export const postConceptAncestorsHandler = http.post<
 })
 
 export const getConceptAncestorsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   VocabularyConceptAncestor
 >('/concept-ancestors/:id', () => {
@@ -780,7 +833,7 @@ export const getConceptAncestorsIdHandler = http.get<
 })
 
 export const putConceptAncestorsIdHandler = http.put<
-  { id: number },
+  { id: string },
   VocabularyConceptAncestorCreate,
   VocabularyConceptAncestor
 >('/concept-ancestors/:id', () => {
@@ -793,7 +846,7 @@ export const putConceptAncestorsIdHandler = http.put<
 })
 
 export const patchConceptAncestorsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   VocabularyConceptAncestorUpdate,
   VocabularyConceptAncestor
 >('/concept-ancestors/:id', () => {
@@ -806,7 +859,7 @@ export const patchConceptAncestorsIdHandler = http.patch<
 })
 
 export const deleteConceptAncestorsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/concept-ancestors/:id', () => {
@@ -816,10 +869,7 @@ export const deleteConceptAncestorsIdHandler = http.delete<
 export const getConceptClasssHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularyConceptClass>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularyConceptClassList
 >('/concept-classs', () => {
   return HttpResponse.json({
     data: [
@@ -829,6 +879,12 @@ export const getConceptClasssHandler = http.get<
         concept_class_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -891,10 +947,7 @@ export const deleteConceptClasssIdHandler = http.delete<
 export const getConceptRelationshipsHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularyConceptRelationship>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularyConceptRelationshipList
 >('/concept-relationships', () => {
   return HttpResponse.json({
     data: [
@@ -905,6 +958,12 @@ export const getConceptRelationshipsHandler = http.get<
         invalid_reason: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -922,7 +981,7 @@ export const postConceptRelationshipsHandler = http.post<
 })
 
 export const getConceptRelationshipsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   VocabularyConceptRelationship
 >('/concept-relationships/:id', () => {
@@ -935,7 +994,7 @@ export const getConceptRelationshipsIdHandler = http.get<
 })
 
 export const putConceptRelationshipsIdHandler = http.put<
-  { id: number },
+  { id: string },
   VocabularyConceptRelationshipCreate,
   VocabularyConceptRelationship
 >('/concept-relationships/:id', () => {
@@ -948,7 +1007,7 @@ export const putConceptRelationshipsIdHandler = http.put<
 })
 
 export const patchConceptRelationshipsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   VocabularyConceptRelationshipUpdate,
   VocabularyConceptRelationship
 >('/concept-relationships/:id', () => {
@@ -961,7 +1020,7 @@ export const patchConceptRelationshipsIdHandler = http.patch<
 })
 
 export const deleteConceptRelationshipsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/concept-relationships/:id', () => {
@@ -971,10 +1030,7 @@ export const deleteConceptRelationshipsIdHandler = http.delete<
 export const getConceptSynonymsHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularyConceptSynonym>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularyConceptSynonymList
 >('/concept-synonyms', () => {
   return HttpResponse.json({
     data: [
@@ -984,6 +1040,12 @@ export const getConceptSynonymsHandler = http.get<
         language_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -1000,7 +1062,7 @@ export const postConceptSynonymsHandler = http.post<
 })
 
 export const getConceptSynonymsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   VocabularyConceptSynonym
 >('/concept-synonyms/:id', () => {
@@ -1012,7 +1074,7 @@ export const getConceptSynonymsIdHandler = http.get<
 })
 
 export const putConceptSynonymsIdHandler = http.put<
-  { id: number },
+  { id: string },
   VocabularyConceptSynonymCreate,
   VocabularyConceptSynonym
 >('/concept-synonyms/:id', () => {
@@ -1024,7 +1086,7 @@ export const putConceptSynonymsIdHandler = http.put<
 })
 
 export const patchConceptSynonymsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   VocabularyConceptSynonymUpdate,
   VocabularyConceptSynonym
 >('/concept-synonyms/:id', () => {
@@ -1036,38 +1098,40 @@ export const patchConceptSynonymsIdHandler = http.patch<
 })
 
 export const deleteConceptSynonymsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/concept-synonyms/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getConceptsHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<VocabularyConcept>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/concepts', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        concept_name: 'Example value',
-        domain_id: 'Example value',
-        vocabulary_id: 'Example value',
-        concept_class_id: 'Example value',
-        standard_concept: 'Example value',
-        concept_code: 'Example value',
-        valid_start_date: '2023-01-15',
-        valid_end_date: '2023-01-15',
-        invalid_reason: 'Example value',
+export const getConceptsHandler = http.get<never, never, VocabularyConceptList>(
+  '/concepts',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          concept_name: 'Example value',
+          domain_id: 'Example value',
+          vocabulary_id: 'Example value',
+          concept_class_id: 'Example value',
+          standard_concept: 'Example value',
+          concept_code: 'Example value',
+          valid_start_date: '2023-01-15',
+          valid_end_date: '2023-01-15',
+          invalid_reason: 'Example value',
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postConceptsHandler = http.post<
   never,
@@ -1089,7 +1153,7 @@ export const postConceptsHandler = http.post<
 })
 
 export const getConceptsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   VocabularyConcept
 >('/concepts/:id', () => {
@@ -1108,7 +1172,7 @@ export const getConceptsIdHandler = http.get<
 })
 
 export const putConceptsIdHandler = http.put<
-  { id: number },
+  { id: string },
   VocabularyConceptCreate,
   VocabularyConcept
 >('/concepts/:id', () => {
@@ -1127,7 +1191,7 @@ export const putConceptsIdHandler = http.put<
 })
 
 export const patchConceptsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   VocabularyConceptUpdate,
   VocabularyConcept
 >('/concepts/:id', () => {
@@ -1146,7 +1210,7 @@ export const patchConceptsIdHandler = http.patch<
 })
 
 export const deleteConceptsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/concepts/:id', () => {
@@ -1156,10 +1220,7 @@ export const deleteConceptsIdHandler = http.delete<
 export const getConditionErasHandler = http.get<
   never,
   never,
-  {
-    data: Array<DerivedConditionEra>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  DerivedConditionEraList
 >('/condition-eras', () => {
   return HttpResponse.json({
     data: [
@@ -1172,6 +1233,12 @@ export const getConditionErasHandler = http.get<
         condition_occurrence_count: 100,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -1191,7 +1258,7 @@ export const postConditionErasHandler = http.post<
 })
 
 export const getConditionErasIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   DerivedConditionEra
 >('/condition-eras/:id', () => {
@@ -1206,7 +1273,7 @@ export const getConditionErasIdHandler = http.get<
 })
 
 export const putConditionErasIdHandler = http.put<
-  { id: number },
+  { id: string },
   DerivedConditionEraCreate,
   DerivedConditionEra
 >('/condition-eras/:id', () => {
@@ -1221,7 +1288,7 @@ export const putConditionErasIdHandler = http.put<
 })
 
 export const patchConditionErasIdHandler = http.patch<
-  { id: number },
+  { id: string },
   DerivedConditionEraUpdate,
   DerivedConditionEra
 >('/condition-eras/:id', () => {
@@ -1236,7 +1303,7 @@ export const patchConditionErasIdHandler = http.patch<
 })
 
 export const deleteConditionErasIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/condition-eras/:id', () => {
@@ -1246,10 +1313,7 @@ export const deleteConditionErasIdHandler = http.delete<
 export const getConditionOccurrencesHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalConditionOccurrence>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalConditionOccurrenceList
 >('/condition-occurrences', () => {
   return HttpResponse.json({
     data: [
@@ -1272,6 +1336,12 @@ export const getConditionOccurrencesHandler = http.get<
         condition_status_source_value: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -1301,7 +1371,7 @@ export const postConditionOccurrencesHandler = http.post<
 })
 
 export const getConditionOccurrencesIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalConditionOccurrence
 >('/condition-occurrences/:id', () => {
@@ -1326,7 +1396,7 @@ export const getConditionOccurrencesIdHandler = http.get<
 })
 
 export const putConditionOccurrencesIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalConditionOccurrenceCreate,
   ClinicalConditionOccurrence
 >('/condition-occurrences/:id', () => {
@@ -1351,7 +1421,7 @@ export const putConditionOccurrencesIdHandler = http.put<
 })
 
 export const patchConditionOccurrencesIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalConditionOccurrenceUpdate,
   ClinicalConditionOccurrence
 >('/condition-occurrences/:id', () => {
@@ -1376,50 +1446,52 @@ export const patchConditionOccurrencesIdHandler = http.patch<
 })
 
 export const deleteConditionOccurrencesIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/condition-occurrences/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getCostsHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<HealthsystemCost>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/costs', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        cost_event_id: 100,
-        cost_domain_id: 'Example value',
-        cost_type_concept_id: 8507,
-        currency_concept_id: 8507,
-        total_charge: 98.6,
-        total_cost: 98.6,
-        total_paid: 98.6,
-        paid_by_payer: 98.6,
-        paid_by_patient: 98.6,
-        paid_patient_copay: 98.6,
-        paid_patient_coinsurance: 98.6,
-        paid_patient_deductible: 98.6,
-        paid_by_primary: 98.6,
-        paid_ingredient_cost: 98.6,
-        paid_dispensing_fee: 98.6,
-        payer_plan_period_id: 100,
-        amount_allowed: 98.6,
-        revenue_code_concept_id: 8507,
-        revenue_code_source_value: 'Example value',
-        drg_concept_id: 8507,
-        drg_source_value: 'Example value',
+export const getCostsHandler = http.get<never, never, HealthsystemCostList>(
+  '/costs',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          cost_event_id: 100,
+          cost_domain_id: 'Example value',
+          cost_type_concept_id: 8507,
+          currency_concept_id: 8507,
+          total_charge: 98.6,
+          total_cost: 98.6,
+          total_paid: 98.6,
+          paid_by_payer: 98.6,
+          paid_by_patient: 98.6,
+          paid_patient_copay: 98.6,
+          paid_patient_coinsurance: 98.6,
+          paid_patient_deductible: 98.6,
+          paid_by_primary: 98.6,
+          paid_ingredient_cost: 98.6,
+          paid_dispensing_fee: 98.6,
+          payer_plan_period_id: 100,
+          amount_allowed: 98.6,
+          revenue_code_concept_id: 8507,
+          revenue_code_source_value: 'Example value',
+          drg_concept_id: 8507,
+          drg_source_value: 'Example value',
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postCostsHandler = http.post<
   never,
@@ -1453,7 +1525,7 @@ export const postCostsHandler = http.post<
 })
 
 export const getCostsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   HealthsystemCost
 >('/costs/:id', () => {
@@ -1484,7 +1556,7 @@ export const getCostsIdHandler = http.get<
 })
 
 export const putCostsIdHandler = http.put<
-  { id: number },
+  { id: string },
   HealthsystemCostCreate,
   HealthsystemCost
 >('/costs/:id', () => {
@@ -1515,7 +1587,7 @@ export const putCostsIdHandler = http.put<
 })
 
 export const patchCostsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   HealthsystemCostUpdate,
   HealthsystemCost
 >('/costs/:id', () => {
@@ -1545,35 +1617,37 @@ export const patchCostsIdHandler = http.patch<
   })
 })
 
-export const deleteCostsIdHandler = http.delete<{ id: number }, never, never>(
+export const deleteCostsIdHandler = http.delete<{ id: string }, never, never>(
   '/costs/:id',
   () => {
     return HttpResponse.json(undefined)
   },
 )
 
-export const getDeathsHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<ClinicalDeath>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/deaths', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        person_id: 100,
-        death_date: '2023-01-15',
-        death_datetime: '2023-01-15',
-        death_type_concept_id: 8507,
-        cause_concept_id: 8507,
-        cause_source_value: 'Example value',
-        cause_source_concept_id: 8507,
+export const getDeathsHandler = http.get<never, never, ClinicalDeathList>(
+  '/deaths',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          person_id: 100,
+          death_date: '2023-01-15',
+          death_datetime: '2023-01-15',
+          death_type_concept_id: 8507,
+          cause_concept_id: 8507,
+          cause_source_value: 'Example value',
+          cause_source_concept_id: 8507,
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postDeathsHandler = http.post<
   never,
@@ -1592,7 +1666,7 @@ export const postDeathsHandler = http.post<
 })
 
 export const getDeathsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalDeath
 >('/deaths/:id', () => {
@@ -1608,7 +1682,7 @@ export const getDeathsIdHandler = http.get<
 })
 
 export const putDeathsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalDeathCreate,
   ClinicalDeath
 >('/deaths/:id', () => {
@@ -1624,7 +1698,7 @@ export const putDeathsIdHandler = http.put<
 })
 
 export const patchDeathsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalDeathUpdate,
   ClinicalDeath
 >('/deaths/:id', () => {
@@ -1639,7 +1713,7 @@ export const patchDeathsIdHandler = http.patch<
   })
 })
 
-export const deleteDeathsIdHandler = http.delete<{ id: number }, never, never>(
+export const deleteDeathsIdHandler = http.delete<{ id: string }, never, never>(
   '/deaths/:id',
   () => {
     return HttpResponse.json(undefined)
@@ -1649,10 +1723,7 @@ export const deleteDeathsIdHandler = http.delete<{ id: number }, never, never>(
 export const getDeviceExposuresHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalDeviceExposure>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalDeviceExposureList
 >('/device-exposures', () => {
   return HttpResponse.json({
     data: [
@@ -1678,6 +1749,12 @@ export const getDeviceExposuresHandler = http.get<
         unit_source_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -1710,7 +1787,7 @@ export const postDeviceExposuresHandler = http.post<
 })
 
 export const getDeviceExposuresIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalDeviceExposure
 >('/device-exposures/:id', () => {
@@ -1738,7 +1815,7 @@ export const getDeviceExposuresIdHandler = http.get<
 })
 
 export const putDeviceExposuresIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalDeviceExposureCreate,
   ClinicalDeviceExposure
 >('/device-exposures/:id', () => {
@@ -1766,7 +1843,7 @@ export const putDeviceExposuresIdHandler = http.put<
 })
 
 export const patchDeviceExposuresIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalDeviceExposureUpdate,
   ClinicalDeviceExposure
 >('/device-exposures/:id', () => {
@@ -1794,31 +1871,33 @@ export const patchDeviceExposuresIdHandler = http.patch<
 })
 
 export const deleteDeviceExposuresIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/device-exposures/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getDomainsHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<VocabularyDomain>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/domains', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: '12345',
-        domain_name: 'Example value',
-        domain_concept_id: 8507,
+export const getDomainsHandler = http.get<never, never, VocabularyDomainList>(
+  '/domains',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: '12345',
+          domain_name: 'Example value',
+          domain_concept_id: 8507,
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postDomainsHandler = http.post<
   never,
@@ -1875,28 +1954,30 @@ export const deleteDomainsIdHandler = http.delete<{ id: string }, never, never>(
   },
 )
 
-export const getDoseErasHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<DerivedDoseEra>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/dose-eras', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        person_id: 100,
-        drug_concept_id: 8507,
-        unit_concept_id: 8507,
-        dose_value: 98.6,
-        dose_era_start_date: '2023-01-15',
-        dose_era_end_date: '2023-01-15',
+export const getDoseErasHandler = http.get<never, never, DerivedDoseEraList>(
+  '/dose-eras',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          person_id: 100,
+          drug_concept_id: 8507,
+          unit_concept_id: 8507,
+          dose_value: 98.6,
+          dose_era_start_date: '2023-01-15',
+          dose_era_end_date: '2023-01-15',
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postDoseErasHandler = http.post<
   never,
@@ -1915,7 +1996,7 @@ export const postDoseErasHandler = http.post<
 })
 
 export const getDoseErasIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   DerivedDoseEra
 >('/dose-eras/:id', () => {
@@ -1931,7 +2012,7 @@ export const getDoseErasIdHandler = http.get<
 })
 
 export const putDoseErasIdHandler = http.put<
-  { id: number },
+  { id: string },
   DerivedDoseEraCreate,
   DerivedDoseEra
 >('/dose-eras/:id', () => {
@@ -1947,7 +2028,7 @@ export const putDoseErasIdHandler = http.put<
 })
 
 export const patchDoseErasIdHandler = http.patch<
-  { id: number },
+  { id: string },
   DerivedDoseEraUpdate,
   DerivedDoseEra
 >('/dose-eras/:id', () => {
@@ -1963,35 +2044,37 @@ export const patchDoseErasIdHandler = http.patch<
 })
 
 export const deleteDoseErasIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/dose-eras/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getDrugErasHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<DerivedDrugEra>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/drug-eras', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        person_id: 100,
-        drug_concept_id: 8507,
-        drug_era_start_date: '2023-01-15',
-        drug_era_end_date: '2023-01-15',
-        drug_exposure_count: 100,
-        gap_days: 100,
+export const getDrugErasHandler = http.get<never, never, DerivedDrugEraList>(
+  '/drug-eras',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          person_id: 100,
+          drug_concept_id: 8507,
+          drug_era_start_date: '2023-01-15',
+          drug_era_end_date: '2023-01-15',
+          drug_exposure_count: 100,
+          gap_days: 100,
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postDrugErasHandler = http.post<
   never,
@@ -2010,7 +2093,7 @@ export const postDrugErasHandler = http.post<
 })
 
 export const getDrugErasIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   DerivedDrugEra
 >('/drug-eras/:id', () => {
@@ -2026,7 +2109,7 @@ export const getDrugErasIdHandler = http.get<
 })
 
 export const putDrugErasIdHandler = http.put<
-  { id: number },
+  { id: string },
   DerivedDrugEraCreate,
   DerivedDrugEra
 >('/drug-eras/:id', () => {
@@ -2042,7 +2125,7 @@ export const putDrugErasIdHandler = http.put<
 })
 
 export const patchDrugErasIdHandler = http.patch<
-  { id: number },
+  { id: string },
   DerivedDrugEraUpdate,
   DerivedDrugEra
 >('/drug-eras/:id', () => {
@@ -2058,7 +2141,7 @@ export const patchDrugErasIdHandler = http.patch<
 })
 
 export const deleteDrugErasIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/drug-eras/:id', () => {
@@ -2068,10 +2151,7 @@ export const deleteDrugErasIdHandler = http.delete<
 export const getDrugExposuresHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalDrugExposure>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalDrugExposureList
 >('/drug-exposures', () => {
   return HttpResponse.json({
     data: [
@@ -2101,6 +2181,12 @@ export const getDrugExposuresHandler = http.get<
         dose_unit_source_value: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -2137,7 +2223,7 @@ export const postDrugExposuresHandler = http.post<
 })
 
 export const getDrugExposuresIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalDrugExposure
 >('/drug-exposures/:id', () => {
@@ -2169,7 +2255,7 @@ export const getDrugExposuresIdHandler = http.get<
 })
 
 export const putDrugExposuresIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalDrugExposureCreate,
   ClinicalDrugExposure
 >('/drug-exposures/:id', () => {
@@ -2201,7 +2287,7 @@ export const putDrugExposuresIdHandler = http.put<
 })
 
 export const patchDrugExposuresIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalDrugExposureUpdate,
   ClinicalDrugExposure
 >('/drug-exposures/:id', () => {
@@ -2233,7 +2319,7 @@ export const patchDrugExposuresIdHandler = http.patch<
 })
 
 export const deleteDrugExposuresIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/drug-exposures/:id', () => {
@@ -2243,10 +2329,7 @@ export const deleteDrugExposuresIdHandler = http.delete<
 export const getDrugStrengthsHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularyDrugStrength>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularyDrugStrengthList
 >('/drug-strengths', () => {
   return HttpResponse.json({
     data: [
@@ -2265,6 +2348,12 @@ export const getDrugStrengthsHandler = http.get<
         invalid_reason: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -2290,7 +2379,7 @@ export const postDrugStrengthsHandler = http.post<
 })
 
 export const getDrugStrengthsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   VocabularyDrugStrength
 >('/drug-strengths/:id', () => {
@@ -2311,7 +2400,7 @@ export const getDrugStrengthsIdHandler = http.get<
 })
 
 export const putDrugStrengthsIdHandler = http.put<
-  { id: number },
+  { id: string },
   VocabularyDrugStrengthCreate,
   VocabularyDrugStrength
 >('/drug-strengths/:id', () => {
@@ -2332,7 +2421,7 @@ export const putDrugStrengthsIdHandler = http.put<
 })
 
 export const patchDrugStrengthsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   VocabularyDrugStrengthUpdate,
   VocabularyDrugStrength
 >('/drug-strengths/:id', () => {
@@ -2353,7 +2442,7 @@ export const patchDrugStrengthsIdHandler = http.patch<
 })
 
 export const deleteDrugStrengthsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/drug-strengths/:id', () => {
@@ -2363,10 +2452,7 @@ export const deleteDrugStrengthsIdHandler = http.delete<
 export const getEpisodeEventsHandler = http.get<
   never,
   never,
-  {
-    data: Array<DerivedEpisodeEvent>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  DerivedEpisodeEventList
 >('/episode-events', () => {
   return HttpResponse.json({
     data: [
@@ -2376,6 +2462,12 @@ export const getEpisodeEventsHandler = http.get<
         episode_event_field_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -2392,7 +2484,7 @@ export const postEpisodeEventsHandler = http.post<
 })
 
 export const getEpisodeEventsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   DerivedEpisodeEvent
 >('/episode-events/:id', () => {
@@ -2404,7 +2496,7 @@ export const getEpisodeEventsIdHandler = http.get<
 })
 
 export const putEpisodeEventsIdHandler = http.put<
-  { id: number },
+  { id: string },
   DerivedEpisodeEventCreate,
   DerivedEpisodeEvent
 >('/episode-events/:id', () => {
@@ -2416,7 +2508,7 @@ export const putEpisodeEventsIdHandler = http.put<
 })
 
 export const patchEpisodeEventsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   DerivedEpisodeEventUpdate,
   DerivedEpisodeEvent
 >('/episode-events/:id', () => {
@@ -2428,41 +2520,43 @@ export const patchEpisodeEventsIdHandler = http.patch<
 })
 
 export const deleteEpisodeEventsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/episode-events/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getEpisodesHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<DerivedEpisode>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/episodes', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        person_id: 100,
-        episode_concept_id: 8507,
-        episode_start_date: '2023-01-15',
-        episode_start_datetime: '2023-01-15',
-        episode_end_date: '2023-01-15',
-        episode_end_datetime: '2023-01-15',
-        episode_parent_id: 100,
-        episode_number: 100,
-        episode_object_concept_id: 8507,
-        episode_type_concept_id: 8507,
-        episode_source_value: 'Example value',
-        episode_source_concept_id: 8507,
+export const getEpisodesHandler = http.get<never, never, DerivedEpisodeList>(
+  '/episodes',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          person_id: 100,
+          episode_concept_id: 8507,
+          episode_start_date: '2023-01-15',
+          episode_start_datetime: '2023-01-15',
+          episode_end_date: '2023-01-15',
+          episode_end_datetime: '2023-01-15',
+          episode_parent_id: 100,
+          episode_number: 100,
+          episode_object_concept_id: 8507,
+          episode_type_concept_id: 8507,
+          episode_source_value: 'Example value',
+          episode_source_concept_id: 8507,
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postEpisodesHandler = http.post<
   never,
@@ -2487,7 +2581,7 @@ export const postEpisodesHandler = http.post<
 })
 
 export const getEpisodesIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   DerivedEpisode
 >('/episodes/:id', () => {
@@ -2509,7 +2603,7 @@ export const getEpisodesIdHandler = http.get<
 })
 
 export const putEpisodesIdHandler = http.put<
-  { id: number },
+  { id: string },
   DerivedEpisodeCreate,
   DerivedEpisode
 >('/episodes/:id', () => {
@@ -2531,7 +2625,7 @@ export const putEpisodesIdHandler = http.put<
 })
 
 export const patchEpisodesIdHandler = http.patch<
-  { id: number },
+  { id: string },
   DerivedEpisodeUpdate,
   DerivedEpisode
 >('/episodes/:id', () => {
@@ -2553,7 +2647,7 @@ export const patchEpisodesIdHandler = http.patch<
 })
 
 export const deleteEpisodesIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/episodes/:id', () => {
@@ -2563,10 +2657,7 @@ export const deleteEpisodesIdHandler = http.delete<
 export const getFactRelationshipsHandler = http.get<
   never,
   never,
-  {
-    data: Array<ResultsFactRelationship>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ResultsFactRelationshipList
 >('/fact-relationships', () => {
   return HttpResponse.json({
     data: [
@@ -2574,6 +2665,12 @@ export const getFactRelationshipsHandler = http.get<
         relationship_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -2588,7 +2685,7 @@ export const postFactRelationshipsHandler = http.post<
 })
 
 export const getFactRelationshipsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ResultsFactRelationship
 >('/fact-relationships/:id', () => {
@@ -2598,7 +2695,7 @@ export const getFactRelationshipsIdHandler = http.get<
 })
 
 export const putFactRelationshipsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ResultsFactRelationshipCreate,
   ResultsFactRelationship
 >('/fact-relationships/:id', () => {
@@ -2608,7 +2705,7 @@ export const putFactRelationshipsIdHandler = http.put<
 })
 
 export const patchFactRelationshipsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ResultsFactRelationshipUpdate,
   ResultsFactRelationship
 >('/fact-relationships/:id', () => {
@@ -2618,7 +2715,7 @@ export const patchFactRelationshipsIdHandler = http.patch<
 })
 
 export const deleteFactRelationshipsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/fact-relationships/:id', () => {
@@ -2628,10 +2725,7 @@ export const deleteFactRelationshipsIdHandler = http.delete<
 export const getLocationsHandler = http.get<
   never,
   never,
-  {
-    data: Array<HealthsystemLocation>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  HealthsystemLocationList
 >('/locations', () => {
   return HttpResponse.json({
     data: [
@@ -2648,6 +2742,12 @@ export const getLocationsHandler = http.get<
         longitude: 98.6,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -2671,7 +2771,7 @@ export const postLocationsHandler = http.post<
 })
 
 export const getLocationsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   HealthsystemLocation
 >('/locations/:id', () => {
@@ -2690,7 +2790,7 @@ export const getLocationsIdHandler = http.get<
 })
 
 export const putLocationsIdHandler = http.put<
-  { id: number },
+  { id: string },
   HealthsystemLocationCreate,
   HealthsystemLocation
 >('/locations/:id', () => {
@@ -2709,7 +2809,7 @@ export const putLocationsIdHandler = http.put<
 })
 
 export const patchLocationsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   HealthsystemLocationUpdate,
   HealthsystemLocation
 >('/locations/:id', () => {
@@ -2728,7 +2828,7 @@ export const patchLocationsIdHandler = http.patch<
 })
 
 export const deleteLocationsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/locations/:id', () => {
@@ -2738,10 +2838,7 @@ export const deleteLocationsIdHandler = http.delete<
 export const getMeasurementsHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalMeasurement>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalMeasurementList
 >('/measurements', () => {
   return HttpResponse.json({
     data: [
@@ -2771,6 +2868,12 @@ export const getMeasurementsHandler = http.get<
         meas_event_field_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -2807,7 +2910,7 @@ export const postMeasurementsHandler = http.post<
 })
 
 export const getMeasurementsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalMeasurement
 >('/measurements/:id', () => {
@@ -2839,7 +2942,7 @@ export const getMeasurementsIdHandler = http.get<
 })
 
 export const putMeasurementsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalMeasurementCreate,
   ClinicalMeasurement
 >('/measurements/:id', () => {
@@ -2871,7 +2974,7 @@ export const putMeasurementsIdHandler = http.put<
 })
 
 export const patchMeasurementsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalMeasurementUpdate,
   ClinicalMeasurement
 >('/measurements/:id', () => {
@@ -2903,37 +3006,39 @@ export const patchMeasurementsIdHandler = http.patch<
 })
 
 export const deleteMeasurementsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/measurements/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getMetadatasHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<MetadataMetadata>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/metadatas', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        metadata_concept_id: 8507,
-        metadata_type_concept_id: 8507,
-        name: 'Example value',
-        value_as_string: 'Example value',
-        value_as_concept_id: 8507,
-        value_as_number: 98.6,
-        metadata_date: '2023-01-15',
-        metadata_datetime: '2023-01-15',
+export const getMetadatasHandler = http.get<never, never, MetadataMetadataList>(
+  '/metadatas',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          metadata_concept_id: 8507,
+          metadata_type_concept_id: 8507,
+          name: 'Example value',
+          value_as_string: 'Example value',
+          value_as_concept_id: 8507,
+          value_as_number: 98.6,
+          metadata_date: '2023-01-15',
+          metadata_datetime: '2023-01-15',
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postMetadatasHandler = http.post<
   never,
@@ -2954,7 +3059,7 @@ export const postMetadatasHandler = http.post<
 })
 
 export const getMetadatasIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   MetadataMetadata
 >('/metadatas/:id', () => {
@@ -2972,7 +3077,7 @@ export const getMetadatasIdHandler = http.get<
 })
 
 export const putMetadatasIdHandler = http.put<
-  { id: number },
+  { id: string },
   MetadataMetadataCreate,
   MetadataMetadata
 >('/metadatas/:id', () => {
@@ -2990,7 +3095,7 @@ export const putMetadatasIdHandler = http.put<
 })
 
 export const patchMetadatasIdHandler = http.patch<
-  { id: number },
+  { id: string },
   MetadataMetadataUpdate,
   MetadataMetadata
 >('/metadatas/:id', () => {
@@ -3008,41 +3113,43 @@ export const patchMetadatasIdHandler = http.patch<
 })
 
 export const deleteMetadatasIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/metadatas/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getNoteNlpsHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<ClinicalNoteNlp>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/note-nlps', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        note_id: 100,
-        section_concept_id: 8507,
-        snippet: 'Example value',
-        lexical_variant: 'Example value',
-        note_nlp_concept_id: 8507,
-        note_nlp_source_concept_id: 8507,
-        nlp_system: 'Example value',
-        nlp_date: '2023-01-15',
-        nlp_datetime: '2023-01-15',
-        term_exists: 'Example value',
-        term_temporal: 'Example value',
-        term_modifiers: 'Example value',
+export const getNoteNlpsHandler = http.get<never, never, ClinicalNoteNlpList>(
+  '/note-nlps',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          note_id: 100,
+          section_concept_id: 8507,
+          snippet: 'Example value',
+          lexical_variant: 'Example value',
+          note_nlp_concept_id: 8507,
+          note_nlp_source_concept_id: 8507,
+          nlp_system: 'Example value',
+          nlp_date: '2023-01-15',
+          nlp_datetime: '2023-01-15',
+          term_exists: 'Example value',
+          term_temporal: 'Example value',
+          term_modifiers: 'Example value',
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postNoteNlpsHandler = http.post<
   never,
@@ -3067,7 +3174,7 @@ export const postNoteNlpsHandler = http.post<
 })
 
 export const getNoteNlpsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalNoteNlp
 >('/note-nlps/:id', () => {
@@ -3089,7 +3196,7 @@ export const getNoteNlpsIdHandler = http.get<
 })
 
 export const putNoteNlpsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalNoteNlpCreate,
   ClinicalNoteNlp
 >('/note-nlps/:id', () => {
@@ -3111,7 +3218,7 @@ export const putNoteNlpsIdHandler = http.put<
 })
 
 export const patchNoteNlpsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalNoteNlpUpdate,
   ClinicalNoteNlp
 >('/note-nlps/:id', () => {
@@ -3133,44 +3240,46 @@ export const patchNoteNlpsIdHandler = http.patch<
 })
 
 export const deleteNoteNlpsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/note-nlps/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getNotesHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<ClinicalNote>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/notes', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        person_id: 100,
-        note_date: '2023-01-15',
-        note_datetime: '2023-01-15',
-        note_type_concept_id: 8507,
-        note_class_concept_id: 8507,
-        note_title: 'Example value',
-        note_text: 'Example value',
-        encoding_concept_id: 8507,
-        language_concept_id: 8507,
-        provider_id: 100,
-        visit_occurrence_id: 100,
-        visit_detail_id: 100,
-        note_source_value: 'Example value',
-        note_event_id: 100,
-        note_event_field_concept_id: 8507,
+export const getNotesHandler = http.get<never, never, ClinicalNoteList>(
+  '/notes',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          person_id: 100,
+          note_date: '2023-01-15',
+          note_datetime: '2023-01-15',
+          note_type_concept_id: 8507,
+          note_class_concept_id: 8507,
+          note_title: 'Example value',
+          note_text: 'Example value',
+          encoding_concept_id: 8507,
+          language_concept_id: 8507,
+          provider_id: 100,
+          visit_occurrence_id: 100,
+          visit_detail_id: 100,
+          note_source_value: 'Example value',
+          note_event_id: 100,
+          note_event_field_concept_id: 8507,
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postNotesHandler = http.post<
   never,
@@ -3197,7 +3306,7 @@ export const postNotesHandler = http.post<
   })
 })
 
-export const getNotesIdHandler = http.get<{ id: number }, never, ClinicalNote>(
+export const getNotesIdHandler = http.get<{ id: string }, never, ClinicalNote>(
   '/notes/:id',
   () => {
     return HttpResponse.json({
@@ -3222,7 +3331,7 @@ export const getNotesIdHandler = http.get<{ id: number }, never, ClinicalNote>(
 )
 
 export const putNotesIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalNoteCreate,
   ClinicalNote
 >('/notes/:id', () => {
@@ -3247,7 +3356,7 @@ export const putNotesIdHandler = http.put<
 })
 
 export const patchNotesIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalNoteUpdate,
   ClinicalNote
 >('/notes/:id', () => {
@@ -3271,7 +3380,7 @@ export const patchNotesIdHandler = http.patch<
   })
 })
 
-export const deleteNotesIdHandler = http.delete<{ id: number }, never, never>(
+export const deleteNotesIdHandler = http.delete<{ id: string }, never, never>(
   '/notes/:id',
   () => {
     return HttpResponse.json(undefined)
@@ -3281,10 +3390,7 @@ export const deleteNotesIdHandler = http.delete<{ id: number }, never, never>(
 export const getObservationPeriodsHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalObservationPeriod>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalObservationPeriodList
 >('/observation-periods', () => {
   return HttpResponse.json({
     data: [
@@ -3296,6 +3402,12 @@ export const getObservationPeriodsHandler = http.get<
         period_type_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -3314,7 +3426,7 @@ export const postObservationPeriodsHandler = http.post<
 })
 
 export const getObservationPeriodsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalObservationPeriod
 >('/observation-periods/:id', () => {
@@ -3328,7 +3440,7 @@ export const getObservationPeriodsIdHandler = http.get<
 })
 
 export const putObservationPeriodsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalObservationPeriodCreate,
   ClinicalObservationPeriod
 >('/observation-periods/:id', () => {
@@ -3342,7 +3454,7 @@ export const putObservationPeriodsIdHandler = http.put<
 })
 
 export const patchObservationPeriodsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalObservationPeriodUpdate,
   ClinicalObservationPeriod
 >('/observation-periods/:id', () => {
@@ -3356,7 +3468,7 @@ export const patchObservationPeriodsIdHandler = http.patch<
 })
 
 export const deleteObservationPeriodsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/observation-periods/:id', () => {
@@ -3366,10 +3478,7 @@ export const deleteObservationPeriodsIdHandler = http.delete<
 export const getObservationsHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalObservation>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalObservationList
 >('/observations', () => {
   return HttpResponse.json({
     data: [
@@ -3397,6 +3506,12 @@ export const getObservationsHandler = http.get<
         obs_event_field_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -3431,7 +3546,7 @@ export const postObservationsHandler = http.post<
 })
 
 export const getObservationsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalObservation
 >('/observations/:id', () => {
@@ -3461,7 +3576,7 @@ export const getObservationsIdHandler = http.get<
 })
 
 export const putObservationsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalObservationCreate,
   ClinicalObservation
 >('/observations/:id', () => {
@@ -3491,7 +3606,7 @@ export const putObservationsIdHandler = http.put<
 })
 
 export const patchObservationsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalObservationUpdate,
   ClinicalObservation
 >('/observations/:id', () => {
@@ -3521,7 +3636,7 @@ export const patchObservationsIdHandler = http.patch<
 })
 
 export const deleteObservationsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/observations/:id', () => {
@@ -3531,10 +3646,7 @@ export const deleteObservationsIdHandler = http.delete<
 export const getPayerPlanPeriodsHandler = http.get<
   never,
   never,
-  {
-    data: Array<HealthsystemPayerPlanPeriod>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  HealthsystemPayerPlanPeriodList
 >('/payer-plan-periods', () => {
   return HttpResponse.json({
     data: [
@@ -3558,6 +3670,12 @@ export const getPayerPlanPeriodsHandler = http.get<
         stop_reason_source_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -3588,7 +3706,7 @@ export const postPayerPlanPeriodsHandler = http.post<
 })
 
 export const getPayerPlanPeriodsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   HealthsystemPayerPlanPeriod
 >('/payer-plan-periods/:id', () => {
@@ -3614,7 +3732,7 @@ export const getPayerPlanPeriodsIdHandler = http.get<
 })
 
 export const putPayerPlanPeriodsIdHandler = http.put<
-  { id: number },
+  { id: string },
   HealthsystemPayerPlanPeriodCreate,
   HealthsystemPayerPlanPeriod
 >('/payer-plan-periods/:id', () => {
@@ -3640,7 +3758,7 @@ export const putPayerPlanPeriodsIdHandler = http.put<
 })
 
 export const patchPayerPlanPeriodsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   HealthsystemPayerPlanPeriodUpdate,
   HealthsystemPayerPlanPeriod
 >('/payer-plan-periods/:id', () => {
@@ -3666,46 +3784,48 @@ export const patchPayerPlanPeriodsIdHandler = http.patch<
 })
 
 export const deletePayerPlanPeriodsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/payer-plan-periods/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getPersonsHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<ClinicalPerson>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/persons', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        gender_concept_id: 8507,
-        year_of_birth: 100,
-        month_of_birth: 100,
-        day_of_birth: 100,
-        birth_datetime: '2023-01-15',
-        race_concept_id: 8507,
-        ethnicity_concept_id: 8507,
-        location_id: 100,
-        provider_id: 100,
-        care_site_id: 100,
-        person_source_value: 'Example value',
-        gender_source_value: 'Example value',
-        gender_source_concept_id: 8507,
-        race_source_value: 'Example value',
-        race_source_concept_id: 8507,
-        ethnicity_source_value: 'Example value',
-        ethnicity_source_concept_id: 8507,
+export const getPersonsHandler = http.get<never, never, ClinicalPersonList>(
+  '/persons',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          gender_concept_id: 8507,
+          year_of_birth: 100,
+          month_of_birth: 100,
+          day_of_birth: 100,
+          birth_datetime: '2023-01-15',
+          race_concept_id: 8507,
+          ethnicity_concept_id: 8507,
+          location_id: 100,
+          provider_id: 100,
+          care_site_id: 100,
+          person_source_value: 'Example value',
+          gender_source_value: 'Example value',
+          gender_source_concept_id: 8507,
+          race_source_value: 'Example value',
+          race_source_concept_id: 8507,
+          ethnicity_source_value: 'Example value',
+          ethnicity_source_concept_id: 8507,
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postPersonsHandler = http.post<
   never,
@@ -3735,7 +3855,7 @@ export const postPersonsHandler = http.post<
 })
 
 export const getPersonsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalPerson
 >('/persons/:id', () => {
@@ -3762,7 +3882,7 @@ export const getPersonsIdHandler = http.get<
 })
 
 export const putPersonsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalPersonCreate,
   ClinicalPerson
 >('/persons/:id', () => {
@@ -3789,7 +3909,7 @@ export const putPersonsIdHandler = http.put<
 })
 
 export const patchPersonsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalPersonUpdate,
   ClinicalPerson
 >('/persons/:id', () => {
@@ -3815,7 +3935,7 @@ export const patchPersonsIdHandler = http.patch<
   })
 })
 
-export const deletePersonsIdHandler = http.delete<{ id: number }, never, never>(
+export const deletePersonsIdHandler = http.delete<{ id: string }, never, never>(
   '/persons/:id',
   () => {
     return HttpResponse.json(undefined)
@@ -3825,10 +3945,7 @@ export const deletePersonsIdHandler = http.delete<{ id: number }, never, never>(
 export const getProcedureOccurrencesHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalProcedureOccurrence>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalProcedureOccurrenceList
 >('/procedure-occurrences', () => {
   return HttpResponse.json({
     data: [
@@ -3851,6 +3968,12 @@ export const getProcedureOccurrencesHandler = http.get<
         modifier_source_value: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -3880,7 +4003,7 @@ export const postProcedureOccurrencesHandler = http.post<
 })
 
 export const getProcedureOccurrencesIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalProcedureOccurrence
 >('/procedure-occurrences/:id', () => {
@@ -3905,7 +4028,7 @@ export const getProcedureOccurrencesIdHandler = http.get<
 })
 
 export const putProcedureOccurrencesIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalProcedureOccurrenceCreate,
   ClinicalProcedureOccurrence
 >('/procedure-occurrences/:id', () => {
@@ -3930,7 +4053,7 @@ export const putProcedureOccurrencesIdHandler = http.put<
 })
 
 export const patchProcedureOccurrencesIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalProcedureOccurrenceUpdate,
   ClinicalProcedureOccurrence
 >('/procedure-occurrences/:id', () => {
@@ -3955,7 +4078,7 @@ export const patchProcedureOccurrencesIdHandler = http.patch<
 })
 
 export const deleteProcedureOccurrencesIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/procedure-occurrences/:id', () => {
@@ -3965,10 +4088,7 @@ export const deleteProcedureOccurrencesIdHandler = http.delete<
 export const getProvidersHandler = http.get<
   never,
   never,
-  {
-    data: Array<HealthsystemProvider>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  HealthsystemProviderList
 >('/providers', () => {
   return HttpResponse.json({
     data: [
@@ -3988,6 +4108,12 @@ export const getProvidersHandler = http.get<
         gender_source_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -4014,7 +4140,7 @@ export const postProvidersHandler = http.post<
 })
 
 export const getProvidersIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   HealthsystemProvider
 >('/providers/:id', () => {
@@ -4036,7 +4162,7 @@ export const getProvidersIdHandler = http.get<
 })
 
 export const putProvidersIdHandler = http.put<
-  { id: number },
+  { id: string },
   HealthsystemProviderCreate,
   HealthsystemProvider
 >('/providers/:id', () => {
@@ -4058,7 +4184,7 @@ export const putProvidersIdHandler = http.put<
 })
 
 export const patchProvidersIdHandler = http.patch<
-  { id: number },
+  { id: string },
   HealthsystemProviderUpdate,
   HealthsystemProvider
 >('/providers/:id', () => {
@@ -4080,7 +4206,7 @@ export const patchProvidersIdHandler = http.patch<
 })
 
 export const deleteProvidersIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/providers/:id', () => {
@@ -4090,10 +4216,7 @@ export const deleteProvidersIdHandler = http.delete<
 export const getRelationshipsHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularyRelationship>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularyRelationshipList
 >('/relationships', () => {
   return HttpResponse.json({
     data: [
@@ -4106,6 +4229,12 @@ export const getRelationshipsHandler = http.get<
         relationship_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -4180,10 +4309,7 @@ export const deleteRelationshipsIdHandler = http.delete<
 export const getSourceToConceptMapsHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularySourceToConceptMap>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularySourceToConceptMapList
 >('/source-to-concept-maps', () => {
   return HttpResponse.json({
     data: [
@@ -4199,6 +4325,12 @@ export const getSourceToConceptMapsHandler = http.get<
         invalid_reason: 'Example value',
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -4221,7 +4353,7 @@ export const postSourceToConceptMapsHandler = http.post<
 })
 
 export const getSourceToConceptMapsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   VocabularySourceToConceptMap
 >('/source-to-concept-maps/:id', () => {
@@ -4239,7 +4371,7 @@ export const getSourceToConceptMapsIdHandler = http.get<
 })
 
 export const putSourceToConceptMapsIdHandler = http.put<
-  { id: number },
+  { id: string },
   VocabularySourceToConceptMapCreate,
   VocabularySourceToConceptMap
 >('/source-to-concept-maps/:id', () => {
@@ -4257,7 +4389,7 @@ export const putSourceToConceptMapsIdHandler = http.put<
 })
 
 export const patchSourceToConceptMapsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   VocabularySourceToConceptMapUpdate,
   VocabularySourceToConceptMap
 >('/source-to-concept-maps/:id', () => {
@@ -4275,43 +4407,45 @@ export const patchSourceToConceptMapsIdHandler = http.patch<
 })
 
 export const deleteSourceToConceptMapsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/source-to-concept-maps/:id', () => {
   return HttpResponse.json(undefined)
 })
 
-export const getSpecimensHandler = http.get<
-  never,
-  never,
-  {
-    data: Array<ClinicalSpecimen>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
->('/specimens', () => {
-  return HttpResponse.json({
-    data: [
-      {
-        id: 12345,
-        person_id: 100,
-        specimen_concept_id: 8507,
-        specimen_type_concept_id: 8507,
-        specimen_date: '2023-01-15',
-        specimen_datetime: '2023-01-15',
-        quantity: 98.6,
-        unit_concept_id: 8507,
-        anatomic_site_concept_id: 8507,
-        disease_status_concept_id: 8507,
-        specimen_source_id: 'Example value',
-        specimen_source_value: 'Example value',
-        unit_source_value: 'Example value',
-        anatomic_site_source_value: 'Example value',
-        disease_status_source_value: 'Example value',
+export const getSpecimensHandler = http.get<never, never, ClinicalSpecimenList>(
+  '/specimens',
+  () => {
+    return HttpResponse.json({
+      data: [
+        {
+          id: 12345,
+          person_id: 100,
+          specimen_concept_id: 8507,
+          specimen_type_concept_id: 8507,
+          specimen_date: '2023-01-15',
+          specimen_datetime: '2023-01-15',
+          quantity: 98.6,
+          unit_concept_id: 8507,
+          anatomic_site_concept_id: 8507,
+          disease_status_concept_id: 8507,
+          specimen_source_id: 'Example value',
+          specimen_source_value: 'Example value',
+          unit_source_value: 'Example value',
+          anatomic_site_source_value: 'Example value',
+          disease_status_source_value: 'Example value',
+        },
+      ],
+      pagination: {
+        total: 1,
+        offset: 0,
+        limit: 100,
+        count: 1,
       },
-    ],
-  })
-})
+    })
+  },
+)
 
 export const postSpecimensHandler = http.post<
   never,
@@ -4338,7 +4472,7 @@ export const postSpecimensHandler = http.post<
 })
 
 export const getSpecimensIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalSpecimen
 >('/specimens/:id', () => {
@@ -4362,7 +4496,7 @@ export const getSpecimensIdHandler = http.get<
 })
 
 export const putSpecimensIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalSpecimenCreate,
   ClinicalSpecimen
 >('/specimens/:id', () => {
@@ -4386,7 +4520,7 @@ export const putSpecimensIdHandler = http.put<
 })
 
 export const patchSpecimensIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalSpecimenUpdate,
   ClinicalSpecimen
 >('/specimens/:id', () => {
@@ -4410,7 +4544,7 @@ export const patchSpecimensIdHandler = http.patch<
 })
 
 export const deleteSpecimensIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/specimens/:id', () => {
@@ -4420,10 +4554,7 @@ export const deleteSpecimensIdHandler = http.delete<
 export const getVisitDetailsHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalVisitDetail>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalVisitDetailList
 >('/visit-details', () => {
   return HttpResponse.json({
     data: [
@@ -4449,6 +4580,12 @@ export const getVisitDetailsHandler = http.get<
         visit_occurrence_id: 100,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -4481,7 +4618,7 @@ export const postVisitDetailsHandler = http.post<
 })
 
 export const getVisitDetailsIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalVisitDetail
 >('/visit-details/:id', () => {
@@ -4509,7 +4646,7 @@ export const getVisitDetailsIdHandler = http.get<
 })
 
 export const putVisitDetailsIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalVisitDetailCreate,
   ClinicalVisitDetail
 >('/visit-details/:id', () => {
@@ -4537,7 +4674,7 @@ export const putVisitDetailsIdHandler = http.put<
 })
 
 export const patchVisitDetailsIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalVisitDetailUpdate,
   ClinicalVisitDetail
 >('/visit-details/:id', () => {
@@ -4565,7 +4702,7 @@ export const patchVisitDetailsIdHandler = http.patch<
 })
 
 export const deleteVisitDetailsIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/visit-details/:id', () => {
@@ -4575,10 +4712,7 @@ export const deleteVisitDetailsIdHandler = http.delete<
 export const getVisitOccurrencesHandler = http.get<
   never,
   never,
-  {
-    data: Array<ClinicalVisitOccurrence>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  ClinicalVisitOccurrenceList
 >('/visit-occurrences', () => {
   return HttpResponse.json({
     data: [
@@ -4602,6 +4736,12 @@ export const getVisitOccurrencesHandler = http.get<
         preceding_visit_occurrence_id: 100,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 
@@ -4632,7 +4772,7 @@ export const postVisitOccurrencesHandler = http.post<
 })
 
 export const getVisitOccurrencesIdHandler = http.get<
-  { id: number },
+  { id: string },
   never,
   ClinicalVisitOccurrence
 >('/visit-occurrences/:id', () => {
@@ -4658,7 +4798,7 @@ export const getVisitOccurrencesIdHandler = http.get<
 })
 
 export const putVisitOccurrencesIdHandler = http.put<
-  { id: number },
+  { id: string },
   ClinicalVisitOccurrenceCreate,
   ClinicalVisitOccurrence
 >('/visit-occurrences/:id', () => {
@@ -4684,7 +4824,7 @@ export const putVisitOccurrencesIdHandler = http.put<
 })
 
 export const patchVisitOccurrencesIdHandler = http.patch<
-  { id: number },
+  { id: string },
   ClinicalVisitOccurrenceUpdate,
   ClinicalVisitOccurrence
 >('/visit-occurrences/:id', () => {
@@ -4710,7 +4850,7 @@ export const patchVisitOccurrencesIdHandler = http.patch<
 })
 
 export const deleteVisitOccurrencesIdHandler = http.delete<
-  { id: number },
+  { id: string },
   never,
   never
 >('/visit-occurrences/:id', () => {
@@ -4720,10 +4860,7 @@ export const deleteVisitOccurrencesIdHandler = http.delete<
 export const getVocabularysHandler = http.get<
   never,
   never,
-  {
-    data: Array<VocabularyVocabulary>
-    pagination: { total: number; offset: number; limit: number; count: number }
-  }
+  VocabularyVocabularyList
 >('/vocabularys', () => {
   return HttpResponse.json({
     data: [
@@ -4735,6 +4872,12 @@ export const getVocabularysHandler = http.get<
         vocabulary_concept_id: 8507,
       },
     ],
+    pagination: {
+      total: 1,
+      offset: 0,
+      limit: 100,
+      count: 1,
+    },
   })
 })
 

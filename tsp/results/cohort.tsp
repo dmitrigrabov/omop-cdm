@@ -113,6 +113,28 @@ model CohortQueryParams {
 }
 
 /**
+ * Cohort list response with example
+ */
+@doc("Paginated list of Cohort records")
+@example(#{
+  data: #[#{
+  cohort_definition_id: 100,
+  subject_id: 100,
+  cohort_start_date: "2023-01-15",
+  cohort_end_date: "2023-01-15"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model CohortList {
+  ...PaginatedList<Cohort>;
+}
+
+/**
  * Cohort API operations
  */
 @route("/cohorts")
@@ -125,7 +147,7 @@ interface Cohorts {
     ...CohortQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Cohort>;
+    @body body: CohortList;
   } | ErrorResponse;
 
   @get
@@ -134,7 +156,7 @@ interface Cohorts {
   read(
     @path
     @doc("Unique cohort identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Cohort;
@@ -164,7 +186,7 @@ interface Cohorts {
   update(
     @path
     @doc("Unique cohort identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete cohort data")
@@ -186,7 +208,7 @@ interface Cohorts {
   patch(
     @path
     @doc("Unique cohort identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -205,7 +227,7 @@ interface Cohorts {
   delete(
     @path
     @doc("Unique cohort identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -19,34 +19,17 @@ export type UpdateDeathsIdFormBody = {
   cause_source_concept_id?: number | undefined
 }
 
-export const UpdateDeathsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <StringField fieldName={`death_date`} label="death_date" />
-      <StringField fieldName={`death_datetime`} label="death_datetime" />
-      <IntegerField fieldName={`death_type_concept_id`} />
-      <IntegerField fieldName={`cause_concept_id`} />
-      <StringField
-        fieldName={`cause_source_value`}
-        label="cause_source_value"
-      />
-      <IntegerField fieldName={`cause_source_concept_id`} />
-    </>
-  )
-}
-
 export type UpdateDeathsIdFormProps = {
-  id: number
-  defaultValues: UpdateDeathsIdFormBody
+  id: string
+  defaultValues: Required<UpdateDeathsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateDeathsIdFormPathParams = { id: number }
+export type UpdateDeathsIdFormPathParams = { id: string }
 
 export const UpdateDeathsIdForm = (props: UpdateDeathsIdFormProps) => {
-  const form = useForm<UpdateDeathsIdFormBody>({
-    resolver: zodResolver(clinicalDeathCreate),
+  const form = useForm<Required<UpdateDeathsIdFormBody>>({
+    resolver: zodResolver(clinicalDeathCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -70,7 +53,28 @@ export const UpdateDeathsIdForm = (props: UpdateDeathsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateDeathsIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <StringField lens={lens.focus('death_date')} label="death_date" />
+        <StringField
+          lens={lens.focus('death_datetime')}
+          label="death_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('death_type_concept_id')}
+          label="death_type_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('cause_concept_id')}
+          label="cause_concept_id"
+        />
+        <StringField
+          lens={lens.focus('cause_source_value')}
+          label="cause_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('cause_source_concept_id')}
+          label="cause_source_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

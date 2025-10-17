@@ -1,19 +1,8 @@
-import { vocabularyDrugStrength } from '@/types/vocabularyDrugStrength.generated.ts'
-import { z } from 'zod'
+import { vocabularyDrugStrengthList } from '@/types/vocabularyDrugStrengthList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiDrugStrengthsResponse = z.object({
-  data: z.array(vocabularyDrugStrength),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiDrugStrengthsArgs = {
   offset?: number | undefined
@@ -63,7 +52,7 @@ export const useGetApiDrugStrengths = ({
         throw error
       }
 
-      return useGetApiDrugStrengthsResponse.parse(data)
+      return vocabularyDrugStrengthList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

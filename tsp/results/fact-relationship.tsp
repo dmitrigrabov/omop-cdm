@@ -80,6 +80,25 @@ model FactRelationshipQueryParams {
 }
 
 /**
+ * FactRelationship list response with example
+ */
+@doc("Paginated list of FactRelationship records")
+@example(#{
+  data: #[#{
+  relationship_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model FactRelationshipList {
+  ...PaginatedList<FactRelationship>;
+}
+
+/**
  * FactRelationship API operations
  */
 @route("/fact-relationships")
@@ -92,7 +111,7 @@ interface FactRelationships {
     ...FactRelationshipQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<FactRelationship>;
+    @body body: FactRelationshipList;
   } | ErrorResponse;
 
   @get
@@ -101,7 +120,7 @@ interface FactRelationships {
   read(
     @path
     @doc("Unique fact-relationship identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: FactRelationship;
@@ -131,7 +150,7 @@ interface FactRelationships {
   update(
     @path
     @doc("Unique fact-relationship identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete fact-relationship data")
@@ -153,7 +172,7 @@ interface FactRelationships {
   patch(
     @path
     @doc("Unique fact-relationship identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -172,7 +191,7 @@ interface FactRelationships {
   delete(
     @path
     @doc("Unique fact-relationship identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

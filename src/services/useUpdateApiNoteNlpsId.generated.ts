@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UseUpdateApiNoteNlpsIdArgs = {
-  id: number
+  id: string
   body: ClinicalNoteNlpCreate
 }
 

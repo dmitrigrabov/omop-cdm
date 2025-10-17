@@ -17,35 +17,17 @@ export type UpdateCareSitesIdFormBody = {
   place_of_service_source_value?: string | undefined
 }
 
-export const UpdateCareSitesIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`care_site_name`} label="care_site_name" />
-      <IntegerField fieldName={`place_of_service_concept_id`} />
-      <IntegerField fieldName={`location_id`} />
-      <StringField
-        fieldName={`care_site_source_value`}
-        label="care_site_source_value"
-      />
-      <StringField
-        fieldName={`place_of_service_source_value`}
-        label="place_of_service_source_value"
-      />
-    </>
-  )
-}
-
 export type UpdateCareSitesIdFormProps = {
-  id: number
-  defaultValues: UpdateCareSitesIdFormBody
+  id: string
+  defaultValues: Required<UpdateCareSitesIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateCareSitesIdFormPathParams = { id: number }
+export type UpdateCareSitesIdFormPathParams = { id: string }
 
 export const UpdateCareSitesIdForm = (props: UpdateCareSitesIdFormProps) => {
-  const form = useForm<UpdateCareSitesIdFormBody>({
-    resolver: zodResolver(healthsystemCareSiteCreate),
+  const form = useForm<Required<UpdateCareSitesIdFormBody>>({
+    resolver: zodResolver(healthsystemCareSiteCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -69,7 +51,23 @@ export const UpdateCareSitesIdForm = (props: UpdateCareSitesIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateCareSitesIdFormFields />
+        <StringField
+          lens={lens.focus('care_site_name')}
+          label="care_site_name"
+        />
+        <IntegerField
+          lens={lens.focus('place_of_service_concept_id')}
+          label="place_of_service_concept_id"
+        />
+        <IntegerField lens={lens.focus('location_id')} label="location_id" />
+        <StringField
+          lens={lens.focus('care_site_source_value')}
+          label="care_site_source_value"
+        />
+        <StringField
+          lens={lens.focus('place_of_service_source_value')}
+          label="place_of_service_source_value"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

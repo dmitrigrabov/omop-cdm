@@ -14,20 +14,8 @@ export type CreateConceptClasssFormBody = {
   concept_class_concept_id: number
 }
 
-export const CreateConceptClasssFormFields = () => {
-  return (
-    <>
-      <StringField
-        fieldName={`concept_class_name`}
-        label="concept_class_name"
-      />
-      <IntegerField fieldName={`concept_class_concept_id`} />
-    </>
-  )
-}
-
 export type CreateConceptClasssFormProps = {
-  defaultValues: CreateConceptClasssFormBody
+  defaultValues: Required<CreateConceptClasssFormBody>
   onSuccess: () => void
 }
 
@@ -36,8 +24,8 @@ export type CreateConceptClasssFormPathParams = Record<string, never>
 export const CreateConceptClasssForm = (
   props: CreateConceptClasssFormProps,
 ) => {
-  const form = useForm<CreateConceptClasssFormBody>({
-    resolver: zodResolver(vocabularyConceptClassCreate),
+  const form = useForm<Required<CreateConceptClasssFormBody>>({
+    resolver: zodResolver(vocabularyConceptClassCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -61,7 +49,14 @@ export const CreateConceptClasssForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateConceptClasssFormFields />
+        <StringField
+          lens={lens.focus('concept_class_name')}
+          label="concept_class_name"
+        />
+        <IntegerField
+          lens={lens.focus('concept_class_concept_id')}
+          label="concept_class_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

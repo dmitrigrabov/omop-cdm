@@ -79,21 +79,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Healthsystem.CareSite'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Healthsystem.CareSiteList'
         default:
           description: An unexpected error response.
           content:
@@ -146,8 +132,7 @@ paths:
           required: true
           description: Unique care-site identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -179,8 +164,7 @@ paths:
           required: true
           description: Unique care-site identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -225,8 +209,7 @@ paths:
           required: true
           description: Unique care-site identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -265,8 +248,7 @@ paths:
           required: true
           description: Unique care-site identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -301,21 +283,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Metadata.CdmSource'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Metadata.CdmSourceList'
         default:
           description: An unexpected error response.
           content:
@@ -368,8 +336,7 @@ paths:
           required: true
           description: Unique cdm-source identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -401,8 +368,7 @@ paths:
           required: true
           description: Unique cdm-source identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -447,8 +413,7 @@ paths:
           required: true
           description: Unique cdm-source identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -487,8 +452,7 @@ paths:
           required: true
           description: Unique cdm-source identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -524,21 +488,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Results.CohortDefinition'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Results.CohortDefinitionList'
         default:
           description: An unexpected error response.
           content:
@@ -591,8 +541,7 @@ paths:
           required: true
           description: Unique cohort-definition identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -624,8 +573,7 @@ paths:
           required: true
           description: Unique cohort-definition identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -670,8 +618,7 @@ paths:
           required: true
           description: Unique cohort-definition identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -710,8 +657,7 @@ paths:
           required: true
           description: Unique cohort-definition identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -745,21 +691,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Results.Cohort'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Results.CohortList'
         default:
           description: An unexpected error response.
           content:
@@ -812,8 +744,7 @@ paths:
           required: true
           description: Unique cohort identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -845,8 +776,7 @@ paths:
           required: true
           description: Unique cohort identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -891,8 +821,7 @@ paths:
           required: true
           description: Unique cohort identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -931,8 +860,7 @@ paths:
           required: true
           description: Unique cohort identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -968,21 +896,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.ConceptAncestor'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.ConceptAncestorList'
         default:
           description: An unexpected error response.
           content:
@@ -1035,8 +949,7 @@ paths:
           required: true
           description: Unique concept-ancestor identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1068,8 +981,7 @@ paths:
           required: true
           description: Unique concept-ancestor identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1114,8 +1026,7 @@ paths:
           required: true
           description: Unique concept-ancestor identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1154,8 +1065,7 @@ paths:
           required: true
           description: Unique concept-ancestor identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -1190,21 +1100,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.ConceptClass'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.ConceptClassList'
         default:
           description: An unexpected error response.
           content:
@@ -1408,21 +1304,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.ConceptRelationship'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.ConceptRelationshipList'
         default:
           description: An unexpected error response.
           content:
@@ -1475,8 +1357,7 @@ paths:
           required: true
           description: Unique concept-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1508,8 +1389,7 @@ paths:
           required: true
           description: Unique concept-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1554,8 +1434,7 @@ paths:
           required: true
           description: Unique concept-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1594,8 +1473,7 @@ paths:
           required: true
           description: Unique concept-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -1631,21 +1509,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.ConceptSynonym'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.ConceptSynonymList'
         default:
           description: An unexpected error response.
           content:
@@ -1698,8 +1562,7 @@ paths:
           required: true
           description: Unique concept-synonym identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1731,8 +1594,7 @@ paths:
           required: true
           description: Unique concept-synonym identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1777,8 +1639,7 @@ paths:
           required: true
           description: Unique concept-synonym identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1817,8 +1678,7 @@ paths:
           required: true
           description: Unique concept-synonym identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -1855,21 +1715,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.Concept'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.ConceptList'
         default:
           description: An unexpected error response.
           content:
@@ -1922,8 +1768,7 @@ paths:
           required: true
           description: Unique concept identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -1955,8 +1800,7 @@ paths:
           required: true
           description: Unique concept identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2001,8 +1845,7 @@ paths:
           required: true
           description: Unique concept identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2041,8 +1884,7 @@ paths:
           required: true
           description: Unique concept identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -2078,21 +1920,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Derived.ConditionEra'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Derived.ConditionEraList'
         default:
           description: An unexpected error response.
           content:
@@ -2145,8 +1973,7 @@ paths:
           required: true
           description: Unique condition-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2178,8 +2005,7 @@ paths:
           required: true
           description: Unique condition-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2224,8 +2050,7 @@ paths:
           required: true
           description: Unique condition-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2264,8 +2089,7 @@ paths:
           required: true
           description: Unique condition-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -2307,21 +2131,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.ConditionOccurrence'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.ConditionOccurrenceList'
         default:
           description: An unexpected error response.
           content:
@@ -2374,8 +2184,7 @@ paths:
           required: true
           description: Unique condition-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2407,8 +2216,7 @@ paths:
           required: true
           description: Unique condition-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2453,8 +2261,7 @@ paths:
           required: true
           description: Unique condition-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2493,8 +2300,7 @@ paths:
           required: true
           description: Unique condition-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -2533,21 +2339,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Healthsystem.Cost'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Healthsystem.CostList'
         default:
           description: An unexpected error response.
           content:
@@ -2600,8 +2392,7 @@ paths:
           required: true
           description: Unique cost identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2633,8 +2424,7 @@ paths:
           required: true
           description: Unique cost identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2679,8 +2469,7 @@ paths:
           required: true
           description: Unique cost identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2719,8 +2508,7 @@ paths:
           required: true
           description: Unique cost identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -2758,21 +2546,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.Death'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.DeathList'
         default:
           description: An unexpected error response.
           content:
@@ -2825,8 +2599,7 @@ paths:
           required: true
           description: Unique death identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2858,8 +2631,7 @@ paths:
           required: true
           description: Unique death identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2904,8 +2676,7 @@ paths:
           required: true
           description: Unique death identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -2944,8 +2715,7 @@ paths:
           required: true
           description: Unique death identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -2988,21 +2758,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.DeviceExposure'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.DeviceExposureList'
         default:
           description: An unexpected error response.
           content:
@@ -3055,8 +2811,7 @@ paths:
           required: true
           description: Unique device-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3088,8 +2843,7 @@ paths:
           required: true
           description: Unique device-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3134,8 +2888,7 @@ paths:
           required: true
           description: Unique device-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3174,8 +2927,7 @@ paths:
           required: true
           description: Unique device-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -3210,21 +2962,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.Domain'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.DomainList'
         default:
           description: An unexpected error response.
           content:
@@ -3430,21 +3168,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Derived.DoseEra'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Derived.DoseEraList'
         default:
           description: An unexpected error response.
           content:
@@ -3497,8 +3221,7 @@ paths:
           required: true
           description: Unique dose-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3530,8 +3253,7 @@ paths:
           required: true
           description: Unique dose-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3576,8 +3298,7 @@ paths:
           required: true
           description: Unique dose-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3616,8 +3337,7 @@ paths:
           required: true
           description: Unique dose-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -3653,21 +3373,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Derived.DrugEra'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Derived.DrugEraList'
         default:
           description: An unexpected error response.
           content:
@@ -3720,8 +3426,7 @@ paths:
           required: true
           description: Unique drug-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3753,8 +3458,7 @@ paths:
           required: true
           description: Unique drug-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3799,8 +3503,7 @@ paths:
           required: true
           description: Unique drug-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3839,8 +3542,7 @@ paths:
           required: true
           description: Unique drug-era identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -3882,21 +3584,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.DrugExposure'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.DrugExposureList'
         default:
           description: An unexpected error response.
           content:
@@ -3949,8 +3637,7 @@ paths:
           required: true
           description: Unique drug-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -3982,8 +3669,7 @@ paths:
           required: true
           description: Unique drug-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4028,8 +3714,7 @@ paths:
           required: true
           description: Unique drug-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4068,8 +3753,7 @@ paths:
           required: true
           description: Unique drug-exposure identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -4108,21 +3792,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.DrugStrength'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.DrugStrengthList'
         default:
           description: An unexpected error response.
           content:
@@ -4175,8 +3845,7 @@ paths:
           required: true
           description: Unique drug-strength identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4208,8 +3877,7 @@ paths:
           required: true
           description: Unique drug-strength identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4254,8 +3922,7 @@ paths:
           required: true
           description: Unique drug-strength identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4294,8 +3961,7 @@ paths:
           required: true
           description: Unique drug-strength identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -4331,21 +3997,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Derived.EpisodeEvent'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Derived.EpisodeEventList'
         default:
           description: An unexpected error response.
           content:
@@ -4398,8 +4050,7 @@ paths:
           required: true
           description: Unique episode-event identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4431,8 +4082,7 @@ paths:
           required: true
           description: Unique episode-event identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4477,8 +4127,7 @@ paths:
           required: true
           description: Unique episode-event identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4517,8 +4166,7 @@ paths:
           required: true
           description: Unique episode-event identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -4557,21 +4205,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Derived.Episode'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Derived.EpisodeList'
         default:
           description: An unexpected error response.
           content:
@@ -4624,8 +4258,7 @@ paths:
           required: true
           description: Unique episode identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4657,8 +4290,7 @@ paths:
           required: true
           description: Unique episode identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4703,8 +4335,7 @@ paths:
           required: true
           description: Unique episode identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4743,8 +4374,7 @@ paths:
           required: true
           description: Unique episode identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -4779,21 +4409,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Results.FactRelationship'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Results.FactRelationshipList'
         default:
           description: An unexpected error response.
           content:
@@ -4846,8 +4462,7 @@ paths:
           required: true
           description: Unique fact-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4879,8 +4494,7 @@ paths:
           required: true
           description: Unique fact-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4925,8 +4539,7 @@ paths:
           required: true
           description: Unique fact-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -4965,8 +4578,7 @@ paths:
           required: true
           description: Unique fact-relationship identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -5001,21 +4613,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Healthsystem.Location'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Healthsystem.LocationList'
         default:
           description: An unexpected error response.
           content:
@@ -5068,8 +4666,7 @@ paths:
           required: true
           description: Unique location identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5101,8 +4698,7 @@ paths:
           required: true
           description: Unique location identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5147,8 +4743,7 @@ paths:
           required: true
           description: Unique location identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5187,8 +4782,7 @@ paths:
           required: true
           description: Unique location identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -5234,21 +4828,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.Measurement'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.MeasurementList'
         default:
           description: An unexpected error response.
           content:
@@ -5301,8 +4881,7 @@ paths:
           required: true
           description: Unique measurement identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5334,8 +4913,7 @@ paths:
           required: true
           description: Unique measurement identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5380,8 +4958,7 @@ paths:
           required: true
           description: Unique measurement identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5420,8 +4997,7 @@ paths:
           required: true
           description: Unique measurement identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -5458,21 +5034,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Metadata.Metadata'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Metadata.MetadataList'
         default:
           description: An unexpected error response.
           content:
@@ -5525,8 +5087,7 @@ paths:
           required: true
           description: Unique metadata identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5558,8 +5119,7 @@ paths:
           required: true
           description: Unique metadata identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5604,8 +5164,7 @@ paths:
           required: true
           description: Unique metadata identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5644,8 +5203,7 @@ paths:
           required: true
           description: Unique metadata identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -5682,21 +5240,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.NoteNlp'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.NoteNlpList'
         default:
           description: An unexpected error response.
           content:
@@ -5749,8 +5293,7 @@ paths:
           required: true
           description: Unique note-nlp identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5782,8 +5325,7 @@ paths:
           required: true
           description: Unique note-nlp identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5828,8 +5370,7 @@ paths:
           required: true
           description: Unique note-nlp identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -5868,8 +5409,7 @@ paths:
           required: true
           description: Unique note-nlp identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -5912,21 +5452,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.Note'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.NoteList'
         default:
           description: An unexpected error response.
           content:
@@ -5979,8 +5505,7 @@ paths:
           required: true
           description: Unique note identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6012,8 +5537,7 @@ paths:
           required: true
           description: Unique note identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6058,8 +5582,7 @@ paths:
           required: true
           description: Unique note identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6098,8 +5621,7 @@ paths:
           required: true
           description: Unique note identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -6135,21 +5657,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.ObservationPeriod'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.ObservationPeriodList'
         default:
           description: An unexpected error response.
           content:
@@ -6202,8 +5710,7 @@ paths:
           required: true
           description: Unique observation-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6235,8 +5742,7 @@ paths:
           required: true
           description: Unique observation-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6281,8 +5787,7 @@ paths:
           required: true
           description: Unique observation-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6321,8 +5826,7 @@ paths:
           required: true
           description: Unique observation-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -6367,21 +5871,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.Observation'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.ObservationList'
         default:
           description: An unexpected error response.
           content:
@@ -6434,8 +5924,7 @@ paths:
           required: true
           description: Unique observation identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6467,8 +5956,7 @@ paths:
           required: true
           description: Unique observation identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6513,8 +6001,7 @@ paths:
           required: true
           description: Unique observation identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6553,8 +6040,7 @@ paths:
           required: true
           description: Unique observation identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -6597,21 +6083,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Healthsystem.PayerPlanPeriod'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Healthsystem.PayerPlanPeriodList'
         default:
           description: An unexpected error response.
           content:
@@ -6664,8 +6136,7 @@ paths:
           required: true
           description: Unique payer-plan-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6697,8 +6168,7 @@ paths:
           required: true
           description: Unique payer-plan-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6743,8 +6213,7 @@ paths:
           required: true
           description: Unique payer-plan-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6783,8 +6252,7 @@ paths:
           required: true
           description: Unique payer-plan-period identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -6827,21 +6295,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.Person'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.PersonList'
         default:
           description: An unexpected error response.
           content:
@@ -6894,8 +6348,7 @@ paths:
           required: true
           description: Unique person identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6927,8 +6380,7 @@ paths:
           required: true
           description: Unique person identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -6973,8 +6425,7 @@ paths:
           required: true
           description: Unique person identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7013,8 +6464,7 @@ paths:
           required: true
           description: Unique person identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -7056,21 +6506,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.ProcedureOccurrence'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.ProcedureOccurrenceList'
         default:
           description: An unexpected error response.
           content:
@@ -7123,8 +6559,7 @@ paths:
           required: true
           description: Unique procedure-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7156,8 +6591,7 @@ paths:
           required: true
           description: Unique procedure-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7202,8 +6636,7 @@ paths:
           required: true
           description: Unique procedure-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7242,8 +6675,7 @@ paths:
           required: true
           description: Unique procedure-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -7282,21 +6714,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Healthsystem.Provider'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Healthsystem.ProviderList'
         default:
           description: An unexpected error response.
           content:
@@ -7349,8 +6767,7 @@ paths:
           required: true
           description: Unique provider identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7382,8 +6799,7 @@ paths:
           required: true
           description: Unique provider identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7428,8 +6844,7 @@ paths:
           required: true
           description: Unique provider identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7468,8 +6883,7 @@ paths:
           required: true
           description: Unique provider identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -7504,21 +6918,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.Relationship'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.RelationshipList'
         default:
           description: An unexpected error response.
           content:
@@ -7724,21 +7124,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.SourceToConceptMap'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.SourceToConceptMapList'
         default:
           description: An unexpected error response.
           content:
@@ -7791,8 +7177,7 @@ paths:
           required: true
           description: Unique source-to-concept-map identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7824,8 +7209,7 @@ paths:
           required: true
           description: Unique source-to-concept-map identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7870,8 +7254,7 @@ paths:
           required: true
           description: Unique source-to-concept-map identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -7910,8 +7293,7 @@ paths:
           required: true
           description: Unique source-to-concept-map identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -7951,21 +7333,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.Specimen'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.SpecimenList'
         default:
           description: An unexpected error response.
           content:
@@ -8018,8 +7386,7 @@ paths:
           required: true
           description: Unique specimen identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8051,8 +7418,7 @@ paths:
           required: true
           description: Unique specimen identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8097,8 +7463,7 @@ paths:
           required: true
           description: Unique specimen identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8137,8 +7502,7 @@ paths:
           required: true
           description: Unique specimen identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -8183,21 +7547,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.VisitDetail'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.VisitDetailList'
         default:
           description: An unexpected error response.
           content:
@@ -8250,8 +7600,7 @@ paths:
           required: true
           description: Unique visit-detail identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8283,8 +7632,7 @@ paths:
           required: true
           description: Unique visit-detail identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8329,8 +7677,7 @@ paths:
           required: true
           description: Unique visit-detail identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8369,8 +7716,7 @@ paths:
           required: true
           description: Unique visit-detail identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -8413,21 +7759,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Clinical.VisitOccurrence'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Clinical.VisitOccurrenceList'
         default:
           description: An unexpected error response.
           content:
@@ -8480,8 +7812,7 @@ paths:
           required: true
           description: Unique visit-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8513,8 +7844,7 @@ paths:
           required: true
           description: Unique visit-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8559,8 +7889,7 @@ paths:
           required: true
           description: Unique visit-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: The request has succeeded.
@@ -8599,8 +7928,7 @@ paths:
           required: true
           description: Unique visit-occurrence identifier
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '204':
           description: 'There is no content to send for this request, but the headers may be useful. '
@@ -8635,21 +7963,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - data
-                  - pagination
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Vocabulary.Vocabulary'
-                    description: Array of items
-                  pagination:
-                    allOf:
-                      - $ref: '#/components/schemas/Common.PaginationInfo'
-                    description: Pagination information
-                description: Generic paginated list response
+                $ref: '#/components/schemas/Vocabulary.VocabularyList'
         default:
           description: An unexpected error response.
           content:
@@ -11153,6 +10467,45 @@ components:
           maxLength: 50
           description: 'This field houses the verbatim value from the source data representing the condition status. ETL Convention: This information may be called something different in the source data but the field is meant to contain a value indicating when and how a diagnosis was given to a patient. This source value is mapped to a standard concept which is stored in the CONDITION_STATUS_CONCEPT_ID field.'
       description: Request body for creating a new ConditionOccurrence record
+    Clinical.ConditionOccurrenceList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.ConditionOccurrence'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ConditionOccurrence records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            condition_concept_id: 8507
+            condition_start_date: '2023-01-15'
+            condition_start_datetime: '2023-01-15'
+            condition_end_date: '2023-01-15'
+            condition_end_datetime: '2023-01-15'
+            condition_type_concept_id: 8507
+            condition_status_concept_id: 8507
+            stop_reason: Example value
+            provider_id: 100
+            visit_occurrence_id: 100
+            visit_detail_id: 100
+            condition_source_value: Example value
+            condition_source_concept_id: 8507
+            condition_status_source_value: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.ConditionOccurrenceUpdate:
       type: object
       properties:
@@ -11292,6 +10645,36 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: If the cause of death was coded using a Vocabulary present in the OMOP Vocabularies (not necessarily a standard concept) put the CONCEPT_ID representing the cause of death here. References CONCEPT table.
       description: Request body for creating a new Death record
+    Clinical.DeathList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.Death'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Death records
+      example:
+        data:
+          - person_id: 100
+            death_date: '2023-01-15'
+            death_datetime: '2023-01-15'
+            death_type_concept_id: 8507
+            cause_concept_id: 8507
+            cause_source_value: Example value
+            cause_source_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.DeathUpdate:
       type: object
       properties:
@@ -11335,7 +10718,7 @@ components:
         id:
           type: integer
           format: int64
-          description: "The unique key given to records a person's exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key."
+          description: 'The unique key given to records a person’s exposure to a foreign physical object or instrument. ETL Convention: Each instance of an exposure to a foreign object or device present in the source data should be assigned this unique key.'
         person_id:
           type: integer
           format: int64
@@ -11510,6 +10893,48 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'This is the concept representing the UNIT_SOURCE_VALUE and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Unit necessary for a given analytic use case. Consider using UNIT_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network. ETL Convention: If the UNIT_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here. References CONCEPT table.'
       description: Request body for creating a new DeviceExposure record
+    Clinical.DeviceExposureList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.DeviceExposure'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of DeviceExposure records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            device_concept_id: 8507
+            device_exposure_start_date: '2023-01-15'
+            device_exposure_start_datetime: '2023-01-15'
+            device_exposure_end_date: '2023-01-15'
+            device_exposure_end_datetime: '2023-01-15'
+            device_type_concept_id: 8507
+            unique_device_id: Example value
+            production_id: Example value
+            quantity: 100
+            provider_id: 100
+            visit_occurrence_id: 100
+            visit_detail_id: 100
+            device_source_value: Example value
+            device_source_concept_id: 8507
+            unit_concept_id: 8507
+            unit_source_value: Example value
+            unit_source_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.DeviceExposureUpdate:
       type: object
       properties:
@@ -11805,6 +11230,52 @@ components:
           maxLength: 50
           description: 'This field houses the verbatim value from the source data representing the dose unit of the drug given. ETL Convention: This information may be called something different in the source data but the field is meant to contain a value indicating the unit of dosage of drug given to the patient. **This is an older column and will be deprecated in an upcoming version.**'
       description: Request body for creating a new DrugExposure record
+    Clinical.DrugExposureList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.DrugExposure'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of DrugExposure records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            drug_concept_id: 8507
+            drug_exposure_start_date: '2023-01-15'
+            drug_exposure_start_datetime: '2023-01-15'
+            drug_exposure_end_date: '2023-01-15'
+            drug_exposure_end_datetime: '2023-01-15'
+            verbatim_end_date: '2023-01-15'
+            drug_type_concept_id: 8507
+            stop_reason: Example value
+            refills: 100
+            quantity: 98.6
+            days_supply: 100
+            sig: Example value
+            route_concept_id: 8507
+            lot_number: Example value
+            provider_id: 100
+            visit_occurrence_id: 100
+            visit_detail_id: 100
+            drug_source_value: Example value
+            drug_source_concept_id: 8507
+            route_source_value: Example value
+            dose_unit_source_value: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.DrugExposureUpdate:
       type: object
       properties:
@@ -12114,6 +11585,52 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'If the Measurement record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the MEASUREMENT_EVENT_ID came from. References CONCEPT table.'
       description: Request body for creating a new Measurement record
+    Clinical.MeasurementList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.Measurement'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Measurement records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            measurement_concept_id: 8507
+            measurement_date: '2023-01-15'
+            measurement_datetime: '2023-01-15'
+            measurement_time: Example value
+            measurement_type_concept_id: 8507
+            operator_concept_id: 8507
+            value_as_number: 98.6
+            value_as_concept_id: 8507
+            unit_concept_id: 8507
+            range_low: 98.6
+            range_high: 98.6
+            provider_id: 100
+            visit_occurrence_id: 100
+            visit_detail_id: 100
+            measurement_source_value: Example value
+            measurement_source_concept_id: 8507
+            unit_source_value: Example value
+            unit_source_concept_id: 8507
+            value_source_value: Example value
+            measurement_event_id: 100
+            meas_event_field_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.MeasurementUpdate:
       type: object
       properties:
@@ -12366,6 +11883,45 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'If the Note record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the NOTE_EVENT_ID came from. References CONCEPT table.'
       description: Request body for creating a new Note record
+    Clinical.NoteList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.Note'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Note records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            note_date: '2023-01-15'
+            note_datetime: '2023-01-15'
+            note_type_concept_id: 8507
+            note_class_concept_id: 8507
+            note_title: Example value
+            note_text: Example value
+            encoding_concept_id: 8507
+            language_concept_id: 8507
+            provider_id: 100
+            visit_occurrence_id: 100
+            visit_detail_id: 100
+            note_source_value: Example value
+            note_event_id: 100
+            note_event_field_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.NoteNlp:
       type: object
       required:
@@ -12497,6 +12053,42 @@ components:
           maxLength: 2000
           description: 'For the modifiers that are there, they would have to have these values: - Negation = false - Subject = patient - Conditional = false - Rule_out = false - Uncertain = true or high or moderate or even low (could argue about low). Term_modifiers will concatenate all modifiers for different types of entities (conditions, drugs, labs etc) into one string. Lab values will be saved as one of the modifiers.'
       description: Request body for creating a new NoteNlp record
+    Clinical.NoteNlpList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.NoteNlp'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of NoteNlp records
+      example:
+        data:
+          - id: 12345
+            note_id: 100
+            section_concept_id: 8507
+            snippet: Example value
+            lexical_variant: Example value
+            note_nlp_concept_id: 8507
+            note_nlp_source_concept_id: 8507
+            nlp_system: Example value
+            nlp_date: '2023-01-15'
+            nlp_datetime: '2023-01-15'
+            term_exists: Example value
+            term_temporal: Example value
+            term_modifiers: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.NoteNlpUpdate:
       type: object
       properties:
@@ -12809,6 +12401,50 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'If the Observation record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the OBSERVATION_EVENT_ID came from. References CONCEPT table.'
       description: Request body for creating a new Observation record
+    Clinical.ObservationList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.Observation'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Observation records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            observation_concept_id: 8507
+            observation_date: '2023-01-15'
+            observation_datetime: '2023-01-15'
+            observation_type_concept_id: 8507
+            value_as_number: 98.6
+            value_as_string: Example value
+            value_as_concept_id: 8507
+            qualifier_concept_id: 8507
+            unit_concept_id: 8507
+            provider_id: 100
+            visit_occurrence_id: 100
+            visit_detail_id: 100
+            observation_source_value: Example value
+            observation_source_concept_id: 8507
+            unit_source_value: Example value
+            qualifier_source_value: Example value
+            value_source_value: Example value
+            observation_event_id: 100
+            obs_event_field_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.ObservationPeriod:
       type: object
       required:
@@ -12870,6 +12506,34 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'This field can be used to determine the provenance of the Observation Period as in whether the period was determined from an insurance enrollment file, EHR healthcare encounters, or other sources. ETL Convention: Choose the observation_period_type_concept_id that best represents how the period was determined. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?domain=Type+Concept&standardConcept=Standard&page=1&pageSize=15&query=). A more detailed explanation of each Type Concept can be found on the [vocabulary wiki](https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT). References CONCEPT table.'
       description: Request body for creating a new ObservationPeriod record
+    Clinical.ObservationPeriodList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.ObservationPeriod'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ObservationPeriod records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            observation_period_start_date: '2023-01-15'
+            observation_period_end_date: '2023-01-15'
+            period_type_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.ObservationPeriodUpdate:
       type: object
       properties:
@@ -13147,6 +12811,47 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'Due to the small number of options, this tends to be zero. ETL Convention: If the source data codes ethnicity in an OMOP supported vocabulary, store the concept_id here. References CONCEPT table.'
       description: Request body for creating a new Person record
+    Clinical.PersonList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.Person'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Person records
+      example:
+        data:
+          - id: 12345
+            gender_concept_id: 8507
+            year_of_birth: 100
+            month_of_birth: 100
+            day_of_birth: 100
+            birth_datetime: '2023-01-15'
+            race_concept_id: 8507
+            ethnicity_concept_id: 8507
+            location_id: 100
+            provider_id: 100
+            care_site_id: 100
+            person_source_value: Example value
+            gender_source_value: Example value
+            gender_source_concept_id: 8507
+            race_source_value: Example value
+            race_source_concept_id: 8507
+            ethnicity_source_value: Example value
+            ethnicity_source_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.PersonUpdate:
       type: object
       properties:
@@ -13375,6 +13080,45 @@ components:
           maxLength: 50
           description: 'This field houses the verbatim value from the source data representing the modifier code for the procedure that occurred. ETL Convention: The value stored here is mapped to a MODIFIER_CONCEPT_ID.'
       description: Request body for creating a new ProcedureOccurrence record
+    Clinical.ProcedureOccurrenceList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.ProcedureOccurrence'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ProcedureOccurrence records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            procedure_concept_id: 8507
+            procedure_date: '2023-01-15'
+            procedure_datetime: '2023-01-15'
+            procedure_end_date: '2023-01-15'
+            procedure_end_datetime: '2023-01-15'
+            procedure_type_concept_id: 8507
+            modifier_concept_id: 8507
+            quantity: 100
+            provider_id: 100
+            visit_occurrence_id: 100
+            visit_detail_id: 100
+            procedure_source_value: Example value
+            procedure_source_concept_id: 8507
+            modifier_source_value: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.ProcedureOccurrenceUpdate:
       type: object
       properties:
@@ -13588,6 +13332,44 @@ components:
           maxLength: 50
           description: ''
       description: Request body for creating a new Specimen record
+    Clinical.SpecimenList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.Specimen'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Specimen records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            specimen_concept_id: 8507
+            specimen_type_concept_id: 8507
+            specimen_date: '2023-01-15'
+            specimen_datetime: '2023-01-15'
+            quantity: 98.6
+            unit_concept_id: 8507
+            anatomic_site_concept_id: 8507
+            disease_status_concept_id: 8507
+            specimen_source_id: Example value
+            specimen_source_value: Example value
+            unit_source_value: Example value
+            anatomic_site_source_value: Example value
+            disease_status_source_value: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.SpecimenUpdate:
       type: object
       properties:
@@ -13834,6 +13616,48 @@ components:
           format: int64
           description: 'Use this field to link the VISIT_DETAIL record to its VISIT_OCCURRENCE. ETL Convention: Put the VISIT_OCCURRENCE_ID that subsumes the VISIT_DETAIL record here. References VISIT_OCCURRENCE table.'
       description: Request body for creating a new VisitDetail record
+    Clinical.VisitDetailList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.VisitDetail'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of VisitDetail records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            visit_detail_concept_id: 8507
+            visit_detail_start_date: '2023-01-15'
+            visit_detail_start_datetime: '2023-01-15'
+            visit_detail_end_date: '2023-01-15'
+            visit_detail_end_datetime: '2023-01-15'
+            visit_detail_type_concept_id: 8507
+            provider_id: 100
+            care_site_id: 100
+            visit_detail_source_value: Example value
+            visit_detail_source_concept_id: 8507
+            admitted_from_concept_id: 8507
+            admitted_from_source_value: Example value
+            discharged_to_source_value: Example value
+            discharged_to_concept_id: 8507
+            preceding_visit_detail_id: 100
+            parent_visit_detail_id: 100
+            visit_occurrence_id: 100
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.VisitDetailUpdate:
       type: object
       properties:
@@ -14078,6 +13902,46 @@ components:
           format: int64
           description: 'Use this field to find the visit that occurred for the person prior to the given visit. There could be a few days or a few years in between. ETL Convention: This field can be used to link a visit immediately preceding the current visit. Note this is not symmetrical, and there is no such thing as a “following_visit_id”. References VISIT_OCCURRENCE table.'
       description: Request body for creating a new VisitOccurrence record
+    Clinical.VisitOccurrenceList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Clinical.VisitOccurrence'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of VisitOccurrence records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            visit_concept_id: 8507
+            visit_start_date: '2023-01-15'
+            visit_start_datetime: '2023-01-15'
+            visit_end_date: '2023-01-15'
+            visit_end_datetime: '2023-01-15'
+            visit_type_concept_id: 8507
+            provider_id: 100
+            care_site_id: 100
+            visit_source_value: Example value
+            visit_source_concept_id: 8507
+            admitted_from_concept_id: 8507
+            admitted_from_source_value: Example value
+            discharged_to_concept_id: 8507
+            discharged_to_source_value: Example value
+            preceding_visit_occurrence_id: 100
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Clinical.VisitOccurrenceUpdate:
       type: object
       properties:
@@ -14358,6 +14222,35 @@ components:
           format: int64
           description: The number of individual Condition Occurrences used to construct the condition era.
       description: Request body for creating a new ConditionEra record
+    Derived.ConditionEraList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Derived.ConditionEra'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ConditionEra records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            condition_concept_id: 8507
+            condition_era_start_date: '2023-01-15'
+            condition_era_end_date: '2023-01-15'
+            condition_occurrence_count: 100
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Derived.ConditionEraUpdate:
       type: object
       properties:
@@ -14465,6 +14358,36 @@ components:
             - $ref: '#/components/schemas/Common.DateOnly'
           description: The date the Person was no longer exposed to the dosage of the specific drug ingredient. An era is ended if there are 31 days or more between dosage records.
       description: Request body for creating a new DoseEra record
+    Derived.DoseEraList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Derived.DoseEra'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of DoseEra records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            drug_concept_id: 8507
+            unit_concept_id: 8507
+            dose_value: 98.6
+            dose_era_start_date: '2023-01-15'
+            dose_era_end_date: '2023-01-15'
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Derived.DoseEraUpdate:
       type: object
       properties:
@@ -14572,6 +14495,36 @@ components:
           format: int64
           description: The Gap Days determine how many total drug-free days are observed between all Drug Exposure events that contribute to a DRUG_ERA record. It is assumed that the drugs are “not stockpiled” by the patient, i.e. that if a new drug prescription or refill is observed (a new DRUG_EXPOSURE record is written), the remaining supply from the previous events is abandoned. The difference between Persistence Window and Gap Days is that the former is the maximum drug-free time allowed between two subsequent DRUG_EXPOSURE records, while the latter is the sum of actual drug-free days for the given Drug Era under the above assumption of non-stockpiling.
       description: Request body for creating a new DrugEra record
+    Derived.DrugEraList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Derived.DrugEra'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of DrugEra records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            drug_concept_id: 8507
+            drug_era_start_date: '2023-01-15'
+            drug_era_end_date: '2023-01-15'
+            drug_exposure_count: 100
+            gap_days: 100
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Derived.DrugEraUpdate:
       type: object
       properties:
@@ -14779,6 +14732,32 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'This field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the EVENT_ID came from. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?vocabulary=CDM&conceptClass=Field&page=1&pageSize=15&query=) References CONCEPT table.'
       description: Request body for creating a new EpisodeEvent record
+    Derived.EpisodeEventList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Derived.EpisodeEvent'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of EpisodeEvent records
+      example:
+        data:
+          - episode_id: 100
+            event_id: 100
+            episode_event_field_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Derived.EpisodeEventUpdate:
       type: object
       properties:
@@ -14795,6 +14774,42 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'This field is the CONCEPT_ID that identifies which table the primary key of the linked record came from. ETL Convention: Put the CONCEPT_ID that identifies which table and field the EVENT_ID came from. [Accepted Concepts](https://athena.ohdsi.org/search-terms/terms?vocabulary=CDM&conceptClass=Field&page=1&pageSize=15&query=) References CONCEPT table.'
       description: Request body for updating an existing EpisodeEvent record
+    Derived.EpisodeList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Derived.Episode'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Episode records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            episode_concept_id: 8507
+            episode_start_date: '2023-01-15'
+            episode_start_datetime: '2023-01-15'
+            episode_end_date: '2023-01-15'
+            episode_end_datetime: '2023-01-15'
+            episode_parent_id: 100
+            episode_number: 100
+            episode_object_concept_id: 8507
+            episode_type_concept_id: 8507
+            episode_source_value: Example value
+            episode_source_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Derived.EpisodeUpdate:
       type: object
       properties:
@@ -14907,6 +14922,35 @@ components:
           maxLength: 50
           description: Put the place of service of the care_site as it appears in the source data.
       description: Request body for creating a new CareSite record
+    Healthsystem.CareSiteList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Healthsystem.CareSite'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of CareSite records
+      example:
+        data:
+          - id: 12345
+            care_site_name: Example value
+            place_of_service_concept_id: 8507
+            location_id: 100
+            care_site_source_value: Example value
+            place_of_service_source_value: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Healthsystem.CareSiteUpdate:
       type: object
       properties:
@@ -15140,6 +15184,51 @@ components:
           maxLength: 3
           description: Diagnosis Related Groups are US codes used to classify hospital cases into one of approximately 500 groups.
       description: Request body for creating a new Cost record
+    Healthsystem.CostList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Healthsystem.Cost'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Cost records
+      example:
+        data:
+          - id: 12345
+            cost_event_id: 100
+            cost_domain_id: Example value
+            cost_type_concept_id: 8507
+            currency_concept_id: 8507
+            total_charge: 98.6
+            total_cost: 98.6
+            total_paid: 98.6
+            paid_by_payer: 98.6
+            paid_by_patient: 98.6
+            paid_patient_copay: 98.6
+            paid_patient_coinsurance: 98.6
+            paid_patient_deductible: 98.6
+            paid_by_primary: 98.6
+            paid_ingredient_cost: 98.6
+            paid_dispensing_fee: 98.6
+            payer_plan_period_id: 100
+            amount_allowed: 98.6
+            revenue_code_concept_id: 8507
+            revenue_code_source_value: Example value
+            drg_concept_id: 8507
+            drg_source_value: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Healthsystem.CostUpdate:
       type: object
       properties:
@@ -15322,6 +15411,39 @@ components:
           format: double
           description: Must be between -180 and 180.
       description: Request body for creating a new Location record
+    Healthsystem.LocationList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Healthsystem.Location'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Location records
+      example:
+        data:
+          - id: 12345
+            city: Example value
+            state: Example value
+            zip: Example value
+            county: Example value
+            location_source_value: Example value
+            country_concept_id: 8507
+            country_source_value: Example value
+            latitude: 98.6
+            longitude: 98.6
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Healthsystem.LocationUpdate:
       type: object
       properties:
@@ -15523,6 +15645,46 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.
       description: Request body for creating a new PayerPlanPeriod record
+    Healthsystem.PayerPlanPeriodList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Healthsystem.PayerPlanPeriod'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of PayerPlanPeriod records
+      example:
+        data:
+          - id: 12345
+            person_id: 100
+            payer_plan_period_start_date: '2023-01-15'
+            payer_plan_period_end_date: '2023-01-15'
+            payer_concept_id: 8507
+            payer_source_value: Example value
+            payer_source_concept_id: 8507
+            plan_concept_id: 8507
+            plan_source_value: Example value
+            plan_source_concept_id: 8507
+            sponsor_concept_id: 8507
+            sponsor_source_value: Example value
+            sponsor_source_concept_id: 8507
+            family_source_value: Example value
+            stop_reason_concept_id: 8507
+            stop_reason_source_value: Example value
+            stop_reason_source_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Healthsystem.PayerPlanPeriodUpdate:
       type: object
       properties:
@@ -15710,6 +15872,42 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: 'This is often zero as many sites use proprietary codes to store provider gender. ETL Convention: If the source data codes provider gender in an OMOP supported vocabulary store the concept_id here. References CONCEPT table.'
       description: Request body for creating a new Provider record
+    Healthsystem.ProviderList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Healthsystem.Provider'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Provider records
+      example:
+        data:
+          - id: 12345
+            provider_name: Example value
+            npi: Example value
+            dea: Example value
+            specialty_concept_id: 8507
+            care_site_id: 100
+            year_of_birth: 100
+            gender_concept_id: 8507
+            provider_source_value: Example value
+            specialty_source_value: Example value
+            specialty_source_concept_id: 8507
+            gender_source_value: Example value
+            gender_source_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Healthsystem.ProviderUpdate:
       type: object
       properties:
@@ -15878,6 +16076,40 @@ components:
           maxLength: 20
           description: "Version of the OMOP standardised vocabularies loaded ETL Convention: You can find the version of your Vocabulary using the query: `SELECT vocabulary_version from vocabulary where vocabulary_id = 'None'`"
       description: Request body for creating a new CdmSource record
+    Metadata.CdmSourceList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Metadata.CdmSource'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of CdmSource records
+      example:
+        data:
+          - cdm_source_name: Example value
+            cdm_source_abbreviation: Example value
+            cdm_holder: Example value
+            source_description: Example value
+            source_documentation_reference: Example value
+            cdm_etl_reference: Example value
+            source_release_date: '2023-01-15'
+            cdm_release_date: '2023-01-15'
+            cdm_version: Example value
+            cdm_version_concept_id: 8507
+            vocabulary_version: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Metadata.CdmSourceUpdate:
       type: object
       properties:
@@ -16013,6 +16245,38 @@ components:
             - $ref: '#/components/schemas/Common.DateTime'
           description: ''
       description: Request body for creating a new Metadata record
+    Metadata.MetadataList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Metadata.Metadata'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Metadata records
+      example:
+        data:
+          - id: 12345
+            metadata_concept_id: 8507
+            metadata_type_concept_id: 8507
+            name: Example value
+            value_as_string: Example value
+            value_as_concept_id: 8507
+            value_as_number: 98.6
+            metadata_date: '2023-01-15'
+            metadata_datetime: '2023-01-15'
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Metadata.MetadataUpdate:
       type: object
       properties:
@@ -16105,12 +16369,12 @@ components:
     Results.CohortDefinition:
       type: object
       required:
-        - cohort_definition_id
+        - id
         - cohort_definition_name
         - definition_type_concept_id
         - subject_concept_id
       properties:
-        cohort_definition_id:
+        id:
           type: integer
           format: int64
           description: This is the identifier given to the cohort, usually by the ATLAS application
@@ -16138,7 +16402,7 @@ components:
           description: A date to indicate when the Cohort was initiated in the COHORT table.
       description: CohortDefinition record in the OMOP CDM
       example:
-        cohort_definition_id: 100
+        id: 12345
         cohort_definition_name: Example value
         cohort_definition_description: Example value
         definition_type_concept_id: 8507
@@ -16148,15 +16412,10 @@ components:
     Results.CohortDefinitionCreate:
       type: object
       required:
-        - cohort_definition_id
         - cohort_definition_name
         - definition_type_concept_id
         - subject_concept_id
       properties:
-        cohort_definition_id:
-          type: integer
-          format: int64
-          description: This is the identifier given to the cohort, usually by the ATLAS application
         cohort_definition_name:
           type: string
           maxLength: 255
@@ -16180,13 +16439,39 @@ components:
             - $ref: '#/components/schemas/Common.DateOnly'
           description: A date to indicate when the Cohort was initiated in the COHORT table.
       description: Request body for creating a new CohortDefinition record
+    Results.CohortDefinitionList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Results.CohortDefinition'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of CohortDefinition records
+      example:
+        data:
+          - id: 12345
+            cohort_definition_name: Example value
+            cohort_definition_description: Example value
+            definition_type_concept_id: 8507
+            cohort_definition_syntax: Example value
+            subject_concept_id: 8507
+            cohort_initiation_date: '2023-01-15'
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Results.CohortDefinitionUpdate:
       type: object
       properties:
-        cohort_definition_id:
-          type: integer
-          format: int64
-          description: This is the identifier given to the cohort, usually by the ATLAS application
         cohort_definition_name:
           type: string
           description: A short description of the cohort
@@ -16209,6 +16494,33 @@ components:
             - $ref: '#/components/schemas/Common.DateOnly'
           description: A date to indicate when the Cohort was initiated in the COHORT table.
       description: Request body for updating an existing CohortDefinition record
+    Results.CohortList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Results.Cohort'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Cohort records
+      example:
+        data:
+          - cohort_definition_id: 100
+            subject_id: 100
+            cohort_start_date: '2023-01-15'
+            cohort_end_date: '2023-01-15'
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Results.CohortUpdate:
       type: object
       properties:
@@ -16251,6 +16563,30 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: References CONCEPT table.
       description: Request body for creating a new FactRelationship record
+    Results.FactRelationshipList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Results.FactRelationship'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of FactRelationship records
+      example:
+        data:
+          - relationship_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Results.FactRelationshipUpdate:
       type: object
       properties:
@@ -16272,8 +16608,8 @@ components:
         - valid_end_date
       properties:
         id:
-          type: integer
-          format: int64
+          allOf:
+            - $ref: '#/components/schemas/Common.ConceptId'
           description: A unique identifier for each Concept across all domains.
         concept_name:
           type: string
@@ -16378,6 +16714,33 @@ components:
           format: int64
           description: The maximum separation in number of levels of hierarchy between ancestor and descendant concepts. This is an attribute that is used to simplify hierarchic analysis.
       description: Request body for creating a new ConceptAncestor record
+    Vocabulary.ConceptAncestorList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.ConceptAncestor'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ConceptAncestor records
+      example:
+        data:
+          - ancestor_concept_id: 8507
+            descendant_concept_id: 8507
+            min_levels_of_separation: 100
+            max_levels_of_separation: 100
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.ConceptAncestorUpdate:
       type: object
       properties:
@@ -16437,6 +16800,32 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: A Concept that represents the Concept Class. References CONCEPT table.
       description: Request body for creating a new ConceptClass record
+    Vocabulary.ConceptClassList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.ConceptClass'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ConceptClass records
+      example:
+        data:
+          - id: '12345'
+            concept_class_name: Example value
+            concept_class_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.ConceptClassUpdate:
       type: object
       properties:
@@ -16496,6 +16885,39 @@ components:
           maxLength: 1
           description: Reason the Concept was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value.
       description: Request body for creating a new Concept record
+    Vocabulary.ConceptList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.Concept'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Concept records
+      example:
+        data:
+          - id: 12345
+            concept_name: Example value
+            domain_id: Example value
+            vocabulary_id: Example value
+            concept_class_id: Example value
+            standard_concept: Example value
+            concept_code: Example value
+            valid_start_date: '2023-01-15'
+            valid_end_date: '2023-01-15'
+            invalid_reason: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.ConceptRelationship:
       type: object
       required:
@@ -16549,6 +16971,33 @@ components:
           maxLength: 1
           description: Reason the relationship was invalidated. Possible values are ‘D’ (deleted), ‘U’ (updated) or NULL.
       description: Request body for creating a new ConceptRelationship record
+    Vocabulary.ConceptRelationshipList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.ConceptRelationship'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ConceptRelationship records
+      example:
+        data:
+          - relationship_id: Example value
+            valid_start_date: '2023-01-15'
+            valid_end_date: '2023-01-15'
+            invalid_reason: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.ConceptRelationshipUpdate:
       type: object
       properties:
@@ -16611,6 +17060,32 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: References CONCEPT table.
       description: Request body for creating a new ConceptSynonym record
+    Vocabulary.ConceptSynonymList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.ConceptSynonym'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of ConceptSynonym records
+      example:
+        data:
+          - concept_id: 8507
+            concept_synonym_name: Example value
+            language_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.ConceptSynonymUpdate:
       type: object
       properties:
@@ -16698,6 +17173,32 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: A Concept representing the Domain Concept the DOMAIN record belongs to. References CONCEPT table.
       description: Request body for creating a new Domain record
+    Vocabulary.DomainList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.Domain'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Domain records
+      example:
+        data:
+          - id: '12345'
+            domain_name: Example value
+            domain_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.DomainUpdate:
       type: object
       properties:
@@ -16836,6 +17337,41 @@ components:
           maxLength: 1
           description: Reason the concept was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value.
       description: Request body for creating a new DrugStrength record
+    Vocabulary.DrugStrengthList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.DrugStrength'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of DrugStrength records
+      example:
+        data:
+          - drug_concept_id: 8507
+            ingredient_concept_id: 8507
+            amount_value: 98.6
+            amount_unit_concept_id: 8507
+            numerator_value: 98.6
+            numerator_unit_concept_id: 8507
+            denominator_value: 98.6
+            denominator_unit_concept_id: 8507
+            box_size: 100
+            valid_start_date: '2023-01-15'
+            valid_end_date: '2023-01-15'
+            invalid_reason: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.DrugStrengthUpdate:
       type: object
       properties:
@@ -16959,6 +17495,35 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: A foreign key that refers to an identifier in the [CONCEPT](https://ohdsi.github.io/CommonDataModel/cdm54.html#concept) table for the unique relationship concept. References CONCEPT table.
       description: Request body for creating a new Relationship record
+    Vocabulary.RelationshipList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.Relationship'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Relationship records
+      example:
+        data:
+          - id: '12345'
+            relationship_name: Example value
+            is_hierarchical: Example value
+            defines_ancestry: Example value
+            reverse_relationship_id: Example value
+            relationship_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.RelationshipUpdate:
       type: object
       properties:
@@ -17085,6 +17650,38 @@ components:
           maxLength: 1
           description: Reason the mapping instance was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value.
       description: Request body for creating a new SourceToConceptMap record
+    Vocabulary.SourceToConceptMapList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.SourceToConceptMap'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of SourceToConceptMap records
+      example:
+        data:
+          - source_code: Example value
+            source_concept_id: 8507
+            source_vocabulary_id: Example value
+            source_code_description: Example value
+            target_concept_id: 8507
+            target_vocabulary_id: Example value
+            valid_start_date: '2023-01-15'
+            valid_end_date: '2023-01-15'
+            invalid_reason: Example value
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.SourceToConceptMapUpdate:
       type: object
       properties:
@@ -17177,6 +17774,34 @@ components:
             - $ref: '#/components/schemas/Common.ConceptId'
           description: A Concept that represents the Vocabulary the VOCABULARY record belongs to. References CONCEPT table.
       description: Request body for creating a new Vocabulary record
+    Vocabulary.VocabularyList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vocabulary.Vocabulary'
+          description: Array of items
+        pagination:
+          allOf:
+            - $ref: '#/components/schemas/Common.PaginationInfo'
+          description: Pagination information
+      description: Paginated list of Vocabulary records
+      example:
+        data:
+          - id: '12345'
+            vocabulary_name: Example value
+            vocabulary_reference: Example value
+            vocabulary_version: Example value
+            vocabulary_concept_id: 8507
+        pagination:
+          total: 1
+          offset: 0
+          limit: 100
+          count: 1
     Vocabulary.VocabularyUpdate:
       type: object
       properties:

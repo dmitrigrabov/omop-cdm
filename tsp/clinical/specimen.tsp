@@ -233,6 +233,39 @@ model SpecimenQueryParams {
 }
 
 /**
+ * Specimen list response with example
+ */
+@doc("Paginated list of Specimen records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  specimen_concept_id: 8507,
+  specimen_type_concept_id: 8507,
+  specimen_date: "2023-01-15",
+  specimen_datetime: "2023-01-15",
+  quantity: 98.6,
+  unit_concept_id: 8507,
+  anatomic_site_concept_id: 8507,
+  disease_status_concept_id: 8507,
+  specimen_source_id: "Example value",
+  specimen_source_value: "Example value",
+  unit_source_value: "Example value",
+  anatomic_site_source_value: "Example value",
+  disease_status_source_value: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model SpecimenList {
+  ...PaginatedList<Specimen>;
+}
+
+/**
  * Specimen API operations
  */
 @route("/specimens")
@@ -245,7 +278,7 @@ interface Specimens {
     ...SpecimenQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Specimen>;
+    @body body: SpecimenList;
   } | ErrorResponse;
 
   @get
@@ -254,7 +287,7 @@ interface Specimens {
   read(
     @path
     @doc("Unique specimen identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Specimen;
@@ -284,7 +317,7 @@ interface Specimens {
   update(
     @path
     @doc("Unique specimen identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete specimen data")
@@ -306,7 +339,7 @@ interface Specimens {
   patch(
     @path
     @doc("Unique specimen identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -325,7 +358,7 @@ interface Specimens {
   delete(
     @path
     @doc("Unique specimen identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

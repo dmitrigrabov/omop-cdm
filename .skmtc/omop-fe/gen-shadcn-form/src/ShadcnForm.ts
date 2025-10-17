@@ -13,7 +13,7 @@ export class ShadcnForm extends ShadcnFormBase {
   clientName: string
   tsRequestBodyName: string
   zodRequestBodyName: string
-  fieldsName: string
+  fields: FormFields
   constructor({ context, operation, settings }: OperationInsertableArgs<EnrichmentSchema>) {
     super({ context, operation, settings })
 
@@ -35,7 +35,7 @@ export class ShadcnForm extends ShadcnFormBase {
       .toParametersObject()
       .addProperty({
         name: 'defaultValues',
-        schema: new CustomValue({ context, value: this.tsRequestBodyName }),
+        schema: new CustomValue({ context, value: `Required<${this.tsRequestBodyName}>` }),
         required: false
       })
       .addProperty({
@@ -48,7 +48,7 @@ export class ShadcnForm extends ShadcnFormBase {
 
     invariant(body?.type === 'object', 'Schema must be an object')
 
-    this.fieldsName = this.insertOperation(FormFields, operation).toName()
+    this.fields = new FormFields({ context, operation, settings })
 
     const typeDefinition = this.insertNormalizedModel(TsInsertable, {
       schema: formArgsSchema,
@@ -80,8 +80,8 @@ export class ShadcnForm extends ShadcnFormBase {
     const { title, description, submitLabel } = this.settings.enrichments?.form ?? {}
 
     return `(${this.parameter}) => {
-  const form = useForm<${this.tsRequestBodyName}>({
-    resolver: zodResolver(${this.zodRequestBodyName}),
+  const form = useForm<Required<${this.tsRequestBodyName}>>({
+    resolver: zodResolver(${this.zodRequestBodyName}.required()),
     defaultValues: props.defaultValues
   })
 
@@ -107,7 +107,7 @@ export class ShadcnForm extends ShadcnFormBase {
           ${description ? `<p className="text-muted-foreground">${description}</p>` : ''}
         ${title || description ? `</div>` : ''}
 
-        <${this.fieldsName} />
+        ${this.fields}
 
         <Button type="submit">${submitLabel || 'Submit'}</Button>
       </form>

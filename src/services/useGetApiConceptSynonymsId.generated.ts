@@ -2,7 +2,7 @@ import { vocabularyConceptSynonym } from '@/types/vocabularyConceptSynonym.gener
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiConceptSynonymsIdArgs = { id: number }
+export type UseGetApiConceptSynonymsIdArgs = { id: string }
 
 export const useGetApiConceptSynonymsId = ({
   id,

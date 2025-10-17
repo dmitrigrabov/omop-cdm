@@ -1,19 +1,8 @@
-import { derivedEpisode } from '@/types/derivedEpisode.generated.ts'
-import { z } from 'zod'
+import { derivedEpisodeList } from '@/types/derivedEpisodeList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiEpisodesResponse = z.object({
-  data: z.array(derivedEpisode),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiEpisodesArgs = {
   offset?: number | undefined
@@ -60,7 +49,7 @@ export const useGetApiEpisodes = ({
         throw error
       }
 
-      return useGetApiEpisodesResponse.parse(data)
+      return derivedEpisodeList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

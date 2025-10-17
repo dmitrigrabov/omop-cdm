@@ -12,16 +12,8 @@ export type CreateFactRelationshipsFormBody = {
   relationship_concept_id: number
 }
 
-export const CreateFactRelationshipsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`relationship_concept_id`} />
-    </>
-  )
-}
-
 export type CreateFactRelationshipsFormProps = {
-  defaultValues: CreateFactRelationshipsFormBody
+  defaultValues: Required<CreateFactRelationshipsFormBody>
   onSuccess: () => void
 }
 
@@ -30,8 +22,8 @@ export type CreateFactRelationshipsFormPathParams = Record<string, never>
 export const CreateFactRelationshipsForm = (
   props: CreateFactRelationshipsFormProps,
 ) => {
-  const form = useForm<CreateFactRelationshipsFormBody>({
-    resolver: zodResolver(resultsFactRelationshipCreate),
+  const form = useForm<Required<CreateFactRelationshipsFormBody>>({
+    resolver: zodResolver(resultsFactRelationshipCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -55,7 +47,10 @@ export const CreateFactRelationshipsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateFactRelationshipsFormFields />
+        <IntegerField
+          lens={lens.focus('relationship_concept_id')}
+          label="relationship_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

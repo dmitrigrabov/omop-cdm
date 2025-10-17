@@ -2,7 +2,7 @@ import { clinicalConditionOccurrence } from '@/types/clinicalConditionOccurrence
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiConditionOccurrencesIdArgs = { id: number }
+export type UseGetApiConditionOccurrencesIdArgs = { id: string }
 
 export const useGetApiConditionOccurrencesId = ({
   id,

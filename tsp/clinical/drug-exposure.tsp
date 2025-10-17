@@ -345,6 +345,47 @@ model DrugExposureQueryParams {
 }
 
 /**
+ * DrugExposure list response with example
+ */
+@doc("Paginated list of DrugExposure records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  drug_concept_id: 8507,
+  drug_exposure_start_date: "2023-01-15",
+  drug_exposure_start_datetime: "2023-01-15",
+  drug_exposure_end_date: "2023-01-15",
+  drug_exposure_end_datetime: "2023-01-15",
+  verbatim_end_date: "2023-01-15",
+  drug_type_concept_id: 8507,
+  stop_reason: "Example value",
+  refills: 100,
+  quantity: 98.6,
+  days_supply: 100,
+  sig: "Example value",
+  route_concept_id: 8507,
+  lot_number: "Example value",
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  drug_source_value: "Example value",
+  drug_source_concept_id: 8507,
+  route_source_value: "Example value",
+  dose_unit_source_value: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model DrugExposureList {
+  ...PaginatedList<DrugExposure>;
+}
+
+/**
  * DrugExposure API operations
  */
 @route("/drug-exposures")
@@ -357,7 +398,7 @@ interface DrugExposures {
     ...DrugExposureQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<DrugExposure>;
+    @body body: DrugExposureList;
   } | ErrorResponse;
 
   @get
@@ -366,7 +407,7 @@ interface DrugExposures {
   read(
     @path
     @doc("Unique drug-exposure identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: DrugExposure;
@@ -396,7 +437,7 @@ interface DrugExposures {
   update(
     @path
     @doc("Unique drug-exposure identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete drug-exposure data")
@@ -418,7 +459,7 @@ interface DrugExposures {
   patch(
     @path
     @doc("Unique drug-exposure identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -437,7 +478,7 @@ interface DrugExposures {
   delete(
     @path
     @doc("Unique drug-exposure identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

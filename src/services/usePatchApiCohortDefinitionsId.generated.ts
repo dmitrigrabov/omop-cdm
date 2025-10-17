@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiCohortDefinitionsIdArgs = {
-  id: number
+  id: string
   body: ResultsCohortDefinitionUpdate
 }
 

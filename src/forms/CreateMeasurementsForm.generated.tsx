@@ -35,54 +35,16 @@ export type CreateMeasurementsFormBody = {
   meas_event_field_concept_id?: number | undefined
 }
 
-export const CreateMeasurementsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`measurement_concept_id`} />
-      <StringField fieldName={`measurement_date`} label="measurement_date" />
-      <StringField
-        fieldName={`measurement_datetime`}
-        label="measurement_datetime"
-      />
-      <StringField fieldName={`measurement_time`} label="measurement_time" />
-      <IntegerField fieldName={`measurement_type_concept_id`} />
-      <IntegerField fieldName={`operator_concept_id`} />
-      <NumberField fieldName={`value_as_number`} />
-      <IntegerField fieldName={`value_as_concept_id`} />
-      <IntegerField fieldName={`unit_concept_id`} />
-      <NumberField fieldName={`range_low`} />
-      <NumberField fieldName={`range_high`} />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-      <IntegerField fieldName={`visit_detail_id`} />
-      <StringField
-        fieldName={`measurement_source_value`}
-        label="measurement_source_value"
-      />
-      <IntegerField fieldName={`measurement_source_concept_id`} />
-      <StringField fieldName={`unit_source_value`} label="unit_source_value" />
-      <IntegerField fieldName={`unit_source_concept_id`} />
-      <StringField
-        fieldName={`value_source_value`}
-        label="value_source_value"
-      />
-      <IntegerField fieldName={`measurement_event_id`} />
-      <IntegerField fieldName={`meas_event_field_concept_id`} />
-    </>
-  )
-}
-
 export type CreateMeasurementsFormProps = {
-  defaultValues: CreateMeasurementsFormBody
+  defaultValues: Required<CreateMeasurementsFormBody>
   onSuccess: () => void
 }
 
 export type CreateMeasurementsFormPathParams = Record<string, never>
 
 export const CreateMeasurementsForm = (props: CreateMeasurementsFormProps) => {
-  const form = useForm<CreateMeasurementsFormBody>({
-    resolver: zodResolver(clinicalMeasurementCreate),
+  const form = useForm<Required<CreateMeasurementsFormBody>>({
+    resolver: zodResolver(clinicalMeasurementCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -106,7 +68,79 @@ export const CreateMeasurementsForm = (props: CreateMeasurementsFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateMeasurementsFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('measurement_concept_id')}
+          label="measurement_concept_id"
+        />
+        <StringField
+          lens={lens.focus('measurement_date')}
+          label="measurement_date"
+        />
+        <StringField
+          lens={lens.focus('measurement_datetime')}
+          label="measurement_datetime"
+        />
+        <StringField
+          lens={lens.focus('measurement_time')}
+          label="measurement_time"
+        />
+        <IntegerField
+          lens={lens.focus('measurement_type_concept_id')}
+          label="measurement_type_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('operator_concept_id')}
+          label="operator_concept_id"
+        />
+        <NumberField lens={lens.focus('value_as_number')} />
+        <IntegerField
+          lens={lens.focus('value_as_concept_id')}
+          label="value_as_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('unit_concept_id')}
+          label="unit_concept_id"
+        />
+        <NumberField lens={lens.focus('range_low')} />
+        <NumberField lens={lens.focus('range_high')} />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_id')}
+          label="visit_detail_id"
+        />
+        <StringField
+          lens={lens.focus('measurement_source_value')}
+          label="measurement_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('measurement_source_concept_id')}
+          label="measurement_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('unit_source_value')}
+          label="unit_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('unit_source_concept_id')}
+          label="unit_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('value_source_value')}
+          label="value_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('measurement_event_id')}
+          label="measurement_event_id"
+        />
+        <IntegerField
+          lens={lens.focus('meas_event_field_concept_id')}
+          label="meas_event_field_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

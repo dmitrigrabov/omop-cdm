@@ -313,6 +313,43 @@ model VisitDetailQueryParams {
 }
 
 /**
+ * VisitDetail list response with example
+ */
+@doc("Paginated list of VisitDetail records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  visit_detail_concept_id: 8507,
+  visit_detail_start_date: "2023-01-15",
+  visit_detail_start_datetime: "2023-01-15",
+  visit_detail_end_date: "2023-01-15",
+  visit_detail_end_datetime: "2023-01-15",
+  visit_detail_type_concept_id: 8507,
+  provider_id: 100,
+  care_site_id: 100,
+  visit_detail_source_value: "Example value",
+  visit_detail_source_concept_id: 8507,
+  admitted_from_concept_id: 8507,
+  admitted_from_source_value: "Example value",
+  discharged_to_source_value: "Example value",
+  discharged_to_concept_id: 8507,
+  preceding_visit_detail_id: 100,
+  parent_visit_detail_id: 100,
+  visit_occurrence_id: 100
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model VisitDetailList {
+  ...PaginatedList<VisitDetail>;
+}
+
+/**
  * VisitDetail API operations
  */
 @route("/visit-details")
@@ -325,7 +362,7 @@ interface VisitDetails {
     ...VisitDetailQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<VisitDetail>;
+    @body body: VisitDetailList;
   } | ErrorResponse;
 
   @get
@@ -334,7 +371,7 @@ interface VisitDetails {
   read(
     @path
     @doc("Unique visit-detail identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: VisitDetail;
@@ -364,7 +401,7 @@ interface VisitDetails {
   update(
     @path
     @doc("Unique visit-detail identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete visit-detail data")
@@ -386,7 +423,7 @@ interface VisitDetails {
   patch(
     @path
     @doc("Unique visit-detail identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -405,7 +442,7 @@ interface VisitDetails {
   delete(
     @path
     @doc("Unique visit-detail identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

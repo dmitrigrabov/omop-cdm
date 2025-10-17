@@ -100,6 +100,27 @@ model ConceptSynonymQueryParams {
 }
 
 /**
+ * ConceptSynonym list response with example
+ */
+@doc("Paginated list of ConceptSynonym records")
+@example(#{
+  data: #[#{
+  concept_id: 8507,
+  concept_synonym_name: "Example value",
+  language_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ConceptSynonymList {
+  ...PaginatedList<ConceptSynonym>;
+}
+
+/**
  * ConceptSynonym API operations
  */
 @route("/concept-synonyms")
@@ -112,7 +133,7 @@ interface ConceptSynonyms {
     ...ConceptSynonymQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ConceptSynonym>;
+    @body body: ConceptSynonymList;
   } | ErrorResponse;
 
   @get
@@ -121,7 +142,7 @@ interface ConceptSynonyms {
   read(
     @path
     @doc("Unique concept-synonym identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ConceptSynonym;
@@ -151,7 +172,7 @@ interface ConceptSynonyms {
   update(
     @path
     @doc("Unique concept-synonym identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete concept-synonym data")
@@ -173,7 +194,7 @@ interface ConceptSynonyms {
   patch(
     @path
     @doc("Unique concept-synonym identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -192,7 +213,7 @@ interface ConceptSynonyms {
   delete(
     @path
     @doc("Unique concept-synonym identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

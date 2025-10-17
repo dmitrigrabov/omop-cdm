@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiSourceToConceptMapsIdArgs = {
-  id: number
+  id: string
   body: VocabularySourceToConceptMapUpdate
 }
 

@@ -33,55 +33,16 @@ export type CreateObservationsFormBody = {
   obs_event_field_concept_id?: number | undefined
 }
 
-export const CreateObservationsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`observation_concept_id`} />
-      <StringField fieldName={`observation_date`} label="observation_date" />
-      <StringField
-        fieldName={`observation_datetime`}
-        label="observation_datetime"
-      />
-      <IntegerField fieldName={`observation_type_concept_id`} />
-      <NumberField fieldName={`value_as_number`} />
-      <StringField fieldName={`value_as_string`} label="value_as_string" />
-      <IntegerField fieldName={`value_as_concept_id`} />
-      <IntegerField fieldName={`qualifier_concept_id`} />
-      <IntegerField fieldName={`unit_concept_id`} />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-      <IntegerField fieldName={`visit_detail_id`} />
-      <StringField
-        fieldName={`observation_source_value`}
-        label="observation_source_value"
-      />
-      <IntegerField fieldName={`observation_source_concept_id`} />
-      <StringField fieldName={`unit_source_value`} label="unit_source_value" />
-      <StringField
-        fieldName={`qualifier_source_value`}
-        label="qualifier_source_value"
-      />
-      <StringField
-        fieldName={`value_source_value`}
-        label="value_source_value"
-      />
-      <IntegerField fieldName={`observation_event_id`} />
-      <IntegerField fieldName={`obs_event_field_concept_id`} />
-    </>
-  )
-}
-
 export type CreateObservationsFormProps = {
-  defaultValues: CreateObservationsFormBody
+  defaultValues: Required<CreateObservationsFormBody>
   onSuccess: () => void
 }
 
 export type CreateObservationsFormPathParams = Record<string, never>
 
 export const CreateObservationsForm = (props: CreateObservationsFormProps) => {
-  const form = useForm<CreateObservationsFormBody>({
-    resolver: zodResolver(clinicalObservationCreate),
+  const form = useForm<Required<CreateObservationsFormBody>>({
+    resolver: zodResolver(clinicalObservationCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -105,7 +66,77 @@ export const CreateObservationsForm = (props: CreateObservationsFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateObservationsFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('observation_concept_id')}
+          label="observation_concept_id"
+        />
+        <StringField
+          lens={lens.focus('observation_date')}
+          label="observation_date"
+        />
+        <StringField
+          lens={lens.focus('observation_datetime')}
+          label="observation_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('observation_type_concept_id')}
+          label="observation_type_concept_id"
+        />
+        <NumberField lens={lens.focus('value_as_number')} />
+        <StringField
+          lens={lens.focus('value_as_string')}
+          label="value_as_string"
+        />
+        <IntegerField
+          lens={lens.focus('value_as_concept_id')}
+          label="value_as_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('qualifier_concept_id')}
+          label="qualifier_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('unit_concept_id')}
+          label="unit_concept_id"
+        />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_id')}
+          label="visit_detail_id"
+        />
+        <StringField
+          lens={lens.focus('observation_source_value')}
+          label="observation_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('observation_source_concept_id')}
+          label="observation_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('unit_source_value')}
+          label="unit_source_value"
+        />
+        <StringField
+          lens={lens.focus('qualifier_source_value')}
+          label="qualifier_source_value"
+        />
+        <StringField
+          lens={lens.focus('value_source_value')}
+          label="value_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('observation_event_id')}
+          label="observation_event_id"
+        />
+        <IntegerField
+          lens={lens.focus('obs_event_field_concept_id')}
+          label="obs_event_field_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -129,6 +129,30 @@ model RelationshipQueryParams {
 }
 
 /**
+ * Relationship list response with example
+ */
+@doc("Paginated list of Relationship records")
+@example(#{
+  data: #[#{
+  id: "12345",
+  relationship_name: "Example value",
+  is_hierarchical: "Example value",
+  defines_ancestry: "Example value",
+  reverse_relationship_id: "Example value",
+  relationship_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model RelationshipList {
+  ...PaginatedList<Relationship>;
+}
+
+/**
  * Relationship API operations
  */
 @route("/relationships")
@@ -141,7 +165,7 @@ interface Relationships {
     ...RelationshipQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Relationship>;
+    @body body: RelationshipList;
   } | ErrorResponse;
 
   @get

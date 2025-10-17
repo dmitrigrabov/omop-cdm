@@ -1,19 +1,8 @@
-import { vocabularySourceToConceptMap } from '@/types/vocabularySourceToConceptMap.generated.ts'
-import { z } from 'zod'
+import { vocabularySourceToConceptMapList } from '@/types/vocabularySourceToConceptMapList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiSourceToConceptMapsResponse = z.object({
-  data: z.array(vocabularySourceToConceptMap),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiSourceToConceptMapsArgs = {
   offset?: number | undefined
@@ -57,7 +46,7 @@ export const useGetApiSourceToConceptMaps = ({
         throw error
       }
 
-      return useGetApiSourceToConceptMapsResponse.parse(data)
+      return vocabularySourceToConceptMapList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

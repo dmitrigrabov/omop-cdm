@@ -201,6 +201,37 @@ model NoteNlpQueryParams {
 }
 
 /**
+ * NoteNlp list response with example
+ */
+@doc("Paginated list of NoteNlp records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  note_id: 100,
+  section_concept_id: 8507,
+  snippet: "Example value",
+  lexical_variant: "Example value",
+  note_nlp_concept_id: 8507,
+  note_nlp_source_concept_id: 8507,
+  nlp_system: "Example value",
+  nlp_date: "2023-01-15",
+  nlp_datetime: "2023-01-15",
+  term_exists: "Example value",
+  term_temporal: "Example value",
+  term_modifiers: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model NoteNlpList {
+  ...PaginatedList<NoteNlp>;
+}
+
+/**
  * NoteNlp API operations
  */
 @route("/note-nlps")
@@ -213,7 +244,7 @@ interface NoteNlps {
     ...NoteNlpQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<NoteNlp>;
+    @body body: NoteNlpList;
   } | ErrorResponse;
 
   @get
@@ -222,7 +253,7 @@ interface NoteNlps {
   read(
     @path
     @doc("Unique note-nlp identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: NoteNlp;
@@ -252,7 +283,7 @@ interface NoteNlps {
   update(
     @path
     @doc("Unique note-nlp identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete note-nlp data")
@@ -274,7 +305,7 @@ interface NoteNlps {
   patch(
     @path
     @doc("Unique note-nlp identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -293,7 +324,7 @@ interface NoteNlps {
   delete(
     @path
     @doc("Unique note-nlp identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -24,36 +24,17 @@ export type PatchNoteNlpsIdFormBody = {
   term_modifiers?: string | undefined
 }
 
-export const PatchNoteNlpsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`note_id`} />
-      <IntegerField fieldName={`section_concept_id`} />
-      <StringField fieldName={`snippet`} label="snippet" />
-      <StringField fieldName={`lexical_variant`} label="lexical_variant" />
-      <IntegerField fieldName={`note_nlp_concept_id`} />
-      <IntegerField fieldName={`note_nlp_source_concept_id`} />
-      <StringField fieldName={`nlp_system`} label="nlp_system" />
-      <StringField fieldName={`nlp_date`} label="nlp_date" />
-      <StringField fieldName={`nlp_datetime`} label="nlp_datetime" />
-      <StringField fieldName={`term_exists`} label="term_exists" />
-      <StringField fieldName={`term_temporal`} label="term_temporal" />
-      <StringField fieldName={`term_modifiers`} label="term_modifiers" />
-    </>
-  )
-}
-
 export type PatchNoteNlpsIdFormProps = {
-  id: number
-  defaultValues: PatchNoteNlpsIdFormBody
+  id: string
+  defaultValues: Required<PatchNoteNlpsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchNoteNlpsIdFormPathParams = { id: number }
+export type PatchNoteNlpsIdFormPathParams = { id: string }
 
 export const PatchNoteNlpsIdForm = (props: PatchNoteNlpsIdFormProps) => {
-  const form = useForm<PatchNoteNlpsIdFormBody>({
-    resolver: zodResolver(clinicalNoteNlpUpdate),
+  const form = useForm<Required<PatchNoteNlpsIdFormBody>>({
+    resolver: zodResolver(clinicalNoteNlpUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -77,7 +58,33 @@ export const PatchNoteNlpsIdForm = (props: PatchNoteNlpsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchNoteNlpsIdFormFields />
+        <IntegerField lens={lens.focus('note_id')} label="note_id" />
+        <IntegerField
+          lens={lens.focus('section_concept_id')}
+          label="section_concept_id"
+        />
+        <StringField lens={lens.focus('snippet')} label="snippet" />
+        <StringField
+          lens={lens.focus('lexical_variant')}
+          label="lexical_variant"
+        />
+        <IntegerField
+          lens={lens.focus('note_nlp_concept_id')}
+          label="note_nlp_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('note_nlp_source_concept_id')}
+          label="note_nlp_source_concept_id"
+        />
+        <StringField lens={lens.focus('nlp_system')} label="nlp_system" />
+        <StringField lens={lens.focus('nlp_date')} label="nlp_date" />
+        <StringField lens={lens.focus('nlp_datetime')} label="nlp_datetime" />
+        <StringField lens={lens.focus('term_exists')} label="term_exists" />
+        <StringField lens={lens.focus('term_temporal')} label="term_temporal" />
+        <StringField
+          lens={lens.focus('term_modifiers')}
+          label="term_modifiers"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

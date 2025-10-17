@@ -18,32 +18,16 @@ export type CreateDrugErasFormBody = {
   gap_days?: number | undefined
 }
 
-export const CreateDrugErasFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`drug_concept_id`} />
-      <StringField
-        fieldName={`drug_era_start_date`}
-        label="drug_era_start_date"
-      />
-      <StringField fieldName={`drug_era_end_date`} label="drug_era_end_date" />
-      <IntegerField fieldName={`drug_exposure_count`} />
-      <IntegerField fieldName={`gap_days`} />
-    </>
-  )
-}
-
 export type CreateDrugErasFormProps = {
-  defaultValues: CreateDrugErasFormBody
+  defaultValues: Required<CreateDrugErasFormBody>
   onSuccess: () => void
 }
 
 export type CreateDrugErasFormPathParams = Record<string, never>
 
 export const CreateDrugErasForm = (props: CreateDrugErasFormProps) => {
-  const form = useForm<CreateDrugErasFormBody>({
-    resolver: zodResolver(derivedDrugEraCreate),
+  const form = useForm<Required<CreateDrugErasFormBody>>({
+    resolver: zodResolver(derivedDrugEraCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -67,7 +51,24 @@ export const CreateDrugErasForm = (props: CreateDrugErasFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateDrugErasFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('drug_concept_id')}
+          label="drug_concept_id"
+        />
+        <StringField
+          lens={lens.focus('drug_era_start_date')}
+          label="drug_era_start_date"
+        />
+        <StringField
+          lens={lens.focus('drug_era_end_date')}
+          label="drug_era_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('drug_exposure_count')}
+          label="drug_exposure_count"
+        />
+        <IntegerField lens={lens.focus('gap_days')} label="gap_days" />
 
         <Button type="submit">Submit</Button>
       </form>

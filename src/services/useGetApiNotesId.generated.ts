@@ -2,7 +2,7 @@ import { clinicalNote } from '@/types/clinicalNote.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiNotesIdArgs = { id: number }
+export type UseGetApiNotesIdArgs = { id: string }
 
 export const useGetApiNotesId = ({ id }: UseGetApiNotesIdArgs) => {
   const result = useQuery({

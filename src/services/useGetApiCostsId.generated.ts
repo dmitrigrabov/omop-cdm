@@ -2,7 +2,7 @@ import { healthsystemCost } from '@/types/healthsystemCost.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiCostsIdArgs = { id: number }
+export type UseGetApiCostsIdArgs = { id: string }
 
 export const useGetApiCostsId = ({ id }: UseGetApiCostsIdArgs) => {
   const result = useQuery({

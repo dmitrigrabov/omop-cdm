@@ -116,6 +116,29 @@ model VocabularyQueryParams {
 }
 
 /**
+ * Vocabulary list response with example
+ */
+@doc("Paginated list of Vocabulary records")
+@example(#{
+  data: #[#{
+  id: "12345",
+  vocabulary_name: "Example value",
+  vocabulary_reference: "Example value",
+  vocabulary_version: "Example value",
+  vocabulary_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model VocabularyList {
+  ...PaginatedList<Vocabulary>;
+}
+
+/**
  * Vocabulary API operations
  */
 @route("/vocabularys")
@@ -128,7 +151,7 @@ interface Vocabularys {
     ...VocabularyQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Vocabulary>;
+    @body body: VocabularyList;
   } | ErrorResponse;
 
   @get

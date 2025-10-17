@@ -27,59 +27,19 @@ export type PatchConditionOccurrencesIdFormBody = {
   condition_status_source_value?: string | undefined
 }
 
-export const PatchConditionOccurrencesIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`condition_concept_id`} />
-      <StringField
-        fieldName={`condition_start_date`}
-        label="condition_start_date"
-      />
-      <StringField
-        fieldName={`condition_start_datetime`}
-        label="condition_start_datetime"
-      />
-      <StringField
-        fieldName={`condition_end_date`}
-        label="condition_end_date"
-      />
-      <StringField
-        fieldName={`condition_end_datetime`}
-        label="condition_end_datetime"
-      />
-      <IntegerField fieldName={`condition_type_concept_id`} />
-      <IntegerField fieldName={`condition_status_concept_id`} />
-      <StringField fieldName={`stop_reason`} label="stop_reason" />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-      <IntegerField fieldName={`visit_detail_id`} />
-      <StringField
-        fieldName={`condition_source_value`}
-        label="condition_source_value"
-      />
-      <IntegerField fieldName={`condition_source_concept_id`} />
-      <StringField
-        fieldName={`condition_status_source_value`}
-        label="condition_status_source_value"
-      />
-    </>
-  )
-}
-
 export type PatchConditionOccurrencesIdFormProps = {
-  id: number
-  defaultValues: PatchConditionOccurrencesIdFormBody
+  id: string
+  defaultValues: Required<PatchConditionOccurrencesIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchConditionOccurrencesIdFormPathParams = { id: number }
+export type PatchConditionOccurrencesIdFormPathParams = { id: string }
 
 export const PatchConditionOccurrencesIdForm = (
   props: PatchConditionOccurrencesIdFormProps,
 ) => {
-  const form = useForm<PatchConditionOccurrencesIdFormBody>({
-    resolver: zodResolver(clinicalConditionOccurrenceUpdate),
+  const form = useForm<Required<PatchConditionOccurrencesIdFormBody>>({
+    resolver: zodResolver(clinicalConditionOccurrenceUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -103,7 +63,57 @@ export const PatchConditionOccurrencesIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchConditionOccurrencesIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('condition_concept_id')}
+          label="condition_concept_id"
+        />
+        <StringField
+          lens={lens.focus('condition_start_date')}
+          label="condition_start_date"
+        />
+        <StringField
+          lens={lens.focus('condition_start_datetime')}
+          label="condition_start_datetime"
+        />
+        <StringField
+          lens={lens.focus('condition_end_date')}
+          label="condition_end_date"
+        />
+        <StringField
+          lens={lens.focus('condition_end_datetime')}
+          label="condition_end_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('condition_type_concept_id')}
+          label="condition_type_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('condition_status_concept_id')}
+          label="condition_status_concept_id"
+        />
+        <StringField lens={lens.focus('stop_reason')} label="stop_reason" />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_id')}
+          label="visit_detail_id"
+        />
+        <StringField
+          lens={lens.focus('condition_source_value')}
+          label="condition_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('condition_source_concept_id')}
+          label="condition_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('condition_status_source_value')}
+          label="condition_status_source_value"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

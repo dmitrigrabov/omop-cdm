@@ -29,50 +29,17 @@ export type UpdatePersonsIdFormBody = {
   ethnicity_source_concept_id?: number | undefined
 }
 
-export const UpdatePersonsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`gender_concept_id`} />
-      <IntegerField fieldName={`year_of_birth`} />
-      <IntegerField fieldName={`month_of_birth`} />
-      <IntegerField fieldName={`day_of_birth`} />
-      <StringField fieldName={`birth_datetime`} label="birth_datetime" />
-      <IntegerField fieldName={`race_concept_id`} />
-      <IntegerField fieldName={`ethnicity_concept_id`} />
-      <IntegerField fieldName={`location_id`} />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`care_site_id`} />
-      <StringField
-        fieldName={`person_source_value`}
-        label="person_source_value"
-      />
-      <StringField
-        fieldName={`gender_source_value`}
-        label="gender_source_value"
-      />
-      <IntegerField fieldName={`gender_source_concept_id`} />
-      <StringField fieldName={`race_source_value`} label="race_source_value" />
-      <IntegerField fieldName={`race_source_concept_id`} />
-      <StringField
-        fieldName={`ethnicity_source_value`}
-        label="ethnicity_source_value"
-      />
-      <IntegerField fieldName={`ethnicity_source_concept_id`} />
-    </>
-  )
-}
-
 export type UpdatePersonsIdFormProps = {
-  id: number
-  defaultValues: UpdatePersonsIdFormBody
+  id: string
+  defaultValues: Required<UpdatePersonsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdatePersonsIdFormPathParams = { id: number }
+export type UpdatePersonsIdFormPathParams = { id: string }
 
 export const UpdatePersonsIdForm = (props: UpdatePersonsIdFormProps) => {
-  const form = useForm<UpdatePersonsIdFormBody>({
-    resolver: zodResolver(clinicalPersonCreate),
+  const form = useForm<Required<UpdatePersonsIdFormBody>>({
+    resolver: zodResolver(clinicalPersonCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -96,7 +63,62 @@ export const UpdatePersonsIdForm = (props: UpdatePersonsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdatePersonsIdFormFields />
+        <IntegerField
+          lens={lens.focus('gender_concept_id')}
+          label="gender_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('year_of_birth')}
+          label="year_of_birth"
+        />
+        <IntegerField
+          lens={lens.focus('month_of_birth')}
+          label="month_of_birth"
+        />
+        <IntegerField lens={lens.focus('day_of_birth')} label="day_of_birth" />
+        <StringField
+          lens={lens.focus('birth_datetime')}
+          label="birth_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('race_concept_id')}
+          label="race_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('ethnicity_concept_id')}
+          label="ethnicity_concept_id"
+        />
+        <IntegerField lens={lens.focus('location_id')} label="location_id" />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField lens={lens.focus('care_site_id')} label="care_site_id" />
+        <StringField
+          lens={lens.focus('person_source_value')}
+          label="person_source_value"
+        />
+        <StringField
+          lens={lens.focus('gender_source_value')}
+          label="gender_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('gender_source_concept_id')}
+          label="gender_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('race_source_value')}
+          label="race_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('race_source_concept_id')}
+          label="race_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('ethnicity_source_value')}
+          label="ethnicity_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('ethnicity_source_concept_id')}
+          label="ethnicity_source_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -16,27 +16,16 @@ export type CreateCohortsFormBody = {
   cohort_end_date: string
 }
 
-export const CreateCohortsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`cohort_definition_id`} />
-      <IntegerField fieldName={`subject_id`} />
-      <StringField fieldName={`cohort_start_date`} label="cohort_start_date" />
-      <StringField fieldName={`cohort_end_date`} label="cohort_end_date" />
-    </>
-  )
-}
-
 export type CreateCohortsFormProps = {
-  defaultValues: CreateCohortsFormBody
+  defaultValues: Required<CreateCohortsFormBody>
   onSuccess: () => void
 }
 
 export type CreateCohortsFormPathParams = Record<string, never>
 
 export const CreateCohortsForm = (props: CreateCohortsFormProps) => {
-  const form = useForm<CreateCohortsFormBody>({
-    resolver: zodResolver(resultsCohortCreate),
+  const form = useForm<Required<CreateCohortsFormBody>>({
+    resolver: zodResolver(resultsCohortCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -60,7 +49,19 @@ export const CreateCohortsForm = (props: CreateCohortsFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateCohortsFormFields />
+        <IntegerField
+          lens={lens.focus('cohort_definition_id')}
+          label="cohort_definition_id"
+        />
+        <IntegerField lens={lens.focus('subject_id')} label="subject_id" />
+        <StringField
+          lens={lens.focus('cohort_start_date')}
+          label="cohort_start_date"
+        />
+        <StringField
+          lens={lens.focus('cohort_end_date')}
+          label="cohort_end_date"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

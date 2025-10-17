@@ -15,30 +15,19 @@ export type PatchConceptRelationshipsIdFormBody = {
   invalid_reason?: string | undefined
 }
 
-export const PatchConceptRelationshipsIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`relationship_id`} label="relationship_id" />
-      <StringField fieldName={`valid_start_date`} label="valid_start_date" />
-      <StringField fieldName={`valid_end_date`} label="valid_end_date" />
-      <StringField fieldName={`invalid_reason`} label="invalid_reason" />
-    </>
-  )
-}
-
 export type PatchConceptRelationshipsIdFormProps = {
-  id: number
-  defaultValues: PatchConceptRelationshipsIdFormBody
+  id: string
+  defaultValues: Required<PatchConceptRelationshipsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchConceptRelationshipsIdFormPathParams = { id: number }
+export type PatchConceptRelationshipsIdFormPathParams = { id: string }
 
 export const PatchConceptRelationshipsIdForm = (
   props: PatchConceptRelationshipsIdFormProps,
 ) => {
-  const form = useForm<PatchConceptRelationshipsIdFormBody>({
-    resolver: zodResolver(vocabularyConceptRelationshipUpdate),
+  const form = useForm<Required<PatchConceptRelationshipsIdFormBody>>({
+    resolver: zodResolver(vocabularyConceptRelationshipUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -62,7 +51,22 @@ export const PatchConceptRelationshipsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchConceptRelationshipsIdFormFields />
+        <StringField
+          lens={lens.focus('relationship_id')}
+          label="relationship_id"
+        />
+        <StringField
+          lens={lens.focus('valid_start_date')}
+          label="valid_start_date"
+        />
+        <StringField
+          lens={lens.focus('valid_end_date')}
+          label="valid_end_date"
+        />
+        <StringField
+          lens={lens.focus('invalid_reason')}
+          label="invalid_reason"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

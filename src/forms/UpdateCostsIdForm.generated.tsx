@@ -34,48 +34,17 @@ export type UpdateCostsIdFormBody = {
   drg_source_value?: string | undefined
 }
 
-export const UpdateCostsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`cost_event_id`} />
-      <StringField fieldName={`cost_domain_id`} label="cost_domain_id" />
-      <IntegerField fieldName={`cost_type_concept_id`} />
-      <IntegerField fieldName={`currency_concept_id`} />
-      <NumberField fieldName={`total_charge`} />
-      <NumberField fieldName={`total_cost`} />
-      <NumberField fieldName={`total_paid`} />
-      <NumberField fieldName={`paid_by_payer`} />
-      <NumberField fieldName={`paid_by_patient`} />
-      <NumberField fieldName={`paid_patient_copay`} />
-      <NumberField fieldName={`paid_patient_coinsurance`} />
-      <NumberField fieldName={`paid_patient_deductible`} />
-      <NumberField fieldName={`paid_by_primary`} />
-      <NumberField fieldName={`paid_ingredient_cost`} />
-      <NumberField fieldName={`paid_dispensing_fee`} />
-      <IntegerField fieldName={`payer_plan_period_id`} />
-      <NumberField fieldName={`amount_allowed`} />
-      <IntegerField fieldName={`revenue_code_concept_id`} />
-      <StringField
-        fieldName={`revenue_code_source_value`}
-        label="revenue_code_source_value"
-      />
-      <IntegerField fieldName={`drg_concept_id`} />
-      <StringField fieldName={`drg_source_value`} label="drg_source_value" />
-    </>
-  )
-}
-
 export type UpdateCostsIdFormProps = {
-  id: number
-  defaultValues: UpdateCostsIdFormBody
+  id: string
+  defaultValues: Required<UpdateCostsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateCostsIdFormPathParams = { id: number }
+export type UpdateCostsIdFormPathParams = { id: string }
 
 export const UpdateCostsIdForm = (props: UpdateCostsIdFormProps) => {
-  const form = useForm<UpdateCostsIdFormBody>({
-    resolver: zodResolver(healthsystemCostCreate),
+  const form = useForm<Required<UpdateCostsIdFormBody>>({
+    resolver: zodResolver(healthsystemCostCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -99,7 +68,54 @@ export const UpdateCostsIdForm = (props: UpdateCostsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateCostsIdFormFields />
+        <IntegerField
+          lens={lens.focus('cost_event_id')}
+          label="cost_event_id"
+        />
+        <StringField
+          lens={lens.focus('cost_domain_id')}
+          label="cost_domain_id"
+        />
+        <IntegerField
+          lens={lens.focus('cost_type_concept_id')}
+          label="cost_type_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('currency_concept_id')}
+          label="currency_concept_id"
+        />
+        <NumberField lens={lens.focus('total_charge')} />
+        <NumberField lens={lens.focus('total_cost')} />
+        <NumberField lens={lens.focus('total_paid')} />
+        <NumberField lens={lens.focus('paid_by_payer')} />
+        <NumberField lens={lens.focus('paid_by_patient')} />
+        <NumberField lens={lens.focus('paid_patient_copay')} />
+        <NumberField lens={lens.focus('paid_patient_coinsurance')} />
+        <NumberField lens={lens.focus('paid_patient_deductible')} />
+        <NumberField lens={lens.focus('paid_by_primary')} />
+        <NumberField lens={lens.focus('paid_ingredient_cost')} />
+        <NumberField lens={lens.focus('paid_dispensing_fee')} />
+        <IntegerField
+          lens={lens.focus('payer_plan_period_id')}
+          label="payer_plan_period_id"
+        />
+        <NumberField lens={lens.focus('amount_allowed')} />
+        <IntegerField
+          lens={lens.focus('revenue_code_concept_id')}
+          label="revenue_code_concept_id"
+        />
+        <StringField
+          lens={lens.focus('revenue_code_source_value')}
+          label="revenue_code_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('drg_concept_id')}
+          label="drg_concept_id"
+        />
+        <StringField
+          lens={lens.focus('drg_source_value')}
+          label="drg_source_value"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

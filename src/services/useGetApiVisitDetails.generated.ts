@@ -1,19 +1,8 @@
-import { clinicalVisitDetail } from '@/types/clinicalVisitDetail.generated.ts'
-import { z } from 'zod'
+import { clinicalVisitDetailList } from '@/types/clinicalVisitDetailList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiVisitDetailsResponse = z.object({
-  data: z.array(clinicalVisitDetail),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiVisitDetailsArgs = {
   offset?: number | undefined
@@ -81,7 +70,7 @@ export const useGetApiVisitDetails = ({
         throw error
       }
 
-      return useGetApiVisitDetailsResponse.parse(data)
+      return clinicalVisitDetailList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

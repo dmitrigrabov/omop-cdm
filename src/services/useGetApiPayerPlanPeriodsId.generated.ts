@@ -2,7 +2,7 @@ import { healthsystemPayerPlanPeriod } from '@/types/healthsystemPayerPlanPeriod
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiPayerPlanPeriodsIdArgs = { id: number }
+export type UseGetApiPayerPlanPeriodsIdArgs = { id: string }
 
 export const useGetApiPayerPlanPeriodsId = ({
   id,

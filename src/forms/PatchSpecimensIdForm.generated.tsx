@@ -27,50 +27,17 @@ export type PatchSpecimensIdFormBody = {
   disease_status_source_value?: string | undefined
 }
 
-export const PatchSpecimensIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`specimen_concept_id`} />
-      <IntegerField fieldName={`specimen_type_concept_id`} />
-      <StringField fieldName={`specimen_date`} label="specimen_date" />
-      <StringField fieldName={`specimen_datetime`} label="specimen_datetime" />
-      <NumberField fieldName={`quantity`} />
-      <IntegerField fieldName={`unit_concept_id`} />
-      <IntegerField fieldName={`anatomic_site_concept_id`} />
-      <IntegerField fieldName={`disease_status_concept_id`} />
-      <StringField
-        fieldName={`specimen_source_id`}
-        label="specimen_source_id"
-      />
-      <StringField
-        fieldName={`specimen_source_value`}
-        label="specimen_source_value"
-      />
-      <StringField fieldName={`unit_source_value`} label="unit_source_value" />
-      <StringField
-        fieldName={`anatomic_site_source_value`}
-        label="anatomic_site_source_value"
-      />
-      <StringField
-        fieldName={`disease_status_source_value`}
-        label="disease_status_source_value"
-      />
-    </>
-  )
-}
-
 export type PatchSpecimensIdFormProps = {
-  id: number
-  defaultValues: PatchSpecimensIdFormBody
+  id: string
+  defaultValues: Required<PatchSpecimensIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchSpecimensIdFormPathParams = { id: number }
+export type PatchSpecimensIdFormPathParams = { id: string }
 
 export const PatchSpecimensIdForm = (props: PatchSpecimensIdFormProps) => {
-  const form = useForm<PatchSpecimensIdFormBody>({
-    resolver: zodResolver(clinicalSpecimenUpdate),
+  const form = useForm<Required<PatchSpecimensIdFormBody>>({
+    resolver: zodResolver(clinicalSpecimenUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -94,7 +61,53 @@ export const PatchSpecimensIdForm = (props: PatchSpecimensIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchSpecimensIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('specimen_concept_id')}
+          label="specimen_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('specimen_type_concept_id')}
+          label="specimen_type_concept_id"
+        />
+        <StringField lens={lens.focus('specimen_date')} label="specimen_date" />
+        <StringField
+          lens={lens.focus('specimen_datetime')}
+          label="specimen_datetime"
+        />
+        <NumberField lens={lens.focus('quantity')} />
+        <IntegerField
+          lens={lens.focus('unit_concept_id')}
+          label="unit_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('anatomic_site_concept_id')}
+          label="anatomic_site_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('disease_status_concept_id')}
+          label="disease_status_concept_id"
+        />
+        <StringField
+          lens={lens.focus('specimen_source_id')}
+          label="specimen_source_id"
+        />
+        <StringField
+          lens={lens.focus('specimen_source_value')}
+          label="specimen_source_value"
+        />
+        <StringField
+          lens={lens.focus('unit_source_value')}
+          label="unit_source_value"
+        />
+        <StringField
+          lens={lens.focus('anatomic_site_source_value')}
+          label="anatomic_site_source_value"
+        />
+        <StringField
+          lens={lens.focus('disease_status_source_value')}
+          label="disease_status_source_value"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

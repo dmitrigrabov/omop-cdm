@@ -2,7 +2,7 @@ import { derivedDoseEra } from '@/types/derivedDoseEra.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiDoseErasIdArgs = { id: number }
+export type UseGetApiDoseErasIdArgs = { id: string }
 
 export const useGetApiDoseErasId = ({ id }: UseGetApiDoseErasIdArgs) => {
   const result = useQuery({

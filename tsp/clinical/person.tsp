@@ -282,6 +282,42 @@ model PersonQueryParams {
 }
 
 /**
+ * Person list response with example
+ */
+@doc("Paginated list of Person records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  gender_concept_id: 8507,
+  year_of_birth: 100,
+  month_of_birth: 100,
+  day_of_birth: 100,
+  birth_datetime: "2023-01-15",
+  race_concept_id: 8507,
+  ethnicity_concept_id: 8507,
+  location_id: 100,
+  provider_id: 100,
+  care_site_id: 100,
+  person_source_value: "Example value",
+  gender_source_value: "Example value",
+  gender_source_concept_id: 8507,
+  race_source_value: "Example value",
+  race_source_concept_id: 8507,
+  ethnicity_source_value: "Example value",
+  ethnicity_source_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model PersonList {
+  ...PaginatedList<Person>;
+}
+
+/**
  * Person API operations
  */
 @route("/persons")
@@ -294,7 +330,7 @@ interface Persons {
     ...PersonQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Person>;
+    @body body: PersonList;
   } | ErrorResponse;
 
   @get
@@ -303,7 +339,7 @@ interface Persons {
   read(
     @path
     @doc("Unique person identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Person;
@@ -333,7 +369,7 @@ interface Persons {
   update(
     @path
     @doc("Unique person identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete person data")
@@ -355,7 +391,7 @@ interface Persons {
   patch(
     @path
     @doc("Unique person identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -374,7 +410,7 @@ interface Persons {
   delete(
     @path
     @doc("Unique person identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

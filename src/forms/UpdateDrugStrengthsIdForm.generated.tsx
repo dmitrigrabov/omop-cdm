@@ -25,38 +25,19 @@ export type UpdateDrugStrengthsIdFormBody = {
   invalid_reason?: string | undefined
 }
 
-export const UpdateDrugStrengthsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`drug_concept_id`} />
-      <IntegerField fieldName={`ingredient_concept_id`} />
-      <NumberField fieldName={`amount_value`} />
-      <IntegerField fieldName={`amount_unit_concept_id`} />
-      <NumberField fieldName={`numerator_value`} />
-      <IntegerField fieldName={`numerator_unit_concept_id`} />
-      <NumberField fieldName={`denominator_value`} />
-      <IntegerField fieldName={`denominator_unit_concept_id`} />
-      <IntegerField fieldName={`box_size`} />
-      <StringField fieldName={`valid_start_date`} label="valid_start_date" />
-      <StringField fieldName={`valid_end_date`} label="valid_end_date" />
-      <StringField fieldName={`invalid_reason`} label="invalid_reason" />
-    </>
-  )
-}
-
 export type UpdateDrugStrengthsIdFormProps = {
-  id: number
-  defaultValues: UpdateDrugStrengthsIdFormBody
+  id: string
+  defaultValues: Required<UpdateDrugStrengthsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateDrugStrengthsIdFormPathParams = { id: number }
+export type UpdateDrugStrengthsIdFormPathParams = { id: string }
 
 export const UpdateDrugStrengthsIdForm = (
   props: UpdateDrugStrengthsIdFormProps,
 ) => {
-  const form = useForm<UpdateDrugStrengthsIdFormBody>({
-    resolver: zodResolver(vocabularyDrugStrengthCreate),
+  const form = useForm<Required<UpdateDrugStrengthsIdFormBody>>({
+    resolver: zodResolver(vocabularyDrugStrengthCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -80,7 +61,42 @@ export const UpdateDrugStrengthsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateDrugStrengthsIdFormFields />
+        <IntegerField
+          lens={lens.focus('drug_concept_id')}
+          label="drug_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('ingredient_concept_id')}
+          label="ingredient_concept_id"
+        />
+        <NumberField lens={lens.focus('amount_value')} />
+        <IntegerField
+          lens={lens.focus('amount_unit_concept_id')}
+          label="amount_unit_concept_id"
+        />
+        <NumberField lens={lens.focus('numerator_value')} />
+        <IntegerField
+          lens={lens.focus('numerator_unit_concept_id')}
+          label="numerator_unit_concept_id"
+        />
+        <NumberField lens={lens.focus('denominator_value')} />
+        <IntegerField
+          lens={lens.focus('denominator_unit_concept_id')}
+          label="denominator_unit_concept_id"
+        />
+        <IntegerField lens={lens.focus('box_size')} label="box_size" />
+        <StringField
+          lens={lens.focus('valid_start_date')}
+          label="valid_start_date"
+        />
+        <StringField
+          lens={lens.focus('valid_end_date')}
+          label="valid_end_date"
+        />
+        <StringField
+          lens={lens.focus('invalid_reason')}
+          label="invalid_reason"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

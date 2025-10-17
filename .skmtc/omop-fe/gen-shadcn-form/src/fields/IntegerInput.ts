@@ -20,7 +20,7 @@ export class IntegerInput extends ContentBase {
     super({ context })
 
     this.name = name
-    this.label = label
+    this.label = label ?? name
     this.placeholder = placeholder
     this.skipLabel = skipLabel
 
@@ -31,6 +31,9 @@ export class IntegerInput extends ContentBase {
   }
 
   override toString() {
-    return `<IntegerField fieldName={\`${this.name}\`} ${this.label && !this.skipLabel ? `label="${this.label}"` : ''} />`
+    return `<IntegerField
+      ${this.name ? `lens={lens.focus('${this.name}')}` : 'lens={lens}'}
+      ${this.label && !this.skipLabel ? `label="${this.label}"` : ''}
+    />`
   }
 }

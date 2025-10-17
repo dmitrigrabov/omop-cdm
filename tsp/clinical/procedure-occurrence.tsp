@@ -259,6 +259,40 @@ model ProcedureOccurrenceQueryParams {
 }
 
 /**
+ * ProcedureOccurrence list response with example
+ */
+@doc("Paginated list of ProcedureOccurrence records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  procedure_concept_id: 8507,
+  procedure_date: "2023-01-15",
+  procedure_datetime: "2023-01-15",
+  procedure_end_date: "2023-01-15",
+  procedure_end_datetime: "2023-01-15",
+  procedure_type_concept_id: 8507,
+  modifier_concept_id: 8507,
+  quantity: 100,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  procedure_source_value: "Example value",
+  procedure_source_concept_id: 8507,
+  modifier_source_value: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ProcedureOccurrenceList {
+  ...PaginatedList<ProcedureOccurrence>;
+}
+
+/**
  * ProcedureOccurrence API operations
  */
 @route("/procedure-occurrences")
@@ -271,7 +305,7 @@ interface ProcedureOccurrences {
     ...ProcedureOccurrenceQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ProcedureOccurrence>;
+    @body body: ProcedureOccurrenceList;
   } | ErrorResponse;
 
   @get
@@ -280,7 +314,7 @@ interface ProcedureOccurrences {
   read(
     @path
     @doc("Unique procedure-occurrence identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ProcedureOccurrence;
@@ -310,7 +344,7 @@ interface ProcedureOccurrences {
   update(
     @path
     @doc("Unique procedure-occurrence identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete procedure-occurrence data")
@@ -332,7 +366,7 @@ interface ProcedureOccurrences {
   patch(
     @path
     @doc("Unique procedure-occurrence identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -351,7 +385,7 @@ interface ProcedureOccurrences {
   delete(
     @path
     @doc("Unique procedure-occurrence identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

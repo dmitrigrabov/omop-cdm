@@ -15,19 +15,8 @@ export type CreateConceptAncestorsFormBody = {
   max_levels_of_separation: number
 }
 
-export const CreateConceptAncestorsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`ancestor_concept_id`} />
-      <IntegerField fieldName={`descendant_concept_id`} />
-      <IntegerField fieldName={`min_levels_of_separation`} />
-      <IntegerField fieldName={`max_levels_of_separation`} />
-    </>
-  )
-}
-
 export type CreateConceptAncestorsFormProps = {
-  defaultValues: CreateConceptAncestorsFormBody
+  defaultValues: Required<CreateConceptAncestorsFormBody>
   onSuccess: () => void
 }
 
@@ -36,8 +25,8 @@ export type CreateConceptAncestorsFormPathParams = Record<string, never>
 export const CreateConceptAncestorsForm = (
   props: CreateConceptAncestorsFormProps,
 ) => {
-  const form = useForm<CreateConceptAncestorsFormBody>({
-    resolver: zodResolver(vocabularyConceptAncestorCreate),
+  const form = useForm<Required<CreateConceptAncestorsFormBody>>({
+    resolver: zodResolver(vocabularyConceptAncestorCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -61,7 +50,22 @@ export const CreateConceptAncestorsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateConceptAncestorsFormFields />
+        <IntegerField
+          lens={lens.focus('ancestor_concept_id')}
+          label="ancestor_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('descendant_concept_id')}
+          label="descendant_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('min_levels_of_separation')}
+          label="min_levels_of_separation"
+        />
+        <IntegerField
+          lens={lens.focus('max_levels_of_separation')}
+          label="max_levels_of_separation"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

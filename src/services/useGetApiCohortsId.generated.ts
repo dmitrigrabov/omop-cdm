@@ -2,7 +2,7 @@ import { resultsCohort } from '@/types/resultsCohort.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiCohortsIdArgs = { id: number }
+export type UseGetApiCohortsIdArgs = { id: string }
 
 export const useGetApiCohortsId = ({ id }: UseGetApiCohortsIdArgs) => {
   const result = useQuery({

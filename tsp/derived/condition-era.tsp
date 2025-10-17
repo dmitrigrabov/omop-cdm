@@ -142,6 +142,30 @@ model ConditionEraQueryParams {
 }
 
 /**
+ * ConditionEra list response with example
+ */
+@doc("Paginated list of ConditionEra records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  condition_concept_id: 8507,
+  condition_era_start_date: "2023-01-15",
+  condition_era_end_date: "2023-01-15",
+  condition_occurrence_count: 100
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ConditionEraList {
+  ...PaginatedList<ConditionEra>;
+}
+
+/**
  * ConditionEra API operations
  */
 @route("/condition-eras")
@@ -154,7 +178,7 @@ interface ConditionEras {
     ...ConditionEraQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ConditionEra>;
+    @body body: ConditionEraList;
   } | ErrorResponse;
 
   @get
@@ -163,7 +187,7 @@ interface ConditionEras {
   read(
     @path
     @doc("Unique condition-era identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ConditionEra;
@@ -193,7 +217,7 @@ interface ConditionEras {
   update(
     @path
     @doc("Unique condition-era identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete condition-era data")
@@ -215,7 +239,7 @@ interface ConditionEras {
   patch(
     @path
     @doc("Unique condition-era identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -234,7 +258,7 @@ interface ConditionEras {
   delete(
     @path
     @doc("Unique condition-era identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

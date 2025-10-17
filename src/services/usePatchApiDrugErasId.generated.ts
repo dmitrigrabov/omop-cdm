@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiDrugErasIdArgs = {
-  id: number
+  id: string
   body: DerivedDrugEraUpdate
 }
 

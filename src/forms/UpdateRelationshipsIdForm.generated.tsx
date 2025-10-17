@@ -17,24 +17,9 @@ export type UpdateRelationshipsIdFormBody = {
   relationship_concept_id: number
 }
 
-export const UpdateRelationshipsIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`relationship_name`} label="relationship_name" />
-      <StringField fieldName={`is_hierarchical`} label="is_hierarchical" />
-      <StringField fieldName={`defines_ancestry`} label="defines_ancestry" />
-      <StringField
-        fieldName={`reverse_relationship_id`}
-        label="reverse_relationship_id"
-      />
-      <IntegerField fieldName={`relationship_concept_id`} />
-    </>
-  )
-}
-
 export type UpdateRelationshipsIdFormProps = {
   id: string
-  defaultValues: UpdateRelationshipsIdFormBody
+  defaultValues: Required<UpdateRelationshipsIdFormBody>
   onSuccess: () => void
 }
 
@@ -43,8 +28,8 @@ export type UpdateRelationshipsIdFormPathParams = { id: string }
 export const UpdateRelationshipsIdForm = (
   props: UpdateRelationshipsIdFormProps,
 ) => {
-  const form = useForm<UpdateRelationshipsIdFormBody>({
-    resolver: zodResolver(vocabularyRelationshipCreate),
+  const form = useForm<Required<UpdateRelationshipsIdFormBody>>({
+    resolver: zodResolver(vocabularyRelationshipCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -68,7 +53,26 @@ export const UpdateRelationshipsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateRelationshipsIdFormFields />
+        <StringField
+          lens={lens.focus('relationship_name')}
+          label="relationship_name"
+        />
+        <StringField
+          lens={lens.focus('is_hierarchical')}
+          label="is_hierarchical"
+        />
+        <StringField
+          lens={lens.focus('defines_ancestry')}
+          label="defines_ancestry"
+        />
+        <StringField
+          lens={lens.focus('reverse_relationship_id')}
+          label="reverse_relationship_id"
+        />
+        <IntegerField
+          lens={lens.focus('relationship_concept_id')}
+          label="relationship_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

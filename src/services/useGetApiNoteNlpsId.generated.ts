@@ -2,7 +2,7 @@ import { clinicalNoteNlp } from '@/types/clinicalNoteNlp.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiNoteNlpsIdArgs = { id: number }
+export type UseGetApiNoteNlpsIdArgs = { id: string }
 
 export const useGetApiNoteNlpsId = ({ id }: UseGetApiNoteNlpsIdArgs) => {
   const result = useQuery({

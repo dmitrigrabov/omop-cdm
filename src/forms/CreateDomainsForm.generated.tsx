@@ -14,25 +14,16 @@ export type CreateDomainsFormBody = {
   domain_concept_id: number
 }
 
-export const CreateDomainsFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`domain_name`} label="domain_name" />
-      <IntegerField fieldName={`domain_concept_id`} />
-    </>
-  )
-}
-
 export type CreateDomainsFormProps = {
-  defaultValues: CreateDomainsFormBody
+  defaultValues: Required<CreateDomainsFormBody>
   onSuccess: () => void
 }
 
 export type CreateDomainsFormPathParams = Record<string, never>
 
 export const CreateDomainsForm = (props: CreateDomainsFormProps) => {
-  const form = useForm<CreateDomainsFormBody>({
-    resolver: zodResolver(vocabularyDomainCreate),
+  const form = useForm<Required<CreateDomainsFormBody>>({
+    resolver: zodResolver(vocabularyDomainCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -56,7 +47,11 @@ export const CreateDomainsForm = (props: CreateDomainsFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateDomainsFormFields />
+        <StringField lens={lens.focus('domain_name')} label="domain_name" />
+        <IntegerField
+          lens={lens.focus('domain_concept_id')}
+          label="domain_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

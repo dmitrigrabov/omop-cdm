@@ -2,7 +2,7 @@ import { metadataMetadata } from '@/types/metadataMetadata.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiMetadatasIdArgs = { id: number }
+export type UseGetApiMetadatasIdArgs = { id: string }
 
 export const useGetApiMetadatasId = ({ id }: UseGetApiMetadatasIdArgs) => {
   const result = useQuery({

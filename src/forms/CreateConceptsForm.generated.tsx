@@ -20,32 +20,16 @@ export type CreateConceptsFormBody = {
   invalid_reason?: string | undefined
 }
 
-export const CreateConceptsFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`concept_name`} label="concept_name" />
-      <StringField fieldName={`domain_id`} label="domain_id" />
-      <StringField fieldName={`vocabulary_id`} label="vocabulary_id" />
-      <StringField fieldName={`concept_class_id`} label="concept_class_id" />
-      <StringField fieldName={`standard_concept`} label="standard_concept" />
-      <StringField fieldName={`concept_code`} label="concept_code" />
-      <StringField fieldName={`valid_start_date`} label="valid_start_date" />
-      <StringField fieldName={`valid_end_date`} label="valid_end_date" />
-      <StringField fieldName={`invalid_reason`} label="invalid_reason" />
-    </>
-  )
-}
-
 export type CreateConceptsFormProps = {
-  defaultValues: CreateConceptsFormBody
+  defaultValues: Required<CreateConceptsFormBody>
   onSuccess: () => void
 }
 
 export type CreateConceptsFormPathParams = Record<string, never>
 
 export const CreateConceptsForm = (props: CreateConceptsFormProps) => {
-  const form = useForm<CreateConceptsFormBody>({
-    resolver: zodResolver(vocabularyConceptCreate),
+  const form = useForm<Required<CreateConceptsFormBody>>({
+    resolver: zodResolver(vocabularyConceptCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -69,7 +53,30 @@ export const CreateConceptsForm = (props: CreateConceptsFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateConceptsFormFields />
+        <StringField lens={lens.focus('concept_name')} label="concept_name" />
+        <StringField lens={lens.focus('domain_id')} label="domain_id" />
+        <StringField lens={lens.focus('vocabulary_id')} label="vocabulary_id" />
+        <StringField
+          lens={lens.focus('concept_class_id')}
+          label="concept_class_id"
+        />
+        <StringField
+          lens={lens.focus('standard_concept')}
+          label="standard_concept"
+        />
+        <StringField lens={lens.focus('concept_code')} label="concept_code" />
+        <StringField
+          lens={lens.focus('valid_start_date')}
+          label="valid_start_date"
+        />
+        <StringField
+          lens={lens.focus('valid_end_date')}
+          label="valid_end_date"
+        />
+        <StringField
+          lens={lens.focus('invalid_reason')}
+          label="invalid_reason"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

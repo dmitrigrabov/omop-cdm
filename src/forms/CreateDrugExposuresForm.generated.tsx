@@ -35,55 +35,8 @@ export type CreateDrugExposuresFormBody = {
   dose_unit_source_value?: string | undefined
 }
 
-export const CreateDrugExposuresFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`drug_concept_id`} />
-      <StringField
-        fieldName={`drug_exposure_start_date`}
-        label="drug_exposure_start_date"
-      />
-      <StringField
-        fieldName={`drug_exposure_start_datetime`}
-        label="drug_exposure_start_datetime"
-      />
-      <StringField
-        fieldName={`drug_exposure_end_date`}
-        label="drug_exposure_end_date"
-      />
-      <StringField
-        fieldName={`drug_exposure_end_datetime`}
-        label="drug_exposure_end_datetime"
-      />
-      <StringField fieldName={`verbatim_end_date`} label="verbatim_end_date" />
-      <IntegerField fieldName={`drug_type_concept_id`} />
-      <StringField fieldName={`stop_reason`} label="stop_reason" />
-      <IntegerField fieldName={`refills`} />
-      <NumberField fieldName={`quantity`} />
-      <IntegerField fieldName={`days_supply`} />
-      <StringField fieldName={`sig`} label="sig" />
-      <IntegerField fieldName={`route_concept_id`} />
-      <StringField fieldName={`lot_number`} label="lot_number" />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-      <IntegerField fieldName={`visit_detail_id`} />
-      <StringField fieldName={`drug_source_value`} label="drug_source_value" />
-      <IntegerField fieldName={`drug_source_concept_id`} />
-      <StringField
-        fieldName={`route_source_value`}
-        label="route_source_value"
-      />
-      <StringField
-        fieldName={`dose_unit_source_value`}
-        label="dose_unit_source_value"
-      />
-    </>
-  )
-}
-
 export type CreateDrugExposuresFormProps = {
-  defaultValues: CreateDrugExposuresFormBody
+  defaultValues: Required<CreateDrugExposuresFormBody>
   onSuccess: () => void
 }
 
@@ -92,8 +45,8 @@ export type CreateDrugExposuresFormPathParams = Record<string, never>
 export const CreateDrugExposuresForm = (
   props: CreateDrugExposuresFormProps,
 ) => {
-  const form = useForm<CreateDrugExposuresFormBody>({
-    resolver: zodResolver(clinicalDrugExposureCreate),
+  const form = useForm<Required<CreateDrugExposuresFormBody>>({
+    resolver: zodResolver(clinicalDrugExposureCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -117,7 +70,70 @@ export const CreateDrugExposuresForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateDrugExposuresFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('drug_concept_id')}
+          label="drug_concept_id"
+        />
+        <StringField
+          lens={lens.focus('drug_exposure_start_date')}
+          label="drug_exposure_start_date"
+        />
+        <StringField
+          lens={lens.focus('drug_exposure_start_datetime')}
+          label="drug_exposure_start_datetime"
+        />
+        <StringField
+          lens={lens.focus('drug_exposure_end_date')}
+          label="drug_exposure_end_date"
+        />
+        <StringField
+          lens={lens.focus('drug_exposure_end_datetime')}
+          label="drug_exposure_end_datetime"
+        />
+        <StringField
+          lens={lens.focus('verbatim_end_date')}
+          label="verbatim_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('drug_type_concept_id')}
+          label="drug_type_concept_id"
+        />
+        <StringField lens={lens.focus('stop_reason')} label="stop_reason" />
+        <IntegerField lens={lens.focus('refills')} label="refills" />
+        <NumberField lens={lens.focus('quantity')} />
+        <IntegerField lens={lens.focus('days_supply')} label="days_supply" />
+        <StringField lens={lens.focus('sig')} label="sig" />
+        <IntegerField
+          lens={lens.focus('route_concept_id')}
+          label="route_concept_id"
+        />
+        <StringField lens={lens.focus('lot_number')} label="lot_number" />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_id')}
+          label="visit_detail_id"
+        />
+        <StringField
+          lens={lens.focus('drug_source_value')}
+          label="drug_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('drug_source_concept_id')}
+          label="drug_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('route_source_value')}
+          label="route_source_value"
+        />
+        <StringField
+          lens={lens.focus('dose_unit_source_value')}
+          label="dose_unit_source_value"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -6,7 +6,7 @@ import {
   UseMutationOptions,
 } from '@tanstack/react-query'
 
-export type UseDeleteApiDeathsIdArgs = { id: number }
+export type UseDeleteApiDeathsIdArgs = { id: string }
 
 export const useDeleteApiDeathsIdResponse = z.void()
 

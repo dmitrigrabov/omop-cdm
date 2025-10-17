@@ -1,19 +1,8 @@
-import { metadataCdmSource } from '@/types/metadataCdmSource.generated.ts'
-import { z } from 'zod'
+import { metadataCdmSourceList } from '@/types/metadataCdmSourceList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiCdmSourcesResponse = z.object({
-  data: z.array(metadataCdmSource),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiCdmSourcesArgs = {
   offset?: number | undefined
@@ -48,7 +37,7 @@ export const useGetApiCdmSources = ({
         throw error
       }
 
-      return useGetApiCdmSourcesResponse.parse(data)
+      return metadataCdmSourceList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

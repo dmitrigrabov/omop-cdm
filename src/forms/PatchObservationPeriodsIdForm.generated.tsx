@@ -16,36 +16,19 @@ export type PatchObservationPeriodsIdFormBody = {
   period_type_concept_id?: number | undefined
 }
 
-export const PatchObservationPeriodsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <StringField
-        fieldName={`observation_period_start_date`}
-        label="observation_period_start_date"
-      />
-      <StringField
-        fieldName={`observation_period_end_date`}
-        label="observation_period_end_date"
-      />
-      <IntegerField fieldName={`period_type_concept_id`} />
-    </>
-  )
-}
-
 export type PatchObservationPeriodsIdFormProps = {
-  id: number
-  defaultValues: PatchObservationPeriodsIdFormBody
+  id: string
+  defaultValues: Required<PatchObservationPeriodsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchObservationPeriodsIdFormPathParams = { id: number }
+export type PatchObservationPeriodsIdFormPathParams = { id: string }
 
 export const PatchObservationPeriodsIdForm = (
   props: PatchObservationPeriodsIdFormProps,
 ) => {
-  const form = useForm<PatchObservationPeriodsIdFormBody>({
-    resolver: zodResolver(clinicalObservationPeriodUpdate),
+  const form = useForm<Required<PatchObservationPeriodsIdFormBody>>({
+    resolver: zodResolver(clinicalObservationPeriodUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -69,7 +52,19 @@ export const PatchObservationPeriodsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchObservationPeriodsIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <StringField
+          lens={lens.focus('observation_period_start_date')}
+          label="observation_period_start_date"
+        />
+        <StringField
+          lens={lens.focus('observation_period_end_date')}
+          label="observation_period_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('period_type_concept_id')}
+          label="period_type_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

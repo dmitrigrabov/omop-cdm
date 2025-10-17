@@ -1,19 +1,8 @@
-import { derivedDrugEra } from '@/types/derivedDrugEra.generated.ts'
-import { z } from 'zod'
+import { derivedDrugEraList } from '@/types/derivedDrugEraList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiDrugErasResponse = z.object({
-  data: z.array(derivedDrugEra),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiDrugErasArgs = {
   offset?: number | undefined
@@ -51,7 +40,7 @@ export const useGetApiDrugEras = ({
         throw error
       }
 
-      return useGetApiDrugErasResponse.parse(data)
+      return derivedDrugEraList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

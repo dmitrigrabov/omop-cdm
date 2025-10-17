@@ -278,6 +278,41 @@ model PayerPlanPeriodQueryParams {
 }
 
 /**
+ * PayerPlanPeriod list response with example
+ */
+@doc("Paginated list of PayerPlanPeriod records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  payer_plan_period_start_date: "2023-01-15",
+  payer_plan_period_end_date: "2023-01-15",
+  payer_concept_id: 8507,
+  payer_source_value: "Example value",
+  payer_source_concept_id: 8507,
+  plan_concept_id: 8507,
+  plan_source_value: "Example value",
+  plan_source_concept_id: 8507,
+  sponsor_concept_id: 8507,
+  sponsor_source_value: "Example value",
+  sponsor_source_concept_id: 8507,
+  family_source_value: "Example value",
+  stop_reason_concept_id: 8507,
+  stop_reason_source_value: "Example value",
+  stop_reason_source_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model PayerPlanPeriodList {
+  ...PaginatedList<PayerPlanPeriod>;
+}
+
+/**
  * PayerPlanPeriod API operations
  */
 @route("/payer-plan-periods")
@@ -290,7 +325,7 @@ interface PayerPlanPeriods {
     ...PayerPlanPeriodQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<PayerPlanPeriod>;
+    @body body: PayerPlanPeriodList;
   } | ErrorResponse;
 
   @get
@@ -299,7 +334,7 @@ interface PayerPlanPeriods {
   read(
     @path
     @doc("Unique payer-plan-period identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: PayerPlanPeriod;
@@ -329,7 +364,7 @@ interface PayerPlanPeriods {
   update(
     @path
     @doc("Unique payer-plan-period identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete payer-plan-period data")
@@ -351,7 +386,7 @@ interface PayerPlanPeriods {
   patch(
     @path
     @doc("Unique payer-plan-period identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -370,7 +405,7 @@ interface PayerPlanPeriods {
   delete(
     @path
     @doc("Unique payer-plan-period identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

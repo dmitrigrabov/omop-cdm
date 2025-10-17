@@ -1,6 +1,6 @@
 import { toOperationEntry } from '@skmtc/core'
 import { toEnrichmentSchema, type EnrichmentSchema } from './enrichments.ts'
-import { isListResponse } from '@skmtc/gen-tanstack-query-supabase-zod'
+import { toListKeyAndItem } from '@skmtc/gen-tanstack-query-supabase-zod'
 import { ShadcnSelectField } from './ShadcnSelectField.ts'
 import { ShadcnSelectApiBase } from './base.ts'
 import denoJson from '../deno.json' with { type: 'json' }
@@ -10,7 +10,33 @@ export const ShadcnSelectApiEntry = toOperationEntry<EnrichmentSchema>({
 
   toEnrichmentSchema,
 
-  isSupported: ({ operation }) => operation.method === 'get' && isListResponse(operation),
+  isSupported: ({ operation }) => {
+    try {
+      if (operation.method !== 'get') {
+        return false
+      }
+
+      const result = toListKeyAndItem(operation)
+
+      if (!result.schema) {
+        return false
+      }
+
+      const resolved = result.schema.resolve()
+
+      if (resolved.type !== 'object') {
+        return false
+      }
+
+      if (!resolved.properties?.id) {
+        return false
+      }
+
+      return true
+    } catch (_error) {
+      return false
+    }
+  },
 
   transform: ({ context, operation }) => {
     context.insertOperation(ShadcnSelectField, operation)

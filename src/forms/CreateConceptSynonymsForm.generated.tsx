@@ -15,21 +15,8 @@ export type CreateConceptSynonymsFormBody = {
   language_concept_id: number
 }
 
-export const CreateConceptSynonymsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`concept_id`} />
-      <StringField
-        fieldName={`concept_synonym_name`}
-        label="concept_synonym_name"
-      />
-      <IntegerField fieldName={`language_concept_id`} />
-    </>
-  )
-}
-
 export type CreateConceptSynonymsFormProps = {
-  defaultValues: CreateConceptSynonymsFormBody
+  defaultValues: Required<CreateConceptSynonymsFormBody>
   onSuccess: () => void
 }
 
@@ -38,8 +25,8 @@ export type CreateConceptSynonymsFormPathParams = Record<string, never>
 export const CreateConceptSynonymsForm = (
   props: CreateConceptSynonymsFormProps,
 ) => {
-  const form = useForm<CreateConceptSynonymsFormBody>({
-    resolver: zodResolver(vocabularyConceptSynonymCreate),
+  const form = useForm<Required<CreateConceptSynonymsFormBody>>({
+    resolver: zodResolver(vocabularyConceptSynonymCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -63,7 +50,15 @@ export const CreateConceptSynonymsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateConceptSynonymsFormFields />
+        <IntegerField lens={lens.focus('concept_id')} label="concept_id" />
+        <StringField
+          lens={lens.focus('concept_synonym_name')}
+          label="concept_synonym_name"
+        />
+        <IntegerField
+          lens={lens.focus('language_concept_id')}
+          label="language_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -19,33 +19,17 @@ export type UpdateDoseErasIdFormBody = {
   dose_era_end_date: string
 }
 
-export const UpdateDoseErasIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`drug_concept_id`} />
-      <IntegerField fieldName={`unit_concept_id`} />
-      <NumberField fieldName={`dose_value`} />
-      <StringField
-        fieldName={`dose_era_start_date`}
-        label="dose_era_start_date"
-      />
-      <StringField fieldName={`dose_era_end_date`} label="dose_era_end_date" />
-    </>
-  )
-}
-
 export type UpdateDoseErasIdFormProps = {
-  id: number
-  defaultValues: UpdateDoseErasIdFormBody
+  id: string
+  defaultValues: Required<UpdateDoseErasIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateDoseErasIdFormPathParams = { id: number }
+export type UpdateDoseErasIdFormPathParams = { id: string }
 
 export const UpdateDoseErasIdForm = (props: UpdateDoseErasIdFormProps) => {
-  const form = useForm<UpdateDoseErasIdFormBody>({
-    resolver: zodResolver(derivedDoseEraCreate),
+  const form = useForm<Required<UpdateDoseErasIdFormBody>>({
+    resolver: zodResolver(derivedDoseEraCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -69,7 +53,24 @@ export const UpdateDoseErasIdForm = (props: UpdateDoseErasIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateDoseErasIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('drug_concept_id')}
+          label="drug_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('unit_concept_id')}
+          label="unit_concept_id"
+        />
+        <NumberField lens={lens.focus('dose_value')} />
+        <StringField
+          lens={lens.focus('dose_era_start_date')}
+          label="dose_era_start_date"
+        />
+        <StringField
+          lens={lens.focus('dose_era_end_date')}
+          label="dose_era_end_date"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

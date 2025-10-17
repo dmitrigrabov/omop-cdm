@@ -2,7 +2,7 @@ import { metadataCdmSource } from '@/types/metadataCdmSource.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiCdmSourcesIdArgs = { id: number }
+export type UseGetApiCdmSourcesIdArgs = { id: string }
 
 export const useGetApiCdmSourcesId = ({ id }: UseGetApiCdmSourcesIdArgs) => {
   const result = useQuery({

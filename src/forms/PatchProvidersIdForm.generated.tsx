@@ -24,45 +24,17 @@ export type PatchProvidersIdFormBody = {
   gender_source_concept_id?: number | undefined
 }
 
-export const PatchProvidersIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`provider_name`} label="provider_name" />
-      <StringField fieldName={`npi`} label="npi" />
-      <StringField fieldName={`dea`} label="dea" />
-      <IntegerField fieldName={`specialty_concept_id`} />
-      <IntegerField fieldName={`care_site_id`} />
-      <IntegerField fieldName={`year_of_birth`} />
-      <IntegerField fieldName={`gender_concept_id`} />
-      <StringField
-        fieldName={`provider_source_value`}
-        label="provider_source_value"
-      />
-      <StringField
-        fieldName={`specialty_source_value`}
-        label="specialty_source_value"
-      />
-      <IntegerField fieldName={`specialty_source_concept_id`} />
-      <StringField
-        fieldName={`gender_source_value`}
-        label="gender_source_value"
-      />
-      <IntegerField fieldName={`gender_source_concept_id`} />
-    </>
-  )
-}
-
 export type PatchProvidersIdFormProps = {
-  id: number
-  defaultValues: PatchProvidersIdFormBody
+  id: string
+  defaultValues: Required<PatchProvidersIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchProvidersIdFormPathParams = { id: number }
+export type PatchProvidersIdFormPathParams = { id: string }
 
 export const PatchProvidersIdForm = (props: PatchProvidersIdFormProps) => {
-  const form = useForm<PatchProvidersIdFormBody>({
-    resolver: zodResolver(healthsystemProviderUpdate),
+  const form = useForm<Required<PatchProvidersIdFormBody>>({
+    resolver: zodResolver(healthsystemProviderUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -86,7 +58,42 @@ export const PatchProvidersIdForm = (props: PatchProvidersIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchProvidersIdFormFields />
+        <StringField lens={lens.focus('provider_name')} label="provider_name" />
+        <StringField lens={lens.focus('npi')} label="npi" />
+        <StringField lens={lens.focus('dea')} label="dea" />
+        <IntegerField
+          lens={lens.focus('specialty_concept_id')}
+          label="specialty_concept_id"
+        />
+        <IntegerField lens={lens.focus('care_site_id')} label="care_site_id" />
+        <IntegerField
+          lens={lens.focus('year_of_birth')}
+          label="year_of_birth"
+        />
+        <IntegerField
+          lens={lens.focus('gender_concept_id')}
+          label="gender_concept_id"
+        />
+        <StringField
+          lens={lens.focus('provider_source_value')}
+          label="provider_source_value"
+        />
+        <StringField
+          lens={lens.focus('specialty_source_value')}
+          label="specialty_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('specialty_source_concept_id')}
+          label="specialty_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('gender_source_value')}
+          label="gender_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('gender_source_concept_id')}
+          label="gender_source_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

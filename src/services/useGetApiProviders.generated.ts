@@ -1,19 +1,8 @@
-import { healthsystemProvider } from '@/types/healthsystemProvider.generated.ts'
-import { z } from 'zod'
+import { healthsystemProviderList } from '@/types/healthsystemProviderList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiProvidersResponse = z.object({
-  data: z.array(healthsystemProvider),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiProvidersArgs = {
   offset?: number | undefined
@@ -60,7 +49,7 @@ export const useGetApiProviders = ({
         throw error
       }
 
-      return useGetApiProvidersResponse.parse(data)
+      return healthsystemProviderList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

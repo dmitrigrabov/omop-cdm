@@ -14,18 +14,8 @@ export type CreateEpisodeEventsFormBody = {
   episode_event_field_concept_id: number
 }
 
-export const CreateEpisodeEventsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`episode_id`} />
-      <IntegerField fieldName={`event_id`} />
-      <IntegerField fieldName={`episode_event_field_concept_id`} />
-    </>
-  )
-}
-
 export type CreateEpisodeEventsFormProps = {
-  defaultValues: CreateEpisodeEventsFormBody
+  defaultValues: Required<CreateEpisodeEventsFormBody>
   onSuccess: () => void
 }
 
@@ -34,8 +24,8 @@ export type CreateEpisodeEventsFormPathParams = Record<string, never>
 export const CreateEpisodeEventsForm = (
   props: CreateEpisodeEventsFormProps,
 ) => {
-  const form = useForm<CreateEpisodeEventsFormBody>({
-    resolver: zodResolver(derivedEpisodeEventCreate),
+  const form = useForm<Required<CreateEpisodeEventsFormBody>>({
+    resolver: zodResolver(derivedEpisodeEventCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -59,7 +49,12 @@ export const CreateEpisodeEventsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateEpisodeEventsFormFields />
+        <IntegerField lens={lens.focus('episode_id')} label="episode_id" />
+        <IntegerField lens={lens.focus('event_id')} label="event_id" />
+        <IntegerField
+          lens={lens.focus('episode_event_field_concept_id')}
+          label="episode_event_field_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

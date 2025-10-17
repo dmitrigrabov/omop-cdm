@@ -15,30 +15,19 @@ export type PatchConceptAncestorsIdFormBody = {
   max_levels_of_separation?: number | undefined
 }
 
-export const PatchConceptAncestorsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`ancestor_concept_id`} />
-      <IntegerField fieldName={`descendant_concept_id`} />
-      <IntegerField fieldName={`min_levels_of_separation`} />
-      <IntegerField fieldName={`max_levels_of_separation`} />
-    </>
-  )
-}
-
 export type PatchConceptAncestorsIdFormProps = {
-  id: number
-  defaultValues: PatchConceptAncestorsIdFormBody
+  id: string
+  defaultValues: Required<PatchConceptAncestorsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchConceptAncestorsIdFormPathParams = { id: number }
+export type PatchConceptAncestorsIdFormPathParams = { id: string }
 
 export const PatchConceptAncestorsIdForm = (
   props: PatchConceptAncestorsIdFormProps,
 ) => {
-  const form = useForm<PatchConceptAncestorsIdFormBody>({
-    resolver: zodResolver(vocabularyConceptAncestorUpdate),
+  const form = useForm<Required<PatchConceptAncestorsIdFormBody>>({
+    resolver: zodResolver(vocabularyConceptAncestorUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -62,7 +51,22 @@ export const PatchConceptAncestorsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchConceptAncestorsIdFormFields />
+        <IntegerField
+          lens={lens.focus('ancestor_concept_id')}
+          label="ancestor_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('descendant_concept_id')}
+          label="descendant_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('min_levels_of_separation')}
+          label="min_levels_of_separation"
+        />
+        <IntegerField
+          lens={lens.focus('max_levels_of_separation')}
+          label="max_levels_of_separation"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

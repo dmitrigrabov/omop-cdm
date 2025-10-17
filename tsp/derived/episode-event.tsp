@@ -96,6 +96,27 @@ model EpisodeEventQueryParams {
 }
 
 /**
+ * EpisodeEvent list response with example
+ */
+@doc("Paginated list of EpisodeEvent records")
+@example(#{
+  data: #[#{
+  episode_id: 100,
+  event_id: 100,
+  episode_event_field_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model EpisodeEventList {
+  ...PaginatedList<EpisodeEvent>;
+}
+
+/**
  * EpisodeEvent API operations
  */
 @route("/episode-events")
@@ -108,7 +129,7 @@ interface EpisodeEvents {
     ...EpisodeEventQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<EpisodeEvent>;
+    @body body: EpisodeEventList;
   } | ErrorResponse;
 
   @get
@@ -117,7 +138,7 @@ interface EpisodeEvents {
   read(
     @path
     @doc("Unique episode-event identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: EpisodeEvent;
@@ -147,7 +168,7 @@ interface EpisodeEvents {
   update(
     @path
     @doc("Unique episode-event identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete episode-event data")
@@ -169,7 +190,7 @@ interface EpisodeEvents {
   patch(
     @path
     @doc("Unique episode-event identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -188,7 +209,7 @@ interface EpisodeEvents {
   delete(
     @path
     @doc("Unique episode-event identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

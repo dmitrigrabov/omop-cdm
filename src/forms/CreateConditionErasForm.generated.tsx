@@ -17,26 +17,8 @@ export type CreateConditionErasFormBody = {
   condition_occurrence_count?: number | undefined
 }
 
-export const CreateConditionErasFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`condition_concept_id`} />
-      <StringField
-        fieldName={`condition_era_start_date`}
-        label="condition_era_start_date"
-      />
-      <StringField
-        fieldName={`condition_era_end_date`}
-        label="condition_era_end_date"
-      />
-      <IntegerField fieldName={`condition_occurrence_count`} />
-    </>
-  )
-}
-
 export type CreateConditionErasFormProps = {
-  defaultValues: CreateConditionErasFormBody
+  defaultValues: Required<CreateConditionErasFormBody>
   onSuccess: () => void
 }
 
@@ -45,8 +27,8 @@ export type CreateConditionErasFormPathParams = Record<string, never>
 export const CreateConditionErasForm = (
   props: CreateConditionErasFormProps,
 ) => {
-  const form = useForm<CreateConditionErasFormBody>({
-    resolver: zodResolver(derivedConditionEraCreate),
+  const form = useForm<Required<CreateConditionErasFormBody>>({
+    resolver: zodResolver(derivedConditionEraCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -70,7 +52,23 @@ export const CreateConditionErasForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateConditionErasFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('condition_concept_id')}
+          label="condition_concept_id"
+        />
+        <StringField
+          lens={lens.focus('condition_era_start_date')}
+          label="condition_era_start_date"
+        />
+        <StringField
+          lens={lens.focus('condition_era_end_date')}
+          label="condition_era_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('condition_occurrence_count')}
+          label="condition_occurrence_count"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -2,7 +2,7 @@ import { clinicalVisitOccurrence } from '@/types/clinicalVisitOccurrence.generat
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiVisitOccurrencesIdArgs = { id: number }
+export type UseGetApiVisitOccurrencesIdArgs = { id: string }
 
 export const useGetApiVisitOccurrencesId = ({
   id,

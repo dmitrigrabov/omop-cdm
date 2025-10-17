@@ -28,49 +28,8 @@ export type CreatePayerPlanPeriodsFormBody = {
   stop_reason_source_concept_id?: number | undefined
 }
 
-export const CreatePayerPlanPeriodsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <StringField
-        fieldName={`payer_plan_period_start_date`}
-        label="payer_plan_period_start_date"
-      />
-      <StringField
-        fieldName={`payer_plan_period_end_date`}
-        label="payer_plan_period_end_date"
-      />
-      <IntegerField fieldName={`payer_concept_id`} />
-      <StringField
-        fieldName={`payer_source_value`}
-        label="payer_source_value"
-      />
-      <IntegerField fieldName={`payer_source_concept_id`} />
-      <IntegerField fieldName={`plan_concept_id`} />
-      <StringField fieldName={`plan_source_value`} label="plan_source_value" />
-      <IntegerField fieldName={`plan_source_concept_id`} />
-      <IntegerField fieldName={`sponsor_concept_id`} />
-      <StringField
-        fieldName={`sponsor_source_value`}
-        label="sponsor_source_value"
-      />
-      <IntegerField fieldName={`sponsor_source_concept_id`} />
-      <StringField
-        fieldName={`family_source_value`}
-        label="family_source_value"
-      />
-      <IntegerField fieldName={`stop_reason_concept_id`} />
-      <StringField
-        fieldName={`stop_reason_source_value`}
-        label="stop_reason_source_value"
-      />
-      <IntegerField fieldName={`stop_reason_source_concept_id`} />
-    </>
-  )
-}
-
 export type CreatePayerPlanPeriodsFormProps = {
-  defaultValues: CreatePayerPlanPeriodsFormBody
+  defaultValues: Required<CreatePayerPlanPeriodsFormBody>
   onSuccess: () => void
 }
 
@@ -79,8 +38,8 @@ export type CreatePayerPlanPeriodsFormPathParams = Record<string, never>
 export const CreatePayerPlanPeriodsForm = (
   props: CreatePayerPlanPeriodsFormProps,
 ) => {
-  const form = useForm<CreatePayerPlanPeriodsFormBody>({
-    resolver: zodResolver(healthsystemPayerPlanPeriodCreate),
+  const form = useForm<Required<CreatePayerPlanPeriodsFormBody>>({
+    resolver: zodResolver(healthsystemPayerPlanPeriodCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -104,7 +63,67 @@ export const CreatePayerPlanPeriodsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreatePayerPlanPeriodsFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <StringField
+          lens={lens.focus('payer_plan_period_start_date')}
+          label="payer_plan_period_start_date"
+        />
+        <StringField
+          lens={lens.focus('payer_plan_period_end_date')}
+          label="payer_plan_period_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('payer_concept_id')}
+          label="payer_concept_id"
+        />
+        <StringField
+          lens={lens.focus('payer_source_value')}
+          label="payer_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('payer_source_concept_id')}
+          label="payer_source_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('plan_concept_id')}
+          label="plan_concept_id"
+        />
+        <StringField
+          lens={lens.focus('plan_source_value')}
+          label="plan_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('plan_source_concept_id')}
+          label="plan_source_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('sponsor_concept_id')}
+          label="sponsor_concept_id"
+        />
+        <StringField
+          lens={lens.focus('sponsor_source_value')}
+          label="sponsor_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('sponsor_source_concept_id')}
+          label="sponsor_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('family_source_value')}
+          label="family_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('stop_reason_concept_id')}
+          label="stop_reason_concept_id"
+        />
+        <StringField
+          lens={lens.focus('stop_reason_source_value')}
+          label="stop_reason_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('stop_reason_source_concept_id')}
+          label="stop_reason_source_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

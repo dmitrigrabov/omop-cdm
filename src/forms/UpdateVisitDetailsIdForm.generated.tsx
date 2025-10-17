@@ -30,65 +30,19 @@ export type UpdateVisitDetailsIdFormBody = {
   visit_occurrence_id: number
 }
 
-export const UpdateVisitDetailsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`visit_detail_concept_id`} />
-      <StringField
-        fieldName={`visit_detail_start_date`}
-        label="visit_detail_start_date"
-      />
-      <StringField
-        fieldName={`visit_detail_start_datetime`}
-        label="visit_detail_start_datetime"
-      />
-      <StringField
-        fieldName={`visit_detail_end_date`}
-        label="visit_detail_end_date"
-      />
-      <StringField
-        fieldName={`visit_detail_end_datetime`}
-        label="visit_detail_end_datetime"
-      />
-      <IntegerField fieldName={`visit_detail_type_concept_id`} />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`care_site_id`} />
-      <StringField
-        fieldName={`visit_detail_source_value`}
-        label="visit_detail_source_value"
-      />
-      <IntegerField fieldName={`visit_detail_source_concept_id`} />
-      <IntegerField fieldName={`admitted_from_concept_id`} />
-      <StringField
-        fieldName={`admitted_from_source_value`}
-        label="admitted_from_source_value"
-      />
-      <StringField
-        fieldName={`discharged_to_source_value`}
-        label="discharged_to_source_value"
-      />
-      <IntegerField fieldName={`discharged_to_concept_id`} />
-      <IntegerField fieldName={`preceding_visit_detail_id`} />
-      <IntegerField fieldName={`parent_visit_detail_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-    </>
-  )
-}
-
 export type UpdateVisitDetailsIdFormProps = {
-  id: number
-  defaultValues: UpdateVisitDetailsIdFormBody
+  id: string
+  defaultValues: Required<UpdateVisitDetailsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateVisitDetailsIdFormPathParams = { id: number }
+export type UpdateVisitDetailsIdFormPathParams = { id: string }
 
 export const UpdateVisitDetailsIdForm = (
   props: UpdateVisitDetailsIdFormProps,
 ) => {
-  const form = useForm<UpdateVisitDetailsIdFormBody>({
-    resolver: zodResolver(clinicalVisitDetailCreate),
+  const form = useForm<Required<UpdateVisitDetailsIdFormBody>>({
+    resolver: zodResolver(clinicalVisitDetailCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -112,7 +66,69 @@ export const UpdateVisitDetailsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateVisitDetailsIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('visit_detail_concept_id')}
+          label="visit_detail_concept_id"
+        />
+        <StringField
+          lens={lens.focus('visit_detail_start_date')}
+          label="visit_detail_start_date"
+        />
+        <StringField
+          lens={lens.focus('visit_detail_start_datetime')}
+          label="visit_detail_start_datetime"
+        />
+        <StringField
+          lens={lens.focus('visit_detail_end_date')}
+          label="visit_detail_end_date"
+        />
+        <StringField
+          lens={lens.focus('visit_detail_end_datetime')}
+          label="visit_detail_end_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_type_concept_id')}
+          label="visit_detail_type_concept_id"
+        />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField lens={lens.focus('care_site_id')} label="care_site_id" />
+        <StringField
+          lens={lens.focus('visit_detail_source_value')}
+          label="visit_detail_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_source_concept_id')}
+          label="visit_detail_source_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('admitted_from_concept_id')}
+          label="admitted_from_concept_id"
+        />
+        <StringField
+          lens={lens.focus('admitted_from_source_value')}
+          label="admitted_from_source_value"
+        />
+        <StringField
+          lens={lens.focus('discharged_to_source_value')}
+          label="discharged_to_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('discharged_to_concept_id')}
+          label="discharged_to_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('preceding_visit_detail_id')}
+          label="preceding_visit_detail_id"
+        />
+        <IntegerField
+          lens={lens.focus('parent_visit_detail_id')}
+          label="parent_visit_detail_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

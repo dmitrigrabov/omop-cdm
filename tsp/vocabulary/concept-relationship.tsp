@@ -111,6 +111,28 @@ model ConceptRelationshipQueryParams {
 }
 
 /**
+ * ConceptRelationship list response with example
+ */
+@doc("Paginated list of ConceptRelationship records")
+@example(#{
+  data: #[#{
+  relationship_id: "Example value",
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ConceptRelationshipList {
+  ...PaginatedList<ConceptRelationship>;
+}
+
+/**
  * ConceptRelationship API operations
  */
 @route("/concept-relationships")
@@ -123,7 +145,7 @@ interface ConceptRelationships {
     ...ConceptRelationshipQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ConceptRelationship>;
+    @body body: ConceptRelationshipList;
   } | ErrorResponse;
 
   @get
@@ -132,7 +154,7 @@ interface ConceptRelationships {
   read(
     @path
     @doc("Unique concept-relationship identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ConceptRelationship;
@@ -162,7 +184,7 @@ interface ConceptRelationships {
   update(
     @path
     @doc("Unique concept-relationship identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete concept-relationship data")
@@ -184,7 +206,7 @@ interface ConceptRelationships {
   patch(
     @path
     @doc("Unique concept-relationship identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -203,7 +225,7 @@ interface ConceptRelationships {
   delete(
     @path
     @doc("Unique concept-relationship identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

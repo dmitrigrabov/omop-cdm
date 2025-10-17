@@ -23,49 +23,16 @@ export type CreateCdmSourcesFormBody = {
   vocabulary_version: string
 }
 
-export const CreateCdmSourcesFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`cdm_source_name`} label="cdm_source_name" />
-      <StringField
-        fieldName={`cdm_source_abbreviation`}
-        label="cdm_source_abbreviation"
-      />
-      <StringField fieldName={`cdm_holder`} label="cdm_holder" />
-      <StringField
-        fieldName={`source_description`}
-        label="source_description"
-      />
-      <StringField
-        fieldName={`source_documentation_reference`}
-        label="source_documentation_reference"
-      />
-      <StringField fieldName={`cdm_etl_reference`} label="cdm_etl_reference" />
-      <StringField
-        fieldName={`source_release_date`}
-        label="source_release_date"
-      />
-      <StringField fieldName={`cdm_release_date`} label="cdm_release_date" />
-      <StringField fieldName={`cdm_version`} label="cdm_version" />
-      <IntegerField fieldName={`cdm_version_concept_id`} />
-      <StringField
-        fieldName={`vocabulary_version`}
-        label="vocabulary_version"
-      />
-    </>
-  )
-}
-
 export type CreateCdmSourcesFormProps = {
-  defaultValues: CreateCdmSourcesFormBody
+  defaultValues: Required<CreateCdmSourcesFormBody>
   onSuccess: () => void
 }
 
 export type CreateCdmSourcesFormPathParams = Record<string, never>
 
 export const CreateCdmSourcesForm = (props: CreateCdmSourcesFormProps) => {
-  const form = useForm<CreateCdmSourcesFormBody>({
-    resolver: zodResolver(metadataCdmSourceCreate),
+  const form = useForm<Required<CreateCdmSourcesFormBody>>({
+    resolver: zodResolver(metadataCdmSourceCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -89,7 +56,44 @@ export const CreateCdmSourcesForm = (props: CreateCdmSourcesFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateCdmSourcesFormFields />
+        <StringField
+          lens={lens.focus('cdm_source_name')}
+          label="cdm_source_name"
+        />
+        <StringField
+          lens={lens.focus('cdm_source_abbreviation')}
+          label="cdm_source_abbreviation"
+        />
+        <StringField lens={lens.focus('cdm_holder')} label="cdm_holder" />
+        <StringField
+          lens={lens.focus('source_description')}
+          label="source_description"
+        />
+        <StringField
+          lens={lens.focus('source_documentation_reference')}
+          label="source_documentation_reference"
+        />
+        <StringField
+          lens={lens.focus('cdm_etl_reference')}
+          label="cdm_etl_reference"
+        />
+        <StringField
+          lens={lens.focus('source_release_date')}
+          label="source_release_date"
+        />
+        <StringField
+          lens={lens.focus('cdm_release_date')}
+          label="cdm_release_date"
+        />
+        <StringField lens={lens.focus('cdm_version')} label="cdm_version" />
+        <IntegerField
+          lens={lens.focus('cdm_version_concept_id')}
+          label="cdm_version_concept_id"
+        />
+        <StringField
+          lens={lens.focus('vocabulary_version')}
+          label="vocabulary_version"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

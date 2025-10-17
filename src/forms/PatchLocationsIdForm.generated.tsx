@@ -22,39 +22,17 @@ export type PatchLocationsIdFormBody = {
   longitude?: number | undefined
 }
 
-export const PatchLocationsIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`city`} label="city" />
-      <StringField fieldName={`state`} label="state" />
-      <StringField fieldName={`zip`} label="zip" />
-      <StringField fieldName={`county`} label="county" />
-      <StringField
-        fieldName={`location_source_value`}
-        label="location_source_value"
-      />
-      <IntegerField fieldName={`country_concept_id`} />
-      <StringField
-        fieldName={`country_source_value`}
-        label="country_source_value"
-      />
-      <NumberField fieldName={`latitude`} />
-      <NumberField fieldName={`longitude`} />
-    </>
-  )
-}
-
 export type PatchLocationsIdFormProps = {
-  id: number
-  defaultValues: PatchLocationsIdFormBody
+  id: string
+  defaultValues: Required<PatchLocationsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchLocationsIdFormPathParams = { id: number }
+export type PatchLocationsIdFormPathParams = { id: string }
 
 export const PatchLocationsIdForm = (props: PatchLocationsIdFormProps) => {
-  const form = useForm<PatchLocationsIdFormBody>({
-    resolver: zodResolver(healthsystemLocationUpdate),
+  const form = useForm<Required<PatchLocationsIdFormBody>>({
+    resolver: zodResolver(healthsystemLocationUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -78,7 +56,24 @@ export const PatchLocationsIdForm = (props: PatchLocationsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchLocationsIdFormFields />
+        <StringField lens={lens.focus('city')} label="city" />
+        <StringField lens={lens.focus('state')} label="state" />
+        <StringField lens={lens.focus('zip')} label="zip" />
+        <StringField lens={lens.focus('county')} label="county" />
+        <StringField
+          lens={lens.focus('location_source_value')}
+          label="location_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('country_concept_id')}
+          label="country_concept_id"
+        />
+        <StringField
+          lens={lens.focus('country_source_value')}
+          label="country_source_value"
+        />
+        <NumberField lens={lens.focus('latitude')} />
+        <NumberField lens={lens.focus('longitude')} />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -1,19 +1,8 @@
-import { resultsFactRelationship } from '@/types/resultsFactRelationship.generated.ts'
-import { z } from 'zod'
+import { resultsFactRelationshipList } from '@/types/resultsFactRelationshipList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiFactRelationshipsResponse = z.object({
-  data: z.array(resultsFactRelationship),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiFactRelationshipsArgs = {
   offset?: number | undefined
@@ -51,7 +40,7 @@ export const useGetApiFactRelationships = ({
         throw error
       }
 
-      return useGetApiFactRelationshipsResponse.parse(data)
+      return resultsFactRelationshipList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

@@ -20,33 +20,17 @@ export type UpdateConceptsIdFormBody = {
   invalid_reason?: string | undefined
 }
 
-export const UpdateConceptsIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`concept_name`} label="concept_name" />
-      <StringField fieldName={`domain_id`} label="domain_id" />
-      <StringField fieldName={`vocabulary_id`} label="vocabulary_id" />
-      <StringField fieldName={`concept_class_id`} label="concept_class_id" />
-      <StringField fieldName={`standard_concept`} label="standard_concept" />
-      <StringField fieldName={`concept_code`} label="concept_code" />
-      <StringField fieldName={`valid_start_date`} label="valid_start_date" />
-      <StringField fieldName={`valid_end_date`} label="valid_end_date" />
-      <StringField fieldName={`invalid_reason`} label="invalid_reason" />
-    </>
-  )
-}
-
 export type UpdateConceptsIdFormProps = {
-  id: number
-  defaultValues: UpdateConceptsIdFormBody
+  id: string
+  defaultValues: Required<UpdateConceptsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateConceptsIdFormPathParams = { id: number }
+export type UpdateConceptsIdFormPathParams = { id: string }
 
 export const UpdateConceptsIdForm = (props: UpdateConceptsIdFormProps) => {
-  const form = useForm<UpdateConceptsIdFormBody>({
-    resolver: zodResolver(vocabularyConceptCreate),
+  const form = useForm<Required<UpdateConceptsIdFormBody>>({
+    resolver: zodResolver(vocabularyConceptCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -70,7 +54,30 @@ export const UpdateConceptsIdForm = (props: UpdateConceptsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateConceptsIdFormFields />
+        <StringField lens={lens.focus('concept_name')} label="concept_name" />
+        <StringField lens={lens.focus('domain_id')} label="domain_id" />
+        <StringField lens={lens.focus('vocabulary_id')} label="vocabulary_id" />
+        <StringField
+          lens={lens.focus('concept_class_id')}
+          label="concept_class_id"
+        />
+        <StringField
+          lens={lens.focus('standard_concept')}
+          label="standard_concept"
+        />
+        <StringField lens={lens.focus('concept_code')} label="concept_code" />
+        <StringField
+          lens={lens.focus('valid_start_date')}
+          label="valid_start_date"
+        />
+        <StringField
+          lens={lens.focus('valid_end_date')}
+          label="valid_end_date"
+        />
+        <StringField
+          lens={lens.focus('invalid_reason')}
+          label="invalid_reason"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

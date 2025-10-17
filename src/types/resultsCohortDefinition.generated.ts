@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const resultsCohortDefinition = z.object({
-  cohort_definition_id: z.number().int(),
+  id: z.number().int(),
   cohort_definition_name: z.string(),
   cohort_definition_description: z.string().optional(),
   definition_type_concept_id: z.number().int(),
@@ -11,7 +11,7 @@ export const resultsCohortDefinition = z.object({
 })
 
 export type ResultsCohortDefinition = {
-  cohort_definition_id: number
+  id: number
   cohort_definition_name: string
   cohort_definition_description?: string | undefined
   definition_type_concept_id: number

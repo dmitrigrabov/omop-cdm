@@ -137,6 +137,29 @@ model ObservationPeriodQueryParams {
 }
 
 /**
+ * ObservationPeriod list response with example
+ */
+@doc("Paginated list of ObservationPeriod records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  observation_period_start_date: "2023-01-15",
+  observation_period_end_date: "2023-01-15",
+  period_type_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ObservationPeriodList {
+  ...PaginatedList<ObservationPeriod>;
+}
+
+/**
  * ObservationPeriod API operations
  */
 @route("/observation-periods")
@@ -149,7 +172,7 @@ interface ObservationPeriods {
     ...ObservationPeriodQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ObservationPeriod>;
+    @body body: ObservationPeriodList;
   } | ErrorResponse;
 
   @get
@@ -158,7 +181,7 @@ interface ObservationPeriods {
   read(
     @path
     @doc("Unique observation-period identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ObservationPeriod;
@@ -188,7 +211,7 @@ interface ObservationPeriods {
   update(
     @path
     @doc("Unique observation-period identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete observation-period data")
@@ -210,7 +233,7 @@ interface ObservationPeriods {
   patch(
     @path
     @doc("Unique observation-period identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -229,7 +252,7 @@ interface ObservationPeriods {
   delete(
     @path
     @doc("Unique observation-period identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

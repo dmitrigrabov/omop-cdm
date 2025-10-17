@@ -16,34 +16,17 @@ export type PatchVocabularysIdFormBody = {
   vocabulary_concept_id?: number | undefined
 }
 
-export const PatchVocabularysIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`vocabulary_name`} label="vocabulary_name" />
-      <StringField
-        fieldName={`vocabulary_reference`}
-        label="vocabulary_reference"
-      />
-      <StringField
-        fieldName={`vocabulary_version`}
-        label="vocabulary_version"
-      />
-      <IntegerField fieldName={`vocabulary_concept_id`} />
-    </>
-  )
-}
-
 export type PatchVocabularysIdFormProps = {
   id: string
-  defaultValues: PatchVocabularysIdFormBody
+  defaultValues: Required<PatchVocabularysIdFormBody>
   onSuccess: () => void
 }
 
 export type PatchVocabularysIdFormPathParams = { id: string }
 
 export const PatchVocabularysIdForm = (props: PatchVocabularysIdFormProps) => {
-  const form = useForm<PatchVocabularysIdFormBody>({
-    resolver: zodResolver(vocabularyVocabularyUpdate),
+  const form = useForm<Required<PatchVocabularysIdFormBody>>({
+    resolver: zodResolver(vocabularyVocabularyUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -67,7 +50,22 @@ export const PatchVocabularysIdForm = (props: PatchVocabularysIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchVocabularysIdFormFields />
+        <StringField
+          lens={lens.focus('vocabulary_name')}
+          label="vocabulary_name"
+        />
+        <StringField
+          lens={lens.focus('vocabulary_reference')}
+          label="vocabulary_reference"
+        />
+        <StringField
+          lens={lens.focus('vocabulary_version')}
+          label="vocabulary_version"
+        />
+        <IntegerField
+          lens={lens.focus('vocabulary_concept_id')}
+          label="vocabulary_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

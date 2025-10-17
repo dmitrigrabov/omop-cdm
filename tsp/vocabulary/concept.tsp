@@ -57,7 +57,7 @@ Concepts.
 })
 model Concept {
   @doc("A unique identifier for each Concept across all domains.")
-  id: int64;
+  id: ConceptId;
 
   @doc("An unambiguous, meaningful and descriptive name for the Concept.")
   @maxLength(255)
@@ -196,6 +196,34 @@ model ConceptQueryParams {
 }
 
 /**
+ * Concept list response with example
+ */
+@doc("Paginated list of Concept records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  concept_name: "Example value",
+  domain_id: "Example value",
+  vocabulary_id: "Example value",
+  concept_class_id: "Example value",
+  standard_concept: "Example value",
+  concept_code: "Example value",
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ConceptList {
+  ...PaginatedList<Concept>;
+}
+
+/**
  * Concept API operations
  */
 @route("/concepts")
@@ -208,7 +236,7 @@ interface Concepts {
     ...ConceptQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Concept>;
+    @body body: ConceptList;
   } | ErrorResponse;
 
   @get
@@ -217,7 +245,7 @@ interface Concepts {
   read(
     @path
     @doc("Unique concept identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Concept;
@@ -247,7 +275,7 @@ interface Concepts {
   update(
     @path
     @doc("Unique concept identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete concept data")
@@ -269,7 +297,7 @@ interface Concepts {
   patch(
     @path
     @doc("Unique concept identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -288,7 +316,7 @@ interface Concepts {
   delete(
     @path
     @doc("Unique concept identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

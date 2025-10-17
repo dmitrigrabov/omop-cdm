@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiConceptsIdArgs = {
-  id: number
+  id: string
   body: VocabularyConceptUpdate
 }
 

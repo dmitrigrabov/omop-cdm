@@ -12,27 +12,19 @@ export type UpdateFactRelationshipsIdFormBody = {
   relationship_concept_id: number
 }
 
-export const UpdateFactRelationshipsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`relationship_concept_id`} />
-    </>
-  )
-}
-
 export type UpdateFactRelationshipsIdFormProps = {
-  id: number
-  defaultValues: UpdateFactRelationshipsIdFormBody
+  id: string
+  defaultValues: Required<UpdateFactRelationshipsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateFactRelationshipsIdFormPathParams = { id: number }
+export type UpdateFactRelationshipsIdFormPathParams = { id: string }
 
 export const UpdateFactRelationshipsIdForm = (
   props: UpdateFactRelationshipsIdFormProps,
 ) => {
-  const form = useForm<UpdateFactRelationshipsIdFormBody>({
-    resolver: zodResolver(resultsFactRelationshipCreate),
+  const form = useForm<Required<UpdateFactRelationshipsIdFormBody>>({
+    resolver: zodResolver(resultsFactRelationshipCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -56,7 +48,10 @@ export const UpdateFactRelationshipsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateFactRelationshipsIdFormFields />
+        <IntegerField
+          lens={lens.focus('relationship_concept_id')}
+          label="relationship_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

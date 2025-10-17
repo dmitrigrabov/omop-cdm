@@ -1,19 +1,8 @@
-import { derivedDoseEra } from '@/types/derivedDoseEra.generated.ts'
-import { z } from 'zod'
+import { derivedDoseEraList } from '@/types/derivedDoseEraList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiDoseErasResponse = z.object({
-  data: z.array(derivedDoseEra),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiDoseErasArgs = {
   offset?: number | undefined
@@ -54,7 +43,7 @@ export const useGetApiDoseEras = ({
         throw error
       }
 
-      return useGetApiDoseErasResponse.parse(data)
+      return derivedDoseEraList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

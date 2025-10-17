@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UseUpdateApiCdmSourcesIdArgs = {
-  id: number
+  id: string
   body: MetadataCdmSourceCreate
 }
 

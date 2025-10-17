@@ -153,6 +153,33 @@ model MetadataQueryParams {
 }
 
 /**
+ * Metadata list response with example
+ */
+@doc("Paginated list of Metadata records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  metadata_concept_id: 8507,
+  metadata_type_concept_id: 8507,
+  name: "Example value",
+  value_as_string: "Example value",
+  value_as_concept_id: 8507,
+  value_as_number: 98.6,
+  metadata_date: "2023-01-15",
+  metadata_datetime: "2023-01-15"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model MetadataList {
+  ...PaginatedList<Metadata>;
+}
+
+/**
  * Metadata API operations
  */
 @route("/metadatas")
@@ -165,7 +192,7 @@ interface Metadatas {
     ...MetadataQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Metadata>;
+    @body body: MetadataList;
   } | ErrorResponse;
 
   @get
@@ -174,7 +201,7 @@ interface Metadatas {
   read(
     @path
     @doc("Unique metadata identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Metadata;
@@ -204,7 +231,7 @@ interface Metadatas {
   update(
     @path
     @doc("Unique metadata identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete metadata data")
@@ -226,7 +253,7 @@ interface Metadatas {
   patch(
     @path
     @doc("Unique metadata identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -245,7 +272,7 @@ interface Metadatas {
   delete(
     @path
     @doc("Unique metadata identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

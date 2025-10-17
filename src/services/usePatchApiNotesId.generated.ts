@@ -7,7 +7,7 @@ import {
   UseMutationOptions,
 } from '@tanstack/react-query'
 
-export type UsePatchApiNotesIdArgs = { id: number; body: ClinicalNoteUpdate }
+export type UsePatchApiNotesIdArgs = { id: string; body: ClinicalNoteUpdate }
 
 export const usePatchApiNotesId = (
   args: UseMutationOptions<

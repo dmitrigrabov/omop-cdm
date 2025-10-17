@@ -1,6 +1,6 @@
 import { resultsCohortDefinitionCreate } from '@/types/resultsCohortDefinitionCreate.generated.ts'
-import { IntegerField } from '@/components/fields/integer-field'
 import { StringField } from '@/components/fields/string-field'
+import { IntegerField } from '@/components/fields/integer-field'
 import { useCreateApiCohortDefinitions } from '@/services/useCreateApiCohortDefinitions.generated.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -10,7 +10,6 @@ import { useLens } from '@hookform/lenses'
 import { useEffect } from 'react'
 
 export type CreateCohortDefinitionsFormBody = {
-  cohort_definition_id: number
   cohort_definition_name: string
   cohort_definition_description?: string | undefined
   definition_type_concept_id: number
@@ -19,34 +18,8 @@ export type CreateCohortDefinitionsFormBody = {
   cohort_initiation_date?: string | undefined
 }
 
-export const CreateCohortDefinitionsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`cohort_definition_id`} />
-      <StringField
-        fieldName={`cohort_definition_name`}
-        label="cohort_definition_name"
-      />
-      <StringField
-        fieldName={`cohort_definition_description`}
-        label="cohort_definition_description"
-      />
-      <IntegerField fieldName={`definition_type_concept_id`} />
-      <StringField
-        fieldName={`cohort_definition_syntax`}
-        label="cohort_definition_syntax"
-      />
-      <IntegerField fieldName={`subject_concept_id`} />
-      <StringField
-        fieldName={`cohort_initiation_date`}
-        label="cohort_initiation_date"
-      />
-    </>
-  )
-}
-
 export type CreateCohortDefinitionsFormProps = {
-  defaultValues: CreateCohortDefinitionsFormBody
+  defaultValues: Required<CreateCohortDefinitionsFormBody>
   onSuccess: () => void
 }
 
@@ -55,8 +28,8 @@ export type CreateCohortDefinitionsFormPathParams = Record<string, never>
 export const CreateCohortDefinitionsForm = (
   props: CreateCohortDefinitionsFormProps,
 ) => {
-  const form = useForm<CreateCohortDefinitionsFormBody>({
-    resolver: zodResolver(resultsCohortDefinitionCreate),
+  const form = useForm<Required<CreateCohortDefinitionsFormBody>>({
+    resolver: zodResolver(resultsCohortDefinitionCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -80,7 +53,30 @@ export const CreateCohortDefinitionsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateCohortDefinitionsFormFields />
+        <StringField
+          lens={lens.focus('cohort_definition_name')}
+          label="cohort_definition_name"
+        />
+        <StringField
+          lens={lens.focus('cohort_definition_description')}
+          label="cohort_definition_description"
+        />
+        <IntegerField
+          lens={lens.focus('definition_type_concept_id')}
+          label="definition_type_concept_id"
+        />
+        <StringField
+          lens={lens.focus('cohort_definition_syntax')}
+          label="cohort_definition_syntax"
+        />
+        <IntegerField
+          lens={lens.focus('subject_concept_id')}
+          label="subject_concept_id"
+        />
+        <StringField
+          lens={lens.focus('cohort_initiation_date')}
+          label="cohort_initiation_date"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

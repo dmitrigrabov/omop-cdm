@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UseUpdateApiConditionOccurrencesIdArgs = {
-  id: number
+  id: string
   body: ClinicalConditionOccurrenceCreate
 }
 

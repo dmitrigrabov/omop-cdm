@@ -344,6 +344,45 @@ model ObservationQueryParams {
 }
 
 /**
+ * Observation list response with example
+ */
+@doc("Paginated list of Observation records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  observation_concept_id: 8507,
+  observation_date: "2023-01-15",
+  observation_datetime: "2023-01-15",
+  observation_type_concept_id: 8507,
+  value_as_number: 98.6,
+  value_as_string: "Example value",
+  value_as_concept_id: 8507,
+  qualifier_concept_id: 8507,
+  unit_concept_id: 8507,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  observation_source_value: "Example value",
+  observation_source_concept_id: 8507,
+  unit_source_value: "Example value",
+  qualifier_source_value: "Example value",
+  value_source_value: "Example value",
+  observation_event_id: 100,
+  obs_event_field_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ObservationList {
+  ...PaginatedList<Observation>;
+}
+
+/**
  * Observation API operations
  */
 @route("/observations")
@@ -356,7 +395,7 @@ interface Observations {
     ...ObservationQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Observation>;
+    @body body: ObservationList;
   } | ErrorResponse;
 
   @get
@@ -365,7 +404,7 @@ interface Observations {
   read(
     @path
     @doc("Unique observation identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Observation;
@@ -395,7 +434,7 @@ interface Observations {
   update(
     @path
     @doc("Unique observation identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete observation data")
@@ -417,7 +456,7 @@ interface Observations {
   patch(
     @path
     @doc("Unique observation identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -436,7 +475,7 @@ interface Observations {
   delete(
     @path
     @doc("Unique observation identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

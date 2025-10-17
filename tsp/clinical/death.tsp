@@ -146,6 +146,31 @@ model DeathQueryParams {
 }
 
 /**
+ * Death list response with example
+ */
+@doc("Paginated list of Death records")
+@example(#{
+  data: #[#{
+  person_id: 100,
+  death_date: "2023-01-15",
+  death_datetime: "2023-01-15",
+  death_type_concept_id: 8507,
+  cause_concept_id: 8507,
+  cause_source_value: "Example value",
+  cause_source_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model DeathList {
+  ...PaginatedList<Death>;
+}
+
+/**
  * Death API operations
  */
 @route("/deaths")
@@ -158,7 +183,7 @@ interface Deaths {
     ...DeathQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Death>;
+    @body body: DeathList;
   } | ErrorResponse;
 
   @get
@@ -167,7 +192,7 @@ interface Deaths {
   read(
     @path
     @doc("Unique death identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Death;
@@ -197,7 +222,7 @@ interface Deaths {
   update(
     @path
     @doc("Unique death identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete death data")
@@ -219,7 +244,7 @@ interface Deaths {
   patch(
     @path
     @doc("Unique death identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -238,7 +263,7 @@ interface Deaths {
   delete(
     @path
     @doc("Unique death identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

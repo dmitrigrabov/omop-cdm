@@ -1,18 +1,7 @@
-import { resultsCohort } from '@/types/resultsCohort.generated.ts'
-import { z } from 'zod'
+import { resultsCohortList } from '@/types/resultsCohortList.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiCohortsResponse = z.object({
-  data: z.array(resultsCohort),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiCohortsArgs = {
   offset?: number | undefined
@@ -38,7 +27,7 @@ export const useGetApiCohorts = ({
         throw error
       }
 
-      return useGetApiCohortsResponse.parse(data)
+      return resultsCohortList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

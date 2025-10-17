@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiConceptSynonymsIdArgs = {
-  id: number
+  id: string
   body: VocabularyConceptSynonymUpdate
 }
 

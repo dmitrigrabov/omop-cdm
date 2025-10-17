@@ -21,33 +21,8 @@ export type CreateSourceToConceptMapsFormBody = {
   invalid_reason?: string | undefined
 }
 
-export const CreateSourceToConceptMapsFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`source_code`} label="source_code" />
-      <IntegerField fieldName={`source_concept_id`} />
-      <StringField
-        fieldName={`source_vocabulary_id`}
-        label="source_vocabulary_id"
-      />
-      <StringField
-        fieldName={`source_code_description`}
-        label="source_code_description"
-      />
-      <IntegerField fieldName={`target_concept_id`} />
-      <StringField
-        fieldName={`target_vocabulary_id`}
-        label="target_vocabulary_id"
-      />
-      <StringField fieldName={`valid_start_date`} label="valid_start_date" />
-      <StringField fieldName={`valid_end_date`} label="valid_end_date" />
-      <StringField fieldName={`invalid_reason`} label="invalid_reason" />
-    </>
-  )
-}
-
 export type CreateSourceToConceptMapsFormProps = {
-  defaultValues: CreateSourceToConceptMapsFormBody
+  defaultValues: Required<CreateSourceToConceptMapsFormBody>
   onSuccess: () => void
 }
 
@@ -56,8 +31,8 @@ export type CreateSourceToConceptMapsFormPathParams = Record<string, never>
 export const CreateSourceToConceptMapsForm = (
   props: CreateSourceToConceptMapsFormProps,
 ) => {
-  const form = useForm<CreateSourceToConceptMapsFormBody>({
-    resolver: zodResolver(vocabularySourceToConceptMapCreate),
+  const form = useForm<Required<CreateSourceToConceptMapsFormBody>>({
+    resolver: zodResolver(vocabularySourceToConceptMapCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -81,7 +56,39 @@ export const CreateSourceToConceptMapsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateSourceToConceptMapsFormFields />
+        <StringField lens={lens.focus('source_code')} label="source_code" />
+        <IntegerField
+          lens={lens.focus('source_concept_id')}
+          label="source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('source_vocabulary_id')}
+          label="source_vocabulary_id"
+        />
+        <StringField
+          lens={lens.focus('source_code_description')}
+          label="source_code_description"
+        />
+        <IntegerField
+          lens={lens.focus('target_concept_id')}
+          label="target_concept_id"
+        />
+        <StringField
+          lens={lens.focus('target_vocabulary_id')}
+          label="target_vocabulary_id"
+        />
+        <StringField
+          lens={lens.focus('valid_start_date')}
+          label="valid_start_date"
+        />
+        <StringField
+          lens={lens.focus('valid_end_date')}
+          label="valid_end_date"
+        />
+        <StringField
+          lens={lens.focus('invalid_reason')}
+          label="invalid_reason"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

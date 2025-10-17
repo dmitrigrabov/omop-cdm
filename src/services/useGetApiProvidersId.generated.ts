@@ -2,7 +2,7 @@ import { healthsystemProvider } from '@/types/healthsystemProvider.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiProvidersIdArgs = { id: number }
+export type UseGetApiProvidersIdArgs = { id: string }
 
 export const useGetApiProvidersId = ({ id }: UseGetApiProvidersIdArgs) => {
   const result = useQuery({

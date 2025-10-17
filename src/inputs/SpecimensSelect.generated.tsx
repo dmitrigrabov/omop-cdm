@@ -31,7 +31,7 @@ export const SpecimensSelect = (props: SpecimensSelectProps) => {
       </SelectTrigger>
       <SelectContent>
         {data?.data?.map((item) => (
-          <SelectItem key={item.id} value={`${item.id}`}>
+          <SelectItem key={`${item.id}`} value={`${item.id}`}>
             {item.id}
           </SelectItem>
         ))}

@@ -215,6 +215,37 @@ model ProviderQueryParams {
 }
 
 /**
+ * Provider list response with example
+ */
+@doc("Paginated list of Provider records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  provider_name: "Example value",
+  npi: "Example value",
+  dea: "Example value",
+  specialty_concept_id: 8507,
+  care_site_id: 100,
+  year_of_birth: 100,
+  gender_concept_id: 8507,
+  provider_source_value: "Example value",
+  specialty_source_value: "Example value",
+  specialty_source_concept_id: 8507,
+  gender_source_value: "Example value",
+  gender_source_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ProviderList {
+  ...PaginatedList<Provider>;
+}
+
+/**
  * Provider API operations
  */
 @route("/providers")
@@ -227,7 +258,7 @@ interface Providers {
     ...ProviderQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Provider>;
+    @body body: ProviderList;
   } | ErrorResponse;
 
   @get
@@ -236,7 +267,7 @@ interface Providers {
   read(
     @path
     @doc("Unique provider identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Provider;
@@ -266,7 +297,7 @@ interface Providers {
   update(
     @path
     @doc("Unique provider identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete provider data")
@@ -288,7 +319,7 @@ interface Providers {
   patch(
     @path
     @doc("Unique provider identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -307,7 +338,7 @@ interface Providers {
   delete(
     @path
     @doc("Unique provider identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

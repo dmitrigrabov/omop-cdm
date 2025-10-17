@@ -21,32 +21,17 @@ export type PatchMetadatasIdFormBody = {
   metadata_datetime?: string | undefined
 }
 
-export const PatchMetadatasIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`metadata_concept_id`} />
-      <IntegerField fieldName={`metadata_type_concept_id`} />
-      <StringField fieldName={`name`} label="name" />
-      <StringField fieldName={`value_as_string`} label="value_as_string" />
-      <IntegerField fieldName={`value_as_concept_id`} />
-      <NumberField fieldName={`value_as_number`} />
-      <StringField fieldName={`metadata_date`} label="metadata_date" />
-      <StringField fieldName={`metadata_datetime`} label="metadata_datetime" />
-    </>
-  )
-}
-
 export type PatchMetadatasIdFormProps = {
-  id: number
-  defaultValues: PatchMetadatasIdFormBody
+  id: string
+  defaultValues: Required<PatchMetadatasIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchMetadatasIdFormPathParams = { id: number }
+export type PatchMetadatasIdFormPathParams = { id: string }
 
 export const PatchMetadatasIdForm = (props: PatchMetadatasIdFormProps) => {
-  const form = useForm<PatchMetadatasIdFormBody>({
-    resolver: zodResolver(metadataMetadataUpdate),
+  const form = useForm<Required<PatchMetadatasIdFormBody>>({
+    resolver: zodResolver(metadataMetadataUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -70,7 +55,29 @@ export const PatchMetadatasIdForm = (props: PatchMetadatasIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchMetadatasIdFormFields />
+        <IntegerField
+          lens={lens.focus('metadata_concept_id')}
+          label="metadata_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('metadata_type_concept_id')}
+          label="metadata_type_concept_id"
+        />
+        <StringField lens={lens.focus('name')} label="name" />
+        <StringField
+          lens={lens.focus('value_as_string')}
+          label="value_as_string"
+        />
+        <IntegerField
+          lens={lens.focus('value_as_concept_id')}
+          label="value_as_concept_id"
+        />
+        <NumberField lens={lens.focus('value_as_number')} />
+        <StringField lens={lens.focus('metadata_date')} label="metadata_date" />
+        <StringField
+          lens={lens.focus('metadata_datetime')}
+          label="metadata_datetime"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

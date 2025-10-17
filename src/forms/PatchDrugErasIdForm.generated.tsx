@@ -18,33 +18,17 @@ export type PatchDrugErasIdFormBody = {
   gap_days?: number | undefined
 }
 
-export const PatchDrugErasIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`drug_concept_id`} />
-      <StringField
-        fieldName={`drug_era_start_date`}
-        label="drug_era_start_date"
-      />
-      <StringField fieldName={`drug_era_end_date`} label="drug_era_end_date" />
-      <IntegerField fieldName={`drug_exposure_count`} />
-      <IntegerField fieldName={`gap_days`} />
-    </>
-  )
-}
-
 export type PatchDrugErasIdFormProps = {
-  id: number
-  defaultValues: PatchDrugErasIdFormBody
+  id: string
+  defaultValues: Required<PatchDrugErasIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchDrugErasIdFormPathParams = { id: number }
+export type PatchDrugErasIdFormPathParams = { id: string }
 
 export const PatchDrugErasIdForm = (props: PatchDrugErasIdFormProps) => {
-  const form = useForm<PatchDrugErasIdFormBody>({
-    resolver: zodResolver(derivedDrugEraUpdate),
+  const form = useForm<Required<PatchDrugErasIdFormBody>>({
+    resolver: zodResolver(derivedDrugEraUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -68,7 +52,24 @@ export const PatchDrugErasIdForm = (props: PatchDrugErasIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchDrugErasIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('drug_concept_id')}
+          label="drug_concept_id"
+        />
+        <StringField
+          lens={lens.focus('drug_era_start_date')}
+          label="drug_era_start_date"
+        />
+        <StringField
+          lens={lens.focus('drug_era_end_date')}
+          label="drug_era_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('drug_exposure_count')}
+          label="drug_exposure_count"
+        />
+        <IntegerField lens={lens.focus('gap_days')} label="gap_days" />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -2,7 +2,7 @@ import { derivedConditionEra } from '@/types/derivedConditionEra.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiConditionErasIdArgs = { id: number }
+export type UseGetApiConditionErasIdArgs = { id: string }
 
 export const useGetApiConditionErasId = ({
   id,

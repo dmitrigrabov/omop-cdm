@@ -134,6 +134,31 @@ model DoseEraQueryParams {
 }
 
 /**
+ * DoseEra list response with example
+ */
+@doc("Paginated list of DoseEra records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  drug_concept_id: 8507,
+  unit_concept_id: 8507,
+  dose_value: 98.6,
+  dose_era_start_date: "2023-01-15",
+  dose_era_end_date: "2023-01-15"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model DoseEraList {
+  ...PaginatedList<DoseEra>;
+}
+
+/**
  * DoseEra API operations
  */
 @route("/dose-eras")
@@ -146,7 +171,7 @@ interface DoseEras {
     ...DoseEraQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<DoseEra>;
+    @body body: DoseEraList;
   } | ErrorResponse;
 
   @get
@@ -155,7 +180,7 @@ interface DoseEras {
   read(
     @path
     @doc("Unique dose-era identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: DoseEra;
@@ -185,7 +210,7 @@ interface DoseEras {
   update(
     @path
     @doc("Unique dose-era identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete dose-era data")
@@ -207,7 +232,7 @@ interface DoseEras {
   patch(
     @path
     @doc("Unique dose-era identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -226,7 +251,7 @@ interface DoseEras {
   delete(
     @path
     @doc("Unique dose-era identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

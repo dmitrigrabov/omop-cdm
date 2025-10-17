@@ -120,6 +120,28 @@ model ConceptAncestorQueryParams {
 }
 
 /**
+ * ConceptAncestor list response with example
+ */
+@doc("Paginated list of ConceptAncestor records")
+@example(#{
+  data: #[#{
+  ancestor_concept_id: 8507,
+  descendant_concept_id: 8507,
+  min_levels_of_separation: 100,
+  max_levels_of_separation: 100
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ConceptAncestorList {
+  ...PaginatedList<ConceptAncestor>;
+}
+
+/**
  * ConceptAncestor API operations
  */
 @route("/concept-ancestors")
@@ -132,7 +154,7 @@ interface ConceptAncestors {
     ...ConceptAncestorQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ConceptAncestor>;
+    @body body: ConceptAncestorList;
   } | ErrorResponse;
 
   @get
@@ -141,7 +163,7 @@ interface ConceptAncestors {
   read(
     @path
     @doc("Unique concept-ancestor identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: ConceptAncestor;
@@ -171,7 +193,7 @@ interface ConceptAncestors {
   update(
     @path
     @doc("Unique concept-ancestor identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete concept-ancestor data")
@@ -193,7 +215,7 @@ interface ConceptAncestors {
   patch(
     @path
     @doc("Unique concept-ancestor identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -212,7 +234,7 @@ interface ConceptAncestors {
   delete(
     @path
     @doc("Unique concept-ancestor identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -17,37 +17,19 @@ export type PatchConditionErasIdFormBody = {
   condition_occurrence_count?: number | undefined
 }
 
-export const PatchConditionErasIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`condition_concept_id`} />
-      <StringField
-        fieldName={`condition_era_start_date`}
-        label="condition_era_start_date"
-      />
-      <StringField
-        fieldName={`condition_era_end_date`}
-        label="condition_era_end_date"
-      />
-      <IntegerField fieldName={`condition_occurrence_count`} />
-    </>
-  )
-}
-
 export type PatchConditionErasIdFormProps = {
-  id: number
-  defaultValues: PatchConditionErasIdFormBody
+  id: string
+  defaultValues: Required<PatchConditionErasIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchConditionErasIdFormPathParams = { id: number }
+export type PatchConditionErasIdFormPathParams = { id: string }
 
 export const PatchConditionErasIdForm = (
   props: PatchConditionErasIdFormProps,
 ) => {
-  const form = useForm<PatchConditionErasIdFormBody>({
-    resolver: zodResolver(derivedConditionEraUpdate),
+  const form = useForm<Required<PatchConditionErasIdFormBody>>({
+    resolver: zodResolver(derivedConditionEraUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -71,7 +53,23 @@ export const PatchConditionErasIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchConditionErasIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('condition_concept_id')}
+          label="condition_concept_id"
+        />
+        <StringField
+          lens={lens.focus('condition_era_start_date')}
+          label="condition_era_start_date"
+        />
+        <StringField
+          lens={lens.focus('condition_era_end_date')}
+          label="condition_era_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('condition_occurrence_count')}
+          label="condition_occurrence_count"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

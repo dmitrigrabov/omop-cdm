@@ -1,19 +1,8 @@
-import { derivedConditionEra } from '@/types/derivedConditionEra.generated.ts'
-import { z } from 'zod'
+import { derivedConditionEraList } from '@/types/derivedConditionEraList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiConditionErasResponse = z.object({
-  data: z.array(derivedConditionEra),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiConditionErasArgs = {
   offset?: number | undefined
@@ -54,7 +43,7 @@ export const useGetApiConditionEras = ({
         throw error
       }
 
-      return useGetApiConditionErasResponse.parse(data)
+      return derivedConditionEraList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

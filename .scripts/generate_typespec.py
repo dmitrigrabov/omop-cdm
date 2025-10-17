@@ -73,9 +73,17 @@ class Field:
         doc = doc.replace('"', '\\"')
         return f'  @doc("{doc}")'
 
-    def generate_field_definition(self, for_create: bool = False) -> str:
-        """Generate TypeSpec field definition"""
+    def generate_field_definition(self, for_create: bool = False, treat_as_pk: bool = False) -> str:
+        """Generate TypeSpec field definition
+
+        Args:
+            for_create: Whether this is for a Create model (makes PK optional/skipped)
+            treat_as_pk: Treat this field as a primary key even if is_pk=False (for synthetic PKs)
+        """
         lines = []
+
+        # Determine if this field should be treated as PK
+        is_pk = self.is_pk or treat_as_pk
 
         # Add documentation
         lines.append(self.generate_doc())
@@ -97,10 +105,13 @@ class Field:
             ts_type = self.to_typespec_type()
 
         # Optional marker
-        optional = '?' if not self.required or for_create and self.is_pk else ''
+        optional = '?' if not self.required or for_create and is_pk else ''
+
+        # Use 'id' for primary keys (explicit or synthetic), otherwise use original field name
+        field_name = 'id' if is_pk else self.name
 
         # Generate field
-        lines.append(f'  {self.name}{optional}: {ts_type};')
+        lines.append(f'  {field_name}{optional}: {ts_type};')
 
         return '\n'.join(lines)
 
@@ -160,6 +171,17 @@ class Table:
                 return field
         return None
 
+    def get_synthetic_pk_field(self) -> Optional[Field]:
+        """Get synthetic primary key field for tables without explicit PK.
+
+        Returns the first required field that matches the pattern {table_name}_id
+        """
+        expected_pk_name = f"{self.name}_id"
+        for field in self.fields:
+            if field.name == expected_pk_name and field.required:
+                return field
+        return None
+
     def get_required_fields(self) -> List[Field]:
         """Get all required fields except PK"""
         return [f for f in self.fields if f.required and not f.is_pk]
@@ -169,9 +191,12 @@ class Table:
         model_name = ''.join(word.capitalize() for word in self.name.split('_'))
         route_name = self.name.replace('_', '-')
 
-        # Get primary key field name
+        # Get primary key field name - always use 'id' in TypeSpec
         pk_field = self.get_pk_field()
-        pk_name = pk_field.name if pk_field else "id"
+        # If no explicit PK, check for synthetic PK
+        if not pk_field:
+            pk_field = self.get_synthetic_pk_field()
+        pk_name = "id"
         pk_type = pk_field.to_typespec_type() if pk_field else "int64"
 
         # Prepare tag name
@@ -180,6 +205,7 @@ class Table:
 
         # Create example data
         example = self.generate_example()
+        list_example = self.generate_list_example()
 
         typespec = f'''import "@typespec/http";
 import "@typespec/rest";
@@ -242,6 +268,15 @@ model {model_name}QueryParams {{
 }}
 
 /**
+ * {model_name} list response with example
+ */
+@doc("Paginated list of {model_name} records")
+@example({list_example})
+model {model_name}List {{
+  ...PaginatedList<{model_name}>;
+}}
+
+/**
  * {model_name} API operations
  */
 @route("/{route_name}s")
@@ -254,7 +289,7 @@ interface {model_name}s {{
     ...{model_name}QueryParams,
   ): {{
     @statusCode statusCode: 200;
-    @body body: PaginatedList<{model_name}>;
+    @body body: {model_name}List;
   }} | ErrorResponse;
 
   @get
@@ -263,7 +298,7 @@ interface {model_name}s {{
   read(
     @path
     @doc("Unique {route_name} identifier")
-    {pk_name}: {pk_type},
+    {pk_name}: string,
   ): {{
     @statusCode statusCode: 200;
     @body body: {model_name};
@@ -293,7 +328,7 @@ interface {model_name}s {{
   update(
     @path
     @doc("Unique {route_name} identifier")
-    {pk_name}: {pk_type},
+    {pk_name}: string,
 
     @body
     @doc("Complete {route_name} data")
@@ -315,7 +350,7 @@ interface {model_name}s {{
   patch(
     @path
     @doc("Unique {route_name} identifier")
-    {pk_name}: {pk_type},
+    {pk_name}: string,
 
     @body
     @doc("Fields to update")
@@ -334,7 +369,7 @@ interface {model_name}s {{
   delete(
     @path
     @doc("Unique {route_name} identifier")
-    {pk_name}: {pk_type},
+    {pk_name}: string,
   ): {{
     @statusCode statusCode: 204;
   }} | {{
@@ -347,22 +382,44 @@ interface {model_name}s {{
 
     def generate_model_fields(self) -> str:
         """Generate model field definitions"""
-        return '\n\n'.join(f.generate_field_definition() for f in self.fields)
+        # Detect synthetic PK if no explicit PK exists
+        synthetic_pk = self.get_synthetic_pk_field() if not self.get_pk_field() else None
+
+        lines = []
+        for field in self.fields:
+            treat_as_pk = (synthetic_pk is not None and field.name == synthetic_pk.name)
+            lines.append(field.generate_field_definition(treat_as_pk=treat_as_pk))
+
+        return '\n\n'.join(lines)
 
     def generate_create_fields(self) -> str:
         """Generate create model fields"""
+        # Detect synthetic PK if no explicit PK exists
+        synthetic_pk = self.get_synthetic_pk_field() if not self.get_pk_field() else None
+
         lines = []
         for field in self.fields:
+            # Skip explicit PKs
             if field.is_pk:
-                continue  # Skip PK in create
+                continue
+            # Skip synthetic PKs
+            if synthetic_pk is not None and field.name == synthetic_pk.name:
+                continue
             lines.append(field.generate_field_definition(for_create=True))
         return '\n\n'.join(lines) if lines else '  // Auto-generated fields only'
 
     def generate_update_fields(self) -> str:
         """Generate update model fields (all optional)"""
+        # Detect synthetic PK if no explicit PK exists
+        synthetic_pk = self.get_synthetic_pk_field() if not self.get_pk_field() else None
+
         lines = []
         for field in self.fields:
+            # Skip explicit PKs
             if field.is_pk:
+                continue
+            # Skip synthetic PKs
+            if synthetic_pk is not None and field.name == synthetic_pk.name:
                 continue
             doc = field.generate_doc()
             ts_type = 'ConceptId' if field.is_concept_id() else field.to_typespec_type()
@@ -371,9 +428,16 @@ interface {model_name}s {{
 
     def generate_query_params(self) -> str:
         """Generate query parameters for filtering"""
+        # Detect synthetic PK if no explicit PK exists
+        synthetic_pk = self.get_synthetic_pk_field() if not self.get_pk_field() else None
+
         lines = []
         for field in self.fields:
+            # Skip explicit PKs
             if field.is_pk:
+                continue
+            # Skip synthetic PKs
+            if synthetic_pk is not None and field.name == synthetic_pk.name:
                 continue
             # Add filters for concept_ids and foreign keys
             if field.is_concept_id() or field.fk_table:
@@ -385,29 +449,54 @@ interface {model_name}s {{
 
     def generate_example(self) -> str:
         """Generate example data"""
+        # Detect synthetic PK if no explicit PK exists
+        synthetic_pk = self.get_synthetic_pk_field() if not self.get_pk_field() else None
+
         examples = {}
         for field in self.fields:
-            if field.is_pk:
+            # Check if this field is a PK (explicit or synthetic)
+            is_pk = field.is_pk or (synthetic_pk is not None and field.name == synthetic_pk.name)
+
+            # Use 'id' for primary keys in examples
+            field_name = 'id' if is_pk else field.name
+
+            if is_pk:
                 # Check if PK is string type
                 if 'varchar' in field.datatype.lower() or field.datatype.lower() == 'string':
-                    examples[field.name] = '"12345"'
+                    examples[field_name] = '"12345"'
                 else:
-                    examples[field.name] = 12345
+                    examples[field_name] = 12345
             elif field.is_concept_id():
-                examples[field.name] = 8507
+                examples[field_name] = 8507
             elif field.datatype.lower() == 'integer' or field.datatype.lower() == 'int':
-                examples[field.name] = 100
+                examples[field_name] = 100
             elif 'date' in field.datatype.lower():
-                examples[field.name] = '"2023-01-15"'
+                examples[field_name] = '"2023-01-15"'
             elif 'time' in field.datatype.lower():
-                examples[field.name] = '"14:30:00"'
+                examples[field_name] = '"14:30:00"'
             elif field.datatype.lower() == 'float':
-                examples[field.name] = 98.6
+                examples[field_name] = 98.6
             else:
-                examples[field.name] = '"Example value"'
+                examples[field_name] = '"Example value"'
 
         example_str = ',\n  '.join(f'{k}: {v}' for k, v in examples.items())
         return f'#{{\n  {example_str}\n}}'
+
+    def generate_list_example(self) -> str:
+        """Generate example data for paginated list response"""
+        # Reuse single item example
+        single_item = self.generate_example()
+        # Create pagination metadata that matches 1 item in the list
+        # Use #[] for array values and #{} for object values in TypeSpec
+        return f'''#{{
+  data: #[{single_item}],
+  pagination: #{{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }}
+}}'''
 
 
 def parse_omop_md(file_path: str) -> List[Table]:

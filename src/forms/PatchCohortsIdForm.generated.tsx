@@ -16,28 +16,17 @@ export type PatchCohortsIdFormBody = {
   cohort_end_date?: string | undefined
 }
 
-export const PatchCohortsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`cohort_definition_id`} />
-      <IntegerField fieldName={`subject_id`} />
-      <StringField fieldName={`cohort_start_date`} label="cohort_start_date" />
-      <StringField fieldName={`cohort_end_date`} label="cohort_end_date" />
-    </>
-  )
-}
-
 export type PatchCohortsIdFormProps = {
-  id: number
-  defaultValues: PatchCohortsIdFormBody
+  id: string
+  defaultValues: Required<PatchCohortsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchCohortsIdFormPathParams = { id: number }
+export type PatchCohortsIdFormPathParams = { id: string }
 
 export const PatchCohortsIdForm = (props: PatchCohortsIdFormProps) => {
-  const form = useForm<PatchCohortsIdFormBody>({
-    resolver: zodResolver(resultsCohortUpdate),
+  const form = useForm<Required<PatchCohortsIdFormBody>>({
+    resolver: zodResolver(resultsCohortUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -61,7 +50,19 @@ export const PatchCohortsIdForm = (props: PatchCohortsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchCohortsIdFormFields />
+        <IntegerField
+          lens={lens.focus('cohort_definition_id')}
+          label="cohort_definition_id"
+        />
+        <IntegerField lens={lens.focus('subject_id')} label="subject_id" />
+        <StringField
+          lens={lens.focus('cohort_start_date')}
+          label="cohort_start_date"
+        />
+        <StringField
+          lens={lens.focus('cohort_end_date')}
+          label="cohort_end_date"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

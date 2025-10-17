@@ -1,19 +1,8 @@
-import { vocabularyDomain } from '@/types/vocabularyDomain.generated.ts'
-import { z } from 'zod'
+import { vocabularyDomainList } from '@/types/vocabularyDomainList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiDomainsResponse = z.object({
-  data: z.array(vocabularyDomain),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiDomainsArgs = {
   offset?: number | undefined
@@ -48,7 +37,7 @@ export const useGetApiDomains = ({
         throw error
       }
 
-      return useGetApiDomainsResponse.parse(data)
+      return vocabularyDomainList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

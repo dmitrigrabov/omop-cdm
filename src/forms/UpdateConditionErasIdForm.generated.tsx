@@ -17,37 +17,19 @@ export type UpdateConditionErasIdFormBody = {
   condition_occurrence_count?: number | undefined
 }
 
-export const UpdateConditionErasIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`condition_concept_id`} />
-      <StringField
-        fieldName={`condition_era_start_date`}
-        label="condition_era_start_date"
-      />
-      <StringField
-        fieldName={`condition_era_end_date`}
-        label="condition_era_end_date"
-      />
-      <IntegerField fieldName={`condition_occurrence_count`} />
-    </>
-  )
-}
-
 export type UpdateConditionErasIdFormProps = {
-  id: number
-  defaultValues: UpdateConditionErasIdFormBody
+  id: string
+  defaultValues: Required<UpdateConditionErasIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateConditionErasIdFormPathParams = { id: number }
+export type UpdateConditionErasIdFormPathParams = { id: string }
 
 export const UpdateConditionErasIdForm = (
   props: UpdateConditionErasIdFormProps,
 ) => {
-  const form = useForm<UpdateConditionErasIdFormBody>({
-    resolver: zodResolver(derivedConditionEraCreate),
+  const form = useForm<Required<UpdateConditionErasIdFormBody>>({
+    resolver: zodResolver(derivedConditionEraCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -71,7 +53,23 @@ export const UpdateConditionErasIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateConditionErasIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('condition_concept_id')}
+          label="condition_concept_id"
+        />
+        <StringField
+          lens={lens.focus('condition_era_start_date')}
+          label="condition_era_start_date"
+        />
+        <StringField
+          lens={lens.focus('condition_era_end_date')}
+          label="condition_era_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('condition_occurrence_count')}
+          label="condition_occurrence_count"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

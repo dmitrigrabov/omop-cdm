@@ -14,26 +14,17 @@ export type PatchDomainsIdFormBody = {
   domain_concept_id?: number | undefined
 }
 
-export const PatchDomainsIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`domain_name`} label="domain_name" />
-      <IntegerField fieldName={`domain_concept_id`} />
-    </>
-  )
-}
-
 export type PatchDomainsIdFormProps = {
   id: string
-  defaultValues: PatchDomainsIdFormBody
+  defaultValues: Required<PatchDomainsIdFormBody>
   onSuccess: () => void
 }
 
 export type PatchDomainsIdFormPathParams = { id: string }
 
 export const PatchDomainsIdForm = (props: PatchDomainsIdFormProps) => {
-  const form = useForm<PatchDomainsIdFormBody>({
-    resolver: zodResolver(vocabularyDomainUpdate),
+  const form = useForm<Required<PatchDomainsIdFormBody>>({
+    resolver: zodResolver(vocabularyDomainUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -57,7 +48,11 @@ export const PatchDomainsIdForm = (props: PatchDomainsIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchDomainsIdFormFields />
+        <StringField lens={lens.focus('domain_name')} label="domain_name" />
+        <IntegerField
+          lens={lens.focus('domain_concept_id')}
+          label="domain_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

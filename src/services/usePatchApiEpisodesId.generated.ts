@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiEpisodesIdArgs = {
-  id: number
+  id: string
   body: DerivedEpisodeUpdate
 }
 

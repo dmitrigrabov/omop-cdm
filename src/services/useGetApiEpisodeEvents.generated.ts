@@ -1,19 +1,8 @@
-import { derivedEpisodeEvent } from '@/types/derivedEpisodeEvent.generated.ts'
-import { z } from 'zod'
+import { derivedEpisodeEventList } from '@/types/derivedEpisodeEventList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiEpisodeEventsResponse = z.object({
-  data: z.array(derivedEpisodeEvent),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiEpisodeEventsArgs = {
   offset?: number | undefined
@@ -54,7 +43,7 @@ export const useGetApiEpisodeEvents = ({
         throw error
       }
 
-      return useGetApiEpisodeEventsResponse.parse(data)
+      return derivedEpisodeEventList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

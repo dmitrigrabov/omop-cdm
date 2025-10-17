@@ -10,7 +10,7 @@ import {
   UseMutationOptions,
 } from '@tanstack/react-query'
 
-export type UseUpdateApiDeathsIdArgs = { id: number; body: ClinicalDeathCreate }
+export type UseUpdateApiDeathsIdArgs = { id: string; body: ClinicalDeathCreate }
 
 export const useUpdateApiDeathsId = (
   args: UseMutationOptions<

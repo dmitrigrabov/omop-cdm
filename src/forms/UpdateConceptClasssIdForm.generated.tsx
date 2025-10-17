@@ -14,21 +14,9 @@ export type UpdateConceptClasssIdFormBody = {
   concept_class_concept_id: number
 }
 
-export const UpdateConceptClasssIdFormFields = () => {
-  return (
-    <>
-      <StringField
-        fieldName={`concept_class_name`}
-        label="concept_class_name"
-      />
-      <IntegerField fieldName={`concept_class_concept_id`} />
-    </>
-  )
-}
-
 export type UpdateConceptClasssIdFormProps = {
   id: string
-  defaultValues: UpdateConceptClasssIdFormBody
+  defaultValues: Required<UpdateConceptClasssIdFormBody>
   onSuccess: () => void
 }
 
@@ -37,8 +25,8 @@ export type UpdateConceptClasssIdFormPathParams = { id: string }
 export const UpdateConceptClasssIdForm = (
   props: UpdateConceptClasssIdFormProps,
 ) => {
-  const form = useForm<UpdateConceptClasssIdFormBody>({
-    resolver: zodResolver(vocabularyConceptClassCreate),
+  const form = useForm<Required<UpdateConceptClasssIdFormBody>>({
+    resolver: zodResolver(vocabularyConceptClassCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -62,7 +50,14 @@ export const UpdateConceptClasssIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateConceptClasssIdFormFields />
+        <StringField
+          lens={lens.focus('concept_class_name')}
+          label="concept_class_name"
+        />
+        <IntegerField
+          lens={lens.focus('concept_class_concept_id')}
+          label="concept_class_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

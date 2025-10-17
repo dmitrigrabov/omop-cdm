@@ -173,6 +173,33 @@ model SourceToConceptMapQueryParams {
 }
 
 /**
+ * SourceToConceptMap list response with example
+ */
+@doc("Paginated list of SourceToConceptMap records")
+@example(#{
+  data: #[#{
+  source_code: "Example value",
+  source_concept_id: 8507,
+  source_vocabulary_id: "Example value",
+  source_code_description: "Example value",
+  target_concept_id: 8507,
+  target_vocabulary_id: "Example value",
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model SourceToConceptMapList {
+  ...PaginatedList<SourceToConceptMap>;
+}
+
+/**
  * SourceToConceptMap API operations
  */
 @route("/source-to-concept-maps")
@@ -185,7 +212,7 @@ interface SourceToConceptMaps {
     ...SourceToConceptMapQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<SourceToConceptMap>;
+    @body body: SourceToConceptMapList;
   } | ErrorResponse;
 
   @get
@@ -194,7 +221,7 @@ interface SourceToConceptMaps {
   read(
     @path
     @doc("Unique source-to-concept-map identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: SourceToConceptMap;
@@ -224,7 +251,7 @@ interface SourceToConceptMaps {
   update(
     @path
     @doc("Unique source-to-concept-map identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete source-to-concept-map data")
@@ -246,7 +273,7 @@ interface SourceToConceptMaps {
   patch(
     @path
     @doc("Unique source-to-concept-map identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -265,7 +292,7 @@ interface SourceToConceptMaps {
   delete(
     @path
     @doc("Unique source-to-concept-map identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

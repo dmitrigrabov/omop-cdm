@@ -2,7 +2,7 @@ import { vocabularyConceptAncestor } from '@/types/vocabularyConceptAncestor.gen
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiConceptAncestorsIdArgs = { id: number }
+export type UseGetApiConceptAncestorsIdArgs = { id: string }
 
 export const useGetApiConceptAncestorsId = ({
   id,

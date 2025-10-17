@@ -365,6 +365,47 @@ model MeasurementQueryParams {
 }
 
 /**
+ * Measurement list response with example
+ */
+@doc("Paginated list of Measurement records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  measurement_concept_id: 8507,
+  measurement_date: "2023-01-15",
+  measurement_datetime: "2023-01-15",
+  measurement_time: "Example value",
+  measurement_type_concept_id: 8507,
+  operator_concept_id: 8507,
+  value_as_number: 98.6,
+  value_as_concept_id: 8507,
+  unit_concept_id: 8507,
+  range_low: 98.6,
+  range_high: 98.6,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  measurement_source_value: "Example value",
+  measurement_source_concept_id: 8507,
+  unit_source_value: "Example value",
+  unit_source_concept_id: 8507,
+  value_source_value: "Example value",
+  measurement_event_id: 100,
+  meas_event_field_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model MeasurementList {
+  ...PaginatedList<Measurement>;
+}
+
+/**
  * Measurement API operations
  */
 @route("/measurements")
@@ -377,7 +418,7 @@ interface Measurements {
     ...MeasurementQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Measurement>;
+    @body body: MeasurementList;
   } | ErrorResponse;
 
   @get
@@ -386,7 +427,7 @@ interface Measurements {
   read(
     @path
     @doc("Unique measurement identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Measurement;
@@ -416,7 +457,7 @@ interface Measurements {
   update(
     @path
     @doc("Unique measurement identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete measurement data")
@@ -438,7 +479,7 @@ interface Measurements {
   patch(
     @path
     @doc("Unique measurement identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -457,7 +498,7 @@ interface Measurements {
   delete(
     @path
     @doc("Unique measurement identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -182,6 +182,35 @@ model CdmSourceQueryParams {
 }
 
 /**
+ * CdmSource list response with example
+ */
+@doc("Paginated list of CdmSource records")
+@example(#{
+  data: #[#{
+  cdm_source_name: "Example value",
+  cdm_source_abbreviation: "Example value",
+  cdm_holder: "Example value",
+  source_description: "Example value",
+  source_documentation_reference: "Example value",
+  cdm_etl_reference: "Example value",
+  source_release_date: "2023-01-15",
+  cdm_release_date: "2023-01-15",
+  cdm_version: "Example value",
+  cdm_version_concept_id: 8507,
+  vocabulary_version: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model CdmSourceList {
+  ...PaginatedList<CdmSource>;
+}
+
+/**
  * CdmSource API operations
  */
 @route("/cdm-sources")
@@ -194,7 +223,7 @@ interface CdmSources {
     ...CdmSourceQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<CdmSource>;
+    @body body: CdmSourceList;
   } | ErrorResponse;
 
   @get
@@ -203,7 +232,7 @@ interface CdmSources {
   read(
     @path
     @doc("Unique cdm-source identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: CdmSource;
@@ -233,7 +262,7 @@ interface CdmSources {
   update(
     @path
     @doc("Unique cdm-source identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete cdm-source data")
@@ -255,7 +284,7 @@ interface CdmSources {
   patch(
     @path
     @doc("Unique cdm-source identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -274,7 +303,7 @@ interface CdmSources {
   delete(
     @path
     @doc("Unique cdm-source identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

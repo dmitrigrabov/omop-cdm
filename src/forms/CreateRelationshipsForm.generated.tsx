@@ -17,23 +17,8 @@ export type CreateRelationshipsFormBody = {
   relationship_concept_id: number
 }
 
-export const CreateRelationshipsFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`relationship_name`} label="relationship_name" />
-      <StringField fieldName={`is_hierarchical`} label="is_hierarchical" />
-      <StringField fieldName={`defines_ancestry`} label="defines_ancestry" />
-      <StringField
-        fieldName={`reverse_relationship_id`}
-        label="reverse_relationship_id"
-      />
-      <IntegerField fieldName={`relationship_concept_id`} />
-    </>
-  )
-}
-
 export type CreateRelationshipsFormProps = {
-  defaultValues: CreateRelationshipsFormBody
+  defaultValues: Required<CreateRelationshipsFormBody>
   onSuccess: () => void
 }
 
@@ -42,8 +27,8 @@ export type CreateRelationshipsFormPathParams = Record<string, never>
 export const CreateRelationshipsForm = (
   props: CreateRelationshipsFormProps,
 ) => {
-  const form = useForm<CreateRelationshipsFormBody>({
-    resolver: zodResolver(vocabularyRelationshipCreate),
+  const form = useForm<Required<CreateRelationshipsFormBody>>({
+    resolver: zodResolver(vocabularyRelationshipCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -67,7 +52,26 @@ export const CreateRelationshipsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateRelationshipsFormFields />
+        <StringField
+          lens={lens.focus('relationship_name')}
+          label="relationship_name"
+        />
+        <StringField
+          lens={lens.focus('is_hierarchical')}
+          label="is_hierarchical"
+        />
+        <StringField
+          lens={lens.focus('defines_ancestry')}
+          label="defines_ancestry"
+        />
+        <StringField
+          lens={lens.focus('reverse_relationship_id')}
+          label="reverse_relationship_id"
+        />
+        <IntegerField
+          lens={lens.focus('relationship_concept_id')}
+          label="relationship_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

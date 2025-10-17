@@ -1,19 +1,8 @@
-import { vocabularyConceptClass } from '@/types/vocabularyConceptClass.generated.ts'
-import { z } from 'zod'
+import { vocabularyConceptClassList } from '@/types/vocabularyConceptClassList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiConceptClasssResponse = z.object({
-  data: z.array(vocabularyConceptClass),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiConceptClasssArgs = {
   offset?: number | undefined
@@ -51,7 +40,7 @@ export const useGetApiConceptClasss = ({
         throw error
       }
 
-      return useGetApiConceptClasssResponse.parse(data)
+      return vocabularyConceptClassList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

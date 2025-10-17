@@ -27,48 +27,8 @@ export type CreateConditionOccurrencesFormBody = {
   condition_status_source_value?: string | undefined
 }
 
-export const CreateConditionOccurrencesFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`condition_concept_id`} />
-      <StringField
-        fieldName={`condition_start_date`}
-        label="condition_start_date"
-      />
-      <StringField
-        fieldName={`condition_start_datetime`}
-        label="condition_start_datetime"
-      />
-      <StringField
-        fieldName={`condition_end_date`}
-        label="condition_end_date"
-      />
-      <StringField
-        fieldName={`condition_end_datetime`}
-        label="condition_end_datetime"
-      />
-      <IntegerField fieldName={`condition_type_concept_id`} />
-      <IntegerField fieldName={`condition_status_concept_id`} />
-      <StringField fieldName={`stop_reason`} label="stop_reason" />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-      <IntegerField fieldName={`visit_detail_id`} />
-      <StringField
-        fieldName={`condition_source_value`}
-        label="condition_source_value"
-      />
-      <IntegerField fieldName={`condition_source_concept_id`} />
-      <StringField
-        fieldName={`condition_status_source_value`}
-        label="condition_status_source_value"
-      />
-    </>
-  )
-}
-
 export type CreateConditionOccurrencesFormProps = {
-  defaultValues: CreateConditionOccurrencesFormBody
+  defaultValues: Required<CreateConditionOccurrencesFormBody>
   onSuccess: () => void
 }
 
@@ -77,8 +37,8 @@ export type CreateConditionOccurrencesFormPathParams = Record<string, never>
 export const CreateConditionOccurrencesForm = (
   props: CreateConditionOccurrencesFormProps,
 ) => {
-  const form = useForm<CreateConditionOccurrencesFormBody>({
-    resolver: zodResolver(clinicalConditionOccurrenceCreate),
+  const form = useForm<Required<CreateConditionOccurrencesFormBody>>({
+    resolver: zodResolver(clinicalConditionOccurrenceCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -102,7 +62,57 @@ export const CreateConditionOccurrencesForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateConditionOccurrencesFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('condition_concept_id')}
+          label="condition_concept_id"
+        />
+        <StringField
+          lens={lens.focus('condition_start_date')}
+          label="condition_start_date"
+        />
+        <StringField
+          lens={lens.focus('condition_start_datetime')}
+          label="condition_start_datetime"
+        />
+        <StringField
+          lens={lens.focus('condition_end_date')}
+          label="condition_end_date"
+        />
+        <StringField
+          lens={lens.focus('condition_end_datetime')}
+          label="condition_end_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('condition_type_concept_id')}
+          label="condition_type_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('condition_status_concept_id')}
+          label="condition_status_concept_id"
+        />
+        <StringField lens={lens.focus('stop_reason')} label="stop_reason" />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_id')}
+          label="visit_detail_id"
+        />
+        <StringField
+          lens={lens.focus('condition_source_value')}
+          label="condition_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('condition_source_concept_id')}
+          label="condition_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('condition_status_source_value')}
+          label="condition_status_source_value"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

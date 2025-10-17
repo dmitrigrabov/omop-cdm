@@ -2,7 +2,7 @@ import { vocabularyConceptRelationship } from '@/types/vocabularyConceptRelation
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiConceptRelationshipsIdArgs = { id: number }
+export type UseGetApiConceptRelationshipsIdArgs = { id: string }
 
 export const useGetApiConceptRelationshipsId = ({
   id,

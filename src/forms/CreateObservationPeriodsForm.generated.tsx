@@ -16,25 +16,8 @@ export type CreateObservationPeriodsFormBody = {
   period_type_concept_id: number
 }
 
-export const CreateObservationPeriodsFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <StringField
-        fieldName={`observation_period_start_date`}
-        label="observation_period_start_date"
-      />
-      <StringField
-        fieldName={`observation_period_end_date`}
-        label="observation_period_end_date"
-      />
-      <IntegerField fieldName={`period_type_concept_id`} />
-    </>
-  )
-}
-
 export type CreateObservationPeriodsFormProps = {
-  defaultValues: CreateObservationPeriodsFormBody
+  defaultValues: Required<CreateObservationPeriodsFormBody>
   onSuccess: () => void
 }
 
@@ -43,8 +26,8 @@ export type CreateObservationPeriodsFormPathParams = Record<string, never>
 export const CreateObservationPeriodsForm = (
   props: CreateObservationPeriodsFormProps,
 ) => {
-  const form = useForm<CreateObservationPeriodsFormBody>({
-    resolver: zodResolver(clinicalObservationPeriodCreate),
+  const form = useForm<Required<CreateObservationPeriodsFormBody>>({
+    resolver: zodResolver(clinicalObservationPeriodCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -68,7 +51,19 @@ export const CreateObservationPeriodsForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateObservationPeriodsFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <StringField
+          lens={lens.focus('observation_period_start_date')}
+          label="observation_period_start_date"
+        />
+        <StringField
+          lens={lens.focus('observation_period_end_date')}
+          label="observation_period_end_date"
+        />
+        <IntegerField
+          lens={lens.focus('period_type_concept_id')}
+          label="period_type_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

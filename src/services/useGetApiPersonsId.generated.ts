@@ -2,7 +2,7 @@ import { clinicalPerson } from '@/types/clinicalPerson.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiPersonsIdArgs = { id: number }
+export type UseGetApiPersonsIdArgs = { id: string }
 
 export const useGetApiPersonsId = ({ id }: UseGetApiPersonsIdArgs) => {
   const result = useQuery({

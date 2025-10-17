@@ -30,6 +30,9 @@ export class NumberInput extends ContentBase {
   }
 
   override toString() {
-    return `<NumberField fieldName={\`${this.name}\`} ${this.label && !this.skipLabel ? `label="${this.label}"` : ''} />`
+    return `<NumberField 
+      ${this.name ? `lens={lens.focus('${this.name}')}` : 'lens={lens}'}
+      ${this.label && !this.skipLabel ? `label="${this.label}"` : ''}
+    />`
   }
 }

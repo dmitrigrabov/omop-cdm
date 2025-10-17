@@ -30,6 +30,9 @@ export class StringInput extends ContentBase {
   }
 
   override toString() {
-    return `<StringField fieldName={\`${this.name}\`} ${this.label && !this.skipLabel ? `label="${this.label}"` : ''} />`
+    return `<StringField
+      ${this.name ? `lens={lens.focus('${this.name}')}` : 'lens={lens}'}
+      ${this.label && !this.skipLabel ? `label="${this.label}"` : ''}
+    />`
   }
 }

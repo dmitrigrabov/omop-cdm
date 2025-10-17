@@ -175,6 +175,34 @@ model LocationQueryParams {
 }
 
 /**
+ * Location list response with example
+ */
+@doc("Paginated list of Location records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  city: "Example value",
+  state: "Example value",
+  zip: "Example value",
+  county: "Example value",
+  location_source_value: "Example value",
+  country_concept_id: 8507,
+  country_source_value: "Example value",
+  latitude: 98.6,
+  longitude: 98.6
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model LocationList {
+  ...PaginatedList<Location>;
+}
+
+/**
  * Location API operations
  */
 @route("/locations")
@@ -187,7 +215,7 @@ interface Locations {
     ...LocationQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Location>;
+    @body body: LocationList;
   } | ErrorResponse;
 
   @get
@@ -196,7 +224,7 @@ interface Locations {
   read(
     @path
     @doc("Unique location identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Location;
@@ -226,7 +254,7 @@ interface Locations {
   update(
     @path
     @doc("Unique location identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete location data")
@@ -248,7 +276,7 @@ interface Locations {
   patch(
     @path
     @doc("Unique location identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -267,7 +295,7 @@ interface Locations {
   delete(
     @path
     @doc("Unique location identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

@@ -1,19 +1,8 @@
-import { healthsystemPayerPlanPeriod } from '@/types/healthsystemPayerPlanPeriod.generated.ts'
-import { z } from 'zod'
+import { healthsystemPayerPlanPeriodList } from '@/types/healthsystemPayerPlanPeriodList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiPayerPlanPeriodsResponse = z.object({
-  data: z.array(healthsystemPayerPlanPeriod),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiPayerPlanPeriodsArgs = {
   offset?: number | undefined
@@ -75,7 +64,7 @@ export const useGetApiPayerPlanPeriods = ({
         throw error
       }
 
-      return useGetApiPayerPlanPeriodsResponse.parse(data)
+      return healthsystemPayerPlanPeriodList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

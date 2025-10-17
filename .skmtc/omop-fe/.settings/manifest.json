@@ -2,8 +2,8 @@
   "files": {
     "src/forms/CreateCareSitesForm.generated.tsx": {
       "destinationPath": "@/forms/CreateCareSitesForm.generated.tsx",
-      "lines": 78,
-      "characters": 2313
+      "lines": 76,
+      "characters": 2393
     },
     "src/types/healthsystemCareSiteCreate.generated.ts": {
       "destinationPath": "@/types/healthsystemCareSiteCreate.generated.ts",
@@ -22,8 +22,8 @@
     },
     "src/forms/UpdateCareSitesIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateCareSitesIdForm.generated.tsx",
-      "lines": 79,
-      "characters": 2343
+      "lines": 77,
+      "characters": 2419
     },
     "src/services/useUpdateApiCareSitesId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiCareSitesId.generated.ts",
@@ -32,8 +32,8 @@
     },
     "src/forms/PatchCareSitesIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchCareSitesIdForm.generated.tsx",
-      "lines": 79,
-      "characters": 2331
+      "lines": 77,
+      "characters": 2409
     },
     "src/types/healthsystemCareSiteUpdate.generated.ts": {
       "destinationPath": "@/types/healthsystemCareSiteUpdate.generated.ts",
@@ -47,8 +47,8 @@
     },
     "src/forms/CreateCdmSourcesForm.generated.tsx": {
       "destinationPath": "@/forms/CreateCdmSourcesForm.generated.tsx",
-      "lines": 99,
-      "characters": 3023
+      "lines": 103,
+      "characters": 3204
     },
     "src/types/metadataCdmSourceCreate.generated.ts": {
       "destinationPath": "@/types/metadataCdmSourceCreate.generated.ts",
@@ -67,8 +67,8 @@
     },
     "src/forms/UpdateCdmSourcesIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateCdmSourcesIdForm.generated.tsx",
-      "lines": 100,
-      "characters": 3053
+      "lines": 104,
+      "characters": 3230
     },
     "src/services/useUpdateApiCdmSourcesId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiCdmSourcesId.generated.ts",
@@ -77,8 +77,8 @@
     },
     "src/forms/PatchCdmSourcesIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchCdmSourcesIdForm.generated.tsx",
-      "lines": 100,
-      "characters": 3132
+      "lines": 104,
+      "characters": 3311
     },
     "src/types/metadataCdmSourceUpdate.generated.ts": {
       "destinationPath": "@/types/metadataCdmSourceUpdate.generated.ts",
@@ -92,13 +92,13 @@
     },
     "src/forms/CreateCohortDefinitionsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateCohortDefinitionsForm.generated.tsx",
-      "lines": 90,
-      "characters": 2695
+      "lines": 86,
+      "characters": 2697
     },
     "src/types/resultsCohortDefinitionCreate.generated.ts": {
       "destinationPath": "@/types/resultsCohortDefinitionCreate.generated.ts",
-      "lines": 22,
-      "characters": 734
+      "lines": 20,
+      "characters": 661
     },
     "src/services/useCreateApiCohortDefinitions.generated.ts": {
       "destinationPath": "@/services/useCreateApiCohortDefinitions.generated.ts",
@@ -108,12 +108,12 @@
     "src/types/resultsCohortDefinition.generated.ts": {
       "destinationPath": "@/types/resultsCohortDefinition.generated.ts",
       "lines": 22,
-      "characters": 722
+      "characters": 686
     },
     "src/forms/UpdateCohortDefinitionsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateCohortDefinitionsIdForm.generated.tsx",
-      "lines": 91,
-      "characters": 2725
+      "lines": 87,
+      "characters": 2723
     },
     "src/services/useUpdateApiCohortDefinitionsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiCohortDefinitionsId.generated.ts",
@@ -122,13 +122,13 @@
     },
     "src/forms/PatchCohortDefinitionsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchCohortDefinitionsIdForm.generated.tsx",
-      "lines": 91,
-      "characters": 2765
+      "lines": 87,
+      "characters": 2752
     },
     "src/types/resultsCohortDefinitionUpdate.generated.ts": {
       "destinationPath": "@/types/resultsCohortDefinitionUpdate.generated.ts",
-      "lines": 22,
-      "characters": 830
+      "lines": 20,
+      "characters": 733
     },
     "src/services/usePatchApiCohortDefinitionsId.generated.ts": {
       "destinationPath": "@/services/usePatchApiCohortDefinitionsId.generated.ts",
@@ -137,8 +137,8 @@
     },
     "src/forms/CreateCohortsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateCohortsForm.generated.tsx",
-      "lines": 70,
-      "characters": 1987
+      "lines": 71,
+      "characters": 2070
     },
     "src/types/resultsCohortCreate.generated.ts": {
       "destinationPath": "@/types/resultsCohortCreate.generated.ts",
@@ -157,8 +157,8 @@
     },
     "src/forms/UpdateCohortsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateCohortsIdForm.generated.tsx",
-      "lines": 71,
-      "characters": 2017
+      "lines": 72,
+      "characters": 2096
     },
     "src/services/useUpdateApiCohortsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiCohortsId.generated.ts",
@@ -167,8 +167,8 @@
     },
     "src/forms/PatchCohortsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchCohortsIdForm.generated.tsx",
-      "lines": 71,
-      "characters": 2057
+      "lines": 72,
+      "characters": 2138
     },
     "src/types/resultsCohortUpdate.generated.ts": {
       "destinationPath": "@/types/resultsCohortUpdate.generated.ts",
@@ -182,8 +182,8 @@
     },
     "src/forms/CreateConceptAncestorsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateConceptAncestorsForm.generated.tsx",
-      "lines": 71,
-      "characters": 2077
+      "lines": 75,
+      "characters": 2246
     },
     "src/types/vocabularyConceptAncestorCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptAncestorCreate.generated.ts",
@@ -202,8 +202,8 @@
     },
     "src/forms/UpdateConceptAncestorsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateConceptAncestorsIdForm.generated.tsx",
-      "lines": 72,
-      "characters": 2107
+      "lines": 76,
+      "characters": 2272
     },
     "src/services/useUpdateApiConceptAncestorsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiConceptAncestorsId.generated.ts",
@@ -212,8 +212,8 @@
     },
     "src/forms/PatchConceptAncestorsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchConceptAncestorsIdForm.generated.tsx",
-      "lines": 72,
-      "characters": 2147
+      "lines": 76,
+      "characters": 2314
     },
     "src/types/vocabularyConceptAncestorUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptAncestorUpdate.generated.ts",
@@ -227,8 +227,8 @@
     },
     "src/forms/CreateConceptClasssForm.generated.tsx": {
       "destinationPath": "@/forms/CreateConceptClasssForm.generated.tsx",
-      "lines": 71,
-      "characters": 1953
+      "lines": 66,
+      "characters": 1941
     },
     "src/types/vocabularyConceptClassCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptClassCreate.generated.ts",
@@ -247,8 +247,8 @@
     },
     "src/forms/UpdateConceptClasssIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateConceptClasssIdForm.generated.tsx",
-      "lines": 72,
-      "characters": 1983
+      "lines": 67,
+      "characters": 1967
     },
     "src/services/useUpdateApiConceptClasssId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiConceptClasssId.generated.ts",
@@ -257,8 +257,8 @@
     },
     "src/forms/PatchConceptClasssIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchConceptClasssIdForm.generated.tsx",
-      "lines": 72,
-      "characters": 1997
+      "lines": 67,
+      "characters": 1983
     },
     "src/types/vocabularyConceptClassUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptClassUpdate.generated.ts",
@@ -272,8 +272,8 @@
     },
     "src/forms/CreateConceptRelationshipsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateConceptRelationshipsForm.generated.tsx",
-      "lines": 71,
-      "characters": 2181
+      "lines": 75,
+      "characters": 2218
     },
     "src/types/vocabularyConceptRelationshipCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptRelationshipCreate.generated.ts",
@@ -292,8 +292,8 @@
     },
     "src/forms/UpdateConceptRelationshipsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateConceptRelationshipsIdForm.generated.tsx",
-      "lines": 72,
-      "characters": 2211
+      "lines": 76,
+      "characters": 2244
     },
     "src/services/useUpdateApiConceptRelationshipsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiConceptRelationshipsId.generated.ts",
@@ -302,8 +302,8 @@
     },
     "src/forms/PatchConceptRelationshipsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchConceptRelationshipsIdForm.generated.tsx",
-      "lines": 72,
-      "characters": 2238
+      "lines": 76,
+      "characters": 2273
     },
     "src/types/vocabularyConceptRelationshipUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptRelationshipUpdate.generated.ts",
@@ -317,8 +317,8 @@
     },
     "src/forms/CreateConceptSynonymsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateConceptSynonymsForm.generated.tsx",
-      "lines": 73,
-      "characters": 2048
+      "lines": 68,
+      "characters": 2055
     },
     "src/types/vocabularyConceptSynonymCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptSynonymCreate.generated.ts",
@@ -337,8 +337,8 @@
     },
     "src/forms/UpdateConceptSynonymsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateConceptSynonymsIdForm.generated.tsx",
-      "lines": 74,
-      "characters": 2078
+      "lines": 69,
+      "characters": 2081
     },
     "src/services/useUpdateApiConceptSynonymsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiConceptSynonymsId.generated.ts",
@@ -347,8 +347,8 @@
     },
     "src/forms/PatchConceptSynonymsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchConceptSynonymsIdForm.generated.tsx",
-      "lines": 74,
-      "characters": 2105
+      "lines": 69,
+      "characters": 2110
     },
     "src/types/vocabularyConceptSynonymUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptSynonymUpdate.generated.ts",
@@ -362,8 +362,8 @@
     },
     "src/forms/CreateConceptsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateConceptsForm.generated.tsx",
-      "lines": 79,
-      "characters": 2483
+      "lines": 86,
+      "characters": 2617
     },
     "src/types/vocabularyConceptCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptCreate.generated.ts",
@@ -382,8 +382,8 @@
     },
     "src/forms/UpdateConceptsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateConceptsIdForm.generated.tsx",
-      "lines": 80,
-      "characters": 2513
+      "lines": 87,
+      "characters": 2643
     },
     "src/services/useUpdateApiConceptsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiConceptsId.generated.ts",
@@ -392,8 +392,8 @@
     },
     "src/forms/PatchConceptsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchConceptsIdForm.generated.tsx",
-      "lines": 80,
-      "characters": 2592
+      "lines": 87,
+      "characters": 2724
     },
     "src/types/vocabularyConceptUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyConceptUpdate.generated.ts",
@@ -407,8 +407,8 @@
     },
     "src/forms/CreateConditionErasForm.generated.tsx": {
       "destinationPath": "@/forms/CreateConditionErasForm.generated.tsx",
-      "lines": 80,
-      "characters": 2280
+      "lines": 78,
+      "characters": 2378
     },
     "src/types/derivedConditionEraCreate.generated.ts": {
       "destinationPath": "@/types/derivedConditionEraCreate.generated.ts",
@@ -427,8 +427,8 @@
     },
     "src/forms/UpdateConditionErasIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateConditionErasIdForm.generated.tsx",
-      "lines": 81,
-      "characters": 2310
+      "lines": 79,
+      "characters": 2404
     },
     "src/services/useUpdateApiConditionErasId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiConditionErasId.generated.ts",
@@ -437,8 +437,8 @@
     },
     "src/forms/PatchConditionErasIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchConditionErasIdForm.generated.tsx",
-      "lines": 81,
-      "characters": 2350
+      "lines": 79,
+      "characters": 2446
     },
     "src/types/derivedConditionEraUpdate.generated.ts": {
       "destinationPath": "@/types/derivedConditionEraUpdate.generated.ts",
@@ -452,8 +452,8 @@
     },
     "src/forms/CreateConditionOccurrencesForm.generated.tsx": {
       "destinationPath": "@/forms/CreateConditionOccurrencesForm.generated.tsx",
-      "lines": 112,
-      "characters": 3632
+      "lines": 122,
+      "characters": 4085
     },
     "src/types/clinicalConditionOccurrenceCreate.generated.ts": {
       "destinationPath": "@/types/clinicalConditionOccurrenceCreate.generated.ts",
@@ -472,8 +472,8 @@
     },
     "src/forms/UpdateConditionOccurrencesIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateConditionOccurrencesIdForm.generated.tsx",
-      "lines": 113,
-      "characters": 3662
+      "lines": 123,
+      "characters": 4111
     },
     "src/services/useUpdateApiConditionOccurrencesId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiConditionOccurrencesId.generated.ts",
@@ -482,8 +482,8 @@
     },
     "src/forms/PatchConditionOccurrencesIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchConditionOccurrencesIdForm.generated.tsx",
-      "lines": 113,
-      "characters": 3702
+      "lines": 123,
+      "characters": 4153
     },
     "src/types/clinicalConditionOccurrenceUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalConditionOccurrenceUpdate.generated.ts",
@@ -497,8 +497,8 @@
     },
     "src/forms/CreateCostsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateCostsForm.generated.tsx",
-      "lines": 108,
-      "characters": 3733
+      "lines": 124,
+      "characters": 4234
     },
     "src/types/healthsystemCostCreate.generated.ts": {
       "destinationPath": "@/types/healthsystemCostCreate.generated.ts",
@@ -517,8 +517,8 @@
     },
     "src/forms/UpdateCostsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateCostsIdForm.generated.tsx",
-      "lines": 109,
-      "characters": 3763
+      "lines": 125,
+      "characters": 4260
     },
     "src/services/useUpdateApiCostsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiCostsId.generated.ts",
@@ -527,8 +527,8 @@
     },
     "src/forms/PatchCostsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchCostsIdForm.generated.tsx",
-      "lines": 109,
-      "characters": 3790
+      "lines": 125,
+      "characters": 4289
     },
     "src/types/healthsystemCostUpdate.generated.ts": {
       "destinationPath": "@/types/healthsystemCostUpdate.generated.ts",
@@ -542,8 +542,8 @@
     },
     "src/forms/CreateDeathsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateDeathsForm.generated.tsx",
-      "lines": 79,
-      "characters": 2325
+      "lines": 83,
+      "characters": 2528
     },
     "src/types/clinicalDeathCreate.generated.ts": {
       "destinationPath": "@/types/clinicalDeathCreate.generated.ts",
@@ -562,8 +562,8 @@
     },
     "src/forms/UpdateDeathsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateDeathsIdForm.generated.tsx",
-      "lines": 80,
-      "characters": 2355
+      "lines": 84,
+      "characters": 2554
     },
     "src/services/useUpdateApiDeathsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiDeathsId.generated.ts",
@@ -572,8 +572,8 @@
     },
     "src/forms/PatchDeathsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchDeathsIdForm.generated.tsx",
-      "lines": 80,
-      "characters": 2369
+      "lines": 84,
+      "characters": 2570
     },
     "src/types/clinicalDeathUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalDeathUpdate.generated.ts",
@@ -587,8 +587,8 @@
     },
     "src/forms/CreateDeviceExposuresForm.generated.tsx": {
       "destinationPath": "@/forms/CreateDeviceExposuresForm.generated.tsx",
-      "lines": 115,
-      "characters": 3828
+      "lines": 134,
+      "characters": 4423
     },
     "src/types/clinicalDeviceExposureCreate.generated.ts": {
       "destinationPath": "@/types/clinicalDeviceExposureCreate.generated.ts",
@@ -607,8 +607,8 @@
     },
     "src/forms/UpdateDeviceExposuresIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateDeviceExposuresIdForm.generated.tsx",
-      "lines": 116,
-      "characters": 3858
+      "lines": 135,
+      "characters": 4449
     },
     "src/services/useUpdateApiDeviceExposuresId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiDeviceExposuresId.generated.ts",
@@ -617,8 +617,8 @@
     },
     "src/forms/PatchDeviceExposuresIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchDeviceExposuresIdForm.generated.tsx",
-      "lines": 116,
-      "characters": 3898
+      "lines": 135,
+      "characters": 4491
     },
     "src/types/clinicalDeviceExposureUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalDeviceExposureUpdate.generated.ts",
@@ -632,8 +632,8 @@
     },
     "src/forms/CreateDomainsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateDomainsForm.generated.tsx",
-      "lines": 66,
-      "characters": 1801
+      "lines": 61,
+      "characters": 1788
     },
     "src/types/vocabularyDomainCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyDomainCreate.generated.ts",
@@ -652,8 +652,8 @@
     },
     "src/forms/UpdateDomainsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateDomainsIdForm.generated.tsx",
-      "lines": 67,
-      "characters": 1831
+      "lines": 62,
+      "characters": 1814
     },
     "src/services/useUpdateApiDomainsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiDomainsId.generated.ts",
@@ -662,8 +662,8 @@
     },
     "src/forms/PatchDomainsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchDomainsIdForm.generated.tsx",
-      "lines": 67,
-      "characters": 1845
+      "lines": 62,
+      "characters": 1830
     },
     "src/types/vocabularyDomainUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyDomainUpdate.generated.ts",
@@ -677,8 +677,8 @@
     },
     "src/forms/CreateDoseErasForm.generated.tsx": {
       "destinationPath": "@/forms/CreateDoseErasForm.generated.tsx",
-      "lines": 78,
-      "characters": 2234
+      "lines": 79,
+      "characters": 2357
     },
     "src/types/derivedDoseEraCreate.generated.ts": {
       "destinationPath": "@/types/derivedDoseEraCreate.generated.ts",
@@ -697,8 +697,8 @@
     },
     "src/forms/UpdateDoseErasIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateDoseErasIdForm.generated.tsx",
-      "lines": 79,
-      "characters": 2264
+      "lines": 80,
+      "characters": 2383
     },
     "src/services/useUpdateApiDoseErasId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiDoseErasId.generated.ts",
@@ -707,8 +707,8 @@
     },
     "src/forms/PatchDoseErasIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchDoseErasIdForm.generated.tsx",
-      "lines": 79,
-      "characters": 2330
+      "lines": 80,
+      "characters": 2451
     },
     "src/types/derivedDoseEraUpdate.generated.ts": {
       "destinationPath": "@/types/derivedDoseEraUpdate.generated.ts",
@@ -722,8 +722,8 @@
     },
     "src/forms/CreateDrugErasForm.generated.tsx": {
       "destinationPath": "@/forms/CreateDrugErasForm.generated.tsx",
-      "lines": 77,
-      "characters": 2202
+      "lines": 78,
+      "characters": 2346
     },
     "src/types/derivedDrugEraCreate.generated.ts": {
       "destinationPath": "@/types/derivedDrugEraCreate.generated.ts",
@@ -742,8 +742,8 @@
     },
     "src/forms/UpdateDrugErasIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateDrugErasIdForm.generated.tsx",
-      "lines": 78,
-      "characters": 2232
+      "lines": 79,
+      "characters": 2372
     },
     "src/services/useUpdateApiDrugErasId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiDrugErasId.generated.ts",
@@ -752,8 +752,8 @@
     },
     "src/forms/PatchDrugErasIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchDrugErasIdForm.generated.tsx",
-      "lines": 78,
-      "characters": 2272
+      "lines": 79,
+      "characters": 2414
     },
     "src/types/derivedDrugEraUpdate.generated.ts": {
       "destinationPath": "@/types/derivedDrugEraUpdate.generated.ts",
@@ -767,8 +767,8 @@
     },
     "src/forms/CreateDrugExposuresForm.generated.tsx": {
       "destinationPath": "@/forms/CreateDrugExposuresForm.generated.tsx",
-      "lines": 127,
-      "characters": 4198
+      "lines": 143,
+      "characters": 4794
     },
     "src/types/clinicalDrugExposureCreate.generated.ts": {
       "destinationPath": "@/types/clinicalDrugExposureCreate.generated.ts",
@@ -787,8 +787,8 @@
     },
     "src/forms/UpdateDrugExposuresIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateDrugExposuresIdForm.generated.tsx",
-      "lines": 128,
-      "characters": 4228
+      "lines": 144,
+      "characters": 4820
     },
     "src/services/useUpdateApiDrugExposuresId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiDrugExposuresId.generated.ts",
@@ -797,8 +797,8 @@
     },
     "src/forms/PatchDrugExposuresIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchDrugExposuresIdForm.generated.tsx",
-      "lines": 128,
-      "characters": 4281
+      "lines": 144,
+      "characters": 4875
     },
     "src/types/clinicalDrugExposureUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalDrugExposureUpdate.generated.ts",
@@ -812,8 +812,8 @@
     },
     "src/forms/CreateDrugStrengthsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateDrugStrengthsForm.generated.tsx",
-      "lines": 89,
-      "characters": 2955
+      "lines": 105,
+      "characters": 3362
     },
     "src/types/vocabularyDrugStrengthCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyDrugStrengthCreate.generated.ts",
@@ -832,8 +832,8 @@
     },
     "src/forms/UpdateDrugStrengthsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateDrugStrengthsIdForm.generated.tsx",
-      "lines": 90,
-      "characters": 2985
+      "lines": 106,
+      "characters": 3388
     },
     "src/services/useUpdateApiDrugStrengthsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiDrugStrengthsId.generated.ts",
@@ -842,8 +842,8 @@
     },
     "src/forms/PatchDrugStrengthsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchDrugStrengthsIdForm.generated.tsx",
-      "lines": 90,
-      "characters": 3025
+      "lines": 106,
+      "characters": 3430
     },
     "src/types/vocabularyDrugStrengthUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyDrugStrengthUpdate.generated.ts",
@@ -857,8 +857,8 @@
     },
     "src/forms/CreateEpisodeEventsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateEpisodeEventsForm.generated.tsx",
-      "lines": 69,
-      "characters": 1894
+      "lines": 64,
+      "characters": 1927
     },
     "src/types/derivedEpisodeEventCreate.generated.ts": {
       "destinationPath": "@/types/derivedEpisodeEventCreate.generated.ts",
@@ -877,8 +877,8 @@
     },
     "src/forms/UpdateEpisodeEventsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateEpisodeEventsIdForm.generated.tsx",
-      "lines": 70,
-      "characters": 1924
+      "lines": 65,
+      "characters": 1953
     },
     "src/services/useUpdateApiEpisodeEventsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiEpisodeEventsId.generated.ts",
@@ -887,8 +887,8 @@
     },
     "src/forms/PatchEpisodeEventsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchEpisodeEventsIdForm.generated.tsx",
-      "lines": 70,
-      "characters": 1951
+      "lines": 65,
+      "characters": 1982
     },
     "src/types/derivedEpisodeEventUpdate.generated.ts": {
       "destinationPath": "@/types/derivedEpisodeEventUpdate.generated.ts",
@@ -902,8 +902,8 @@
     },
     "src/forms/CreateEpisodesForm.generated.tsx": {
       "destinationPath": "@/forms/CreateEpisodesForm.generated.tsx",
-      "lines": 98,
-      "characters": 2991
+      "lines": 111,
+      "characters": 3426
     },
     "src/types/derivedEpisodeCreate.generated.ts": {
       "destinationPath": "@/types/derivedEpisodeCreate.generated.ts",
@@ -922,8 +922,8 @@
     },
     "src/forms/UpdateEpisodesIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateEpisodesIdForm.generated.tsx",
-      "lines": 99,
-      "characters": 3021
+      "lines": 112,
+      "characters": 3452
     },
     "src/services/useUpdateApiEpisodesId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiEpisodesId.generated.ts",
@@ -932,8 +932,8 @@
     },
     "src/forms/PatchEpisodesIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchEpisodesIdForm.generated.tsx",
-      "lines": 99,
-      "characters": 3074
+      "lines": 112,
+      "characters": 3507
     },
     "src/types/derivedEpisodeUpdate.generated.ts": {
       "destinationPath": "@/types/derivedEpisodeUpdate.generated.ts",
@@ -947,8 +947,8 @@
     },
     "src/forms/CreateFactRelationshipsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateFactRelationshipsForm.generated.tsx",
-      "lines": 65,
-      "characters": 1806
+      "lines": 60,
+      "characters": 1770
     },
     "src/types/resultsFactRelationshipCreate.generated.ts": {
       "destinationPath": "@/types/resultsFactRelationshipCreate.generated.ts",
@@ -967,8 +967,8 @@
     },
     "src/forms/UpdateFactRelationshipsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateFactRelationshipsIdForm.generated.tsx",
-      "lines": 66,
-      "characters": 1836
+      "lines": 61,
+      "characters": 1796
     },
     "src/services/useUpdateApiFactRelationshipsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiFactRelationshipsId.generated.ts",
@@ -977,8 +977,8 @@
     },
     "src/forms/PatchFactRelationshipsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchFactRelationshipsIdForm.generated.tsx",
-      "lines": 66,
-      "characters": 1837
+      "lines": 61,
+      "characters": 1799
     },
     "src/types/resultsFactRelationshipUpdate.generated.ts": {
       "destinationPath": "@/types/resultsFactRelationshipUpdate.generated.ts",
@@ -992,8 +992,8 @@
     },
     "src/forms/CreateLocationsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateLocationsForm.generated.tsx",
-      "lines": 87,
-      "characters": 2622
+      "lines": 82,
+      "characters": 2681
     },
     "src/types/healthsystemLocationCreate.generated.ts": {
       "destinationPath": "@/types/healthsystemLocationCreate.generated.ts",
@@ -1012,8 +1012,8 @@
     },
     "src/forms/UpdateLocationsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateLocationsIdForm.generated.tsx",
-      "lines": 88,
-      "characters": 2652
+      "lines": 83,
+      "characters": 2707
     },
     "src/services/useUpdateApiLocationsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiLocationsId.generated.ts",
@@ -1022,8 +1022,8 @@
     },
     "src/forms/PatchLocationsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchLocationsIdForm.generated.tsx",
-      "lines": 88,
-      "characters": 2640
+      "lines": 83,
+      "characters": 2697
     },
     "src/types/healthsystemLocationUpdate.generated.ts": {
       "destinationPath": "@/types/healthsystemLocationUpdate.generated.ts",
@@ -1037,8 +1037,8 @@
     },
     "src/forms/CreateMeasurementsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateMeasurementsForm.generated.tsx",
-      "lines": 116,
-      "characters": 4092
+      "lines": 150,
+      "characters": 4976
     },
     "src/types/clinicalMeasurementCreate.generated.ts": {
       "destinationPath": "@/types/clinicalMeasurementCreate.generated.ts",
@@ -1057,8 +1057,8 @@
     },
     "src/forms/UpdateMeasurementsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateMeasurementsIdForm.generated.tsx",
-      "lines": 119,
-      "characters": 4127
+      "lines": 153,
+      "characters": 5007
     },
     "src/services/useUpdateApiMeasurementsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiMeasurementsId.generated.ts",
@@ -1067,8 +1067,8 @@
     },
     "src/forms/PatchMeasurementsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchMeasurementsIdForm.generated.tsx",
-      "lines": 119,
-      "characters": 4167
+      "lines": 153,
+      "characters": 5049
     },
     "src/types/clinicalMeasurementUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalMeasurementUpdate.generated.ts",
@@ -1082,8 +1082,8 @@
     },
     "src/forms/CreateMetadatasForm.generated.tsx": {
       "destinationPath": "@/forms/CreateMetadatasForm.generated.tsx",
-      "lines": 79,
-      "characters": 2504
+      "lines": 86,
+      "characters": 2716
     },
     "src/types/metadataMetadataCreate.generated.ts": {
       "destinationPath": "@/types/metadataMetadataCreate.generated.ts",
@@ -1102,8 +1102,8 @@
     },
     "src/forms/UpdateMetadatasIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateMetadatasIdForm.generated.tsx",
-      "lines": 80,
-      "characters": 2534
+      "lines": 87,
+      "characters": 2742
     },
     "src/services/useUpdateApiMetadatasId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiMetadatasId.generated.ts",
@@ -1112,8 +1112,8 @@
     },
     "src/forms/PatchMetadatasIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchMetadatasIdForm.generated.tsx",
-      "lines": 80,
-      "characters": 2561
+      "lines": 87,
+      "characters": 2771
     },
     "src/types/metadataMetadataUpdate.generated.ts": {
       "destinationPath": "@/types/metadataMetadataUpdate.generated.ts",
@@ -1127,8 +1127,8 @@
     },
     "src/forms/CreateNoteNlpsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateNoteNlpsForm.generated.tsx",
-      "lines": 86,
-      "characters": 2816
+      "lines": 93,
+      "characters": 3083
     },
     "src/types/clinicalNoteNlpCreate.generated.ts": {
       "destinationPath": "@/types/clinicalNoteNlpCreate.generated.ts",
@@ -1147,8 +1147,8 @@
     },
     "src/forms/UpdateNoteNlpsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateNoteNlpsIdForm.generated.tsx",
-      "lines": 87,
-      "characters": 2846
+      "lines": 94,
+      "characters": 3109
     },
     "src/services/useUpdateApiNoteNlpsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiNoteNlpsId.generated.ts",
@@ -1157,8 +1157,8 @@
     },
     "src/forms/PatchNoteNlpsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchNoteNlpsIdForm.generated.tsx",
-      "lines": 87,
-      "characters": 2873
+      "lines": 94,
+      "characters": 3138
     },
     "src/types/clinicalNoteNlpUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalNoteNlpUpdate.generated.ts",
@@ -1172,8 +1172,8 @@
     },
     "src/forms/CreateNotesForm.generated.tsx": {
       "destinationPath": "@/forms/CreateNotesForm.generated.tsx",
-      "lines": 92,
-      "characters": 2991
+      "lines": 111,
+      "characters": 3560
     },
     "src/types/clinicalNoteCreate.generated.ts": {
       "destinationPath": "@/types/clinicalNoteCreate.generated.ts",
@@ -1192,8 +1192,8 @@
     },
     "src/forms/UpdateNotesIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateNotesIdForm.generated.tsx",
-      "lines": 93,
-      "characters": 3021
+      "lines": 112,
+      "characters": 3586
     },
     "src/services/useUpdateApiNotesId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiNotesId.generated.ts",
@@ -1202,8 +1202,8 @@
     },
     "src/forms/PatchNotesIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchNotesIdForm.generated.tsx",
-      "lines": 93,
-      "characters": 3100
+      "lines": 112,
+      "characters": 3667
     },
     "src/types/clinicalNoteUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalNoteUpdate.generated.ts",
@@ -1217,8 +1217,8 @@
     },
     "src/forms/CreateObservationPeriodsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateObservationPeriodsForm.generated.tsx",
-      "lines": 78,
-      "characters": 2278
+      "lines": 73,
+      "characters": 2296
     },
     "src/types/clinicalObservationPeriodCreate.generated.ts": {
       "destinationPath": "@/types/clinicalObservationPeriodCreate.generated.ts",
@@ -1237,8 +1237,8 @@
     },
     "src/forms/UpdateObservationPeriodsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateObservationPeriodsIdForm.generated.tsx",
-      "lines": 79,
-      "characters": 2308
+      "lines": 74,
+      "characters": 2322
     },
     "src/services/useUpdateApiObservationPeriodsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiObservationPeriodsId.generated.ts",
@@ -1247,8 +1247,8 @@
     },
     "src/forms/PatchObservationPeriodsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchObservationPeriodsIdForm.generated.tsx",
-      "lines": 79,
-      "characters": 2348
+      "lines": 74,
+      "characters": 2364
     },
     "src/types/clinicalObservationPeriodUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalObservationPeriodUpdate.generated.ts",
@@ -1262,8 +1262,8 @@
     },
     "src/forms/CreateObservationsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateObservationsForm.generated.tsx",
-      "lines": 115,
-      "characters": 3981
+      "lines": 146,
+      "characters": 4794
     },
     "src/types/clinicalObservationCreate.generated.ts": {
       "destinationPath": "@/types/clinicalObservationCreate.generated.ts",
@@ -1282,8 +1282,8 @@
     },
     "src/forms/UpdateObservationsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateObservationsIdForm.generated.tsx",
-      "lines": 118,
-      "characters": 4016
+      "lines": 149,
+      "characters": 4825
     },
     "src/services/useUpdateApiObservationsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiObservationsId.generated.ts",
@@ -1292,8 +1292,8 @@
     },
     "src/forms/PatchObservationsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchObservationsIdForm.generated.tsx",
-      "lines": 118,
-      "characters": 4056
+      "lines": 149,
+      "characters": 4867
     },
     "src/types/clinicalObservationUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalObservationUpdate.generated.ts",
@@ -1307,8 +1307,8 @@
     },
     "src/forms/CreatePayerPlanPeriodsForm.generated.tsx": {
       "destinationPath": "@/forms/CreatePayerPlanPeriodsForm.generated.tsx",
-      "lines": 114,
-      "characters": 3729
+      "lines": 133,
+      "characters": 4318
     },
     "src/types/healthsystemPayerPlanPeriodCreate.generated.ts": {
       "destinationPath": "@/types/healthsystemPayerPlanPeriodCreate.generated.ts",
@@ -1327,8 +1327,8 @@
     },
     "src/forms/UpdatePayerPlanPeriodsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdatePayerPlanPeriodsIdForm.generated.tsx",
-      "lines": 115,
-      "characters": 3759
+      "lines": 134,
+      "characters": 4344
     },
     "src/services/useUpdateApiPayerPlanPeriodsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiPayerPlanPeriodsId.generated.ts",
@@ -1337,8 +1337,8 @@
     },
     "src/forms/PatchPayerPlanPeriodsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchPayerPlanPeriodsIdForm.generated.tsx",
-      "lines": 115,
-      "characters": 3786
+      "lines": 134,
+      "characters": 4373
     },
     "src/types/healthsystemPayerPlanPeriodUpdate.generated.ts": {
       "destinationPath": "@/types/healthsystemPayerPlanPeriodUpdate.generated.ts",
@@ -1352,8 +1352,8 @@
     },
     "src/forms/CreatePersonsForm.generated.tsx": {
       "destinationPath": "@/forms/CreatePersonsForm.generated.tsx",
-      "lines": 105,
-      "characters": 3399
+      "lines": 127,
+      "characters": 4071
     },
     "src/types/clinicalPersonCreate.generated.ts": {
       "destinationPath": "@/types/clinicalPersonCreate.generated.ts",
@@ -1372,8 +1372,8 @@
     },
     "src/forms/UpdatePersonsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdatePersonsIdForm.generated.tsx",
-      "lines": 106,
-      "characters": 3429
+      "lines": 128,
+      "characters": 4097
     },
     "src/services/useUpdateApiPersonsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiPersonsId.generated.ts",
@@ -1382,8 +1382,8 @@
     },
     "src/forms/PatchPersonsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchPersonsIdForm.generated.tsx",
-      "lines": 106,
-      "characters": 3469
+      "lines": 128,
+      "characters": 4139
     },
     "src/types/clinicalPersonUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalPersonUpdate.generated.ts",
@@ -1397,8 +1397,8 @@
     },
     "src/forms/CreateProcedureOccurrencesForm.generated.tsx": {
       "destinationPath": "@/forms/CreateProcedureOccurrencesForm.generated.tsx",
-      "lines": 109,
-      "characters": 3509
+      "lines": 122,
+      "characters": 3993
     },
     "src/types/clinicalProcedureOccurrenceCreate.generated.ts": {
       "destinationPath": "@/types/clinicalProcedureOccurrenceCreate.generated.ts",
@@ -1417,8 +1417,8 @@
     },
     "src/forms/UpdateProcedureOccurrencesIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateProcedureOccurrencesIdForm.generated.tsx",
-      "lines": 110,
-      "characters": 3539
+      "lines": 123,
+      "characters": 4019
     },
     "src/services/useUpdateApiProcedureOccurrencesId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiProcedureOccurrencesId.generated.ts",
@@ -1427,8 +1427,8 @@
     },
     "src/forms/PatchProcedureOccurrencesIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchProcedureOccurrencesIdForm.generated.tsx",
-      "lines": 110,
-      "characters": 3579
+      "lines": 123,
+      "characters": 4061
     },
     "src/types/clinicalProcedureOccurrenceUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalProcedureOccurrenceUpdate.generated.ts",
@@ -1442,8 +1442,8 @@
     },
     "src/forms/CreateProvidersForm.generated.tsx": {
       "destinationPath": "@/forms/CreateProvidersForm.generated.tsx",
-      "lines": 95,
-      "characters": 2991
+      "lines": 102,
+      "characters": 3335
     },
     "src/types/healthsystemProviderCreate.generated.ts": {
       "destinationPath": "@/types/healthsystemProviderCreate.generated.ts",
@@ -1462,8 +1462,8 @@
     },
     "src/forms/UpdateProvidersIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateProvidersIdForm.generated.tsx",
-      "lines": 96,
-      "characters": 3021
+      "lines": 103,
+      "characters": 3361
     },
     "src/services/useUpdateApiProvidersId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiProvidersId.generated.ts",
@@ -1472,8 +1472,8 @@
     },
     "src/forms/PatchProvidersIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchProvidersIdForm.generated.tsx",
-      "lines": 96,
-      "characters": 3009
+      "lines": 103,
+      "characters": 3351
     },
     "src/types/healthsystemProviderUpdate.generated.ts": {
       "destinationPath": "@/types/healthsystemProviderUpdate.generated.ts",
@@ -1487,8 +1487,8 @@
     },
     "src/forms/CreateRelationshipsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateRelationshipsForm.generated.tsx",
-      "lines": 77,
-      "characters": 2281
+      "lines": 81,
+      "characters": 2379
     },
     "src/types/vocabularyRelationshipCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyRelationshipCreate.generated.ts",
@@ -1507,8 +1507,8 @@
     },
     "src/forms/UpdateRelationshipsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateRelationshipsIdForm.generated.tsx",
-      "lines": 78,
-      "characters": 2311
+      "lines": 82,
+      "characters": 2405
     },
     "src/services/useUpdateApiRelationshipsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiRelationshipsId.generated.ts",
@@ -1517,8 +1517,8 @@
     },
     "src/forms/PatchRelationshipsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchRelationshipsIdForm.generated.tsx",
-      "lines": 78,
-      "characters": 2364
+      "lines": 82,
+      "characters": 2460
     },
     "src/types/vocabularyRelationshipUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyRelationshipUpdate.generated.ts",
@@ -1532,8 +1532,8 @@
     },
     "src/forms/CreateSourceToConceptMapsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateSourceToConceptMapsForm.generated.tsx",
-      "lines": 91,
-      "characters": 2824
+      "lines": 98,
+      "characters": 3006
     },
     "src/types/vocabularySourceToConceptMapCreate.generated.ts": {
       "destinationPath": "@/types/vocabularySourceToConceptMapCreate.generated.ts",
@@ -1552,8 +1552,8 @@
     },
     "src/forms/UpdateSourceToConceptMapsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateSourceToConceptMapsIdForm.generated.tsx",
-      "lines": 92,
-      "characters": 2854
+      "lines": 99,
+      "characters": 3032
     },
     "src/services/useUpdateApiSourceToConceptMapsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiSourceToConceptMapsId.generated.ts",
@@ -1562,8 +1562,8 @@
     },
     "src/forms/PatchSourceToConceptMapsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchSourceToConceptMapsIdForm.generated.tsx",
-      "lines": 92,
-      "characters": 2933
+      "lines": 99,
+      "characters": 3113
     },
     "src/types/vocabularySourceToConceptMapUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularySourceToConceptMapUpdate.generated.ts",
@@ -1577,8 +1577,8 @@
     },
     "src/forms/CreateSpecimensForm.generated.tsx": {
       "destinationPath": "@/forms/CreateSpecimensForm.generated.tsx",
-      "lines": 103,
-      "characters": 3339
+      "lines": 116,
+      "characters": 3766
     },
     "src/types/clinicalSpecimenCreate.generated.ts": {
       "destinationPath": "@/types/clinicalSpecimenCreate.generated.ts",
@@ -1597,8 +1597,8 @@
     },
     "src/forms/UpdateSpecimensIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateSpecimensIdForm.generated.tsx",
-      "lines": 104,
-      "characters": 3369
+      "lines": 117,
+      "characters": 3792
     },
     "src/services/useUpdateApiSpecimensId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiSpecimensId.generated.ts",
@@ -1607,8 +1607,8 @@
     },
     "src/forms/PatchSpecimensIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchSpecimensIdForm.generated.tsx",
-      "lines": 104,
-      "characters": 3409
+      "lines": 117,
+      "characters": 3834
     },
     "src/types/clinicalSpecimenUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalSpecimenUpdate.generated.ts",
@@ -1622,8 +1622,8 @@
     },
     "src/forms/CreateVisitDetailsForm.generated.tsx": {
       "destinationPath": "@/forms/CreateVisitDetailsForm.generated.tsx",
-      "lines": 119,
-      "characters": 3918
+      "lines": 135,
+      "characters": 4577
     },
     "src/types/clinicalVisitDetailCreate.generated.ts": {
       "destinationPath": "@/types/clinicalVisitDetailCreate.generated.ts",
@@ -1642,8 +1642,8 @@
     },
     "src/forms/UpdateVisitDetailsIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateVisitDetailsIdForm.generated.tsx",
-      "lines": 122,
-      "characters": 3953
+      "lines": 138,
+      "characters": 4608
     },
     "src/services/useUpdateApiVisitDetailsId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiVisitDetailsId.generated.ts",
@@ -1652,8 +1652,8 @@
     },
     "src/forms/PatchVisitDetailsIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchVisitDetailsIdForm.generated.tsx",
-      "lines": 122,
-      "characters": 4019
+      "lines": 138,
+      "characters": 4676
     },
     "src/types/clinicalVisitDetailUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalVisitDetailUpdate.generated.ts",
@@ -1667,8 +1667,8 @@
     },
     "src/forms/CreateVisitOccurrencesForm.generated.tsx": {
       "destinationPath": "@/forms/CreateVisitOccurrencesForm.generated.tsx",
-      "lines": 111,
-      "characters": 3607
+      "lines": 127,
+      "characters": 4152
     },
     "src/types/clinicalVisitOccurrenceCreate.generated.ts": {
       "destinationPath": "@/types/clinicalVisitOccurrenceCreate.generated.ts",
@@ -1687,8 +1687,8 @@
     },
     "src/forms/UpdateVisitOccurrencesIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateVisitOccurrencesIdForm.generated.tsx",
-      "lines": 112,
-      "characters": 3637
+      "lines": 128,
+      "characters": 4178
     },
     "src/services/useUpdateApiVisitOccurrencesId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiVisitOccurrencesId.generated.ts",
@@ -1697,8 +1697,8 @@
     },
     "src/forms/PatchVisitOccurrencesIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchVisitOccurrencesIdForm.generated.tsx",
-      "lines": 112,
-      "characters": 3690
+      "lines": 128,
+      "characters": 4233
     },
     "src/types/clinicalVisitOccurrenceUpdate.generated.ts": {
       "destinationPath": "@/types/clinicalVisitOccurrenceUpdate.generated.ts",
@@ -1712,8 +1712,8 @@
     },
     "src/forms/CreateVocabularysForm.generated.tsx": {
       "destinationPath": "@/forms/CreateVocabularysForm.generated.tsx",
-      "lines": 76,
-      "characters": 2179
+      "lines": 74,
+      "characters": 2220
     },
     "src/types/vocabularyVocabularyCreate.generated.ts": {
       "destinationPath": "@/types/vocabularyVocabularyCreate.generated.ts",
@@ -1732,8 +1732,8 @@
     },
     "src/forms/UpdateVocabularysIdForm.generated.tsx": {
       "destinationPath": "@/forms/UpdateVocabularysIdForm.generated.tsx",
-      "lines": 79,
-      "characters": 2214
+      "lines": 77,
+      "characters": 2251
     },
     "src/services/useUpdateApiVocabularysId.generated.ts": {
       "destinationPath": "@/services/useUpdateApiVocabularysId.generated.ts",
@@ -1742,8 +1742,8 @@
     },
     "src/forms/PatchVocabularysIdForm.generated.tsx": {
       "destinationPath": "@/forms/PatchVocabularysIdForm.generated.tsx",
-      "lines": 77,
-      "characters": 2223
+      "lines": 75,
+      "characters": 2262
     },
     "src/types/vocabularyVocabularyUpdate.generated.ts": {
       "destinationPath": "@/types/vocabularyVocabularyUpdate.generated.ts",
@@ -1758,12 +1758,17 @@
     "src/inputs/CareSitesSelect.generated.tsx": {
       "destinationPath": "@/inputs/CareSitesSelect.generated.tsx",
       "lines": 80,
-      "characters": 1786
+      "characters": 1791
     },
     "src/services/useGetApiCareSites.generated.ts": {
       "destinationPath": "@/services/useGetApiCareSites.generated.ts",
-      "lines": 61,
-      "characters": 1537
+      "lines": 50,
+      "characters": 1275
+    },
+    "src/types/healthsystemCareSiteList.generated.ts": {
+      "destinationPath": "@/types/healthsystemCareSiteList.generated.ts",
+      "lines": 21,
+      "characters": 532
     },
     "src/types/commonConceptId.generated.ts": {
       "destinationPath": "@/types/commonConceptId.generated.ts",
@@ -1775,385 +1780,425 @@
       "lines": 6,
       "characters": 126
     },
-    "src/inputs/CdmSourcesSelect.generated.tsx": {
-      "destinationPath": "@/inputs/CdmSourcesSelect.generated.tsx",
-      "lines": 80,
-      "characters": 1796
-    },
-    "src/services/useGetApiCdmSources.generated.ts": {
-      "destinationPath": "@/services/useGetApiCdmSources.generated.ts",
-      "lines": 58,
-      "characters": 1446
-    },
     "src/inputs/CohortDefinitionsSelect.generated.tsx": {
       "destinationPath": "@/inputs/CohortDefinitionsSelect.generated.tsx",
       "lines": 82,
-      "characters": 1871
+      "characters": 1876
     },
     "src/services/useGetApiCohortDefinitions.generated.ts": {
       "destinationPath": "@/services/useGetApiCohortDefinitions.generated.ts",
-      "lines": 64,
-      "characters": 1652
+      "lines": 53,
+      "characters": 1374
     },
-    "src/inputs/CohortsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/CohortsSelect.generated.tsx",
-      "lines": 80,
-      "characters": 1766
-    },
-    "src/services/useGetApiCohorts.generated.ts": {
-      "destinationPath": "@/services/useGetApiCohorts.generated.ts",
-      "lines": 48,
-      "characters": 1192
-    },
-    "src/inputs/ConceptAncestorsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/ConceptAncestorsSelect.generated.tsx",
-      "lines": 80,
-      "characters": 1856
-    },
-    "src/services/useGetApiConceptAncestors.generated.ts": {
-      "destinationPath": "@/services/useGetApiConceptAncestors.generated.ts",
-      "lines": 64,
-      "characters": 1642
+    "src/types/resultsCohortDefinitionList.generated.ts": {
+      "destinationPath": "@/types/resultsCohortDefinitionList.generated.ts",
+      "lines": 21,
+      "characters": 553
     },
     "src/inputs/ConceptClasssSelect.generated.tsx": {
       "destinationPath": "@/inputs/ConceptClasssSelect.generated.tsx",
       "lines": 80,
-      "characters": 1826
+      "characters": 1831
     },
     "src/services/useGetApiConceptClasss.generated.ts": {
       "destinationPath": "@/services/useGetApiConceptClasss.generated.ts",
-      "lines": 61,
-      "characters": 1519
+      "lines": 50,
+      "characters": 1249
     },
-    "src/inputs/ConceptRelationshipsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/ConceptRelationshipsSelect.generated.tsx",
-      "lines": 82,
-      "characters": 1901
-    },
-    "src/services/useGetApiConceptRelationships.generated.ts": {
-      "destinationPath": "@/services/useGetApiConceptRelationships.generated.ts",
-      "lines": 60,
-      "characters": 1482
-    },
-    "src/inputs/ConceptSynonymsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/ConceptSynonymsSelect.generated.tsx",
-      "lines": 80,
-      "characters": 1846
-    },
-    "src/services/useGetApiConceptSynonyms.generated.ts": {
-      "destinationPath": "@/services/useGetApiConceptSynonyms.generated.ts",
-      "lines": 64,
-      "characters": 1599
+    "src/types/vocabularyConceptClassList.generated.ts": {
+      "destinationPath": "@/types/vocabularyConceptClassList.generated.ts",
+      "lines": 21,
+      "characters": 546
     },
     "src/inputs/ConceptsSelect.generated.tsx": {
       "destinationPath": "@/inputs/ConceptsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1776
+      "characters": 1781
     },
     "src/services/useGetApiConcepts.generated.ts": {
       "destinationPath": "@/services/useGetApiConcepts.generated.ts",
-      "lines": 63,
-      "characters": 1473
+      "lines": 52,
+      "characters": 1213
+    },
+    "src/types/vocabularyConceptList.generated.ts": {
+      "destinationPath": "@/types/vocabularyConceptList.generated.ts",
+      "lines": 21,
+      "characters": 511
     },
     "src/inputs/ConditionErasSelect.generated.tsx": {
       "destinationPath": "@/inputs/ConditionErasSelect.generated.tsx",
       "lines": 80,
-      "characters": 1826
+      "characters": 1831
     },
     "src/services/useGetApiConditionEras.generated.ts": {
       "destinationPath": "@/services/useGetApiConditionEras.generated.ts",
-      "lines": 64,
-      "characters": 1558
+      "lines": 53,
+      "characters": 1288
+    },
+    "src/types/derivedConditionEraList.generated.ts": {
+      "destinationPath": "@/types/derivedConditionEraList.generated.ts",
+      "lines": 21,
+      "characters": 525
     },
     "src/inputs/ConditionOccurrencesSelect.generated.tsx": {
       "destinationPath": "@/inputs/ConditionOccurrencesSelect.generated.tsx",
       "lines": 82,
-      "characters": 1901
+      "characters": 1906
     },
     "src/services/useGetApiConditionOccurrences.generated.ts": {
       "destinationPath": "@/services/useGetApiConditionOccurrences.generated.ts",
-      "lines": 82,
-      "characters": 2247
+      "lines": 71,
+      "characters": 1963
+    },
+    "src/types/clinicalConditionOccurrenceList.generated.ts": {
+      "destinationPath": "@/types/clinicalConditionOccurrenceList.generated.ts",
+      "lines": 21,
+      "characters": 581
     },
     "src/inputs/CostsSelect.generated.tsx": {
       "destinationPath": "@/inputs/CostsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1746
+      "characters": 1751
     },
     "src/services/useGetApiCosts.generated.ts": {
       "destinationPath": "@/services/useGetApiCosts.generated.ts",
-      "lines": 70,
-      "characters": 1787
+      "lines": 59,
+      "characters": 1533
     },
-    "src/inputs/DeathsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/DeathsSelect.generated.tsx",
-      "lines": 80,
-      "characters": 1756
-    },
-    "src/services/useGetApiDeaths.generated.ts": {
-      "destinationPath": "@/services/useGetApiDeaths.generated.ts",
-      "lines": 67,
-      "characters": 1672
+    "src/types/healthsystemCostList.generated.ts": {
+      "destinationPath": "@/types/healthsystemCostList.generated.ts",
+      "lines": 21,
+      "characters": 504
     },
     "src/inputs/DeviceExposuresSelect.generated.tsx": {
       "destinationPath": "@/inputs/DeviceExposuresSelect.generated.tsx",
       "lines": 80,
-      "characters": 1846
+      "characters": 1851
     },
     "src/services/useGetApiDeviceExposures.generated.ts": {
       "destinationPath": "@/services/useGetApiDeviceExposures.generated.ts",
-      "lines": 85,
-      "characters": 2245
+      "lines": 74,
+      "characters": 1971
+    },
+    "src/types/clinicalDeviceExposureList.generated.ts": {
+      "destinationPath": "@/types/clinicalDeviceExposureList.generated.ts",
+      "lines": 21,
+      "characters": 546
     },
     "src/inputs/DomainsSelect.generated.tsx": {
       "destinationPath": "@/inputs/DomainsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1766
+      "characters": 1771
     },
     "src/services/useGetApiDomains.generated.ts": {
       "destinationPath": "@/services/useGetApiDomains.generated.ts",
-      "lines": 58,
-      "characters": 1408
+      "lines": 47,
+      "characters": 1150
+    },
+    "src/types/vocabularyDomainList.generated.ts": {
+      "destinationPath": "@/types/vocabularyDomainList.generated.ts",
+      "lines": 21,
+      "characters": 504
     },
     "src/inputs/DoseErasSelect.generated.tsx": {
       "destinationPath": "@/inputs/DoseErasSelect.generated.tsx",
       "lines": 80,
-      "characters": 1776
+      "characters": 1781
     },
     "src/services/useGetApiDoseEras.generated.ts": {
       "destinationPath": "@/services/useGetApiDoseEras.generated.ts",
-      "lines": 64,
-      "characters": 1554
+      "lines": 53,
+      "characters": 1294
+    },
+    "src/types/derivedDoseEraList.generated.ts": {
+      "destinationPath": "@/types/derivedDoseEraList.generated.ts",
+      "lines": 21,
+      "characters": 490
     },
     "src/inputs/DrugErasSelect.generated.tsx": {
       "destinationPath": "@/inputs/DrugErasSelect.generated.tsx",
       "lines": 80,
-      "characters": 1776
+      "characters": 1781
     },
     "src/services/useGetApiDrugEras.generated.ts": {
       "destinationPath": "@/services/useGetApiDrugEras.generated.ts",
-      "lines": 61,
-      "characters": 1464
+      "lines": 50,
+      "characters": 1204
+    },
+    "src/types/derivedDrugEraList.generated.ts": {
+      "destinationPath": "@/types/derivedDrugEraList.generated.ts",
+      "lines": 21,
+      "characters": 490
     },
     "src/inputs/DrugExposuresSelect.generated.tsx": {
       "destinationPath": "@/inputs/DrugExposuresSelect.generated.tsx",
       "lines": 80,
-      "characters": 1826
+      "characters": 1831
     },
     "src/services/useGetApiDrugExposures.generated.ts": {
       "destinationPath": "@/services/useGetApiDrugExposures.generated.ts",
-      "lines": 82,
-      "characters": 2099
+      "lines": 71,
+      "characters": 1829
     },
-    "src/inputs/DrugStrengthsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/DrugStrengthsSelect.generated.tsx",
-      "lines": 80,
-      "characters": 1826
-    },
-    "src/services/useGetApiDrugStrengths.generated.ts": {
-      "destinationPath": "@/services/useGetApiDrugStrengths.generated.ts",
-      "lines": 73,
-      "characters": 1957
-    },
-    "src/inputs/EpisodeEventsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/EpisodeEventsSelect.generated.tsx",
-      "lines": 80,
-      "characters": 1826
-    },
-    "src/services/useGetApiEpisodeEvents.generated.ts": {
-      "destinationPath": "@/services/useGetApiEpisodeEvents.generated.ts",
-      "lines": 64,
-      "characters": 1591
+    "src/types/clinicalDrugExposureList.generated.ts": {
+      "destinationPath": "@/types/clinicalDrugExposureList.generated.ts",
+      "lines": 21,
+      "characters": 532
     },
     "src/inputs/EpisodesSelect.generated.tsx": {
       "destinationPath": "@/inputs/EpisodesSelect.generated.tsx",
       "lines": 80,
-      "characters": 1776
+      "characters": 1781
     },
     "src/services/useGetApiEpisodes.generated.ts": {
       "destinationPath": "@/services/useGetApiEpisodes.generated.ts",
-      "lines": 70,
-      "characters": 1826
+      "lines": 59,
+      "characters": 1566
     },
-    "src/inputs/FactRelationshipsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/FactRelationshipsSelect.generated.tsx",
-      "lines": 82,
-      "characters": 1871
-    },
-    "src/services/useGetApiFactRelationships.generated.ts": {
-      "destinationPath": "@/services/useGetApiFactRelationships.generated.ts",
-      "lines": 61,
-      "characters": 1544
+    "src/types/derivedEpisodeList.generated.ts": {
+      "destinationPath": "@/types/derivedEpisodeList.generated.ts",
+      "lines": 21,
+      "characters": 490
     },
     "src/inputs/LocationsSelect.generated.tsx": {
       "destinationPath": "@/inputs/LocationsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1786
+      "characters": 1791
     },
     "src/services/useGetApiLocations.generated.ts": {
       "destinationPath": "@/services/useGetApiLocations.generated.ts",
-      "lines": 58,
-      "characters": 1440
+      "lines": 47,
+      "characters": 1178
+    },
+    "src/types/healthsystemLocationList.generated.ts": {
+      "destinationPath": "@/types/healthsystemLocationList.generated.ts",
+      "lines": 21,
+      "characters": 532
     },
     "src/inputs/MeasurementsSelect.generated.tsx": {
       "destinationPath": "@/inputs/MeasurementsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1816
+      "characters": 1821
     },
     "src/services/useGetApiMeasurements.generated.ts": {
       "destinationPath": "@/services/useGetApiMeasurements.generated.ts",
-      "lines": 91,
-      "characters": 2560
+      "lines": 80,
+      "characters": 2292
+    },
+    "src/types/clinicalMeasurementList.generated.ts": {
+      "destinationPath": "@/types/clinicalMeasurementList.generated.ts",
+      "lines": 21,
+      "characters": 525
     },
     "src/inputs/MetadatasSelect.generated.tsx": {
       "destinationPath": "@/inputs/MetadatasSelect.generated.tsx",
       "lines": 80,
-      "characters": 1786
+      "characters": 1791
     },
     "src/services/useGetApiMetadatas.generated.ts": {
       "destinationPath": "@/services/useGetApiMetadatas.generated.ts",
-      "lines": 64,
-      "characters": 1645
+      "lines": 53,
+      "characters": 1383
+    },
+    "src/types/metadataMetadataList.generated.ts": {
+      "destinationPath": "@/types/metadataMetadataList.generated.ts",
+      "lines": 21,
+      "characters": 504
     },
     "src/inputs/NoteNlpsSelect.generated.tsx": {
       "destinationPath": "@/inputs/NoteNlpsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1776
+      "characters": 1781
     },
     "src/services/useGetApiNoteNlps.generated.ts": {
       "destinationPath": "@/services/useGetApiNoteNlps.generated.ts",
-      "lines": 64,
-      "characters": 1639
+      "lines": 53,
+      "characters": 1379
+    },
+    "src/types/clinicalNoteNlpList.generated.ts": {
+      "destinationPath": "@/types/clinicalNoteNlpList.generated.ts",
+      "lines": 21,
+      "characters": 497
     },
     "src/inputs/NotesSelect.generated.tsx": {
       "destinationPath": "@/inputs/NotesSelect.generated.tsx",
       "lines": 80,
-      "characters": 1746
+      "characters": 1751
     },
     "src/services/useGetApiNotes.generated.ts": {
       "destinationPath": "@/services/useGetApiNotes.generated.ts",
-      "lines": 82,
-      "characters": 2133
+      "lines": 71,
+      "characters": 1879
+    },
+    "src/types/clinicalNoteList.generated.ts": {
+      "destinationPath": "@/types/clinicalNoteList.generated.ts",
+      "lines": 18,
+      "characters": 471
     },
     "src/inputs/ObservationPeriodsSelect.generated.tsx": {
       "destinationPath": "@/inputs/ObservationPeriodsSelect.generated.tsx",
       "lines": 82,
-      "characters": 1881
+      "characters": 1886
     },
     "src/services/useGetApiObservationPeriods.generated.ts": {
       "destinationPath": "@/services/useGetApiObservationPeriods.generated.ts",
-      "lines": 64,
-      "characters": 1618
+      "lines": 53,
+      "characters": 1338
+    },
+    "src/types/clinicalObservationPeriodList.generated.ts": {
+      "destinationPath": "@/types/clinicalObservationPeriodList.generated.ts",
+      "lines": 21,
+      "characters": 567
     },
     "src/inputs/ObservationsSelect.generated.tsx": {
       "destinationPath": "@/inputs/ObservationsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1816
+      "characters": 1821
     },
     "src/services/useGetApiObservations.generated.ts": {
       "destinationPath": "@/services/useGetApiObservations.generated.ts",
-      "lines": 88,
-      "characters": 2449
+      "lines": 77,
+      "characters": 2181
+    },
+    "src/types/clinicalObservationList.generated.ts": {
+      "destinationPath": "@/types/clinicalObservationList.generated.ts",
+      "lines": 21,
+      "characters": 525
     },
     "src/inputs/PayerPlanPeriodsSelect.generated.tsx": {
       "destinationPath": "@/inputs/PayerPlanPeriodsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1856
+      "characters": 1861
     },
     "src/services/useGetApiPayerPlanPeriods.generated.ts": {
       "destinationPath": "@/services/useGetApiPayerPlanPeriods.generated.ts",
-      "lines": 85,
-      "characters": 2375
+      "lines": 74,
+      "characters": 2099
+    },
+    "src/types/healthsystemPayerPlanPeriodList.generated.ts": {
+      "destinationPath": "@/types/healthsystemPayerPlanPeriodList.generated.ts",
+      "lines": 21,
+      "characters": 581
     },
     "src/inputs/PersonsSelect.generated.tsx": {
       "destinationPath": "@/inputs/PersonsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1766
+      "characters": 1771
     },
     "src/services/useGetApiPersons.generated.ts": {
       "destinationPath": "@/services/useGetApiPersons.generated.ts",
-      "lines": 82,
-      "characters": 2159
+      "lines": 71,
+      "characters": 1901
+    },
+    "src/types/clinicalPersonList.generated.ts": {
+      "destinationPath": "@/types/clinicalPersonList.generated.ts",
+      "lines": 21,
+      "characters": 490
     },
     "src/inputs/ProcedureOccurrencesSelect.generated.tsx": {
       "destinationPath": "@/inputs/ProcedureOccurrencesSelect.generated.tsx",
       "lines": 82,
-      "characters": 1901
+      "characters": 1906
     },
     "src/services/useGetApiProcedureOccurrences.generated.ts": {
       "destinationPath": "@/services/useGetApiProcedureOccurrences.generated.ts",
-      "lines": 82,
-      "characters": 2223
+      "lines": 71,
+      "characters": 1939
+    },
+    "src/types/clinicalProcedureOccurrenceList.generated.ts": {
+      "destinationPath": "@/types/clinicalProcedureOccurrenceList.generated.ts",
+      "lines": 21,
+      "characters": 581
     },
     "src/inputs/ProvidersSelect.generated.tsx": {
       "destinationPath": "@/inputs/ProvidersSelect.generated.tsx",
       "lines": 80,
-      "characters": 1786
+      "characters": 1791
     },
     "src/services/useGetApiProviders.generated.ts": {
       "destinationPath": "@/services/useGetApiProviders.generated.ts",
-      "lines": 70,
-      "characters": 1857
+      "lines": 59,
+      "characters": 1595
+    },
+    "src/types/healthsystemProviderList.generated.ts": {
+      "destinationPath": "@/types/healthsystemProviderList.generated.ts",
+      "lines": 21,
+      "characters": 532
     },
     "src/inputs/RelationshipsSelect.generated.tsx": {
       "destinationPath": "@/inputs/RelationshipsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1826
+      "characters": 1831
     },
     "src/services/useGetApiRelationships.generated.ts": {
       "destinationPath": "@/services/useGetApiRelationships.generated.ts",
-      "lines": 61,
-      "characters": 1515
+      "lines": 50,
+      "characters": 1245
     },
-    "src/inputs/SourceToConceptMapsSelect.generated.tsx": {
-      "destinationPath": "@/inputs/SourceToConceptMapsSelect.generated.tsx",
-      "lines": 82,
-      "characters": 1891
-    },
-    "src/services/useGetApiSourceToConceptMaps.generated.ts": {
-      "destinationPath": "@/services/useGetApiSourceToConceptMaps.generated.ts",
-      "lines": 67,
-      "characters": 1752
+    "src/types/vocabularyRelationshipList.generated.ts": {
+      "destinationPath": "@/types/vocabularyRelationshipList.generated.ts",
+      "lines": 21,
+      "characters": 546
     },
     "src/inputs/SpecimensSelect.generated.tsx": {
       "destinationPath": "@/inputs/SpecimensSelect.generated.tsx",
       "lines": 80,
-      "characters": 1786
+      "characters": 1791
     },
     "src/services/useGetApiSpecimens.generated.ts": {
       "destinationPath": "@/services/useGetApiSpecimens.generated.ts",
-      "lines": 73,
-      "characters": 1933
+      "lines": 62,
+      "characters": 1671
+    },
+    "src/types/clinicalSpecimenList.generated.ts": {
+      "destinationPath": "@/types/clinicalSpecimenList.generated.ts",
+      "lines": 21,
+      "characters": 504
     },
     "src/inputs/VisitDetailsSelect.generated.tsx": {
       "destinationPath": "@/inputs/VisitDetailsSelect.generated.tsx",
       "lines": 80,
-      "characters": 1816
+      "characters": 1821
     },
     "src/services/useGetApiVisitDetails.generated.ts": {
       "destinationPath": "@/services/useGetApiVisitDetails.generated.ts",
-      "lines": 91,
-      "characters": 2506
+      "lines": 80,
+      "characters": 2238
+    },
+    "src/types/clinicalVisitDetailList.generated.ts": {
+      "destinationPath": "@/types/clinicalVisitDetailList.generated.ts",
+      "lines": 21,
+      "characters": 525
     },
     "src/inputs/VisitOccurrencesSelect.generated.tsx": {
       "destinationPath": "@/inputs/VisitOccurrencesSelect.generated.tsx",
       "lines": 80,
-      "characters": 1856
+      "characters": 1861
     },
     "src/services/useGetApiVisitOccurrences.generated.ts": {
       "destinationPath": "@/services/useGetApiVisitOccurrences.generated.ts",
-      "lines": 85,
-      "characters": 2300
+      "lines": 74,
+      "characters": 2024
+    },
+    "src/types/clinicalVisitOccurrenceList.generated.ts": {
+      "destinationPath": "@/types/clinicalVisitOccurrenceList.generated.ts",
+      "lines": 21,
+      "characters": 553
     },
     "src/inputs/VocabularysSelect.generated.tsx": {
       "destinationPath": "@/inputs/VocabularysSelect.generated.tsx",
       "lines": 80,
-      "characters": 1806
+      "characters": 1811
     },
     "src/services/useGetApiVocabularys.generated.ts": {
       "destinationPath": "@/services/useGetApiVocabularys.generated.ts",
-      "lines": 58,
-      "characters": 1460
+      "lines": 47,
+      "characters": 1194
+    },
+    "src/types/vocabularyVocabularyList.generated.ts": {
+      "destinationPath": "@/types/vocabularyVocabularyList.generated.ts",
+      "lines": 21,
+      "characters": 532
     },
     "src/services/useGetApiCareSitesId.generated.ts": {
       "destinationPath": "@/services/useGetApiCareSitesId.generated.ts",
@@ -2164,6 +2209,16 @@
       "destinationPath": "@/services/useDeleteApiCareSitesId.generated.ts",
       "lines": 55,
       "characters": 1214
+    },
+    "src/services/useGetApiCdmSources.generated.ts": {
+      "destinationPath": "@/services/useGetApiCdmSources.generated.ts",
+      "lines": 47,
+      "characters": 1182
+    },
+    "src/types/metadataCdmSourceList.generated.ts": {
+      "destinationPath": "@/types/metadataCdmSourceList.generated.ts",
+      "lines": 21,
+      "characters": 511
     },
     "src/services/useGetApiCdmSourcesId.generated.ts": {
       "destinationPath": "@/services/useGetApiCdmSourcesId.generated.ts",
@@ -2185,6 +2240,16 @@
       "lines": 55,
       "characters": 1296
     },
+    "src/services/useGetApiCohorts.generated.ts": {
+      "destinationPath": "@/services/useGetApiCohorts.generated.ts",
+      "lines": 37,
+      "characters": 934
+    },
+    "src/types/resultsCohortList.generated.ts": {
+      "destinationPath": "@/types/resultsCohortList.generated.ts",
+      "lines": 21,
+      "characters": 483
+    },
     "src/services/useGetApiCohortsId.generated.ts": {
       "destinationPath": "@/services/useGetApiCohortsId.generated.ts",
       "lines": 28,
@@ -2194,6 +2259,16 @@
       "destinationPath": "@/services/useDeleteApiCohortsId.generated.ts",
       "lines": 53,
       "characters": 1170
+    },
+    "src/services/useGetApiConceptAncestors.generated.ts": {
+      "destinationPath": "@/services/useGetApiConceptAncestors.generated.ts",
+      "lines": 53,
+      "characters": 1366
+    },
+    "src/types/vocabularyConceptAncestorList.generated.ts": {
+      "destinationPath": "@/types/vocabularyConceptAncestorList.generated.ts",
+      "lines": 21,
+      "characters": 567
     },
     "src/services/useGetApiConceptAncestorsId.generated.ts": {
       "destinationPath": "@/services/useGetApiConceptAncestorsId.generated.ts",
@@ -2215,6 +2290,16 @@
       "lines": 55,
       "characters": 1255
     },
+    "src/services/useGetApiConceptRelationships.generated.ts": {
+      "destinationPath": "@/services/useGetApiConceptRelationships.generated.ts",
+      "lines": 49,
+      "characters": 1198
+    },
+    "src/types/vocabularyConceptRelationshipList.generated.ts": {
+      "destinationPath": "@/types/vocabularyConceptRelationshipList.generated.ts",
+      "lines": 21,
+      "characters": 595
+    },
     "src/services/useGetApiConceptRelationshipsId.generated.ts": {
       "destinationPath": "@/services/useGetApiConceptRelationshipsId.generated.ts",
       "lines": 30,
@@ -2224,6 +2309,16 @@
       "destinationPath": "@/services/useDeleteApiConceptRelationshipsId.generated.ts",
       "lines": 55,
       "characters": 1332
+    },
+    "src/services/useGetApiConceptSynonyms.generated.ts": {
+      "destinationPath": "@/services/useGetApiConceptSynonyms.generated.ts",
+      "lines": 53,
+      "characters": 1325
+    },
+    "src/types/vocabularyConceptSynonymList.generated.ts": {
+      "destinationPath": "@/types/vocabularyConceptSynonymList.generated.ts",
+      "lines": 21,
+      "characters": 560
     },
     "src/services/useGetApiConceptSynonymsId.generated.ts": {
       "destinationPath": "@/services/useGetApiConceptSynonymsId.generated.ts",
@@ -2274,6 +2369,16 @@
       "destinationPath": "@/services/useDeleteApiCostsId.generated.ts",
       "lines": 52,
       "characters": 1140
+    },
+    "src/services/useGetApiDeaths.generated.ts": {
+      "destinationPath": "@/services/useGetApiDeaths.generated.ts",
+      "lines": 56,
+      "characters": 1416
+    },
+    "src/types/clinicalDeathList.generated.ts": {
+      "destinationPath": "@/types/clinicalDeathList.generated.ts",
+      "lines": 21,
+      "characters": 483
     },
     "src/services/useGetApiDeathsId.generated.ts": {
       "destinationPath": "@/services/useGetApiDeathsId.generated.ts",
@@ -2335,6 +2440,16 @@
       "lines": 55,
       "characters": 1253
     },
+    "src/services/useGetApiDrugStrengths.generated.ts": {
+      "destinationPath": "@/services/useGetApiDrugStrengths.generated.ts",
+      "lines": 62,
+      "characters": 1687
+    },
+    "src/types/vocabularyDrugStrengthList.generated.ts": {
+      "destinationPath": "@/types/vocabularyDrugStrengthList.generated.ts",
+      "lines": 21,
+      "characters": 546
+    },
     "src/services/useGetApiDrugStrengthsId.generated.ts": {
       "destinationPath": "@/services/useGetApiDrugStrengthsId.generated.ts",
       "lines": 30,
@@ -2344,6 +2459,16 @@
       "destinationPath": "@/services/useDeleteApiDrugStrengthsId.generated.ts",
       "lines": 55,
       "characters": 1255
+    },
+    "src/services/useGetApiEpisodeEvents.generated.ts": {
+      "destinationPath": "@/services/useGetApiEpisodeEvents.generated.ts",
+      "lines": 53,
+      "characters": 1321
+    },
+    "src/types/derivedEpisodeEventList.generated.ts": {
+      "destinationPath": "@/types/derivedEpisodeEventList.generated.ts",
+      "lines": 21,
+      "characters": 525
     },
     "src/services/useGetApiEpisodeEventsId.generated.ts": {
       "destinationPath": "@/services/useGetApiEpisodeEventsId.generated.ts",
@@ -2364,6 +2489,16 @@
       "destinationPath": "@/services/useDeleteApiEpisodesId.generated.ts",
       "lines": 53,
       "characters": 1181
+    },
+    "src/services/useGetApiFactRelationships.generated.ts": {
+      "destinationPath": "@/services/useGetApiFactRelationships.generated.ts",
+      "lines": 50,
+      "characters": 1266
+    },
+    "src/types/resultsFactRelationshipList.generated.ts": {
+      "destinationPath": "@/types/resultsFactRelationshipList.generated.ts",
+      "lines": 21,
+      "characters": 553
     },
     "src/services/useGetApiFactRelationshipsId.generated.ts": {
       "destinationPath": "@/services/useGetApiFactRelationshipsId.generated.ts",
@@ -2495,6 +2630,16 @@
       "lines": 55,
       "characters": 1254
     },
+    "src/services/useGetApiSourceToConceptMaps.generated.ts": {
+      "destinationPath": "@/services/useGetApiSourceToConceptMaps.generated.ts",
+      "lines": 56,
+      "characters": 1470
+    },
+    "src/types/vocabularySourceToConceptMapList.generated.ts": {
+      "destinationPath": "@/types/vocabularySourceToConceptMapList.generated.ts",
+      "lines": 21,
+      "characters": 588
+    },
     "src/services/useGetApiSourceToConceptMapsId.generated.ts": {
       "destinationPath": "@/services/useGetApiSourceToConceptMapsId.generated.ts",
       "lines": 30,
@@ -2597,8 +2742,8 @@
     },
     "src/mocks/handlers.generated.ts": {
       "destinationPath": "@/mocks/handlers.generated.ts",
-      "lines": 4804,
-      "characters": 134347
+      "lines": 4947,
+      "characters": 138060
     }
   },
   "previews": {
@@ -4139,19 +4284,6 @@
           "operationMethod": "get"
         }
       },
-      "CdmSourcesSelect": {
-        "module": {
-          "name": "CdmSourcesSelect",
-          "exportPath": "@/inputs/CdmSourcesSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/cdm-sources",
-          "operationMethod": "get"
-        }
-      },
       "CohortDefinitionsSelect": {
         "module": {
           "name": "CohortDefinitionsSelect",
@@ -4165,32 +4297,6 @@
           "operationMethod": "get"
         }
       },
-      "CohortsSelect": {
-        "module": {
-          "name": "CohortsSelect",
-          "exportPath": "@/inputs/CohortsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/cohorts",
-          "operationMethod": "get"
-        }
-      },
-      "ConceptAncestorsSelect": {
-        "module": {
-          "name": "ConceptAncestorsSelect",
-          "exportPath": "@/inputs/ConceptAncestorsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/concept-ancestors",
-          "operationMethod": "get"
-        }
-      },
       "ConceptClasssSelect": {
         "module": {
           "name": "ConceptClasssSelect",
@@ -4201,32 +4307,6 @@
           "type": "operation",
           "generatorId": "@skmtc/gen-shadcn-select",
           "operationPath": "/concept-classs",
-          "operationMethod": "get"
-        }
-      },
-      "ConceptRelationshipsSelect": {
-        "module": {
-          "name": "ConceptRelationshipsSelect",
-          "exportPath": "@/inputs/ConceptRelationshipsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/concept-relationships",
-          "operationMethod": "get"
-        }
-      },
-      "ConceptSynonymsSelect": {
-        "module": {
-          "name": "ConceptSynonymsSelect",
-          "exportPath": "@/inputs/ConceptSynonymsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/concept-synonyms",
           "operationMethod": "get"
         }
       },
@@ -4279,19 +4359,6 @@
           "type": "operation",
           "generatorId": "@skmtc/gen-shadcn-select",
           "operationPath": "/costs",
-          "operationMethod": "get"
-        }
-      },
-      "DeathsSelect": {
-        "module": {
-          "name": "DeathsSelect",
-          "exportPath": "@/inputs/DeathsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/deaths",
           "operationMethod": "get"
         }
       },
@@ -4360,32 +4427,6 @@
           "operationMethod": "get"
         }
       },
-      "DrugStrengthsSelect": {
-        "module": {
-          "name": "DrugStrengthsSelect",
-          "exportPath": "@/inputs/DrugStrengthsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/drug-strengths",
-          "operationMethod": "get"
-        }
-      },
-      "EpisodeEventsSelect": {
-        "module": {
-          "name": "EpisodeEventsSelect",
-          "exportPath": "@/inputs/EpisodeEventsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/episode-events",
-          "operationMethod": "get"
-        }
-      },
       "EpisodesSelect": {
         "module": {
           "name": "EpisodesSelect",
@@ -4396,19 +4437,6 @@
           "type": "operation",
           "generatorId": "@skmtc/gen-shadcn-select",
           "operationPath": "/episodes",
-          "operationMethod": "get"
-        }
-      },
-      "FactRelationshipsSelect": {
-        "module": {
-          "name": "FactRelationshipsSelect",
-          "exportPath": "@/inputs/FactRelationshipsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/fact-relationships",
           "operationMethod": "get"
         }
       },
@@ -4568,19 +4596,6 @@
           "operationMethod": "get"
         }
       },
-      "SourceToConceptMapsSelect": {
-        "module": {
-          "name": "SourceToConceptMapsSelect",
-          "exportPath": "@/inputs/SourceToConceptMapsSelect.generated.tsx",
-          "group": "inputs"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/source-to-concept-maps",
-          "operationMethod": "get"
-        }
-      },
       "SpecimensSelect": {
         "module": {
           "name": "SpecimensSelect",
@@ -4652,21 +4667,6 @@
           "operationMethod": "get"
         }
       },
-      "CdmSourcesSelectField": {
-        "module": {
-          "name": "CdmSourcesSelectField",
-          "exportPath": "@/inputs/CdmSourcesSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/cdm-sources",
-          "operationMethod": "get"
-        }
-      },
       "CohortDefinitionsSelectField": {
         "module": {
           "name": "CohortDefinitionsSelectField",
@@ -4682,36 +4682,6 @@
           "operationMethod": "get"
         }
       },
-      "CohortsSelectField": {
-        "module": {
-          "name": "CohortsSelectField",
-          "exportPath": "@/inputs/CohortsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/cohorts",
-          "operationMethod": "get"
-        }
-      },
-      "ConceptAncestorsSelectField": {
-        "module": {
-          "name": "ConceptAncestorsSelectField",
-          "exportPath": "@/inputs/ConceptAncestorsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/concept-ancestors",
-          "operationMethod": "get"
-        }
-      },
       "ConceptClasssSelectField": {
         "module": {
           "name": "ConceptClasssSelectField",
@@ -4724,36 +4694,6 @@
           "type": "operation",
           "generatorId": "@skmtc/gen-shadcn-select",
           "operationPath": "/concept-classs",
-          "operationMethod": "get"
-        }
-      },
-      "ConceptRelationshipsSelectField": {
-        "module": {
-          "name": "ConceptRelationshipsSelectField",
-          "exportPath": "@/inputs/ConceptRelationshipsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/concept-relationships",
-          "operationMethod": "get"
-        }
-      },
-      "ConceptSynonymsSelectField": {
-        "module": {
-          "name": "ConceptSynonymsSelectField",
-          "exportPath": "@/inputs/ConceptSynonymsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/concept-synonyms",
           "operationMethod": "get"
         }
       },
@@ -4814,21 +4754,6 @@
           "type": "operation",
           "generatorId": "@skmtc/gen-shadcn-select",
           "operationPath": "/costs",
-          "operationMethod": "get"
-        }
-      },
-      "DeathsSelectField": {
-        "module": {
-          "name": "DeathsSelectField",
-          "exportPath": "@/inputs/DeathsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/deaths",
           "operationMethod": "get"
         }
       },
@@ -4907,36 +4832,6 @@
           "operationMethod": "get"
         }
       },
-      "DrugStrengthsSelectField": {
-        "module": {
-          "name": "DrugStrengthsSelectField",
-          "exportPath": "@/inputs/DrugStrengthsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/drug-strengths",
-          "operationMethod": "get"
-        }
-      },
-      "EpisodeEventsSelectField": {
-        "module": {
-          "name": "EpisodeEventsSelectField",
-          "exportPath": "@/inputs/EpisodeEventsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/episode-events",
-          "operationMethod": "get"
-        }
-      },
       "EpisodesSelectField": {
         "module": {
           "name": "EpisodesSelectField",
@@ -4949,21 +4844,6 @@
           "type": "operation",
           "generatorId": "@skmtc/gen-shadcn-select",
           "operationPath": "/episodes",
-          "operationMethod": "get"
-        }
-      },
-      "FactRelationshipsSelectField": {
-        "module": {
-          "name": "FactRelationshipsSelectField",
-          "exportPath": "@/inputs/FactRelationshipsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/fact-relationships",
           "operationMethod": "get"
         }
       },
@@ -5147,21 +5027,6 @@
           "operationMethod": "get"
         }
       },
-      "SourceToConceptMapsSelectField": {
-        "module": {
-          "name": "SourceToConceptMapsSelectField",
-          "exportPath": "@/inputs/SourceToConceptMapsSelect.generated.tsx",
-          "group": "inputs",
-          "itemType": "input",
-          "schema": "string"
-        },
-        "source": {
-          "type": "operation",
-          "generatorId": "@skmtc/gen-shadcn-select",
-          "operationPath": "/source-to-concept-maps",
-          "operationMethod": "get"
-        }
-      },
       "SpecimensSelectField": {
         "module": {
           "name": "SpecimensSelectField",
@@ -5224,10 +5089,10 @@
       }
     }
   },
-  "traceId": "0e53831b1b13402085442d94788c1f4b",
-  "spanId": "988a9a455056844c",
+  "traceId": "027a8b3eddf745bc8a55bee3414e841f",
+  "spanId": "8f7added7d220270",
   "results": {
-    "988a9a455056844c": {
+    "8f7added7d220270": {
       "generate": {
         "@skmtc/gen-shadcn-form": {
           "/care-sites": {
@@ -5633,7 +5498,7 @@
             "delete": "notSupported"
           },
           "/cdm-sources": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/cdm-sources/{id}": {
@@ -5653,7 +5518,7 @@
             "delete": "notSupported"
           },
           "/cohorts": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/cohorts/{id}": {
@@ -5663,7 +5528,7 @@
             "delete": "notSupported"
           },
           "/concept-ancestors": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/concept-ancestors/{id}": {
@@ -5683,7 +5548,7 @@
             "delete": "notSupported"
           },
           "/concept-relationships": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/concept-relationships/{id}": {
@@ -5693,7 +5558,7 @@
             "delete": "notSupported"
           },
           "/concept-synonyms": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/concept-synonyms/{id}": {
@@ -5743,7 +5608,7 @@
             "delete": "notSupported"
           },
           "/deaths": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/deaths/{id}": {
@@ -5803,7 +5668,7 @@
             "delete": "notSupported"
           },
           "/drug-strengths": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/drug-strengths/{id}": {
@@ -5813,7 +5678,7 @@
             "delete": "notSupported"
           },
           "/episode-events": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/episode-events/{id}": {
@@ -5833,7 +5698,7 @@
             "delete": "notSupported"
           },
           "/fact-relationships": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/fact-relationships/{id}": {
@@ -5963,7 +5828,7 @@
             "delete": "notSupported"
           },
           "/source-to-concept-maps": {
-            "get": "success",
+            "get": "notSupported",
             "post": "notSupported"
           },
           "/source-to-concept-maps/{id}": {
@@ -6408,45 +6273,59 @@
         "@skmtc/gen-zod": {
           "Clinical.ConditionOccurrence": "success",
           "Clinical.ConditionOccurrenceCreate": "success",
+          "Clinical.ConditionOccurrenceList": "success",
           "Clinical.ConditionOccurrenceUpdate": "success",
           "Clinical.Death": "success",
           "Clinical.DeathCreate": "success",
+          "Clinical.DeathList": "success",
           "Clinical.DeathUpdate": "success",
           "Clinical.DeviceExposure": "success",
           "Clinical.DeviceExposureCreate": "success",
+          "Clinical.DeviceExposureList": "success",
           "Clinical.DeviceExposureUpdate": "success",
           "Clinical.DrugExposure": "success",
           "Clinical.DrugExposureCreate": "success",
+          "Clinical.DrugExposureList": "success",
           "Clinical.DrugExposureUpdate": "success",
           "Clinical.Measurement": "success",
           "Clinical.MeasurementCreate": "success",
+          "Clinical.MeasurementList": "success",
           "Clinical.MeasurementUpdate": "success",
           "Clinical.Note": "success",
           "Clinical.NoteCreate": "success",
+          "Clinical.NoteList": "success",
           "Clinical.NoteNlp": "success",
           "Clinical.NoteNlpCreate": "success",
+          "Clinical.NoteNlpList": "success",
           "Clinical.NoteNlpUpdate": "success",
           "Clinical.NoteUpdate": "success",
           "Clinical.Observation": "success",
           "Clinical.ObservationCreate": "success",
+          "Clinical.ObservationList": "success",
           "Clinical.ObservationPeriod": "success",
           "Clinical.ObservationPeriodCreate": "success",
+          "Clinical.ObservationPeriodList": "success",
           "Clinical.ObservationPeriodUpdate": "success",
           "Clinical.ObservationUpdate": "success",
           "Clinical.Person": "success",
           "Clinical.PersonCreate": "success",
+          "Clinical.PersonList": "success",
           "Clinical.PersonUpdate": "success",
           "Clinical.ProcedureOccurrence": "success",
           "Clinical.ProcedureOccurrenceCreate": "success",
+          "Clinical.ProcedureOccurrenceList": "success",
           "Clinical.ProcedureOccurrenceUpdate": "success",
           "Clinical.Specimen": "success",
           "Clinical.SpecimenCreate": "success",
+          "Clinical.SpecimenList": "success",
           "Clinical.SpecimenUpdate": "success",
           "Clinical.VisitDetail": "success",
           "Clinical.VisitDetailCreate": "success",
+          "Clinical.VisitDetailList": "success",
           "Clinical.VisitDetailUpdate": "success",
           "Clinical.VisitOccurrence": "success",
           "Clinical.VisitOccurrenceCreate": "success",
+          "Clinical.VisitOccurrenceList": "success",
           "Clinical.VisitOccurrenceUpdate": "success",
           "Common.BatchError": "success",
           "Common.ConceptId": "success",
@@ -6462,122 +6341,161 @@
           "Common.ValidationError": "success",
           "Derived.ConditionEra": "success",
           "Derived.ConditionEraCreate": "success",
+          "Derived.ConditionEraList": "success",
           "Derived.ConditionEraUpdate": "success",
           "Derived.DoseEra": "success",
           "Derived.DoseEraCreate": "success",
+          "Derived.DoseEraList": "success",
           "Derived.DoseEraUpdate": "success",
           "Derived.DrugEra": "success",
           "Derived.DrugEraCreate": "success",
+          "Derived.DrugEraList": "success",
           "Derived.DrugEraUpdate": "success",
           "Derived.Episode": "success",
           "Derived.EpisodeCreate": "success",
           "Derived.EpisodeEvent": "success",
           "Derived.EpisodeEventCreate": "success",
+          "Derived.EpisodeEventList": "success",
           "Derived.EpisodeEventUpdate": "success",
+          "Derived.EpisodeList": "success",
           "Derived.EpisodeUpdate": "success",
           "Healthsystem.CareSite": "success",
           "Healthsystem.CareSiteCreate": "success",
+          "Healthsystem.CareSiteList": "success",
           "Healthsystem.CareSiteUpdate": "success",
           "Healthsystem.Cost": "success",
           "Healthsystem.CostCreate": "success",
+          "Healthsystem.CostList": "success",
           "Healthsystem.CostUpdate": "success",
           "Healthsystem.Location": "success",
           "Healthsystem.LocationCreate": "success",
+          "Healthsystem.LocationList": "success",
           "Healthsystem.LocationUpdate": "success",
           "Healthsystem.PayerPlanPeriod": "success",
           "Healthsystem.PayerPlanPeriodCreate": "success",
+          "Healthsystem.PayerPlanPeriodList": "success",
           "Healthsystem.PayerPlanPeriodUpdate": "success",
           "Healthsystem.Provider": "success",
           "Healthsystem.ProviderCreate": "success",
+          "Healthsystem.ProviderList": "success",
           "Healthsystem.ProviderUpdate": "success",
           "Metadata.CdmSource": "success",
           "Metadata.CdmSourceCreate": "success",
+          "Metadata.CdmSourceList": "success",
           "Metadata.CdmSourceUpdate": "success",
           "Metadata.Metadata": "success",
           "Metadata.MetadataCreate": "success",
+          "Metadata.MetadataList": "success",
           "Metadata.MetadataUpdate": "success",
           "Results.Cohort": "success",
           "Results.CohortCreate": "success",
           "Results.CohortDefinition": "success",
           "Results.CohortDefinitionCreate": "success",
+          "Results.CohortDefinitionList": "success",
           "Results.CohortDefinitionUpdate": "success",
+          "Results.CohortList": "success",
           "Results.CohortUpdate": "success",
           "Results.FactRelationship": "success",
           "Results.FactRelationshipCreate": "success",
+          "Results.FactRelationshipList": "success",
           "Results.FactRelationshipUpdate": "success",
           "Vocabulary.Concept": "success",
           "Vocabulary.ConceptAncestor": "success",
           "Vocabulary.ConceptAncestorCreate": "success",
+          "Vocabulary.ConceptAncestorList": "success",
           "Vocabulary.ConceptAncestorUpdate": "success",
           "Vocabulary.ConceptClass": "success",
           "Vocabulary.ConceptClassCreate": "success",
+          "Vocabulary.ConceptClassList": "success",
           "Vocabulary.ConceptClassUpdate": "success",
           "Vocabulary.ConceptCreate": "success",
+          "Vocabulary.ConceptList": "success",
           "Vocabulary.ConceptRelationship": "success",
           "Vocabulary.ConceptRelationshipCreate": "success",
+          "Vocabulary.ConceptRelationshipList": "success",
           "Vocabulary.ConceptRelationshipUpdate": "success",
           "Vocabulary.ConceptSynonym": "success",
           "Vocabulary.ConceptSynonymCreate": "success",
+          "Vocabulary.ConceptSynonymList": "success",
           "Vocabulary.ConceptSynonymUpdate": "success",
           "Vocabulary.ConceptUpdate": "success",
           "Vocabulary.Domain": "success",
           "Vocabulary.DomainCreate": "success",
+          "Vocabulary.DomainList": "success",
           "Vocabulary.DomainUpdate": "success",
           "Vocabulary.DrugStrength": "success",
           "Vocabulary.DrugStrengthCreate": "success",
+          "Vocabulary.DrugStrengthList": "success",
           "Vocabulary.DrugStrengthUpdate": "success",
           "Vocabulary.Relationship": "success",
           "Vocabulary.RelationshipCreate": "success",
+          "Vocabulary.RelationshipList": "success",
           "Vocabulary.RelationshipUpdate": "success",
           "Vocabulary.SourceToConceptMap": "success",
           "Vocabulary.SourceToConceptMapCreate": "success",
+          "Vocabulary.SourceToConceptMapList": "success",
           "Vocabulary.SourceToConceptMapUpdate": "success",
           "Vocabulary.Vocabulary": "success",
           "Vocabulary.VocabularyCreate": "success",
+          "Vocabulary.VocabularyList": "success",
           "Vocabulary.VocabularyUpdate": "success"
         },
         "@skmtc/gen-typescript": {
           "Clinical.ConditionOccurrence": "success",
           "Clinical.ConditionOccurrenceCreate": "success",
+          "Clinical.ConditionOccurrenceList": "success",
           "Clinical.ConditionOccurrenceUpdate": "success",
           "Clinical.Death": "success",
           "Clinical.DeathCreate": "success",
+          "Clinical.DeathList": "success",
           "Clinical.DeathUpdate": "success",
           "Clinical.DeviceExposure": "success",
           "Clinical.DeviceExposureCreate": "success",
+          "Clinical.DeviceExposureList": "success",
           "Clinical.DeviceExposureUpdate": "success",
           "Clinical.DrugExposure": "success",
           "Clinical.DrugExposureCreate": "success",
+          "Clinical.DrugExposureList": "success",
           "Clinical.DrugExposureUpdate": "success",
           "Clinical.Measurement": "success",
           "Clinical.MeasurementCreate": "success",
+          "Clinical.MeasurementList": "success",
           "Clinical.MeasurementUpdate": "success",
           "Clinical.Note": "success",
           "Clinical.NoteCreate": "success",
+          "Clinical.NoteList": "success",
           "Clinical.NoteNlp": "success",
           "Clinical.NoteNlpCreate": "success",
+          "Clinical.NoteNlpList": "success",
           "Clinical.NoteNlpUpdate": "success",
           "Clinical.NoteUpdate": "success",
           "Clinical.Observation": "success",
           "Clinical.ObservationCreate": "success",
+          "Clinical.ObservationList": "success",
           "Clinical.ObservationPeriod": "success",
           "Clinical.ObservationPeriodCreate": "success",
+          "Clinical.ObservationPeriodList": "success",
           "Clinical.ObservationPeriodUpdate": "success",
           "Clinical.ObservationUpdate": "success",
           "Clinical.Person": "success",
           "Clinical.PersonCreate": "success",
+          "Clinical.PersonList": "success",
           "Clinical.PersonUpdate": "success",
           "Clinical.ProcedureOccurrence": "success",
           "Clinical.ProcedureOccurrenceCreate": "success",
+          "Clinical.ProcedureOccurrenceList": "success",
           "Clinical.ProcedureOccurrenceUpdate": "success",
           "Clinical.Specimen": "success",
           "Clinical.SpecimenCreate": "success",
+          "Clinical.SpecimenList": "success",
           "Clinical.SpecimenUpdate": "success",
           "Clinical.VisitDetail": "success",
           "Clinical.VisitDetailCreate": "success",
+          "Clinical.VisitDetailList": "success",
           "Clinical.VisitDetailUpdate": "success",
           "Clinical.VisitOccurrence": "success",
           "Clinical.VisitOccurrenceCreate": "success",
+          "Clinical.VisitOccurrenceList": "success",
           "Clinical.VisitOccurrenceUpdate": "success",
           "Common.BatchError": "success",
           "Common.ConceptId": "success",
@@ -6593,78 +6511,103 @@
           "Common.ValidationError": "success",
           "Derived.ConditionEra": "success",
           "Derived.ConditionEraCreate": "success",
+          "Derived.ConditionEraList": "success",
           "Derived.ConditionEraUpdate": "success",
           "Derived.DoseEra": "success",
           "Derived.DoseEraCreate": "success",
+          "Derived.DoseEraList": "success",
           "Derived.DoseEraUpdate": "success",
           "Derived.DrugEra": "success",
           "Derived.DrugEraCreate": "success",
+          "Derived.DrugEraList": "success",
           "Derived.DrugEraUpdate": "success",
           "Derived.Episode": "success",
           "Derived.EpisodeCreate": "success",
           "Derived.EpisodeEvent": "success",
           "Derived.EpisodeEventCreate": "success",
+          "Derived.EpisodeEventList": "success",
           "Derived.EpisodeEventUpdate": "success",
+          "Derived.EpisodeList": "success",
           "Derived.EpisodeUpdate": "success",
           "Healthsystem.CareSite": "success",
           "Healthsystem.CareSiteCreate": "success",
+          "Healthsystem.CareSiteList": "success",
           "Healthsystem.CareSiteUpdate": "success",
           "Healthsystem.Cost": "success",
           "Healthsystem.CostCreate": "success",
+          "Healthsystem.CostList": "success",
           "Healthsystem.CostUpdate": "success",
           "Healthsystem.Location": "success",
           "Healthsystem.LocationCreate": "success",
+          "Healthsystem.LocationList": "success",
           "Healthsystem.LocationUpdate": "success",
           "Healthsystem.PayerPlanPeriod": "success",
           "Healthsystem.PayerPlanPeriodCreate": "success",
+          "Healthsystem.PayerPlanPeriodList": "success",
           "Healthsystem.PayerPlanPeriodUpdate": "success",
           "Healthsystem.Provider": "success",
           "Healthsystem.ProviderCreate": "success",
+          "Healthsystem.ProviderList": "success",
           "Healthsystem.ProviderUpdate": "success",
           "Metadata.CdmSource": "success",
           "Metadata.CdmSourceCreate": "success",
+          "Metadata.CdmSourceList": "success",
           "Metadata.CdmSourceUpdate": "success",
           "Metadata.Metadata": "success",
           "Metadata.MetadataCreate": "success",
+          "Metadata.MetadataList": "success",
           "Metadata.MetadataUpdate": "success",
           "Results.Cohort": "success",
           "Results.CohortCreate": "success",
           "Results.CohortDefinition": "success",
           "Results.CohortDefinitionCreate": "success",
+          "Results.CohortDefinitionList": "success",
           "Results.CohortDefinitionUpdate": "success",
+          "Results.CohortList": "success",
           "Results.CohortUpdate": "success",
           "Results.FactRelationship": "success",
           "Results.FactRelationshipCreate": "success",
+          "Results.FactRelationshipList": "success",
           "Results.FactRelationshipUpdate": "success",
           "Vocabulary.Concept": "success",
           "Vocabulary.ConceptAncestor": "success",
           "Vocabulary.ConceptAncestorCreate": "success",
+          "Vocabulary.ConceptAncestorList": "success",
           "Vocabulary.ConceptAncestorUpdate": "success",
           "Vocabulary.ConceptClass": "success",
           "Vocabulary.ConceptClassCreate": "success",
+          "Vocabulary.ConceptClassList": "success",
           "Vocabulary.ConceptClassUpdate": "success",
           "Vocabulary.ConceptCreate": "success",
+          "Vocabulary.ConceptList": "success",
           "Vocabulary.ConceptRelationship": "success",
           "Vocabulary.ConceptRelationshipCreate": "success",
+          "Vocabulary.ConceptRelationshipList": "success",
           "Vocabulary.ConceptRelationshipUpdate": "success",
           "Vocabulary.ConceptSynonym": "success",
           "Vocabulary.ConceptSynonymCreate": "success",
+          "Vocabulary.ConceptSynonymList": "success",
           "Vocabulary.ConceptSynonymUpdate": "success",
           "Vocabulary.ConceptUpdate": "success",
           "Vocabulary.Domain": "success",
           "Vocabulary.DomainCreate": "success",
+          "Vocabulary.DomainList": "success",
           "Vocabulary.DomainUpdate": "success",
           "Vocabulary.DrugStrength": "success",
           "Vocabulary.DrugStrengthCreate": "success",
+          "Vocabulary.DrugStrengthList": "success",
           "Vocabulary.DrugStrengthUpdate": "success",
           "Vocabulary.Relationship": "success",
           "Vocabulary.RelationshipCreate": "success",
+          "Vocabulary.RelationshipList": "success",
           "Vocabulary.RelationshipUpdate": "success",
           "Vocabulary.SourceToConceptMap": "success",
           "Vocabulary.SourceToConceptMapCreate": "success",
+          "Vocabulary.SourceToConceptMapList": "success",
           "Vocabulary.SourceToConceptMapUpdate": "success",
           "Vocabulary.Vocabulary": "success",
           "Vocabulary.VocabularyCreate": "success",
+          "Vocabulary.VocabularyList": "success",
           "Vocabulary.VocabularyUpdate": "success"
         },
         "@skmtc/gen-msw": {
@@ -7414,98 +7357,117 @@
         "@/services/usePatchApiVocabularysId.generated.ts": "success",
         "@/inputs/CareSitesSelect.generated.tsx": "success",
         "@/services/useGetApiCareSites.generated.ts": "success",
+        "@/types/healthsystemCareSiteList.generated.ts": "success",
         "@/types/commonConceptId.generated.ts": "success",
         "@/types/commonSortOrder.generated.ts": "success",
-        "@/inputs/CdmSourcesSelect.generated.tsx": "success",
-        "@/services/useGetApiCdmSources.generated.ts": "success",
         "@/inputs/CohortDefinitionsSelect.generated.tsx": "success",
         "@/services/useGetApiCohortDefinitions.generated.ts": "success",
-        "@/inputs/CohortsSelect.generated.tsx": "success",
-        "@/services/useGetApiCohorts.generated.ts": "success",
-        "@/inputs/ConceptAncestorsSelect.generated.tsx": "success",
-        "@/services/useGetApiConceptAncestors.generated.ts": "success",
+        "@/types/resultsCohortDefinitionList.generated.ts": "success",
         "@/inputs/ConceptClasssSelect.generated.tsx": "success",
         "@/services/useGetApiConceptClasss.generated.ts": "success",
-        "@/inputs/ConceptRelationshipsSelect.generated.tsx": "success",
-        "@/services/useGetApiConceptRelationships.generated.ts": "success",
-        "@/inputs/ConceptSynonymsSelect.generated.tsx": "success",
-        "@/services/useGetApiConceptSynonyms.generated.ts": "success",
+        "@/types/vocabularyConceptClassList.generated.ts": "success",
         "@/inputs/ConceptsSelect.generated.tsx": "success",
         "@/services/useGetApiConcepts.generated.ts": "success",
+        "@/types/vocabularyConceptList.generated.ts": "success",
         "@/inputs/ConditionErasSelect.generated.tsx": "success",
         "@/services/useGetApiConditionEras.generated.ts": "success",
+        "@/types/derivedConditionEraList.generated.ts": "success",
         "@/inputs/ConditionOccurrencesSelect.generated.tsx": "success",
         "@/services/useGetApiConditionOccurrences.generated.ts": "success",
+        "@/types/clinicalConditionOccurrenceList.generated.ts": "success",
         "@/inputs/CostsSelect.generated.tsx": "success",
         "@/services/useGetApiCosts.generated.ts": "success",
-        "@/inputs/DeathsSelect.generated.tsx": "success",
-        "@/services/useGetApiDeaths.generated.ts": "success",
+        "@/types/healthsystemCostList.generated.ts": "success",
         "@/inputs/DeviceExposuresSelect.generated.tsx": "success",
         "@/services/useGetApiDeviceExposures.generated.ts": "success",
+        "@/types/clinicalDeviceExposureList.generated.ts": "success",
         "@/inputs/DomainsSelect.generated.tsx": "success",
         "@/services/useGetApiDomains.generated.ts": "success",
+        "@/types/vocabularyDomainList.generated.ts": "success",
         "@/inputs/DoseErasSelect.generated.tsx": "success",
         "@/services/useGetApiDoseEras.generated.ts": "success",
+        "@/types/derivedDoseEraList.generated.ts": "success",
         "@/inputs/DrugErasSelect.generated.tsx": "success",
         "@/services/useGetApiDrugEras.generated.ts": "success",
+        "@/types/derivedDrugEraList.generated.ts": "success",
         "@/inputs/DrugExposuresSelect.generated.tsx": "success",
         "@/services/useGetApiDrugExposures.generated.ts": "success",
-        "@/inputs/DrugStrengthsSelect.generated.tsx": "success",
-        "@/services/useGetApiDrugStrengths.generated.ts": "success",
-        "@/inputs/EpisodeEventsSelect.generated.tsx": "success",
-        "@/services/useGetApiEpisodeEvents.generated.ts": "success",
+        "@/types/clinicalDrugExposureList.generated.ts": "success",
         "@/inputs/EpisodesSelect.generated.tsx": "success",
         "@/services/useGetApiEpisodes.generated.ts": "success",
-        "@/inputs/FactRelationshipsSelect.generated.tsx": "success",
-        "@/services/useGetApiFactRelationships.generated.ts": "success",
+        "@/types/derivedEpisodeList.generated.ts": "success",
         "@/inputs/LocationsSelect.generated.tsx": "success",
         "@/services/useGetApiLocations.generated.ts": "success",
+        "@/types/healthsystemLocationList.generated.ts": "success",
         "@/inputs/MeasurementsSelect.generated.tsx": "success",
         "@/services/useGetApiMeasurements.generated.ts": "success",
+        "@/types/clinicalMeasurementList.generated.ts": "success",
         "@/inputs/MetadatasSelect.generated.tsx": "success",
         "@/services/useGetApiMetadatas.generated.ts": "success",
+        "@/types/metadataMetadataList.generated.ts": "success",
         "@/inputs/NoteNlpsSelect.generated.tsx": "success",
         "@/services/useGetApiNoteNlps.generated.ts": "success",
+        "@/types/clinicalNoteNlpList.generated.ts": "success",
         "@/inputs/NotesSelect.generated.tsx": "success",
         "@/services/useGetApiNotes.generated.ts": "success",
+        "@/types/clinicalNoteList.generated.ts": "success",
         "@/inputs/ObservationPeriodsSelect.generated.tsx": "success",
         "@/services/useGetApiObservationPeriods.generated.ts": "success",
+        "@/types/clinicalObservationPeriodList.generated.ts": "success",
         "@/inputs/ObservationsSelect.generated.tsx": "success",
         "@/services/useGetApiObservations.generated.ts": "success",
+        "@/types/clinicalObservationList.generated.ts": "success",
         "@/inputs/PayerPlanPeriodsSelect.generated.tsx": "success",
         "@/services/useGetApiPayerPlanPeriods.generated.ts": "success",
+        "@/types/healthsystemPayerPlanPeriodList.generated.ts": "success",
         "@/inputs/PersonsSelect.generated.tsx": "success",
         "@/services/useGetApiPersons.generated.ts": "success",
+        "@/types/clinicalPersonList.generated.ts": "success",
         "@/inputs/ProcedureOccurrencesSelect.generated.tsx": "success",
         "@/services/useGetApiProcedureOccurrences.generated.ts": "success",
+        "@/types/clinicalProcedureOccurrenceList.generated.ts": "success",
         "@/inputs/ProvidersSelect.generated.tsx": "success",
         "@/services/useGetApiProviders.generated.ts": "success",
+        "@/types/healthsystemProviderList.generated.ts": "success",
         "@/inputs/RelationshipsSelect.generated.tsx": "success",
         "@/services/useGetApiRelationships.generated.ts": "success",
-        "@/inputs/SourceToConceptMapsSelect.generated.tsx": "success",
-        "@/services/useGetApiSourceToConceptMaps.generated.ts": "success",
+        "@/types/vocabularyRelationshipList.generated.ts": "success",
         "@/inputs/SpecimensSelect.generated.tsx": "success",
         "@/services/useGetApiSpecimens.generated.ts": "success",
+        "@/types/clinicalSpecimenList.generated.ts": "success",
         "@/inputs/VisitDetailsSelect.generated.tsx": "success",
         "@/services/useGetApiVisitDetails.generated.ts": "success",
+        "@/types/clinicalVisitDetailList.generated.ts": "success",
         "@/inputs/VisitOccurrencesSelect.generated.tsx": "success",
         "@/services/useGetApiVisitOccurrences.generated.ts": "success",
+        "@/types/clinicalVisitOccurrenceList.generated.ts": "success",
         "@/inputs/VocabularysSelect.generated.tsx": "success",
         "@/services/useGetApiVocabularys.generated.ts": "success",
+        "@/types/vocabularyVocabularyList.generated.ts": "success",
         "@/services/useGetApiCareSitesId.generated.ts": "success",
         "@/services/useDeleteApiCareSitesId.generated.ts": "success",
+        "@/services/useGetApiCdmSources.generated.ts": "success",
+        "@/types/metadataCdmSourceList.generated.ts": "success",
         "@/services/useGetApiCdmSourcesId.generated.ts": "success",
         "@/services/useDeleteApiCdmSourcesId.generated.ts": "success",
         "@/services/useGetApiCohortDefinitionsId.generated.ts": "success",
         "@/services/useDeleteApiCohortDefinitionsId.generated.ts": "success",
+        "@/services/useGetApiCohorts.generated.ts": "success",
+        "@/types/resultsCohortList.generated.ts": "success",
         "@/services/useGetApiCohortsId.generated.ts": "success",
         "@/services/useDeleteApiCohortsId.generated.ts": "success",
+        "@/services/useGetApiConceptAncestors.generated.ts": "success",
+        "@/types/vocabularyConceptAncestorList.generated.ts": "success",
         "@/services/useGetApiConceptAncestorsId.generated.ts": "success",
         "@/services/useDeleteApiConceptAncestorsId.generated.ts": "success",
         "@/services/useGetApiConceptClasssId.generated.ts": "success",
         "@/services/useDeleteApiConceptClasssId.generated.ts": "success",
+        "@/services/useGetApiConceptRelationships.generated.ts": "success",
+        "@/types/vocabularyConceptRelationshipList.generated.ts": "success",
         "@/services/useGetApiConceptRelationshipsId.generated.ts": "success",
         "@/services/useDeleteApiConceptRelationshipsId.generated.ts": "success",
+        "@/services/useGetApiConceptSynonyms.generated.ts": "success",
+        "@/types/vocabularyConceptSynonymList.generated.ts": "success",
         "@/services/useGetApiConceptSynonymsId.generated.ts": "success",
         "@/services/useDeleteApiConceptSynonymsId.generated.ts": "success",
         "@/services/useGetApiConceptsId.generated.ts": "success",
@@ -7516,6 +7478,8 @@
         "@/services/useDeleteApiConditionOccurrencesId.generated.ts": "success",
         "@/services/useGetApiCostsId.generated.ts": "success",
         "@/services/useDeleteApiCostsId.generated.ts": "success",
+        "@/services/useGetApiDeaths.generated.ts": "success",
+        "@/types/clinicalDeathList.generated.ts": "success",
         "@/services/useGetApiDeathsId.generated.ts": "success",
         "@/services/useDeleteApiDeathsId.generated.ts": "success",
         "@/services/useGetApiDeviceExposuresId.generated.ts": "success",
@@ -7528,12 +7492,18 @@
         "@/services/useDeleteApiDrugErasId.generated.ts": "success",
         "@/services/useGetApiDrugExposuresId.generated.ts": "success",
         "@/services/useDeleteApiDrugExposuresId.generated.ts": "success",
+        "@/services/useGetApiDrugStrengths.generated.ts": "success",
+        "@/types/vocabularyDrugStrengthList.generated.ts": "success",
         "@/services/useGetApiDrugStrengthsId.generated.ts": "success",
         "@/services/useDeleteApiDrugStrengthsId.generated.ts": "success",
+        "@/services/useGetApiEpisodeEvents.generated.ts": "success",
+        "@/types/derivedEpisodeEventList.generated.ts": "success",
         "@/services/useGetApiEpisodeEventsId.generated.ts": "success",
         "@/services/useDeleteApiEpisodeEventsId.generated.ts": "success",
         "@/services/useGetApiEpisodesId.generated.ts": "success",
         "@/services/useDeleteApiEpisodesId.generated.ts": "success",
+        "@/services/useGetApiFactRelationships.generated.ts": "success",
+        "@/types/resultsFactRelationshipList.generated.ts": "success",
         "@/services/useGetApiFactRelationshipsId.generated.ts": "success",
         "@/services/useDeleteApiFactRelationshipsId.generated.ts": "success",
         "@/services/useGetApiLocationsId.generated.ts": "success",
@@ -7560,6 +7530,8 @@
         "@/services/useDeleteApiProvidersId.generated.ts": "success",
         "@/services/useGetApiRelationshipsId.generated.ts": "success",
         "@/services/useDeleteApiRelationshipsId.generated.ts": "success",
+        "@/services/useGetApiSourceToConceptMaps.generated.ts": "success",
+        "@/types/vocabularySourceToConceptMapList.generated.ts": "success",
         "@/services/useGetApiSourceToConceptMapsId.generated.ts": "success",
         "@/services/useDeleteApiSourceToConceptMapsId.generated.ts": "success",
         "@/services/useGetApiSpecimensId.generated.ts": "success",
@@ -7584,7 +7556,7 @@
       }
     }
   },
-  "deploymentId": "1760697076229",
-  "startAt": 1760697074785,
-  "endAt": 1760697076229
+  "deploymentId": "1760701932109",
+  "startAt": 1760701930547,
+  "endAt": 1760701932109
 }

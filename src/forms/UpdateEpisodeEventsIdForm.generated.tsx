@@ -14,29 +14,19 @@ export type UpdateEpisodeEventsIdFormBody = {
   episode_event_field_concept_id: number
 }
 
-export const UpdateEpisodeEventsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`episode_id`} />
-      <IntegerField fieldName={`event_id`} />
-      <IntegerField fieldName={`episode_event_field_concept_id`} />
-    </>
-  )
-}
-
 export type UpdateEpisodeEventsIdFormProps = {
-  id: number
-  defaultValues: UpdateEpisodeEventsIdFormBody
+  id: string
+  defaultValues: Required<UpdateEpisodeEventsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateEpisodeEventsIdFormPathParams = { id: number }
+export type UpdateEpisodeEventsIdFormPathParams = { id: string }
 
 export const UpdateEpisodeEventsIdForm = (
   props: UpdateEpisodeEventsIdFormProps,
 ) => {
-  const form = useForm<UpdateEpisodeEventsIdFormBody>({
-    resolver: zodResolver(derivedEpisodeEventCreate),
+  const form = useForm<Required<UpdateEpisodeEventsIdFormBody>>({
+    resolver: zodResolver(derivedEpisodeEventCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -60,7 +50,12 @@ export const UpdateEpisodeEventsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateEpisodeEventsIdFormFields />
+        <IntegerField lens={lens.focus('episode_id')} label="episode_id" />
+        <IntegerField lens={lens.focus('event_id')} label="event_id" />
+        <IntegerField
+          lens={lens.focus('episode_event_field_concept_id')}
+          label="episode_event_field_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

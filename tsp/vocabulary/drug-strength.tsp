@@ -197,6 +197,36 @@ model DrugStrengthQueryParams {
 }
 
 /**
+ * DrugStrength list response with example
+ */
+@doc("Paginated list of DrugStrength records")
+@example(#{
+  data: #[#{
+  drug_concept_id: 8507,
+  ingredient_concept_id: 8507,
+  amount_value: 98.6,
+  amount_unit_concept_id: 8507,
+  numerator_value: 98.6,
+  numerator_unit_concept_id: 8507,
+  denominator_value: 98.6,
+  denominator_unit_concept_id: 8507,
+  box_size: 100,
+  valid_start_date: "2023-01-15",
+  valid_end_date: "2023-01-15",
+  invalid_reason: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model DrugStrengthList {
+  ...PaginatedList<DrugStrength>;
+}
+
+/**
  * DrugStrength API operations
  */
 @route("/drug-strengths")
@@ -209,7 +239,7 @@ interface DrugStrengths {
     ...DrugStrengthQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<DrugStrength>;
+    @body body: DrugStrengthList;
   } | ErrorResponse;
 
   @get
@@ -218,7 +248,7 @@ interface DrugStrengths {
   read(
     @path
     @doc("Unique drug-strength identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: DrugStrength;
@@ -248,7 +278,7 @@ interface DrugStrengths {
   update(
     @path
     @doc("Unique drug-strength identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete drug-strength data")
@@ -270,7 +300,7 @@ interface DrugStrengths {
   patch(
     @path
     @doc("Unique drug-strength identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -289,7 +319,7 @@ interface DrugStrengths {
   delete(
     @path
     @doc("Unique drug-strength identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

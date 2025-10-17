@@ -14,21 +14,9 @@ export type PatchConceptClasssIdFormBody = {
   concept_class_concept_id?: number | undefined
 }
 
-export const PatchConceptClasssIdFormFields = () => {
-  return (
-    <>
-      <StringField
-        fieldName={`concept_class_name`}
-        label="concept_class_name"
-      />
-      <IntegerField fieldName={`concept_class_concept_id`} />
-    </>
-  )
-}
-
 export type PatchConceptClasssIdFormProps = {
   id: string
-  defaultValues: PatchConceptClasssIdFormBody
+  defaultValues: Required<PatchConceptClasssIdFormBody>
   onSuccess: () => void
 }
 
@@ -37,8 +25,8 @@ export type PatchConceptClasssIdFormPathParams = { id: string }
 export const PatchConceptClasssIdForm = (
   props: PatchConceptClasssIdFormProps,
 ) => {
-  const form = useForm<PatchConceptClasssIdFormBody>({
-    resolver: zodResolver(vocabularyConceptClassUpdate),
+  const form = useForm<Required<PatchConceptClasssIdFormBody>>({
+    resolver: zodResolver(vocabularyConceptClassUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -62,7 +50,14 @@ export const PatchConceptClasssIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchConceptClasssIdFormFields />
+        <StringField
+          lens={lens.focus('concept_class_name')}
+          label="concept_class_name"
+        />
+        <IntegerField
+          lens={lens.focus('concept_class_concept_id')}
+          label="concept_class_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

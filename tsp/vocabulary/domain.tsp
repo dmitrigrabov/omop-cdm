@@ -95,6 +95,27 @@ model DomainQueryParams {
 }
 
 /**
+ * Domain list response with example
+ */
+@doc("Paginated list of Domain records")
+@example(#{
+  data: #[#{
+  id: "12345",
+  domain_name: "Example value",
+  domain_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model DomainList {
+  ...PaginatedList<Domain>;
+}
+
+/**
  * Domain API operations
  */
 @route("/domains")
@@ -107,7 +128,7 @@ interface Domains {
     ...DomainQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Domain>;
+    @body body: DomainList;
   } | ErrorResponse;
 
   @get

@@ -15,32 +15,19 @@ export type PatchConceptSynonymsIdFormBody = {
   language_concept_id?: number | undefined
 }
 
-export const PatchConceptSynonymsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`concept_id`} />
-      <StringField
-        fieldName={`concept_synonym_name`}
-        label="concept_synonym_name"
-      />
-      <IntegerField fieldName={`language_concept_id`} />
-    </>
-  )
-}
-
 export type PatchConceptSynonymsIdFormProps = {
-  id: number
-  defaultValues: PatchConceptSynonymsIdFormBody
+  id: string
+  defaultValues: Required<PatchConceptSynonymsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchConceptSynonymsIdFormPathParams = { id: number }
+export type PatchConceptSynonymsIdFormPathParams = { id: string }
 
 export const PatchConceptSynonymsIdForm = (
   props: PatchConceptSynonymsIdFormProps,
 ) => {
-  const form = useForm<PatchConceptSynonymsIdFormBody>({
-    resolver: zodResolver(vocabularyConceptSynonymUpdate),
+  const form = useForm<Required<PatchConceptSynonymsIdFormBody>>({
+    resolver: zodResolver(vocabularyConceptSynonymUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -64,7 +51,15 @@ export const PatchConceptSynonymsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchConceptSynonymsIdFormFields />
+        <IntegerField lens={lens.focus('concept_id')} label="concept_id" />
+        <StringField
+          lens={lens.focus('concept_synonym_name')}
+          label="concept_synonym_name"
+        />
+        <IntegerField
+          lens={lens.focus('language_concept_id')}
+          label="language_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

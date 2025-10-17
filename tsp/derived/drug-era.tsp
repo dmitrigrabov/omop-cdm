@@ -130,6 +130,31 @@ model DrugEraQueryParams {
 }
 
 /**
+ * DrugEra list response with example
+ */
+@doc("Paginated list of DrugEra records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  drug_concept_id: 8507,
+  drug_era_start_date: "2023-01-15",
+  drug_era_end_date: "2023-01-15",
+  drug_exposure_count: 100,
+  gap_days: 100
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model DrugEraList {
+  ...PaginatedList<DrugEra>;
+}
+
+/**
  * DrugEra API operations
  */
 @route("/drug-eras")
@@ -142,7 +167,7 @@ interface DrugEras {
     ...DrugEraQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<DrugEra>;
+    @body body: DrugEraList;
   } | ErrorResponse;
 
   @get
@@ -151,7 +176,7 @@ interface DrugEras {
   read(
     @path
     @doc("Unique drug-era identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: DrugEra;
@@ -181,7 +206,7 @@ interface DrugEras {
   update(
     @path
     @doc("Unique drug-era identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete drug-era data")
@@ -203,7 +228,7 @@ interface DrugEras {
   patch(
     @path
     @doc("Unique drug-era identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -222,7 +247,7 @@ interface DrugEras {
   delete(
     @path
     @doc("Unique drug-era identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

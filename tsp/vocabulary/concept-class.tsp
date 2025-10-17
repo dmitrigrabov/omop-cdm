@@ -91,6 +91,27 @@ model ConceptClassQueryParams {
 }
 
 /**
+ * ConceptClass list response with example
+ */
+@doc("Paginated list of ConceptClass records")
+@example(#{
+  data: #[#{
+  id: "12345",
+  concept_class_name: "Example value",
+  concept_class_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model ConceptClassList {
+  ...PaginatedList<ConceptClass>;
+}
+
+/**
  * ConceptClass API operations
  */
 @route("/concept-classs")
@@ -103,7 +124,7 @@ interface ConceptClasss {
     ...ConceptClassQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<ConceptClass>;
+    @body body: ConceptClassList;
   } | ErrorResponse;
 
   @get

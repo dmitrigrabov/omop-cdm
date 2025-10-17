@@ -30,48 +30,8 @@ export type CreateDeviceExposuresFormBody = {
   unit_source_concept_id?: number | undefined
 }
 
-export const CreateDeviceExposuresFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`device_concept_id`} />
-      <StringField
-        fieldName={`device_exposure_start_date`}
-        label="device_exposure_start_date"
-      />
-      <StringField
-        fieldName={`device_exposure_start_datetime`}
-        label="device_exposure_start_datetime"
-      />
-      <StringField
-        fieldName={`device_exposure_end_date`}
-        label="device_exposure_end_date"
-      />
-      <StringField
-        fieldName={`device_exposure_end_datetime`}
-        label="device_exposure_end_datetime"
-      />
-      <IntegerField fieldName={`device_type_concept_id`} />
-      <StringField fieldName={`unique_device_id`} label="unique_device_id" />
-      <StringField fieldName={`production_id`} label="production_id" />
-      <IntegerField fieldName={`quantity`} />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-      <IntegerField fieldName={`visit_detail_id`} />
-      <StringField
-        fieldName={`device_source_value`}
-        label="device_source_value"
-      />
-      <IntegerField fieldName={`device_source_concept_id`} />
-      <IntegerField fieldName={`unit_concept_id`} />
-      <StringField fieldName={`unit_source_value`} label="unit_source_value" />
-      <IntegerField fieldName={`unit_source_concept_id`} />
-    </>
-  )
-}
-
 export type CreateDeviceExposuresFormProps = {
-  defaultValues: CreateDeviceExposuresFormBody
+  defaultValues: Required<CreateDeviceExposuresFormBody>
   onSuccess: () => void
 }
 
@@ -80,8 +40,8 @@ export type CreateDeviceExposuresFormPathParams = Record<string, never>
 export const CreateDeviceExposuresForm = (
   props: CreateDeviceExposuresFormProps,
 ) => {
-  const form = useForm<CreateDeviceExposuresFormBody>({
-    resolver: zodResolver(clinicalDeviceExposureCreate),
+  const form = useForm<Required<CreateDeviceExposuresFormBody>>({
+    resolver: zodResolver(clinicalDeviceExposureCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -105,7 +65,66 @@ export const CreateDeviceExposuresForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateDeviceExposuresFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('device_concept_id')}
+          label="device_concept_id"
+        />
+        <StringField
+          lens={lens.focus('device_exposure_start_date')}
+          label="device_exposure_start_date"
+        />
+        <StringField
+          lens={lens.focus('device_exposure_start_datetime')}
+          label="device_exposure_start_datetime"
+        />
+        <StringField
+          lens={lens.focus('device_exposure_end_date')}
+          label="device_exposure_end_date"
+        />
+        <StringField
+          lens={lens.focus('device_exposure_end_datetime')}
+          label="device_exposure_end_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('device_type_concept_id')}
+          label="device_type_concept_id"
+        />
+        <StringField
+          lens={lens.focus('unique_device_id')}
+          label="unique_device_id"
+        />
+        <StringField lens={lens.focus('production_id')} label="production_id" />
+        <IntegerField lens={lens.focus('quantity')} label="quantity" />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_id')}
+          label="visit_detail_id"
+        />
+        <StringField
+          lens={lens.focus('device_source_value')}
+          label="device_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('device_source_concept_id')}
+          label="device_source_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('unit_concept_id')}
+          label="unit_concept_id"
+        />
+        <StringField
+          lens={lens.focus('unit_source_value')}
+          label="unit_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('unit_source_concept_id')}
+          label="unit_source_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

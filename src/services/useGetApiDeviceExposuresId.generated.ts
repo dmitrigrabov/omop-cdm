@@ -2,7 +2,7 @@ import { clinicalDeviceExposure } from '@/types/clinicalDeviceExposure.generated
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiDeviceExposuresIdArgs = { id: number }
+export type UseGetApiDeviceExposuresIdArgs = { id: string }
 
 export const useGetApiDeviceExposuresId = ({
   id,

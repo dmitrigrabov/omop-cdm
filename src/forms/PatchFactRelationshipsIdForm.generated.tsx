@@ -12,27 +12,19 @@ export type PatchFactRelationshipsIdFormBody = {
   relationship_concept_id?: number | undefined
 }
 
-export const PatchFactRelationshipsIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`relationship_concept_id`} />
-    </>
-  )
-}
-
 export type PatchFactRelationshipsIdFormProps = {
-  id: number
-  defaultValues: PatchFactRelationshipsIdFormBody
+  id: string
+  defaultValues: Required<PatchFactRelationshipsIdFormBody>
   onSuccess: () => void
 }
 
-export type PatchFactRelationshipsIdFormPathParams = { id: number }
+export type PatchFactRelationshipsIdFormPathParams = { id: string }
 
 export const PatchFactRelationshipsIdForm = (
   props: PatchFactRelationshipsIdFormProps,
 ) => {
-  const form = useForm<PatchFactRelationshipsIdFormBody>({
-    resolver: zodResolver(resultsFactRelationshipUpdate),
+  const form = useForm<Required<PatchFactRelationshipsIdFormBody>>({
+    resolver: zodResolver(resultsFactRelationshipUpdate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -56,7 +48,10 @@ export const PatchFactRelationshipsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <PatchFactRelationshipsIdFormFields />
+        <IntegerField
+          lens={lens.focus('relationship_concept_id')}
+          label="relationship_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

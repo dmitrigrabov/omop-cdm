@@ -2,7 +2,7 @@ import { clinicalDeath } from '@/types/clinicalDeath.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiDeathsIdArgs = { id: number }
+export type UseGetApiDeathsIdArgs = { id: string }
 
 export const useGetApiDeathsId = ({ id }: UseGetApiDeathsIdArgs) => {
   const result = useQuery({

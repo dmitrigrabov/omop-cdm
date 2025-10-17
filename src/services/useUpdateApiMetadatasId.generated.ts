@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UseUpdateApiMetadatasIdArgs = {
-  id: number
+  id: string
   body: MetadataMetadataCreate
 }
 

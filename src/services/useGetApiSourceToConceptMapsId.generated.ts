@@ -2,7 +2,7 @@ import { vocabularySourceToConceptMap } from '@/types/vocabularySourceToConceptM
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiSourceToConceptMapsIdArgs = { id: number }
+export type UseGetApiSourceToConceptMapsIdArgs = { id: string }
 
 export const useGetApiSourceToConceptMapsId = ({
   id,

@@ -210,6 +210,37 @@ model EpisodeQueryParams {
 }
 
 /**
+ * Episode list response with example
+ */
+@doc("Paginated list of Episode records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  episode_concept_id: 8507,
+  episode_start_date: "2023-01-15",
+  episode_start_datetime: "2023-01-15",
+  episode_end_date: "2023-01-15",
+  episode_end_datetime: "2023-01-15",
+  episode_parent_id: 100,
+  episode_number: 100,
+  episode_object_concept_id: 8507,
+  episode_type_concept_id: 8507,
+  episode_source_value: "Example value",
+  episode_source_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model EpisodeList {
+  ...PaginatedList<Episode>;
+}
+
+/**
  * Episode API operations
  */
 @route("/episodes")
@@ -222,7 +253,7 @@ interface Episodes {
     ...EpisodeQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Episode>;
+    @body body: EpisodeList;
   } | ErrorResponse;
 
   @get
@@ -231,7 +262,7 @@ interface Episodes {
   read(
     @path
     @doc("Unique episode identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Episode;
@@ -261,7 +292,7 @@ interface Episodes {
   update(
     @path
     @doc("Unique episode identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete episode data")
@@ -283,7 +314,7 @@ interface Episodes {
   patch(
     @path
     @doc("Unique episode identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -302,7 +333,7 @@ interface Episodes {
   delete(
     @path
     @doc("Unique episode identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

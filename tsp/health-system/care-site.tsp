@@ -139,6 +139,30 @@ model CareSiteQueryParams {
 }
 
 /**
+ * CareSite list response with example
+ */
+@doc("Paginated list of CareSite records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  care_site_name: "Example value",
+  place_of_service_concept_id: 8507,
+  location_id: 100,
+  care_site_source_value: "Example value",
+  place_of_service_source_value: "Example value"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model CareSiteList {
+  ...PaginatedList<CareSite>;
+}
+
+/**
  * CareSite API operations
  */
 @route("/care-sites")
@@ -151,7 +175,7 @@ interface CareSites {
     ...CareSiteQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<CareSite>;
+    @body body: CareSiteList;
   } | ErrorResponse;
 
   @get
@@ -160,7 +184,7 @@ interface CareSites {
   read(
     @path
     @doc("Unique care-site identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: CareSite;
@@ -190,7 +214,7 @@ interface CareSites {
   update(
     @path
     @doc("Unique care-site identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete care-site data")
@@ -212,7 +236,7 @@ interface CareSites {
   patch(
     @path
     @doc("Unique care-site identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -231,7 +255,7 @@ interface CareSites {
   delete(
     @path
     @doc("Unique care-site identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

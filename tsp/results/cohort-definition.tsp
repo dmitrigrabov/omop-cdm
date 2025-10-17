@@ -28,7 +28,7 @@ Model.
 
 @doc("CohortDefinition record in the OMOP CDM")
 @example(#{
-  cohort_definition_id: 100,
+  id: 12345,
   cohort_definition_name: "Example value",
   cohort_definition_description: "Example value",
   definition_type_concept_id: 8507,
@@ -38,7 +38,7 @@ Model.
 })
 model CohortDefinition {
   @doc("This is the identifier given to the cohort, usually by the ATLAS application")
-  cohort_definition_id: int64;
+  id: int64;
 
   @doc("A short description of the cohort")
   @maxLength(255)
@@ -65,9 +65,6 @@ model CohortDefinition {
  */
 @doc("Request body for creating a new CohortDefinition record")
 model CohortDefinitionCreate {
-  @doc("This is the identifier given to the cohort, usually by the ATLAS application")
-  cohort_definition_id: int64;
-
   @doc("A short description of the cohort")
   @maxLength(255)
   cohort_definition_name: string;
@@ -93,9 +90,6 @@ model CohortDefinitionCreate {
  */
 @doc("Request body for updating an existing CohortDefinition record")
 model CohortDefinitionUpdate {
-  @doc("This is the identifier given to the cohort, usually by the ATLAS application")
-  cohort_definition_id?: int64;
-
   @doc("A short description of the cohort")
   cohort_definition_name?: string;
 
@@ -140,6 +134,31 @@ model CohortDefinitionQueryParams {
 }
 
 /**
+ * CohortDefinition list response with example
+ */
+@doc("Paginated list of CohortDefinition records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  cohort_definition_name: "Example value",
+  cohort_definition_description: "Example value",
+  definition_type_concept_id: 8507,
+  cohort_definition_syntax: "Example value",
+  subject_concept_id: 8507,
+  cohort_initiation_date: "2023-01-15"
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model CohortDefinitionList {
+  ...PaginatedList<CohortDefinition>;
+}
+
+/**
  * CohortDefinition API operations
  */
 @route("/cohort-definitions")
@@ -152,7 +171,7 @@ interface CohortDefinitions {
     ...CohortDefinitionQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<CohortDefinition>;
+    @body body: CohortDefinitionList;
   } | ErrorResponse;
 
   @get
@@ -161,7 +180,7 @@ interface CohortDefinitions {
   read(
     @path
     @doc("Unique cohort-definition identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: CohortDefinition;
@@ -191,7 +210,7 @@ interface CohortDefinitions {
   update(
     @path
     @doc("Unique cohort-definition identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete cohort-definition data")
@@ -213,7 +232,7 @@ interface CohortDefinitions {
   patch(
     @path
     @doc("Unique cohort-definition identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -232,7 +251,7 @@ interface CohortDefinitions {
   delete(
     @path
     @doc("Unique cohort-definition identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

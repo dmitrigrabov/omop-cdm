@@ -24,48 +24,17 @@ export type UpdateEpisodesIdFormBody = {
   episode_source_concept_id?: number | undefined
 }
 
-export const UpdateEpisodesIdFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`episode_concept_id`} />
-      <StringField
-        fieldName={`episode_start_date`}
-        label="episode_start_date"
-      />
-      <StringField
-        fieldName={`episode_start_datetime`}
-        label="episode_start_datetime"
-      />
-      <StringField fieldName={`episode_end_date`} label="episode_end_date" />
-      <StringField
-        fieldName={`episode_end_datetime`}
-        label="episode_end_datetime"
-      />
-      <IntegerField fieldName={`episode_parent_id`} />
-      <IntegerField fieldName={`episode_number`} />
-      <IntegerField fieldName={`episode_object_concept_id`} />
-      <IntegerField fieldName={`episode_type_concept_id`} />
-      <StringField
-        fieldName={`episode_source_value`}
-        label="episode_source_value"
-      />
-      <IntegerField fieldName={`episode_source_concept_id`} />
-    </>
-  )
-}
-
 export type UpdateEpisodesIdFormProps = {
-  id: number
-  defaultValues: UpdateEpisodesIdFormBody
+  id: string
+  defaultValues: Required<UpdateEpisodesIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateEpisodesIdFormPathParams = { id: number }
+export type UpdateEpisodesIdFormPathParams = { id: string }
 
 export const UpdateEpisodesIdForm = (props: UpdateEpisodesIdFormProps) => {
-  const form = useForm<UpdateEpisodesIdFormBody>({
-    resolver: zodResolver(derivedEpisodeCreate),
+  const form = useForm<Required<UpdateEpisodesIdFormBody>>({
+    resolver: zodResolver(derivedEpisodeCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -89,7 +58,51 @@ export const UpdateEpisodesIdForm = (props: UpdateEpisodesIdFormProps) => {
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateEpisodesIdFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('episode_concept_id')}
+          label="episode_concept_id"
+        />
+        <StringField
+          lens={lens.focus('episode_start_date')}
+          label="episode_start_date"
+        />
+        <StringField
+          lens={lens.focus('episode_start_datetime')}
+          label="episode_start_datetime"
+        />
+        <StringField
+          lens={lens.focus('episode_end_date')}
+          label="episode_end_date"
+        />
+        <StringField
+          lens={lens.focus('episode_end_datetime')}
+          label="episode_end_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('episode_parent_id')}
+          label="episode_parent_id"
+        />
+        <IntegerField
+          lens={lens.focus('episode_number')}
+          label="episode_number"
+        />
+        <IntegerField
+          lens={lens.focus('episode_object_concept_id')}
+          label="episode_object_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('episode_type_concept_id')}
+          label="episode_type_concept_id"
+        />
+        <StringField
+          lens={lens.focus('episode_source_value')}
+          label="episode_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('episode_source_concept_id')}
+          label="episode_source_concept_id"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

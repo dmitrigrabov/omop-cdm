@@ -274,6 +274,40 @@ model NoteQueryParams {
 }
 
 /**
+ * Note list response with example
+ */
+@doc("Paginated list of Note records")
+@example(#{
+  data: #[#{
+  id: 12345,
+  person_id: 100,
+  note_date: "2023-01-15",
+  note_datetime: "2023-01-15",
+  note_type_concept_id: 8507,
+  note_class_concept_id: 8507,
+  note_title: "Example value",
+  note_text: "Example value",
+  encoding_concept_id: 8507,
+  language_concept_id: 8507,
+  provider_id: 100,
+  visit_occurrence_id: 100,
+  visit_detail_id: 100,
+  note_source_value: "Example value",
+  note_event_id: 100,
+  note_event_field_concept_id: 8507
+}],
+  pagination: #{
+    total: 1,
+    offset: 0,
+    limit: 100,
+    count: 1
+  }
+})
+model NoteList {
+  ...PaginatedList<Note>;
+}
+
+/**
  * Note API operations
  */
 @route("/notes")
@@ -286,7 +320,7 @@ interface Notes {
     ...NoteQueryParams,
   ): {
     @statusCode statusCode: 200;
-    @body body: PaginatedList<Note>;
+    @body body: NoteList;
   } | ErrorResponse;
 
   @get
@@ -295,7 +329,7 @@ interface Notes {
   read(
     @path
     @doc("Unique note identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 200;
     @body body: Note;
@@ -325,7 +359,7 @@ interface Notes {
   update(
     @path
     @doc("Unique note identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Complete note data")
@@ -347,7 +381,7 @@ interface Notes {
   patch(
     @path
     @doc("Unique note identifier")
-    id: int64,
+    id: string,
 
     @body
     @doc("Fields to update")
@@ -366,7 +400,7 @@ interface Notes {
   delete(
     @path
     @doc("Unique note identifier")
-    id: int64,
+    id: string,
   ): {
     @statusCode statusCode: 204;
   } | {

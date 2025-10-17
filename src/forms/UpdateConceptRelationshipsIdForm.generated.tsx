@@ -15,30 +15,19 @@ export type UpdateConceptRelationshipsIdFormBody = {
   invalid_reason?: string | undefined
 }
 
-export const UpdateConceptRelationshipsIdFormFields = () => {
-  return (
-    <>
-      <StringField fieldName={`relationship_id`} label="relationship_id" />
-      <StringField fieldName={`valid_start_date`} label="valid_start_date" />
-      <StringField fieldName={`valid_end_date`} label="valid_end_date" />
-      <StringField fieldName={`invalid_reason`} label="invalid_reason" />
-    </>
-  )
-}
-
 export type UpdateConceptRelationshipsIdFormProps = {
-  id: number
-  defaultValues: UpdateConceptRelationshipsIdFormBody
+  id: string
+  defaultValues: Required<UpdateConceptRelationshipsIdFormBody>
   onSuccess: () => void
 }
 
-export type UpdateConceptRelationshipsIdFormPathParams = { id: number }
+export type UpdateConceptRelationshipsIdFormPathParams = { id: string }
 
 export const UpdateConceptRelationshipsIdForm = (
   props: UpdateConceptRelationshipsIdFormProps,
 ) => {
-  const form = useForm<UpdateConceptRelationshipsIdFormBody>({
-    resolver: zodResolver(vocabularyConceptRelationshipCreate),
+  const form = useForm<Required<UpdateConceptRelationshipsIdFormBody>>({
+    resolver: zodResolver(vocabularyConceptRelationshipCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -62,7 +51,22 @@ export const UpdateConceptRelationshipsIdForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <UpdateConceptRelationshipsIdFormFields />
+        <StringField
+          lens={lens.focus('relationship_id')}
+          label="relationship_id"
+        />
+        <StringField
+          lens={lens.focus('valid_start_date')}
+          label="valid_start_date"
+        />
+        <StringField
+          lens={lens.focus('valid_end_date')}
+          label="valid_end_date"
+        />
+        <StringField
+          lens={lens.focus('invalid_reason')}
+          label="invalid_reason"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

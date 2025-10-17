@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiFactRelationshipsIdArgs = {
-  id: number
+  id: string
   body: ResultsFactRelationshipUpdate
 }
 

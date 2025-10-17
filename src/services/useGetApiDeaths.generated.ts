@@ -1,19 +1,8 @@
-import { clinicalDeath } from '@/types/clinicalDeath.generated.ts'
-import { z } from 'zod'
+import { clinicalDeathList } from '@/types/clinicalDeathList.generated.ts'
 import { CommonConceptId } from '@/types/commonConceptId.generated.ts'
 import { CommonSortOrder } from '@/types/commonSortOrder.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-
-export const useGetApiDeathsResponse = z.object({
-  data: z.array(clinicalDeath),
-  pagination: z.object({
-    total: z.number().int(),
-    offset: z.number().int(),
-    limit: z.number().int(),
-    count: z.number().int(),
-  }),
-})
 
 export type UseGetApiDeathsArgs = {
   offset?: number | undefined
@@ -57,7 +46,7 @@ export const useGetApiDeaths = ({
         throw error
       }
 
-      return useGetApiDeathsResponse.parse(data)
+      return clinicalDeathList.parse(data)
     },
     placeholderData: keepPreviousData,
   })

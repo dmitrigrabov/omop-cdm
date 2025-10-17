@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query'
 
 export type UsePatchApiCostsIdArgs = {
-  id: number
+  id: string
   body: HealthsystemCostUpdate
 }
 

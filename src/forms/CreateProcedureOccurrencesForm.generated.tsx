@@ -27,45 +27,8 @@ export type CreateProcedureOccurrencesFormBody = {
   modifier_source_value?: string | undefined
 }
 
-export const CreateProcedureOccurrencesFormFields = () => {
-  return (
-    <>
-      <IntegerField fieldName={`person_id`} />
-      <IntegerField fieldName={`procedure_concept_id`} />
-      <StringField fieldName={`procedure_date`} label="procedure_date" />
-      <StringField
-        fieldName={`procedure_datetime`}
-        label="procedure_datetime"
-      />
-      <StringField
-        fieldName={`procedure_end_date`}
-        label="procedure_end_date"
-      />
-      <StringField
-        fieldName={`procedure_end_datetime`}
-        label="procedure_end_datetime"
-      />
-      <IntegerField fieldName={`procedure_type_concept_id`} />
-      <IntegerField fieldName={`modifier_concept_id`} />
-      <IntegerField fieldName={`quantity`} />
-      <IntegerField fieldName={`provider_id`} />
-      <IntegerField fieldName={`visit_occurrence_id`} />
-      <IntegerField fieldName={`visit_detail_id`} />
-      <StringField
-        fieldName={`procedure_source_value`}
-        label="procedure_source_value"
-      />
-      <IntegerField fieldName={`procedure_source_concept_id`} />
-      <StringField
-        fieldName={`modifier_source_value`}
-        label="modifier_source_value"
-      />
-    </>
-  )
-}
-
 export type CreateProcedureOccurrencesFormProps = {
-  defaultValues: CreateProcedureOccurrencesFormBody
+  defaultValues: Required<CreateProcedureOccurrencesFormBody>
   onSuccess: () => void
 }
 
@@ -74,8 +37,8 @@ export type CreateProcedureOccurrencesFormPathParams = Record<string, never>
 export const CreateProcedureOccurrencesForm = (
   props: CreateProcedureOccurrencesFormProps,
 ) => {
-  const form = useForm<CreateProcedureOccurrencesFormBody>({
-    resolver: zodResolver(clinicalProcedureOccurrenceCreate),
+  const form = useForm<Required<CreateProcedureOccurrencesFormBody>>({
+    resolver: zodResolver(clinicalProcedureOccurrenceCreate.required()),
     defaultValues: props.defaultValues,
   })
 
@@ -99,7 +62,57 @@ export const CreateProcedureOccurrencesForm = (
         })}
         className="flex flex-col flex-1 gap-4 p-4"
       >
-        <CreateProcedureOccurrencesFormFields />
+        <IntegerField lens={lens.focus('person_id')} label="person_id" />
+        <IntegerField
+          lens={lens.focus('procedure_concept_id')}
+          label="procedure_concept_id"
+        />
+        <StringField
+          lens={lens.focus('procedure_date')}
+          label="procedure_date"
+        />
+        <StringField
+          lens={lens.focus('procedure_datetime')}
+          label="procedure_datetime"
+        />
+        <StringField
+          lens={lens.focus('procedure_end_date')}
+          label="procedure_end_date"
+        />
+        <StringField
+          lens={lens.focus('procedure_end_datetime')}
+          label="procedure_end_datetime"
+        />
+        <IntegerField
+          lens={lens.focus('procedure_type_concept_id')}
+          label="procedure_type_concept_id"
+        />
+        <IntegerField
+          lens={lens.focus('modifier_concept_id')}
+          label="modifier_concept_id"
+        />
+        <IntegerField lens={lens.focus('quantity')} label="quantity" />
+        <IntegerField lens={lens.focus('provider_id')} label="provider_id" />
+        <IntegerField
+          lens={lens.focus('visit_occurrence_id')}
+          label="visit_occurrence_id"
+        />
+        <IntegerField
+          lens={lens.focus('visit_detail_id')}
+          label="visit_detail_id"
+        />
+        <StringField
+          lens={lens.focus('procedure_source_value')}
+          label="procedure_source_value"
+        />
+        <IntegerField
+          lens={lens.focus('procedure_source_concept_id')}
+          label="procedure_source_concept_id"
+        />
+        <StringField
+          lens={lens.focus('modifier_source_value')}
+          label="modifier_source_value"
+        />
 
         <Button type="submit">Submit</Button>
       </form>

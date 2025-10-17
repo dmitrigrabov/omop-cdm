@@ -2,7 +2,7 @@ import { derivedEpisode } from '@/types/derivedEpisode.generated.ts'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/react-query'
 
-export type UseGetApiEpisodesIdArgs = { id: number }
+export type UseGetApiEpisodesIdArgs = { id: string }
 
 export const useGetApiEpisodesId = ({ id }: UseGetApiEpisodesIdArgs) => {
   const result = useQuery({
